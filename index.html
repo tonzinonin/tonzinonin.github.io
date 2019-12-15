@@ -90,9 +90,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h3 id="2019-12-15-13-56-35"><a href="#2019-12-15-13-56-35" class="headerlink" title="2019-12-15 13:56:35"></a>2019-12-15 13:56:35</h3><h2 id="hexo-manage"><a href="#hexo-manage" class="headerlink" title="hexo manage"></a>hexo manage</h2><hr>
-<p>主题下载并启用#</p>
+        <p>主题下载并启用#</p>
 <p>进入命令行，下载 NexT 主题，输入：</p>
 <p>Copy<br>    git clone <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next</a> themes/next</p>
 <p>修改站点配置文件 _config.yml，找到如下代码：</p>
@@ -105,6 +103,8 @@
       <a data-url="http://yoursite.com/2019/12/15/%E8%AE%BA%E7%BB%99hexo%E6%8D%A2%E4%B8%BB%E9%A2%98/" data-id="ck46lt1dx0000icqtexhxbbiq" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gits/" rel="tag">Gits</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
     </footer>
   </div>
   
@@ -134,13 +134,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>1，hexo常见操作符：</p>
+<pre><code>hexo new &quot;name&quot;       # 新建文章
+hexo new page &quot;name&quot;  # 新建页面
+hexo g                # 生成页面
+hexo d                # 部署
+hexo g -d             # 生成页面并部署
+hexo s                # 本地预览
+hexo clean            # 清除缓存和已生成的静态文件
+hexo help             # 帮助</code></pre><p>2，Hexo 设置显示文章摘要，首页不显示全文</p>
+<pre><code>Hexo 主页文章列表默认会显示文章全文，浏览时很不方便，可以在文章中插入 &lt;!--more--&gt; 进行分段。
+
+该代码前面的内容会作为摘要显示，而后面的内容会替换为 “Read More” 隐藏起来。</code></pre><p>更多详情请见文章：<a href="https://zhuanlan.zhihu.com/p/60578464" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/60578464</a></p>
+
       
     </div>
     <footer class="article-footer">
       <a data-url="http://yoursite.com/2019/12/15/Hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" data-id="ck46geqlh00029kqt8oob1ccg" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
     </footer>
   </div>
   
@@ -257,9 +271,23 @@ II delete远程文件
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gits/" rel="tag">Gits</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gits/" style="font-size: 10px;">Gits</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
