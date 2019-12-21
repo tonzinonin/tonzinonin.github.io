@@ -7,15 +7,15 @@
   
   <title>论给博客,换主题,DIY,加功能 | Tonzinonin&#39;s Technical Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="主题下载并启用# 进入命令行，下载 NexT 主题，输入： Copy git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next修改站点配置文件 _config.yml，找到如下代码： Copy #Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F; theme: landscape将 landscape 修改为">
+  <meta name="description" content="主题下载并启用 进入命令行，下载 NexT 主题，输入：  Copy git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next  修改站点配置文件 _config.yml，找到如下代码：  Copy #Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F; theme: landscape  将 landscap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论给博客,换主题,DIY,加功能">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;15&#x2F;%E8%AE%BA%E7%BB%99%E5%8D%9A%E5%AE%A2,%E6%8D%A2%E4%B8%BB%E9%A2%98,DIY,%E5%8A%A0%E5%8A%9F%E8%83%BD&#x2F;index.html">
 <meta property="og:site_name" content="Tonzinonin&#39;s Technical Blog">
-<meta property="og:description" content="主题下载并启用# 进入命令行，下载 NexT 主题，输入： Copy git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next修改站点配置文件 _config.yml，找到如下代码： Copy #Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F; theme: landscape将 landscape 修改为">
+<meta property="og:description" content="主题下载并启用 进入命令行，下载 NexT 主题，输入：  Copy git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next  修改站点配置文件 _config.yml，找到如下代码：  Copy #Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F; theme: landscape  将 landscap">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-15T05:56:35.743Z">
-<meta property="article:modified_time" content="2019-12-15T07:09:46.551Z">
+<meta property="article:modified_time" content="2019-12-21T10:34:30.031Z">
 <meta property="article:author" content="Tonzinonin">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Git">
@@ -92,14 +92,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>主题下载并启用#</p>
-<p>进入命令行，下载 NexT 主题，输入：</p>
-<pre><code>Copy
-git clone https://github.com/theme-next/hexo-theme-next themes/next</code></pre><p>修改站点配置文件 _config.yml，找到如下代码：</p>
-<pre><code>Copy
+        <p>主题下载并启用</p>
+<pre><code>进入命令行，下载 NexT 主题，输入：
+
+Copy
+git clone https://github.com/theme-next/hexo-theme-next themes/next
+
+修改站点配置文件 _config.yml，找到如下代码：
+
+Copy
 #Themes: https://hexo.io/themes/
-theme: landscape</code></pre><p>将 landscape 修改为 next 即可。</p>
-<p>索引：</p>
+theme: landscape
+
+将 landscape 修改为 next 即可。</code></pre><p>修改默认背景</p>
+<pre><code>通过theme-&gt;landscape-&gt;source-&gt;css-&gt;image
+把要换的图片替换成文件夹下的banner图片并更名
+在public文件夹下用git bash执行hexo generate。然后hexo s预览即可。</code></pre><p>索引：</p>
 <pre><code>论如何加网站加标签页，以及给文章分类加标签：
 https://blog.csdn.net/ganzhilin520/article/details/79047249
 NexT官方文档：
