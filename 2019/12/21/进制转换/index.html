@@ -5,20 +5,20 @@
   
 
   
-  <title>二分查找 | Tonzinonin&#39;s Technical Blog</title>
+  <title>进制转换 | Tonzinonin&#39;s Technical Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="二分查找是一种很经典的查找数字的算法，经常用作优化时间复杂度上  问题描述 公司举办年会，为了活跃气氛，设置了摇奖环节。参加聚会的每位员工都有一张带有号码的抽奖卷。现在，主持人依次公布n个不同的获奖号码，小谢看着自己抽奖上的号码win，无比紧张。请编写一个程序，如果小谢获奖了，请输出他中的第几个号码；如果没有中奖，请输出0。       输入     第一行一个正整数n，表示有n个获奖号码，2＜n">
+  <meta name="description" content="计算机只能识别2进制的机器语言，汽车的的车牌号是36进制，进制在生活中随处可见，而进制算法，就是所谓的把一种进制的数字，转化为另一种进制的算法，在C++中，有一些有关进制转换的函数及用法：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二分查找">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;15&#x2F;%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE&#x2F;index.html">
+<meta property="og:title" content="进制转换">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;21&#x2F;%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2&#x2F;index.html">
 <meta property="og:site_name" content="Tonzinonin&#39;s Technical Blog">
-<meta property="og:description" content="二分查找是一种很经典的查找数字的算法，经常用作优化时间复杂度上  问题描述 公司举办年会，为了活跃气氛，设置了摇奖环节。参加聚会的每位员工都有一张带有号码的抽奖卷。现在，主持人依次公布n个不同的获奖号码，小谢看着自己抽奖上的号码win，无比紧张。请编写一个程序，如果小谢获奖了，请输出他中的第几个号码；如果没有中奖，请输出0。       输入     第一行一个正整数n，表示有n个获奖号码，2＜n">
+<meta property="og:description" content="计算机只能识别2进制的机器语言，汽车的的车牌号是36进制，进制在生活中随处可见，而进制算法，就是所谓的把一种进制的数字，转化为另一种进制的算法，在C++中，有一些有关进制转换的函数及用法：">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-12-15T07:41:36.867Z">
-<meta property="article:modified_time" content="2019-12-21T10:46:50.432Z">
+<meta property="article:published_time" content="2019-12-21T10:47:54.415Z">
+<meta property="article:modified_time" content="2019-12-21T11:19:25.931Z">
 <meta property="article:author" content="Tonzinonin">
 <meta property="article:tag" content="C++">
-<meta property="article:tag" content="搜索算法">
+<meta property="article:tag" content="基本算法">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Tonzinonin&#39;s Technical Blog" type="application/atom+xml">
@@ -70,10 +70,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-二分查找" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-进制转换" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/12/15/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="article-date">
-  <time datetime="2019-12-15T07:41:36.867Z" itemprop="datePublished">2019-12-15</time>
+    <a href="/2019/12/21/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" class="article-date">
+  <time datetime="2019-12-21T10:47:54.415Z" itemprop="datePublished">2019-12-21</time>
 </a>
     
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      二分查找
+      进制转换
     </h1>
   
 
@@ -92,60 +92,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>二分查找是一种很经典的查找数字的算法，经常用作优化时间复杂度上</p>
-<blockquote>
-<p>问题描述 公司举办年会，为了活跃气氛，设置了摇奖环节。参加聚会的每位员工都有一张带有号码的抽奖卷。现在，主持人依次公布n个不同的获奖号码，小谢看着自己抽奖上的号码win，无比紧张。请编写一个程序，如果小谢获奖了，请输出他中的第几个号码；如果没有中奖，请输出0。    </p>
-</blockquote>
-<blockquote>
-<p>输入<br>     第一行一个正整数n，表示有n个获奖号码，2＜n≤100。</p>
-</blockquote>
-<blockquote>
-<p>第二行包含n个正整数，之间用一个空格隔开，表示依次公布的n个获奖号码。<br>     第三行一个正整数num，表示第小谢抽奖卷上的号码。1≤获奖号码，win＜10000。</p>
-</blockquote>
-<blockquote>
-<p>输出<br>一行一个整数，如果小谢中奖了，表示中奖的是第几个号码；如果没有中奖，则为0。    </p>
-</blockquote>
-<blockquote>
-<p>样例输入 Copy</p>
-</blockquote>
-<blockquote>
-<p>7<br>1 2 3 4 6 17 9555<br>3</p>
-</blockquote>
-<blockquote>
-<p>样例输出 Copy</p>
-</blockquote>
-<blockquote>
-<p>3</p>
-</blockquote>
-<pre><code>#include&lt;cstdio&gt;
-    using namespace std;
-int s[101],win;
-int R(int l,int r){//设置一个二分函数
-      if(l&lt;=r){
-     int mid=(r+l)/2;
-     if(win==s[mid]){return mid;}
-        if(win&gt;s[mid]) return R(mid+1,r);
-        if(win&lt;s[mid]) return R(l,mid-1);
-    }
-    else return 0;
-}
-
+        <p>计算机只能识别2进制的机器语言，汽车的的车牌号是36进制，进制在生活中随处可见，而进制算法，就是所谓的把一种进制的数字，转化为另一种进制的算法，在C++中，有一些有关进制转换的函数及用法：</p>
+<a id="more"></a>
+<p>c++中有一些自带的输出方式可以进行进制转换</p>
+<pre><code>//#include&lt;bits/stdc++.h&gt;
+#include&lt;bitset&gt; //保留位数的头文件 
+#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+using namespace std;
 int main(){
-int n,f,i;
-scanf(&quot;%d&quot;,&amp;n);
-for(i=1;i&lt;=n;i++) scanf(&quot;%d&quot;,&amp;s[i]);
-scanf(&quot;%d&quot;,&amp;win);
-f=R(1,n);
-printf(&quot;%d&quot;,f);
-return 0;    
+    //格式化输出 
+    printf(&quot;35的八进制是： %05o\n&quot;,35);    //按八进制格式输出，保留5位高位补零
+    printf(&quot;35的十进制是： %03d\n&quot;,35);    //按十进制格式输出，保留3位高位补零
+    printf(&quot;35的十六进制是： %05x\n&quot;,35);    //按十六进制格式输出，保留5位高位补零
+    //流输入输出 
+    cout&lt;&lt;&quot;136的八进制是： &quot;&lt;&lt; oct &lt;&lt; 35&lt;&lt; endl;  
+    cout&lt;&lt;&quot;136的十进制是： &quot;&lt;&lt; dec &lt;&lt; 35 &lt;&lt; endl;
+    cout&lt;&lt;&quot;136的十六进制是： &quot;&lt;&lt; hex &lt;&lt; 35 &lt;&lt; endl;
+    cout&lt;&lt;&quot;136的二进制是： &quot;&lt;&lt;    bitset&lt;8&gt;(35) &lt;&lt; endl;    //&lt;8&gt;：表示保留8位输出
+}
+}  </code></pre><p>但是这仍然是有限的，也许我们除了八进制二进制和十六进制，还需要用到其它进制，这时有两种方法：<br>##1.使用C++库中自带的函数进行进制转换<br>strtol 函数：<br>它的功能是将一个任意1-36进制数转化为10进制数，返回是long int型。</p>
+<p>函数为long int strtol(const char <em>nptr, char *</em>endptr, int base)</p>
+<p>base是要转化的数的进制，非法字符会赋值给endptr，nptr是要转化的字符，例如：</p>
+<pre><code>char buffer[20]=&quot;10379cend$3&quot;;
+char *stop;
+printf(&quot;%d\n&quot;,strtol(buffer, &amp;stop, 8));
+printf(&quot;%s\n&quot;, stop);</code></pre><p>输出结果：<br>543<br>9cend$3</p>
+<p>将一个8进制转化为10进制，读取1037，其他后面的为非法字符，转化结果以int型输出来。</p>
+<p>另外，如果base为0，且字符串不是以0x(或者0X)开头，则按十进制进行转化。如果base为0或者16，并且字符串以0x（或者0X）开头，那么，x（或者X）被忽略，字符串按16进制转化。如果base不等于0和16，并且字符串以0x(或者0X)开头，那么x被视为非法字符。</p>
+<p>最后，需要说明的是，对于nptr指向的字符串，其开头和结尾处的空格被忽视，字符串中间的空格被视为非法字符。</p>
+<p>##2.构造函数：<br>如下代码,可以将十进制的数转化为2到36进制的数：</p>
+<pre><code>char ch[4];
+void change(int x,int y){
+    memset(ch,&apos;0&apos;,sizeof(ch));
+    int t=0;
+    for(int i=0;i&lt;=1000;i++){
+    if(y&gt;=10){//进制字符
+        if(x%y&gt;=10) ch[i]=x%y+55;
+        else ch[i]=x%y+&apos;0&apos;;}
+    else ch[i]=x%y+&apos;0&apos;;
+    x/=y;
+    t++;
+    if(!x) break;
+    }
+    cout&lt;&lt;setw(4);
+    for(int i=t;i&gt;=0;i--)
+    cout&lt;&lt;ch[i];
 }</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/15/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" data-id="ck4ffyqf30001ocqt1dqt0rde" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/21/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" data-id="ck4fhq45j0000g4qt3ccy4cri" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li></ul>
 
     </footer>
   </div>
@@ -153,19 +153,10 @@ return 0;
     
 <nav id="article-nav">
   
-    <a href="/2019/12/21/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          高精度算法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/15/%E8%AE%BA%E7%BB%99%E5%8D%9A%E5%AE%A2,%E6%8D%A2%E4%B8%BB%E9%A2%98,DIY,%E5%8A%A0%E5%8A%9F%E8%83%BD/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/12/21/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">论给博客,换主题,DIY,加功能</div>
+      <div class="article-nav-title">高精度算法</div>
     </a>
   
 </nav>
