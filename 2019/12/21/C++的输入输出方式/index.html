@@ -7,15 +7,15 @@
   
   <title>C++的输入输出方式 | Tonzinonin&#39;s Technical Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="c++有两大输入输出方式：  #scanf，printf： 优点： 格式化输入输出，输入输出的速度比流输入输出更快 支持c语言,不需要标准名字空间 输入字符串比较方便 缺点： 使用较不方便（相对于用惯了流输入输出方式来说…） 使用时要指明数字类型">
+  <meta name="description" content="c++有两大输入输出方式： #scanf，printf： 优点： 格式化输入输出，输入输出的速度比流输入输出更快 支持c语言,不需要标准名字空间 输入字符串比较方便 缺点： 使用较不方便（相对于用惯了流输入输出方式来说…） 使用时要指明数字类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++的输入输出方式">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;21&#x2F;C++%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F&#x2F;index.html">
 <meta property="og:site_name" content="Tonzinonin&#39;s Technical Blog">
-<meta property="og:description" content="c++有两大输入输出方式：  #scanf，printf： 优点： 格式化输入输出，输入输出的速度比流输入输出更快 支持c语言,不需要标准名字空间 输入字符串比较方便 缺点： 使用较不方便（相对于用惯了流输入输出方式来说…） 使用时要指明数字类型">
+<meta property="og:description" content="c++有两大输入输出方式： #scanf，printf： 优点： 格式化输入输出，输入输出的速度比流输入输出更快 支持c语言,不需要标准名字空间 输入字符串比较方便 缺点： 使用较不方便（相对于用惯了流输入输出方式来说…） 使用时要指明数字类型">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-21T11:28:00.000Z">
-<meta property="article:modified_time" content="2019-12-21T11:51:23.635Z">
+<meta property="article:modified_time" content="2019-12-22T14:58:58.584Z">
 <meta property="article:author" content="Tonzinonin">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -92,7 +92,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>c++有两大输入输出方式：</p>
-<p> #scanf，printf：</p>
+<p>#scanf，printf：</p>
 <p>优点：</p>
 <p>格式化输入输出，输入输出的速度比流输入输出更快</p>
 <p>支持c语言,不需要标准名字空间</p>
@@ -101,13 +101,13 @@
 <p>使用较不方便（相对于用惯了流输入输出方式来说…）</p>
 <p>使用时要指明数字类型</p>
 <a id="more"></a>
-<p> #cin，cout：</p>
+<p>#cin，cout：</p>
 <p>优点：</p>
 <p>使用时不用指明数字类型，较为方便</p>
 <p>缺点：</p>
 <p>默认为流输入输出，速度慢速度慢速度慢重要的事情说三遍！</p>
 <p>不容易处理夹杂在数据中的字符串</p>
-<p> #那么，有没有什么方式可以挽救cin，cout这令人着急的speed呢？</p>
+<p>#那么，有没有什么方式可以挽救cin，cout这令人着急的speed呢？</p>
 <p>答案是有！</p>
 <p>在代码前输入以下命令：</p>
 <pre><code>ios::sync_with_stdio(false);
