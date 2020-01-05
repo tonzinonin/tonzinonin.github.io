@@ -15,7 +15,7 @@
 <meta property="og:description" content="set又称作集合，是stl中的常用容器之一，分为set和multiset，区别是 是否能够含有相同的元素，底层用二叉树（红黑树）实现">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-05T05:41:58.101Z">
-<meta property="article:modified_time" content="2020-01-05T06:06:24.210Z">
+<meta property="article:modified_time" content="2020-01-05T07:12:12.077Z">
 <meta property="article:author" content="Tonzinonin">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="stl">
@@ -110,6 +110,12 @@ for(multiset&lt;int&gt;::iterator it = s.begin(); it != s.end(); it++){
 }
 putchar(&apos;\n&apos;);
 }
+class cmp{//排序的仿函数 
+public:
+bool operator() (const int &amp;a,const int &amp;b) const{
+    return a&gt;b;
+}
+};
 int main(){
 set&lt;int&gt; st_3;
 set&lt;int&gt; st;//定义操作； 
@@ -162,7 +168,16 @@ if(pos != st_2.end()) puts(&quot;YES&quot;);
 else puts(&quot;NO&quot;); 
 
 puts(&quot;统计mtst元素&quot;);
-printf(&quot;%d\n&quot;,mtst.count(15)); 
+printf(&quot;%d\n&quot;,mtst.count(15));
+
+puts(&quot;setの自定义排序&quot;); 
+set&lt;int,cmp&gt; less_st;//定义时设置排序规则 
+less_st.insert(156);
+less_st.insert(132);
+for(set&lt;int&gt;::iterator it = less_st.begin(); it != less_st.end(); it++){
+    printf(&quot;%d &quot;,*it);
+}
+putchar(&apos;\n&apos;);
 return 0;
 }`</code></pre>
       
