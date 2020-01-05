@@ -104,6 +104,114 @@
 
 
   
+    <article id="post-集合与Set" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/05/%E9%9B%86%E5%90%88%E4%B8%8ESet/" class="article-date">
+  <time datetime="2020-01-05T05:41:58.101Z" itemprop="datePublished">2020-01-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/05/%E9%9B%86%E5%90%88%E4%B8%8ESet/">集合与Set</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>set又称作集合，是stl中的常用容器之一，分为set和multiset，区别是 是否能够含有相同的元素，底层用二叉树（红黑树）实现</p>
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;set&gt;
+using namespace std;
+void output(set&lt;int&gt;&amp;s){//打印 set 
+for(set&lt;int&gt;::iterator it = s.begin(); it != s.end(); it++){
+    printf(&quot;%d &quot;,*it);
+}
+putchar(&apos;\n&apos;);
+}
+void output_multi(multiset&lt;int&gt;&amp;s){//打印 multiset 
+for(multiset&lt;int&gt;::iterator it = s.begin(); it != s.end(); it++){
+    printf(&quot;%d &quot;,*it);
+}
+putchar(&apos;\n&apos;);
+}
+int main(){
+set&lt;int&gt; st_3;
+set&lt;int&gt; st;//定义操作； 
+multiset&lt;int&gt; mtst;
+
+st.insert(12);//插入操作 
+st.insert(24);
+st.insert(6);
+st.insert(12);
+
+pair&lt;set&lt;int&gt;::iterator,bool&gt; judge = st.insert(12);
+if(judge.second) puts(&quot;插入成功&quot;); 
+else puts(&quot;插入失败&quot;);
+
+mtst.insert(16);
+mtst.insert(7);
+mtst.insert(15);
+mtst.insert(15);
+
+set&lt;int&gt; st_2(st); //copy操作
+st_2.insert(100);
+st_3 = st_2; //赋值 
+
+puts(&quot;输出测试：&quot;);
+output(st);
+output(st_2);
+output(st_3); 
+output_multi(mtst);
+puts(&quot;st的大小为:&quot;);
+printf(&quot;%d\n&quot;,st.size());
+puts(&quot;mtst的大小为:&quot;);
+printf(&quot;%d\n&quot;,mtst.size());
+puts(&quot;交换操作：&quot;);
+st.swap(st_2);
+printf(&quot;st: &quot;);output(st);
+printf(&quot;st_2: &quot;);output(st_2);
+puts(&quot;删除st容器中的100操作：&quot;);
+st.erase(100);
+output(st);
+puts(&quot;删除st容器中的第一个元素的操作：&quot;);//排好序后删除
+st.erase(st.begin());
+output(st);
+puts(&quot;清空st&quot;);
+st.clear(); 
+if(st.empty()) puts(&quot;st已清空&quot;);
+
+puts(&quot;查找st_2元素&quot;) ;
+set&lt;int&gt;::iterator pos = st_2.find(12);
+if(pos != st_2.end()) puts(&quot;YES&quot;);
+else puts(&quot;NO&quot;); 
+
+puts(&quot;统计mtst元素&quot;);
+printf(&quot;%d\n&quot;,mtst.count(15)); 
+return 0;
+}`</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/05/%E9%9B%86%E5%90%88%E4%B8%8ESet/" data-id="ck50m0vaj0001xwqt1s81hto4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stl/" rel="tag">stl</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-单调队列与queue" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/28/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97%E4%B8%8Equeue/" class="article-date">
@@ -133,6 +241,230 @@
       <a data-url="http://yoursite.com/2019/12/28/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97%E4%B8%8Equeue/" data-id="ck50lu06f0000psqt0hpndgc5" class="article-share-link">Share</a>
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-链表与List" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/22/%E9%93%BE%E8%A1%A8%E4%B8%8EList/" class="article-date">
+  <time datetime="2019-12-22T15:02:05.559Z" itemprop="datePublished">2019-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/22/%E9%93%BE%E8%A1%A8%E4%B8%8EList/">链表与List</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>概念：数据结构，以链表的形式储存数据，链表一般有许多结点，结点相互连接，每个结点下有一个数据域和一个指针域，数据域(-&gt;num)用来储存数据，指针域(-&gt;next)用来指下一个节点的位置，最后一个节点的指针域一般为NULL。与数组不同，数组是以线性表的方式储存数据的。STL拥有的容器（List）为双向链表。</p>
+<ul>
+<li>特性：</li>
+</ul>
+<p>可以在任意的位置迅速的查找，插入，删除某一个元素，修改指针即可；</p>
+<p>采用动态储存(List)，不会造成内存浪费或溢出；</p>
+<p>遍历速度没有数组快（Time）；</p>
+<p>占用的空间比数组要大（Space）；</p>
+<p>List的迭代器为双向迭代器，支持前移和后移；</p>
+<p>插入和删除操作都不会造成List迭代器的失效，这在vector容器中是不成立的</p>
+<ol>
+<li>链表的基操：</li>
+</ol>
+<ul>
+<li>1,插入元素，如果是在链表中间则在链表中间插入一个结点，并把该结点与该结点两边的结点相连；如果是在开头插入则新设置一个头结点并把新结点连到原头结点上；如果是在末端则直接在末端新建一个结点；</li>
+</ul>
+<p>2,删除元素，原理很简单，把要删除的元素的结点给“忽略”，也就是把该结点与其它结点的联系给切断，然后通过对旁边的节点进行操作来进行删除；</p>
+<p>3,链表的遍历输出，每次把结点通过指针指向下一个结点进行遍历与输出；</p>
+<ul>
+<li>链表的分类</li>
+</ul>
+<p>链表大致可以分为单向链表，双向链表，循环链表，用来处理不同的问题；</p>
+<p>单向链表：<br>最简单的链表，只能向一个方向进行遍历以及其它操作；<br>手工链表应用举例（kzoj-1322）</p>
+<pre><code>#include&lt;iostream&gt;
+using namespace std;
+
+struct node{
+int num;
+node *next; //定义一个指针，指向下一个结点 
+}; 
+int main(){
+    int n,x;
+    node *head,*p,*q,*r;
+    cin &gt;&gt; n;
+    head = new node;
+    head -&gt; next = NULL;//初始化头结点
+    cin &gt;&gt; head -&gt; num;
+    q = head;
+
+    for(int i = 2; i &lt;= n; i++){
+    p = new node;
+    p -&gt; next = NULL;
+    cin &gt;&gt; p -&gt; num;
+    q -&gt; next = p;
+    q = p;//建立链表 
+    }
+
+    cin &gt;&gt; x;
+   p = head; //回到头结点 ,遍历链表，找到插入位置 
+   while(p != NULL){
+    if(p-&gt;num &gt;= x) break;
+    q = p;//取前一个元素 
+    p = p -&gt; next;
+}
+
+r = new node;
+r -&gt; num = x;
+r -&gt; next = NULL;
+if(p == head){//如果插入位置在链表的头部 ,建立新头结点 
+    r -&gt; next = head;
+    head = r;
+}
+else if(p == NULL){//如果插入位置在链表地尾部，在尾部加上一个结点 
+    q -&gt; next = r;
+} 
+else{//如果插入位置在链表中间，插入结点 
+    q -&gt; next = r;
+    r -&gt; next = p;
+}
+
+p = head;//输出 
+while(p -&gt; next != NULL){
+    cout &lt;&lt; p -&gt; num &lt;&lt;&apos; &apos;; 
+    p = p-&gt;next;
+}
+cout &lt;&lt; p -&gt; num &lt;&lt;endl;
+return 0;
+} </code></pre><p>双向链表：<br>可以往两个方向进行操作，stl中的容器List就是一个双向链表；<br>双向链表应用举例（kzoj-1323）</p>
+<pre><code>#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+using namespace std;
+struct node {
+int num;
+node *pre,*next;
+};
+int main(){
+int n,m,d,s;
+node *head,*tail,*p,*k;
+scanf (&quot;%d%d&quot;,&amp;n,&amp;m);
+head = new node;
+head-&gt;pre = NULL;
+head-&gt;next = NULL;
+head-&gt;num = 1;
+k = head;
+for (int i = 2; i &lt;= n; i++){
+    p = new node;
+    p-&gt;next = NULL;
+    p-&gt;pre = NULL;
+    p-&gt;num = i;
+
+    k-&gt;next = p;
+    p-&gt;pre = k;
+    k = p;
+}
+tail = k;
+p = head;
+s = 0;
+d = 1;
+while (head != tail){
+    s++;
+    if(s==m){
+        s=0;
+        if(p == tail){
+            tail = p-&gt;pre;
+            p = tail;
+            d = 2;
+            continue;
+        }
+        if(p == head){
+              head = p-&gt;next;
+              p = head;
+                d = 1;
+                continue;
+        }
+        p-&gt;pre-&gt;next = p-&gt;next;
+        p-&gt;next-&gt;pre = p-&gt;pre;
+    }
+    if(d == 1){
+        if(p == tail){
+            p = p-&gt;pre;
+            d = 2;
+        }
+        else p = p-&gt;next;
+    }
+    else{
+        if(p == head){
+            p = p-&gt;next;
+            d = 1;
+        }
+        else p = p-&gt;pre;
+    }
+}
+cout&lt;&lt;head-&gt;num;
+return 0;
+}</code></pre><p>循环链表：<br>链表首尾相连，很好理解；单向链表应用举例（kzoj-1324）</p>
+<pre><code>#include&lt;cstdio&gt;
+#include&lt;iostream&gt;
+using namespace std;
+struct node {
+int num;
+node *next;
+};
+int main(){
+int n,k,s;
+scanf(&quot;%d%d&quot;,&amp;n,&amp;k);
+node *head,*p,*q;
+head = new node;
+head-&gt;next = NULL;
+head-&gt;num = 1;
+q = head; 
+for(int i = 2; i &lt;= n; i++){
+    p = new node;
+    p-&gt;next = NULL;
+    p-&gt;num = i;
+    q-&gt;next = p;
+    q = p;
+}
+q-&gt;next = head;//建立循环链表 
+p = head;
+s = 0;
+while(p-&gt;next != p){
+    s++;
+    if(s == k){
+        s = 0;
+        printf(&quot;%d &quot;,p-&gt;num);
+        q-&gt;next = p-&gt;next;
+        p = p-&gt;next;
+    }
+    else{
+        q = p;
+        p = p-&gt;next;
+    }
+}
+printf(&quot;%d&quot;,p-&gt;num);
+return 0;
+} </code></pre><p>`<br><strong>list的操作</strong><br>待补充：</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/22/%E9%93%BE%E8%A1%A8%E4%B8%8EList/" data-id="ck50m0vab0000xwqtcpgsd5sl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stl/" rel="tag">stl</a></li></ul>
+
     </footer>
   </div>
   
@@ -416,51 +748,12 @@ hexo help             # 帮助</code></pre>
 
 
   
-    <article id="post-使用Git上传和删除远端文件以及npm下载慢解决方案" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/15/%E4%BD%BF%E7%94%A8Git%E4%B8%8A%E4%BC%A0%E5%92%8C%E5%88%A0%E9%99%A4%E8%BF%9C%E7%AB%AF%E6%96%87%E4%BB%B6%E4%BB%A5%E5%8F%8Anpm%E4%B8%8B%E8%BD%BD%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
-  <time datetime="2019-12-15T02:40:39.157Z" itemprop="datePublished">2019-12-15</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/15/%E4%BD%BF%E7%94%A8Git%E4%B8%8A%E4%BC%A0%E5%92%8C%E5%88%A0%E9%99%A4%E8%BF%9C%E7%AB%AF%E6%96%87%E4%BB%B6%E4%BB%A5%E5%8F%8Anpm%E4%B8%8B%E8%BD%BD%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">使用Git上传和删除远端文件以及npm下载慢解决方案</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> I 上传文件</p>
-<p>以下步骤详细输入</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/12/15/%E4%BD%BF%E7%94%A8Git%E4%B8%8A%E4%BC%A0%E5%92%8C%E5%88%A0%E9%99%A4%E8%BF%9C%E7%AB%AF%E6%96%87%E4%BB%B6%E4%BB%A5%E5%8F%8Anpm%E4%B8%8B%E8%BD%BD%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/15/%E4%BD%BF%E7%94%A8Git%E4%B8%8A%E4%BC%A0%E5%92%8C%E5%88%A0%E9%99%A4%E8%BF%9C%E7%AB%AF%E6%96%87%E4%BB%B6%E4%BB%A5%E5%8F%8Anpm%E4%B8%8B%E8%BD%BD%E6%85%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-id="ck46r6v3400008oqt7ixccofh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Manage-data/" rel="tag">Manage data</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -473,7 +766,7 @@ hexo help             # 帮助</code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Manage-data/" rel="tag">Manage data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Manage-data/" rel="tag">Manage data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stl/" rel="tag">stl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li></ul>
     </div>
   </div>
 
@@ -483,7 +776,7 @@ hexo help             # 帮助</code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Manage-data/" style="font-size: 10px;">Manage data</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 13.33px;">基本算法</a> <a href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" style="font-size: 10px;">搜索算法</a>
+      <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Manage-data/" style="font-size: 10px;">Manage data</a> <a href="/tags/stl/" style="font-size: 13.33px;">stl</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 13.33px;">基本算法</a> <a href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" style="font-size: 10px;">搜索算法</a>
     </div>
   </div>
 
@@ -509,19 +802,19 @@ hexo help             # 帮助</code></pre>
           </li>
         
           <li>
+            <a href="/2020/01/05/%E9%9B%86%E5%90%88%E4%B8%8ESet/">集合与Set</a>
+          </li>
+        
+          <li>
             <a href="/2019/12/28/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97%E4%B8%8Equeue/">队列与queue</a>
           </li>
         
           <li>
+            <a href="/2019/12/22/%E9%93%BE%E8%A1%A8%E4%B8%8EList/">链表与List</a>
+          </li>
+        
+          <li>
             <a href="/2019/12/21/C++%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F/">C++的输入输出方式</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/21/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">进制转换</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/21/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95/">高精度算法</a>
           </li>
         
       </ul>
