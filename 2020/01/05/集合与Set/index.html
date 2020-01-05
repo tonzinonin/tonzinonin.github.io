@@ -15,7 +15,7 @@
 <meta property="og:description" content="set又称作集合，是stl中的常用容器之一，分为set和multiset，区别是 是否能够含有相同的元素，底层用二叉树（红黑树）实现">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-05T05:41:58.101Z">
-<meta property="article:modified_time" content="2020-01-05T07:12:12.077Z">
+<meta property="article:modified_time" content="2020-01-05T08:51:40.999Z">
 <meta property="article:author" content="Tonzinonin">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="stl">
@@ -97,6 +97,8 @@
 
 <pre><code>#include &lt;cstdio&gt;
 #include &lt;set&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string&gt; 
 using namespace std;
 void output(set&lt;int&gt;&amp;s){//打印 set 
 for(set&lt;int&gt;::iterator it = s.begin(); it != s.end(); it++){
@@ -104,16 +106,31 @@ for(set&lt;int&gt;::iterator it = s.begin(); it != s.end(); it++){
 }
 putchar(&apos;\n&apos;);
 }
+
 void output_multi(multiset&lt;int&gt;&amp;s){//打印 multiset 
 for(multiset&lt;int&gt;::iterator it = s.begin(); it != s.end(); it++){
     printf(&quot;%d &quot;,*it);
 }
 putchar(&apos;\n&apos;);
 }
-class cmp{//排序的仿函数 
-public:
+
+struct cmp{//排序的仿函数
 bool operator() (const int &amp;a,const int &amp;b) const{
     return a&gt;b;
+}
+};
+
+struct person{
+    person(int age,string name){
+        this-&gt;m_age = age;
+        this-&gt;m_name = name;
+    }
+int m_age;
+string m_name; 
+};
+struct person_cmp{
+bool operator() (const person&amp;a,const person&amp;b) const{
+    return a.m_age &gt; b.m_age;
 }
 };
 int main(){
@@ -144,20 +161,26 @@ output(st);
 output(st_2);
 output(st_3); 
 output_multi(mtst);
+
+//system(&quot;pause&quot;);
+
 puts(&quot;st的大小为:&quot;);
 printf(&quot;%d\n&quot;,st.size());
 puts(&quot;mtst的大小为:&quot;);
 printf(&quot;%d\n&quot;,mtst.size());
+
 puts(&quot;交换操作：&quot;);
 st.swap(st_2);
 printf(&quot;st: &quot;);output(st);
 printf(&quot;st_2: &quot;);output(st_2);
+
 puts(&quot;删除st容器中的100操作：&quot;);
 st.erase(100);
 output(st);
 puts(&quot;删除st容器中的第一个元素的操作：&quot;);//排好序后删除
 st.erase(st.begin());
 output(st);
+
 puts(&quot;清空st&quot;);
 st.clear(); 
 if(st.empty()) puts(&quot;st已清空&quot;);
@@ -167,8 +190,8 @@ set&lt;int&gt;::iterator pos = st_2.find(12);
 if(pos != st_2.end()) puts(&quot;YES&quot;);
 else puts(&quot;NO&quot;); 
 
-puts(&quot;统计mtst元素&quot;);
-printf(&quot;%d\n&quot;,mtst.count(15));
+puts(&quot;统计mtst元素&quot;);//set容器的元素个数不是0就是1，multiset则不一定 
+printf(&quot;%d\n&quot;,mtst.count(15)); 
 
 puts(&quot;setの自定义排序&quot;); 
 set&lt;int,cmp&gt; less_st;//定义时设置排序规则 
@@ -178,8 +201,20 @@ for(set&lt;int&gt;::iterator it = less_st.begin(); it != less_st.end(); it++){
     printf(&quot;%d &quot;,*it);
 }
 putchar(&apos;\n&apos;);
+
+puts(&quot;setの自定义类型的排序&quot;);
+
+set&lt;person,person_cmp&gt; st_4;
+person p1(12,&quot;甲&quot;),p2(18,&quot;乙&quot;),p3(32,&quot;丁&quot;); 
+ st_4.insert(p1);
+ st_4.insert(p2);
+ st_4.insert(p3);
+for(set&lt;person,person_cmp&gt;::iterator it = st_4.begin(); it != st_4.end(); it++){
+    printf(&quot;%d %s &quot;,it-&gt;m_age,it-&gt;m_name.c_str());
+}
+putchar(&apos;\n&apos;);
 return 0;
-}`</code></pre>
+}</code></pre>
       
     </div>
     <footer class="article-footer">
