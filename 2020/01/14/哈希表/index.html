@@ -15,11 +15,10 @@
 <meta property="og:description" content="散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。 给定表M，存在函数f(key)，对任意给定的关键字值key，代入函数后若能得到包含该关键字的记录在表中的地址，则称表M为哈希(Hash）表，函数f(key)为哈希(H">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-14T12:16:49.742Z">
-<meta property="article:modified_time" content="2020-01-14T12:23:25.412Z">
+<meta property="article:modified_time" content="2020-01-15T01:09:29.355Z">
 <meta property="article:author" content="Tonzinonin">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="散列表">
-<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Tonzinonin&#39;s Technical Blog" type="application/atom+xml">
@@ -55,6 +54,8 @@
         
           <a class="main-nav-link" href="/archives">Archives</a>
         
+          <a class="main-nav-link" href="/categories">categories</a>
+        
           <a class="main-nav-link" href="/tags">tags</a>
         
       </nav>
@@ -77,6 +78,10 @@
   <time datetime="2020-01-14T12:16:49.742Z" itemprop="datePublished">2020-01-14</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -110,27 +115,26 @@
 <p>数字分析法：分析一组数据，比如一组员工的出生年月日，这时我们发现出生年月日的前几位数字大体相同，这样的话，出现冲突的几率就会很大，但是我们发现年月日的后几位表示月份和具体日期的数字差别很大，如果用后面的数字来构成散列地址，则冲突的几率会明显降低。因此数字分析法就是找出数字的规律，尽可能利用这些数据来构造冲突几率较低的散列地址。</p>
 <p>平方取中法：当无法确定关键字中哪几位分布较均匀时，可以先求出关键字的平方值，然后按需要取平方值的中间几位作为哈希地址。这是因为：平方后中间几位和关键字中每一位都相关，故不同关键字会以较高的概率产生不同的哈希地址。</p>
 <p> #include <iostream><br> #include <cstdio><br> using namespace std;<br> const int empty = -1;<br> const int p = 13;<br> int h[p];<br> void makehash() {//建立哈希表 </p>
-<pre><code>for (int i = 0; i &lt; p; i++) h[i] = empty;</code></pre><p> }<br> int hash(int x){//计算哈希表，哈希函数 </p>
-<pre><code>return x%p;</code></pre><p> }<br> int locate(int x) {//定位操作 </p>
+<pre><code>for (int i = 0; i &lt; p; i++) h[i] = empty;}</code></pre><p> int hash(int x){//计算哈希表，哈希函数 </p>
+<pre><code>return x%p;}</code></pre><p> int locate(int x) {//定位操作 </p>
 <pre><code>int orig = hash(x);
 int i = 0;
 while (( i &lt; p) &amp;&amp; ( h[(i + orig) % p] != x) &amp;&amp; (h[(i + orig) % p] != empty )) i++;
-return (orig + i) % 13;</code></pre><p> }<br> void insert(int x) {//插入操作 </p>
+return (orig + i) % 13;}</code></pre><p> void insert(int x) {//插入操作 </p>
 <pre><code>int posi = locate(x);
 if(h[posi] == empty) h[posi] = x;
-else puts(&quot;cant!&quot;);</code></pre><p> }<br> bool judge(int x) {//判断是否存在该元素 </p>
+else puts(&quot;cant!&quot;);}</code></pre><p> bool judge(int x) {//判断是否存在该元素 </p>
 <pre><code>int posi = locate(x);
 if(h[posi] == x) return true;
-return false;</code></pre><p> }<br> void output() {//检查状态 </p>
+return false;}</code></pre><p> void output() {//检查状态 </p>
 <pre><code>puts(&quot;哈希表状态：&quot;);
 for(int i = 0; i &lt; p; i++) printf(&quot;%d &quot;,h[i]);
-puts(&quot;&quot;);</code></pre><p> }<br> int main(){</p>
+puts(&quot;&quot;);}</code></pre><p> int main(){</p>
 <pre><code>int x;
 makehash();
 while(~scanf(&quot;%d&quot;,&amp;x) &amp;&amp; x != -1){
     insert( x );
-    output();
-}
+    output();}
 return 0;</code></pre><p> }</p>
 </li>
 </ol>
@@ -141,13 +145,22 @@ return 0;</code></pre><p> }</p>
       <a data-url="http://yoursite.com/2020/01/14/%E5%93%88%E5%B8%8C%E8%A1%A8/" data-id="ck5dui1sd0000kgqt9fsffk7t" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" rel="tag">散列表</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" rel="tag">散列表</a></li></ul>
 
     </footer>
   </div>
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/01/15/%E6%A0%88/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          栈
+        
+      </div>
+    </a>
   
   
     <a href="/2020/01/05/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%EF%BC%88BFS%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
@@ -165,13 +178,20 @@ return 0;</code></pre><p> }</p>
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li></ul>
+    </div>
+  </div>
+
 
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Manage-data/" rel="tag">Manage data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stl/" rel="tag">stl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" rel="tag">散列表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E7%89%88%E5%BA%93/" rel="tag">模版库</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Manage-data/" rel="tag">Manage data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stl/" rel="tag">stl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">基本线性数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" rel="tag">散列表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E7%89%88%E5%BA%93/" rel="tag">模版库</a></li></ul>
     </div>
   </div>
 
@@ -181,7 +201,7 @@ return 0;</code></pre><p> }</p>
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Manage-data/" style="font-size: 10px;">Manage data</a> <a href="/tags/stl/" style="font-size: 12.5px;">stl</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 17.5px;">基本算法</a> <a href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" style="font-size: 15px;">搜索算法</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 10px;">散列表</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%A8%A1%E7%89%88%E5%BA%93/" style="font-size: 12.5px;">模版库</a>
+      <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Manage-data/" style="font-size: 10px;">Manage data</a> <a href="/tags/stl/" style="font-size: 12.5px;">stl</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 17.5px;">基本算法</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">基本线性数据结构</a> <a href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" style="font-size: 15px;">搜索算法</a> <a href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/" style="font-size: 10px;">散列表</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%A8%A1%E7%89%88%E5%BA%93/" style="font-size: 12.5px;">模版库</a>
     </div>
   </div>
 
@@ -203,6 +223,14 @@ return 0;</code></pre><p> }</p>
       <ul>
         
           <li>
+            <a href="/2020/01/15/%E9%98%9F%E5%88%97/">队列</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/15/%E6%A0%88/">栈</a>
+          </li>
+        
+          <li>
             <a href="/2020/01/14/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a>
           </li>
         
@@ -212,14 +240,6 @@ return 0;</code></pre><p> }</p>
         
           <li>
             <a href="/2020/01/05/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%EF%BC%88DFS%EF%BC%89/">深度优先遍历（DFS）</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/05/%E6%98%A0%E5%B0%84%E4%B8%8Emap/">映射与map</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/05/%E5%AF%B9%E7%BB%84%E4%B8%8EPair/">Pair容器</a>
           </li>
         
       </ul>
@@ -245,6 +265,8 @@ return 0;</code></pre><p> }</p>
     <a href="/" class="mobile-nav-link">Home</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">categories</a>
   
     <a href="/tags" class="mobile-nav-link">tags</a>
   
