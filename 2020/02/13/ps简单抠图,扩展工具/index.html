@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="photoshop," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="抠图tips 1.调整边缘。 先调出调整边缘 视图模式：可以为选区添加背景，更利于观察。 可以选择“显示半径(抠图的识别区)”，“显示原稿（显示最原始的状态）”。边缘检测，点击显示半径，可以看到图层外有一个亮带，调整边缘的调整对象就在这个半径以内。而智能半径，可以对边缘进行计算，进行一些特殊的处理。下面就是调整边缘可调控的参数，平滑度越高，边缘越柔和；羽化，可以让边缘产生过度；对比度和羽化相反，可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ps tips">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;13&#x2F;ps%E7%AE%80%E5%8D%95%E6%8A%A0%E5%9B%BE,%E6%89%A9%E5%B1%95%E5%B7%A5%E5%85%B7&#x2F;index.html">
+<meta property="og:site_name" content="tonzinonin 的 博 客">
+<meta property="og:description" content="抠图tips 1.调整边缘。 先调出调整边缘 视图模式：可以为选区添加背景，更利于观察。 可以选择“显示半径(抠图的识别区)”，“显示原稿（显示最原始的状态）”。边缘检测，点击显示半径，可以看到图层外有一个亮带，调整边缘的调整对象就在这个半径以内。而智能半径，可以对边缘进行计算，进行一些特殊的处理。下面就是调整边缘可调控的参数，平滑度越高，边缘越柔和；羽化，可以让边缘产生过度；对比度和羽化相反，可">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-13T11:53:59.000Z">
+<meta property="article:modified_time" content="2020-02-15T01:13:39.886Z">
+<meta property="article:author" content="Tonzinonin">
+<meta property="article:tag" content="photoshop">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/13/ps简单抠图,扩展工具/"/>
+
+
+
+
+
+  <title>ps tips | tonzinonin 的 博 客</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.1.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/tonzinonin" target="_blank" rel="noopener"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_red_aa0000.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">tonzinonin 的 博 客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/13/ps%E7%AE%80%E5%8D%95%E6%8A%A0%E5%9B%BE,%E6%89%A9%E5%B1%95%E5%B7%A5%E5%85%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tonzinonin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonzinonin 的 博 客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ps tips</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-13T19:53:59+08:00">
+                2020-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91/" itemprop="url" rel="index">
+                    <span itemprop="name">图片编辑</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>抠图tips</strong></p>
+<p>1.调整边缘。<br> 先调出调整边缘<br> 视图模式：可以为选区添加背景，更利于观察。<br> 可以选择“显示半径(抠图的识别区)”，“显示原稿（显示最原始的状态）”。<br>边缘检测，点击显示半径，可以看到图层外有一个亮带，调整边缘的调整对象就在这个半径以内。而智能半径，可以对边缘进行计算，进行一些特殊的处理。<br>下面就是调整边缘可调控的参数，平滑度越高，边缘越柔和；羽化，可以让边缘产生过度；对比度和羽化相反，可以突出边缘；移动边缘，可以收缩或者扩展边缘。<br>输出：净化颜色可以减少多余边缘，可以输出到很多地方，最好是输出到蒙版。</p>
+<p>2.用调整边缘扣头发：<br>先用快速选择工具 大概的选择一下头发，在调整边缘菜单里调整半径，ps可以大概地识别一下头发。<br>调整移动边缘，也可以向内去掉一些白边。<br>但这还不够，还需要在调整面板上选择调整工具：<br>调整半径工具&amp;抹除调整工具，可以手动调整半径大小。<br>最后可以调整一些参数，比如净化颜色，来把杂色去掉。<br>再进过细微的调整，就可以扣出头发了。</p>
+<p>3.修边：对于一些边缘没有调好的图层蒙版，可以右击进入调整蒙版的菜单，相当于调整边缘。<br>图层菜单-修边，也可以对边缘进行净化颜色的操作（必须有蒙版才能使用这个命令）。<br>-去边/移去白色杂边/移去黑色杂边，可以去除一些杂边。</p>
+<p>4.蒙版：想要形成有特殊效果的抠图，比如在边缘创建艺术手绘效果，可以利用蒙版，首先创建一个蒙版。<br>使用不同的画笔，在蒙版上进行手工抠图。<br>可以利用渐变，达到化繁为简的效果。</p>
+<p><strong>制图操作：</strong><br>1.排照片：<br>先针对想要制作的图片，在建立进行尺寸的调整（一寸照尺寸 = 2.5cm * 3.5cm）。<br>使用移动工具和裁剪工具。<br>美化操作。<br>给照片添加描边：双击图层，弹出图层样式，选择描边。<br>再次变换 复制命令：ctrl+alt+shift+T</p>
+<p>2.自动生成全景照<br>文件-脚本-将文件载入堆栈。<br>选择存放照片的文件夹。<br>可以直接迅速地把图片载入成图层。<br>创建全景照片的画布：<br>低效的方法是去在画布上拼凑。<br>可以将图层全选中，在移动工具的选项栏中，点击最后一个按钮（自动对齐图层），选择对齐方式，然后就可以对齐全景照片。<br>但是有时不同的全景照片的曝光程度不一样，这时全选图层，到编辑-自动混合图层，选择全景图自动混合，可以将全景照片的曝光率自动统一。<br>最后可以用裁切工具裁出全景照。<br>同样的方法，可以用在焦点不同但画面相同的照片上，选择堆叠图像，可以自动恢复照片的细节。</p>
+<p>3.操控变形<br>编辑-操控变形 可以进入操控变形模式。<br>通过光标（图钉样），在要操控的结点上定义控点。<br>将鼠标放在点上，可以控制图层的运动。<br>选项栏：<br>可以选择变形的模式。<br>浓度: 可以控制操控网格的密度。<br>扩展：扩展网格<br>显示网格<br>图钉深度：通过调节这个参数可以调节item在图层画面显示上的优先级。<br>旋转：也可以通过光标旋转。<br>最后提交，得到成品。</p>
+<p>4.内容识别比例调图<br>准备工作：建立一个选区并存储，然后取消选区。<br>启用：编辑-内容识别比例。<br>选项栏上有一个保护的选项：可以保护选区不被变形。<br>后面还有一个按钮，可以保护肤色。</p>
+<p>5.画笔高级设置<br>画笔面板 F5<br>先在预设里选择一个画笔。<br>然后调出画笔面板。<br>可以通过锁来锁定画笔的选项，使属性可以应用到所有的画笔。<br>\<br>画笔笔尖形状：选择想要改变的画笔，可以调节大小，硬度，画笔角度，圆度，间距（调节间距可以制作出虚线的效果）等最基本的属性。<br>\<br>形状动态：大小抖动，可以使画笔笔触大小不一、设置渐隐等控制效果、渐隐最小直径、钢笔压力，钢笔斜度，钢笔轮都需要结合数位板操作，钢笔压力支持压力识别。<br>角度抖动，可以使笔触产生角度的动态变化。<br>圆度抖动：可以使笔触产生圆度的动态变化。<br>还可以支持x和y的翻转抖动。<br>画笔投影，需要可以识别斜度的数位板。<br>\<br>散布：可以产生散布的笔触，可以在多个方向上进行散布，可以控制散布的数量，抖动。<br>\<br>纹理：可以选择笔触的图案，可以调节图案的参数。<br>\<br>双重画笔：可以使画笔效果进行结合。<br>\<br>颜色动态：可在画的时候产生颜色的前景背景抖动，色相，饱和度，亮度，纯度抖动。<br>\<br>传递：传递可以设置画笔在绘制过程中，不透明度还有流量的动态变化。针对混合器画笔可以对湿度等进行设置<br>\<br>画笔笔势：可以调节画笔的笔势（倾斜值，旋转，压力），画出不同的笔触。（覆盖可以忽略数位板的压力）<br>\<br>杂色：可以在笔触边上产生杂色<br>湿边：可以强度笔触的边缘<br>建立：对应喷枪<br>平滑：使画出来的线尽可能平滑<br>保护纹理：针对特殊效果画笔，勾选了笔触会一直保持原始的图案设置。</p>
+<p>6.复制的总结：<br>图层的复制：可以在图层菜单找到复制图层的命令。<br>或者在移动工具下按住alt移动图层可以进行复制。<br>在图层面板里将图层拖到建立图层的按钮进行复制。<br>快捷键：ctrl+J，通过拷贝的图层。<br>自由变换的状态下：ctrl+shift+alt+t 快速变换并复制。</p>
+<p>选区的图层复制：<br>移动工具，alt键，在同一图层上复制。<br>ctrl+J通过拷贝的图层。<br>编辑菜单里拷贝（ctrl+c）剪切（ctrl+x）粘贴（ctrl+v），清理菜单（没有选区）就不能使用。<br>选择性粘贴-原味粘贴，可以位置不动粘贴。<br>在选区内可以贴入操作，会产生蒙版。<br>合并拷贝（ctrl+shift+c）也就是整体效果拷贝</p>
+<p><em>ctrl+H 可以隐藏额外内容</em></p>
+<p><strong>图层样式：</strong><br>创建图层样式有多重方法，最常用的就是双击图层。<br>可以在图层样式的面板中调节一些效果的参数，参数可以反复调节。<br>图层样式只是一个独立的效果不影响图层本身，就好似身体和衣服。<br>可以隐藏样式，也可以右击随时停用或启用效果，也可以清除，拷贝，转移。<br>可以拖拽效果转移效果。<br>样式的类型繁多，效果丰富。<br>图层样式可以作用于任何类型图层。<br>图层-图层样式-创建图层：把样式效果生成图层。<br>缩放效果:对所有样式效果进行成比例缩放。<br>样式面板：提供了一些调好的参数，也可以载入外部样式，样式素材可以灵活修改，纳为己用。</p>
+<p>混合选项：<br>常规混合：提供许多不同的混合模式，并且调节整个图层不透明度。<br>高级混合:可以调节填充不透明度，只会调整图层的内部填充。选取带混合的通道，产生特殊的通道混合效果。挖空，混合后的挖除效果设置，挖空效果要与图层组搭配。<br>将效果与填充混合成组，可以受填充度，混合模式影响。<br>勾选透明形状图层，透明区域可以产生效果。<br>可以隐藏图层在各种区域上的效果。</p>
+<p>tips:可以用这种方式制作红蓝3d图片<br>tips：图层样式的优先级由上往下递减。</p>
+<p>浮雕与斜面：<br>可以给图层带上立体的感觉。<br>结构方面，可以更改各种各样的样式，参数。<br>可以调节阴影，调节光线的参数。<br>等高线编辑器：一个直方图，和曲线命令很像，其中x轴代表图形上的距离，y轴代表光泽的强度。<br>等高线编辑器：x轴代表图像从下到上的距离，y轴浮雕的强度。</p>
+<p>描边：<br>可以调节描边大小，描边位置（内部或外部），混合模式，填充类型。</p>
+<p>内阴影：可以产生陷下去的效果，图层样式里提供了许多可调节的参数。</p>
+<p>内发光：使边缘内部发光，内发光提供了一些可调节的参数，调节参数可以达到类似内阴影的效果，不过和内阴影不同的是，内发光默认是沿着全方位扩散的（也可以变成其它方向），内阴影默认是有方向性的。</p>
+<p>光泽：对文字作用更大。</p>
+<p>此外还有<br>颜色叠加<br>渐变叠加<br>图案叠加等。</p>
+<p>外发光：和内发光类似，不过发光方向是从边缘到外</p>
+<p>投影：角度，距离，扩展，大小等。投影可以直接用移动工具移动。</p>
+<p>调节这些模式，达成自己想要的效果。</p>
+<p><strong>智能对象</strong><br>封装图像原始数据的对象。</p>
+<p>在文件菜单里，可以将当前文件“打开为智能对象”。</p>
+<p>在图层上 右击：可以转换为智能对象（图层菜单也行）。<br>可以保存或置入智能对象。<br>智能对象可以作为普通图层来使用，不可以直接调色。<br>可以保护原图数据不被调整破坏。</p>
+<p>可以在菜单里多次转换为智能对象。<br>在图层-智能对象 菜单点击编辑内容（或对智能对象双击），来对智能对象编辑。<br>通过拷贝创建智能对象。<br>可以作为独立的智能对象导出，替换智能对象。<br>智能对象还有一个堆栈模式，医学的应用比较多。<br>ps还可以制作矢量智能对象。</p>
+<p><strong>标尺与计数工具</strong><br>吸管工具下，隐藏着一个标尺工具。<br>可以用来在画面上划线来计量。<br>计量结果在选项栏。<br>x,y是第一点的坐标值<br>W，H是宽度和高度值。<br>A值：角度。<br>L1：线的长度。<br>L2：第二条线的长度（按住alt键不松在结束点来拉出一条线）。<br>标尺可以更改单位。<br>拉直图层：顾名思义，把斜的变为水平的。<br>图像-分析里可以对标尺进行更详细的设置。</p>
+<p>计数工具：<br>直接到画面上标记数字。<br>可以在选项栏上建立计数组。</p>
+<p><strong>切片工具</strong><br>可以把大图切成若干小块，可以加快图的加载速度。<br>在裁剪工具进行切换。</p>
+<p>切的方式：<br>1，手动，按住鼠标不松拖拽，类似选框，切完后可以在控点上进行调整。<br>切片的其余部分，可以在左上角区域右键，提升成切片区域，这样就可以对其进行操作，同样的，在操作的过程中，也可能会有新的除切片外的其它部分生成，可以采用同样的方式产生切片。<br>可以鼠标右键调整切片的层次。<br>右击菜单可以删除切片。<br>选项栏，可以选择切的样式。<br>可以选择基于参考线的切片。</p>
+<p>切片选择工具。<br>可用来切片的选择和编辑。<br>选项栏：<br>提升可以将所选区域提升为切片。<br>划分：可以自动划分切片。<br>对齐方式，可以按住shift同时选中几个切片进行对齐。<br>隐藏自动切片，指左上角为灰色而非蓝色的切片。<br>切片选项（右击菜单也可以调出），可以对切片做更多的操作。</p>
+<p>文件-存储为Web格式，保存切片。<br>弹窗，选择切片选择工具，调整，最后-存储，保存参数。<br>会自动生成一个保存切片的文件夹。</p>
+<p><strong>混合器画笔</strong><br>选项栏：可以载入画笔设置。<br>可以选择清洗模式<br>可以模拟真实的画笔。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/photoshop/" rel="tag"># photoshop</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/13/PS%E7%9A%84%E5%85%B6%E5%AE%83%E5%B7%A5%E5%85%B7%EF%BC%8C3D%EF%BC%8C%E8%A7%86%E9%A2%91%E5%8A%A8%E7%94%BB/" rel="next" title="PS的其它工具，3D，视频动画">
+                <i class="fa fa-chevron-left"></i> PS的其它工具，3D，视频动画
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/15/ps%E7%9A%84%E6%B7%B7%E5%90%88%E4%B8%8E%E8%B0%83%E8%89%B2/" rel="prev" title="ps的混合与调色">
+                ps的混合与调色 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tonzinonin</p>
+              <p class="site-description motion-element" itemprop="description">活着就是为了赤木杏</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tonzinonin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
