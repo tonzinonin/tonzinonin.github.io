@@ -402,6 +402,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/16/unity-2d%E4%B8%8E%E7%89%A9%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tonzinonin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonzinonin 的 博 客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/16/unity-2d%E4%B8%8E%E7%89%A9%E7%90%86/" itemprop="url">unity 2d与物理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-16T19:20:46+08:00">
+                2020-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Unity</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>2D物理引擎</strong><br>现在unity提供了2套不同的游戏引擎，2D一个、3D一个，3D引擎中有第三维度（z轴）。<br>physic 2d组件与对应的3d版本行为很相似，但尽管3D和2D物理能存在于同一场景中，但彼此之间不会交互。<br>2d和3d引擎的最决定性区别是在2d引擎中没有深度的概念，所有的2d物理只在x,y轴表现，这个片面的z轴是0值。<br>由于可以在3d模式下查看2d对象，也可以修改2d物理引擎作用下的游戏对象位置的z轴坐标。<br>需要注意的是所有的物理交互都发生在z轴的0值处。</p>
+<p>2d物理引擎有一些项目级别的设置。<br>edit-project settings-physics2D。<br>这些设置中包含一些详细参数。比如重力的方向和大小。默认材质，层间碰撞矩阵，还有很多其他。</p>
+<p>rigidbody2D，对游戏对象添加这个组件可以使它处在2d物理引擎的控制下。<br>rigidbody2D组件与碰撞体一起进行碰撞检测，能接受力和扭距，处理各种类型的关节，以及其他特别类型的2D物理行为，这个组件也用来跟踪，其所在物理对象的重要的物理属性，他拥有物体的质量参数，线性阻力和角阻力，受重力比例，以及其它属性。</p>
+<p>在每一个2d项目，在physics 2d setting里都有一个预设的重力值。<br>重力将会影响所有的添加了rigidbody的游戏对象。除非rigidbody被设置为忽略重力（将gravity scale设置为0）任何其它数值，都将会改变作用于物体的重力值，可以对每个游戏对象单独设置。</p>
+<p>如果对游戏对象添加一个2d碰撞体，他可以参与物理碰撞，和触发器事件。2d碰撞体允许游戏对象在2d场景中拥有物理形状，或者物理实体。有多种类型2d碰撞体可以与rigidbody2d（以下简称rb2d）一起工作，圆形，盒状，线型，多边形 碰撞体。每一个碰撞体都有一组不同的行为，可以在不同的环境中选择使用。</p>
+<p>添加了rb2d组件的游戏对象，可以使用一些joint 2d（2d关节类型）组件，添加了该组件游戏对象可以参与更复杂的，特殊的物理行为。2d关节组件允许游戏对象以场景内某点或某个对象为锚点，并对此锚点做出物理反应。</p>
+<p>碰撞体的表面属性由特殊类型的材质决定。这种材质是2d物理材质资源。两个拥有2d碰撞体的物体碰撞时，2d物理材质用来控制其摩擦和弹跳行为。</p>
+<p><strong>rigidbody2D刚体组件</strong><br>点击add component - physics 2d - rb2d可以设置物体的物理参数。<br>所有参与交互的对象都必须拥有2D碰撞组件，同时其中至少有一个拥有rb2d插件。<br>点击component-physics 2d-box collider<br>2d碰撞体会自动匹配精灵的大小。<br>rb2d组件，除了允许游戏对象被2d物理影响，也用来定义游戏对象的一些重要物理属性。</p>
+<p>2d刚体（rigidbody）的质量越大，就需要更多的力来移动，与其它对象碰撞时也会产生更大的效果。<br>线型阻力影响2d刚体的移动速度。<br>角阻力会影响它的旋转或者角速度。<br>重力比例控制重力如何影响2D刚体，与直接修改全局的重力值不同，重力比例允许对每个游戏对象进行精确控制，重力比例越小。物体下落速度越慢，设置为0时，忽略重力。<br>选中fixed angle（固定角度）时，rb2d会受到2d物理中力的影响，但不会旋转。<br>选中is kinematic（是否运动学）rb2d被认为是运动学物体。不会被2d物理的力影响，包括重力和碰撞，这种情况一般发生在，不使用物理引擎和物理力，去移动一个有2d碰撞体的对象。在游戏进行移动一个2d碰撞体时，非常建议把rb2d组件也加上，然而我们不想这个平台受到其它作用力影响，这种情况下可以把is kinematic打开。<br>interpolate（插入）设置用来平滑游戏对象的运动，当游戏对象被rb2d移动时发生抖动，使用interpolate来帮助平滑它的变换运动（根据上一帧的位置来平滑）<br>sleeping mode控制刚体如何休眠来节约处理时间。never sleep将禁止休眠，start awake保证rb2d在被实体化时是唤醒状态，start sleeping将初始化rb2d为休眠，但是可以被碰撞唤醒。<br>collision detection设置，用于控制rb2d上的碰撞检测机制类型。离散类型：此时，只有游戏对象的2d碰撞体，在一个物理更新时，与其他碰撞体接触，才产生碰撞事件；连续检测适用于快速移动的物体，当游戏对象在两个更新之间可能发生了碰撞时，就产生碰撞事件。</p>
+<p><strong>2d碰撞组件</strong><br>一个游戏对象必须使用碰撞体组件来定义它的物理外形，同时与相关的物理引擎交互。<br>添加2d碰撞体组件，有四种2d碰撞组件可供选择：<br>2d圆形碰撞体，2d方形碰撞体，2d多边形碰撞体，2d边缘碰撞体。<br>这些碰撞体组件有很多相同的参数，因为都继承自同一个通用基础2d碰撞体，但每一个碰撞体都为一种特殊的形状做了优化。</p>
+<p>多边形碰撞体和边缘碰撞体很相似，他们都由一组点或者顶点，及点间的连线组成，他们的主要区别是，多边形碰撞体必须是覆盖一块区域的封闭图形，边缘碰撞体必须是开放的，用于定义一个或多个段的边缘，所以它适合用于创造单个的固定表面。</p>
+<p>所有的碰撞体在检视视图中有2个相同参数；<br>is trigger（是否触发器）用来将碰撞体设置为触发器碰撞体，2d触发器碰撞体不参与碰撞，而且发出的是触发器消息，而不是碰撞消息，这些触发器消息可以用来在场景里加人新的动作；<br>material（材质）参数是对2d碰撞体所用的2d物理材质的引用，可以设置为none（空），物理材质用来定义当碰撞体相互碰撞时的反应，可以定义弹跳系数和表面摩擦力。<br>其余独有参数用来定义特定碰撞体的形状。</p>
+<p>2d碰撞体必须被添加到游戏对象上使用，可以点击Add Component button选择physics 2d选择一个collider2d组件添加2d碰撞体。</p>
+<p>添加了碰撞体组件后，unity会尝试将碰撞体尺寸匹配精灵的尺寸，如果对碰撞体的形状和尺寸不满意，可通过修改检视视图的参数修改形状，或者在场景视图内直接修改碰撞体（在场景视图编辑碰撞体时，按住shift，这会在2d碰撞体gizmo上显示一些操作点，这些操作点可以拖拽）<br>对于边缘碰撞体和多边形碰撞体，拖拽一个已存在的操作点，会移动碰撞体的顶点，改变其形状，而不是调整大小，将鼠标放到边缘碰撞体和多边形碰撞体的一个空白的边上，点击就能创建一个新的顶点，按住ctrl点击顶点可以将其删除。</p>
+<p>一个性能最优的常用模式是：只添加2d碰撞体，不添加rigidbody组件，对所有参与2d物理交互的，静态或不会移动的物体。<br>同时添加2d碰撞体和rigidbody组件，对场景内的交互中，动态且可移动的对象。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/16/%E5%88%9D%E8%AF%86unity%EF%BC%8C%E4%B8%80%E6%AC%BE%E5%B7%A5%E4%B8%9A%E7%BA%A7%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -503,9 +659,162 @@
 <p><strong>building a project</strong><br>下载好软件，点击进入，会提醒你要创建一个unity关联的账户。<br>注册好账户之后，可以进行立项，unity会内置给你一个小demo，可以用它来体验一下。</p>
 <p>这里我选择的是2d模式，因为本人的方向就是2d，<strong>把话说在前头，我博客里的unity文章，将大部分是与unity 2d有关的内容</strong>，但这并不意味着我不会涉及3d，<strong>之所以少用3d，是因为家里电脑配置不允许</strong>，以后有机会，我多会尝试与3d有关的内容。</p>
 <p><strong>具体的学习路线：</strong><br>总结了一下之前学ps的经验，这次我会在学习的过程中进行更多实践<br>由于unity这款软件的特殊性，我针对unity的学习曲线不会很系统，我会面向自己的项目学习，也就是用一个个的案例来学习，也就是先把基础打好，与其用一次性用大量的资源去造出个破烂一样的车来，不如先去把车轮子这些零件造好，之后再去造车就得心应手了。</p>
-<p>经过知乎查询和各路博客，我收集了一些学习资源，并根据各路人的意见大致总结了以下几点：<br>1.尽量跟着官方教程走。<br>2.unity的国内教程很多很坑（siki算比较好的）。<br>3.学习unity可能有一点英文门槛，不过这不是重点，重点是C#编程语言的门槛。<br>4.c#语言好学，比c++简单，可以在学unity的时候同时学。</p>
+<p>经过知乎查询和各路博客，我收集了一些学习资源，并根据各路人的意见大致总结了以下几点：<br>1.尽量跟着官方教程走。<br>2.unity的国内教程很多坑（siki算比较好的）。<br>3.学习unity可能有一点英文门槛，不过这不是重点，重点是C#编程语言的门槛。<br>4.c#语言好学，比c++简单，可以在学unity的时候同时学。</p>
 <p>学习路线规划：<br>先进入unity的the first project，进入后，unity会引导你大概要怎么做，先跟着他走就行，可以让你对unity有一个大概的认识。<br>使用unity官方文档，先把整体界面大致了解一下，之后如果有不懂的，随时可以到官方文档里查缺补漏。<br>b站的风农翻译的unity 2d 4.3官方教程<a href="https://www.bilibili.com/video/av3246302?p=6把他补了。" target="_blank" rel="noopener">https://www.bilibili.com/video/av3246302?p=6把他补了。</a><br>在学习的同时，制作自己的项目。</p>
 <p>先就到这里吧，等我把以上的步骤finish后，会回来更新的。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/16/unity-2d%E4%B8%8E%E7%B2%BE%E7%81%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tonzinonin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonzinonin 的 博 客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/16/unity-2d%E4%B8%8E%E7%B2%BE%E7%81%B5/" itemprop="url">unity与sprite类型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-16T16:39:44+08:00">
+                2020-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Unity</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>精灵类型（sprite type）</strong><br>以精灵类型导入图片素材时，材质需要设置为sprite。如果项目已经被设置为2D，素材导入器会使用Sprite作为默认类型导入新的图片素材。如果图片素材导入时没有自动设置为sprite类型，可以手动在导入器中修改。<br>精灵类型有三个选项，单个，多个和图形。<br>当导入的图片素材只包含一个元素时选择单个，包含多个元素时选择多个。<br>打包标记：对素材打包进行标记，以后再补充<br>还可以调节一些参数：比如pixels to units（每单位像素数）决定了素材导入后的比例。<br>轴心：代表物体的中心，选中多个模式时，轴心设置选项为不可用。<br>需要对每个sprite在sprite editor中单独设置，点击sprite editor按钮，将用编辑器打开这个素材。<br>精灵类型素材不需要改动filter mode和per platform overrides（？）选项。<br>需要注意，图集和精灵表单的规格，可能超出图片素材默认的最大值2048，如果超出最大值，在导入过程中将会被调整为最大值。</p>
+<p><strong>精灵渲染器（sprite renderer）</strong><br>用来显示以精灵类型导入的图片素材，以便在2d和3d场景中使用。<br>这是一个精灵到渲染器的应用。</p>
+<p>颜色：可以改变sprite的颜色，colour也可以通过调整颜色的alpha通道值，控制sprite的透明度，。</p>
+<p>材质：默认情况下，新加入的精灵渲染器组件，使用的是默认材质，用默认材质渲染的精灵将不会被场景中的光照影响，将简单的最大亮度来渲染这个精灵。要使用光照的话，所选的材质必须需带有能够响应光照的shade（着色器）。<br>sprites diffuse类型专门为使用在精灵素材上优化过，当然也可以使用其它类型的shader，注意有一些shader是跟精灵渲染器不兼容的。<br>精灵使用标准的unity材质，但是精灵渲染器对材质的处理与mesh renderer（网格渲染器是不同的），主要区别是，不需要材质的纹理属性，精灵渲染器会使用一个兼容的材质中的shader，颜色以及其它属性，但不使用纹理属性。<br>如果所使用的材质中有一个调色（tint colour）属性，那么他将会与精灵的calour属性组合起来。<br>光照和材质会影响游戏性能，所以在使用光照和更加复杂的着色器时，最好找到场景中光照效果和性能之间的平衡点。</p>
+<p>对sprite进行翻转，更改绘制模式。</p>
+<p>sorting layer（排序图层）和order in layer（图层顺序）是系统决定sprite在哪层被绘制出来的参数。<br>所有的精灵渲染器，在创建时都会被放置在一个默认的sorting layer。</p>
+<p><strong>精灵编辑器（sprite editor）</strong><br>用来处理含有多个元素的图片，如图集或精灵表单。<br>只有精灵模式设置为多个时才能使用编辑器，设置为单个时无法使用编辑器。<br>点击sprite editor进入精灵编辑器的界面，编辑器是一个标准的unity窗口。<br>在编辑器内点击并圈入图中想要的元素，就可以创建出精灵，可以对边框进行自由变换的操作。<br>选中一个精灵时，编辑器窗口右下角出现一个精灵面板，显示出选中的精灵的详细信息。</p>
+<p>精灵编辑器顶部也有一些工具，讲一些主要的，切割菜单用来从图片中切割元素，自动创建精灵，切割类型可以是自动或者网格，自动适合切割单个的不规则的元素，比如一个图集，选择自动切割时，minimum size值决定了切割每个元素的最小大小，如果这个值设置的太大了，相互临近的小一些的元素会被合并在一起，形成一个大的精灵。<br>pivot（轴心）设置了所有精灵，从图片被切出来时的默认轴心点。<br>RGB Alpha按钮用来切换编辑器中的图片，以颜色模式还是以alpha通道模式来显示。<br>以上的步骤都完成后，点击slice按钮切割图片，生成单独的精灵并应用。<br>之后点击精灵旁边的三角符号可以看到它的子精灵“chidren”</p>
+<p><strong>排序图层（sorting layers）</strong><br>制作一个2d游戏时，必须要精确的控制物体的渲染顺序。<br>一种方法是控制精灵到摄像头之间的距离。<br>另一种方法是sorting layers。<br>排序图层与摄像头的位置无关，各排序图层之间被指定一定的顺序，在排序图层内的物体将按这一个顺序进行渲染。<br>在摄像头视野范围内精灵才会被渲染，如果需要更精确的控制，可以给单个精灵添加order in layer（图层顺序）值。</p>
+<p>有两种方式进入tags和layers设置面板。<br>从精灵渲染器组件选择sorting layer - add sorting layer或在编辑器内选择Edit - project setting - tags and layers。<br>在打开的面板中，可以对sorting layer 添加删除或者重新排序。<br>列表中有一个default layer，它不能被重命名或者删除，但是可以重新排序。<br>点击+，+一个图层。<br>点击名称区域可重命名图层<br>sorting layer列表顺序是从顶部到底部。<br>最先渲染的在后面。之后的层再前一层之上渲染。</p>
+<p>将一个精灵添加到某个sorting layer的操作是，选中一个精灵，在精灵渲染器组件里，使用sorting layer下拉菜单，选择一个sorting layer。</p>
+<p>需要注意，sorting layer和order in layer的参赛是全局的，在unity内所有的渲染器中都可以获取。<br>每个渲染器，包括粒子渲染器（particle renderers）都能指定一个sorting layer和order in layer<br>尽管只有精灵渲染器在检视视图里提供了这些参数，其他渲染器需要在脚本中使用这些参数。<br>设置渲染器的sorting layer时，把renderer.sortingLayerName参数设置为某个sorting layer的名称或者ID。<br>设置order in layer使用renderer.sortingorder参数。</p>
 
           
         
@@ -648,9 +957,9 @@
         
           
             <p>some words and terms when i study computer science.<br>英语渣渣，请见谅。</p>
-<p>daily：<br>drag：v.拖动<br>release：v.松开<br>frame：n.帧，框架，机壳 v.建立，创造，建筑<br>select：v.选择<br>ensure：v.确保<br>reposition：v.重新确定位置<br>rotate：n.旋转<br>scale：n.规模, 比例, 尺度；动词攀登，延展。<br>folder：v.夹<br>walkthrough：n.演练，演示，攻略<br>context：n.语境<br>term：n.术语, 项, 词, 学期<br>v.表示，表明<br>content：n.满意，内容。<br>adj.满意的。<br>v.满足<br>abscure：adj. 朦胧<br>v. 朦胧, 隐晦<br>n. 隐藏, 隐蔽, 涩<br>section：n.部分<br>version：n.版本<br>current：adj.当前<br>n.潮流<br>scene: n.场景<br>prompt：v.提示<br>acconpany: v.伴随</p>
-<p>operating system:<br>system: n.系统<br>edit： v.编辑<br>editor： n.编辑器<br>Profile：n.功能<br>property：n.属性<br>store：v.保存<br>button：n.按钮<br>cursor：n.光标<br>import：v.输入，进口<br>export：v.输出，出口<br>executeble：adj.可执行的，n.可执行文件</p>
-<p>unity:<br>component: 零件 the item of the object.<br>render: 渲染<br>renderer: 渲染器 the tool to render figure in the computer.<br>asset：愿意资产，在unity这里指资源<br>Prefab：愿意是预置，在unity里是一种资源类型，存储在项目视图中的一种可反复使用的游戏对象。<br>hierarchy：unity的一个视图，用来管理对象<br>Instantiate：unity特殊词汇，对一个对象进行复制操作</p>
+<p>daily：<br>drag：v.拖动<br>release：v.松开<br>frame：n.帧，框架，机壳 v.建立，创造，建筑<br>select：v.选择<br>ensure：v.确保<br>reposition：v.重新确定位置<br>rotate：n.旋转<br>scale：n.规模, 比例, 尺度；动词攀登，延展。<br>folder：v.夹<br>walkthrough：n.演练，演示，攻略<br>context：n.语境<br>term：n.术语, 项, 词, 学期<br>v.表示，表明<br>content：n.满意，内容。<br>adj.满意的。<br>v.满足<br>abscure：adj. 朦胧<br>v. 朦胧, 隐晦<br>n. 隐藏, 隐蔽, 涩<br>section：n.部分<br>version：n.版本<br>current：adj.当前<br>n.潮流<br>scene: n.场景<br>prompt：v.提示<br>acconpany: v.伴随<br>display: v&amp;n.显示<br>respond: n&amp;v.相应，解答<br>complex：n.复合<br>v.复杂，复杂化<br>adj.复合的，复杂的<br>concept：n.概念，学说<br>detect：V.检测<br>velocity：n.速度</p>
+<p>operating system:<br>system: n.系统<br>edit： v.编辑<br>editor： n.编辑器<br>Profile：n.功能<br>property：n.属性<br>store：v.保存<br>button：n.按钮<br>cursor：n.光标<br>import：v.输入，进口<br>export：v.输出，出口<br>executeble：adj.可执行的，n.可执行文件<br>texture：n.素材<br>default：n&amp;v.默认<br>filter：v.过滤<br>n.过滤器<br>platform：n.平台<br>override：v.废除<br>rearrange：v.重新排序/改编</p>
+<p>unity:<br>component: 零件 the item of the object.<br>render: 渲染<br>renderer: 渲染器 the tool to render figure in the computer.<br>asset：愿意资产，在unity这里指资源<br>Prefab：愿意是预置，在unity里是一种资源类型，存储在项目视图中的一种可反复使用的游戏对象。<br>hierarchy：unity的一个视图，用来管理对象<br>Instantiate：unity特殊词汇，对一个对象进行复制操作<br>sprite: unity特有的一种override类型<br>layer：图层<br>shade：着色器<br>tint: v.调色<br>panel: n.面板<br>collider：n.碰撞体</p>
 
           
         
@@ -1423,298 +1732,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/12/ps%E4%B8%8E%E8%87%AA%E7%94%B1%E5%8F%98%E6%8D%A2%E5%92%8C%E5%9B%BE%E5%B1%82%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tonzinonin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tonzinonin 的 博 客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/12/ps%E4%B8%8E%E8%87%AA%E7%94%B1%E5%8F%98%E6%8D%A2%E5%92%8C%E5%9B%BE%E5%B1%82%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86/" itemprop="url">ps与自由变换和图层进阶知识</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-12T12:33:52+08:00">
-                2020-02-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91/" itemprop="url" rel="index">
-                    <span itemprop="name">图片编辑</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>自由变换操作</strong><br>变换可以针对整个图层（组或链接图层），或者选区内。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/12/ps%E4%B8%8E%E8%87%AA%E7%94%B1%E5%8F%98%E6%8D%A2%E5%92%8C%E5%9B%BE%E5%B1%82%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/ps%E4%B8%8E%E8%89%BA%E6%9C%AF%E5%B7%A5%E5%85%B7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tonzinonin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tonzinonin 的 博 客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/11/ps%E4%B8%8E%E8%89%BA%E6%9C%AF%E5%B7%A5%E5%85%B7/" itemprop="url">ps与艺术工具</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-11T21:56:49+08:00">
-                2020-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91/" itemprop="url" rel="index">
-                    <span itemprop="name">图片编辑</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>上一篇：<br>    <a href="https://tonzinonin.github.io/2020/02/11/ps%E4%B8%8E%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/#more" target="_blank" rel="noopener">https://tonzinonin.github.io/2020/02/11/ps%E4%B8%8E%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7/#more</a><br>这次这些工具，主要有关图片的编辑工作！
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/11/ps%E4%B8%8E%E8%89%BA%E6%9C%AF%E5%B7%A5%E5%85%B7/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1765,7 +1782,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
