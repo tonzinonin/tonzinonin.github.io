@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="2D物理引擎现在unity提供了2套不同的游戏引擎，2D一个、3D一个，3D引擎中有第三维度（z轴）。physic 2d组件与对应的3d版本行为很相似，但尽管3D和2D物理能存在于同一场景中，但彼此之间不会交互。2d和3d引擎的最决定性区别是在2d引擎中没有深度的概念，所有的2d物理只在x,y轴表现，这个片面的z轴是0值。由于可以在3d模式下查看2d对象，也可以修改2d物理引擎作用下的游戏对象位置">
+<meta name="description" content="animator搭好并调整角色的四肢，放在一个母对象下。在母对象下，使用animator动画器组件。资源菜单创建动画控制器，移到其动画组件上。用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键行为模块可以在行为模块里建立关系。动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。 有关2d的移动控制1.直接修改transform–">
 <meta property="og:type" content="article">
-<meta property="og:title" content="unity 2d与物理">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;16&#x2F;unity-2d%E4%B8%8E%E7%89%A9%E7%90%86&#x2F;index.html">
+<meta property="og:title" content="unity-2d的简单动画和控制">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;17&#x2F;unity-2d%E4%B8%8E%E5%8A%A8%E7%94%BB&#x2F;index.html">
 <meta property="og:site_name" content="tonzinonin 的 博 客">
-<meta property="og:description" content="2D物理引擎现在unity提供了2套不同的游戏引擎，2D一个、3D一个，3D引擎中有第三维度（z轴）。physic 2d组件与对应的3d版本行为很相似，但尽管3D和2D物理能存在于同一场景中，但彼此之间不会交互。2d和3d引擎的最决定性区别是在2d引擎中没有深度的概念，所有的2d物理只在x,y轴表现，这个片面的z轴是0值。由于可以在3d模式下查看2d对象，也可以修改2d物理引擎作用下的游戏对象位置">
+<meta property="og:description" content="animator搭好并调整角色的四肢，放在一个母对象下。在母对象下，使用animator动画器组件。资源菜单创建动画控制器，移到其动画组件上。用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键行为模块可以在行为模块里建立关系。动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。 有关2d的移动控制1.直接修改transform–">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-16T11:20:46.000Z">
-<meta property="article:modified_time" content="2020-02-16T14:48:59.228Z">
+<meta property="article:published_time" content="2020-02-17T02:17:31.000Z">
+<meta property="article:modified_time" content="2020-02-20T13:42:30.894Z">
 <meta property="article:author" content="Tonzinonin">
 <meta property="article:tag" content="Unity 2d">
 <meta name="twitter:card" content="summary">
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/16/unity-2d与物理/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/02/17/unity-2d与动画/"/>
 
 
 
 
 
-  <title>unity 2d与物理 | tonzinonin 的 博 客</title>
+  <title>unity-2d的简单动画和控制 | tonzinonin 的 博 客</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/16/unity-2d%E4%B8%8E%E7%89%A9%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/17/unity-2d%E4%B8%8E%E5%8A%A8%E7%94%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tonzinonin">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">unity 2d与物理</h1>
+          <h1 class="post-title" itemprop="name headline">unity-2d的简单动画和控制</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-16T19:20:46+08:00">
-                2020-02-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-17T10:17:31+08:00">
+                2020-02-17
               </time>
             
 
@@ -342,22 +342,80 @@
       
 
       
-        <p><strong>2D物理引擎</strong><br>现在unity提供了2套不同的游戏引擎，2D一个、3D一个，3D引擎中有第三维度（z轴）。<br>physic 2d组件与对应的3d版本行为很相似，但尽管3D和2D物理能存在于同一场景中，但彼此之间不会交互。<br>2d和3d引擎的最决定性区别是在2d引擎中没有深度的概念，所有的2d物理只在x,y轴表现，这个片面的z轴是0值。<br>由于可以在3d模式下查看2d对象，也可以修改2d物理引擎作用下的游戏对象位置的z轴坐标。<br>需要注意的是所有的物理交互都发生在z轴的0值处。</p>
-<p>2d物理引擎有一些项目级别的设置。<br>edit-project settings-physics2D。<br>这些设置中包含一些详细参数。比如重力的方向和大小。默认材质，层间碰撞矩阵，还有很多其他。</p>
-<p>rigidbody2D，对游戏对象添加这个组件可以使它处在2d物理引擎的控制下。<br>rigidbody2D组件与碰撞体一起进行碰撞检测，能接受力和扭距，处理各种类型的关节，以及其他特别类型的2D物理行为，这个组件也用来跟踪，其所在物理对象的重要的物理属性，他拥有物体的质量参数，线性阻力和角阻力，受重力比例，以及其它属性。</p>
-<p>在每一个2d项目，在physics 2d setting里都有一个预设的重力值。<br>重力将会影响所有的添加了rigidbody的游戏对象。除非rigidbody被设置为忽略重力（将gravity scale设置为0）任何其它数值，都将会改变作用于物体的重力值，可以对每个游戏对象单独设置。</p>
-<p>如果对游戏对象添加一个2d碰撞体，他可以参与物理碰撞，和触发器事件。2d碰撞体允许游戏对象在2d场景中拥有物理形状，或者物理实体。有多种类型2d碰撞体可以与rigidbody2d（以下简称rb2d）一起工作，圆形，盒状，线型，多边形 碰撞体。每一个碰撞体都有一组不同的行为，可以在不同的环境中选择使用。</p>
-<p>添加了rb2d组件的游戏对象，可以使用一些joint 2d（2d关节类型）组件，添加了该组件游戏对象可以参与更复杂的，特殊的物理行为。2d关节组件允许游戏对象以场景内某点或某个对象为锚点，并对此锚点做出物理反应。</p>
-<p>碰撞体的表面属性由特殊类型的材质决定。这种材质是2d物理材质资源。两个拥有2d碰撞体的物体碰撞时，2d物理材质用来控制其摩擦和弹跳行为。</p>
-<p><strong>rigidbody2D刚体组件</strong><br>点击add component - physics 2d - rb2d可以设置物体的物理参数。<br>所有参与交互的对象都必须拥有2D碰撞组件，同时其中至少有一个拥有rb2d插件。<br>点击component-physics 2d-box collider<br>2d碰撞体会自动匹配精灵的大小。<br>rb2d组件，除了允许游戏对象被2d物理影响，也用来定义游戏对象的一些重要物理属性。</p>
-<p>2d刚体（rigidbody）的质量越大，就需要更多的力来移动，与其它对象碰撞时也会产生更大的效果。<br>线型阻力影响2d刚体的移动速度。<br>角阻力会影响它的旋转或者角速度。<br>重力比例控制重力如何影响2D刚体，与直接修改全局的重力值不同，重力比例允许对每个游戏对象进行精确控制，重力比例越小。物体下落速度越慢，设置为0时，忽略重力。<br>选中fixed angle（固定角度）时，rb2d会受到2d物理中力的影响，但不会旋转。<br>选中is kinematic（是否运动学）rb2d被认为是运动学物体。不会被2d物理的力影响，包括重力和碰撞，这种情况一般发生在，不使用物理引擎和物理力，去移动一个有2d碰撞体的对象。在游戏进行移动一个2d碰撞体时，非常建议把rb2d组件也加上，然而我们不想这个平台受到其它作用力影响，这种情况下可以把is kinematic打开。<br>interpolate（插入）设置用来平滑游戏对象的运动，当游戏对象被rb2d移动时发生抖动，使用interpolate来帮助平滑它的变换运动（根据上一帧的位置来平滑）<br>sleeping mode控制刚体如何休眠来节约处理时间。never sleep将禁止休眠，start awake保证rb2d在被实体化时是唤醒状态，start sleeping将初始化rb2d为休眠，但是可以被碰撞唤醒。<br>collision detection设置，用于控制rb2d上的碰撞检测机制类型。离散类型：此时，只有游戏对象的2d碰撞体，在一个物理更新时，与其他碰撞体接触，才产生碰撞事件；连续检测适用于快速移动的物体，当游戏对象在两个更新之间可能发生了碰撞时，就产生碰撞事件。</p>
-<p><strong>2d碰撞组件</strong><br>一个游戏对象必须使用碰撞体组件来定义它的物理外形，同时与相关的物理引擎交互。<br>添加2d碰撞体组件，有四种2d碰撞组件可供选择：<br>2d圆形碰撞体，2d方形碰撞体，2d多边形碰撞体，2d边缘碰撞体。<br>这些碰撞体组件有很多相同的参数，因为都继承自同一个通用基础2d碰撞体，但每一个碰撞体都为一种特殊的形状做了优化。</p>
-<p>多边形碰撞体和边缘碰撞体很相似，他们都由一组点或者顶点，及点间的连线组成，他们的主要区别是，多边形碰撞体必须是覆盖一块区域的封闭图形，边缘碰撞体必须是开放的，用于定义一个或多个段的边缘，所以它适合用于创造单个的固定表面。</p>
-<p>所有的碰撞体在检视视图中有2个相同参数；<br>is trigger（是否触发器）用来将碰撞体设置为触发器碰撞体，2d触发器碰撞体不参与碰撞，而且发出的是触发器消息，而不是碰撞消息，这些触发器消息可以用来在场景里加人新的动作；<br>material（材质）参数是对2d碰撞体所用的2d物理材质的引用，可以设置为none（空），物理材质用来定义当碰撞体相互碰撞时的反应，可以定义弹跳系数和表面摩擦力。<br>其余独有参数用来定义特定碰撞体的形状。</p>
-<p>2d碰撞体必须被添加到游戏对象上使用，可以点击Add Component button选择physics 2d选择一个collider2d组件添加2d碰撞体。</p>
-<p>添加了碰撞体组件后，unity会尝试将碰撞体尺寸匹配精灵的尺寸，如果对碰撞体的形状和尺寸不满意，可通过修改检视视图的参数修改形状，或者在场景视图内直接修改碰撞体（在场景视图编辑碰撞体时，按住shift，这会在2d碰撞体gizmo上显示一些操作点，这些操作点可以拖拽）<br>对于边缘碰撞体和多边形碰撞体，拖拽一个已存在的操作点，会移动碰撞体的顶点，改变其形状，而不是调整大小，将鼠标放到边缘碰撞体和多边形碰撞体的一个空白的边上，点击就能创建一个新的顶点，按住ctrl点击顶点可以将其删除。</p>
-<p>一个性能最优的常用模式是：只添加2d碰撞体，不添加rigidbody组件，对所有参与2d物理交互的，静态或不会移动的物体。<br>同时添加2d碰撞体和rigidbody组件，对场景内的交互中，动态且可移动的对象。</p>
+        <p><strong>animator</strong><br>搭好并调整角色的四肢，放在一个母对象下。<br>在母对象下，使用animator动画器组件。<br>资源菜单创建动画控制器，移到其动画组件上。<br>用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键行为模块可以在行为模块里建立关系。<br>动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。</p>
+<p><strong>有关2d的移动控制</strong><br>1.直接修改transform<br>–transform.translate –按输入vector3的方向和大小移动，可以选择输入参照的坐标系。</p>
+<p>–vector3<br> –vector3.lerp -在两点间计算线性插值，可以用结果修改position，直线移动<br> –vector3.slerp -在两点间计算球形插值，用结果修改position，弧线移动<br> –vector3.movetowards -输入两点，及限制最大距离，返回一个不超过最大距离的点，直接移动。<br> –vector3.SmoothDamp -平滑的从A点逐渐移动到B点，可以设置移动总时间，最大速度，常见的用法是相机跟随目标。</p>
+<p>2.修改rigidbody<br>–velocity -速度<br>–AddForce -施加力<br>–MovePosition -移动位置<br>–使用时应该在fixedUpdate，因为是按照物理引擎更新进度更新的，UpdatehefixedUpdate不是一个节奏，而且需要注意描述里写的条件和影响结果。</p>
+<p>3.CharacterController并不适用于2D</p>
+<p><strong>blend tree</strong><br>创建过渡只能用Greater和less两个条件。<br>blend tree可以使用区间。<br>创建blend后双击，可以进入blend tree的检视菜单。<br>到里面兴建运动域，然后把你的动画放上，可以调节动画播放的时间和过度效果<br>blend tree有很多优点，详情可以查看官方文档。</p>
+<p><strong>地面检测</strong><br>建立空对象，放在游戏对象下，提供游戏对象与地面接触的坐标，可用来检测游戏对象的脚下是不是地面。<br>linecast，可以通过划线的方式检测地面，详情可以见官方文档。<br>还有一种方法，overlap覆盖检测</p>
+<p>如果用垂直速度来控制跳跃动画的播放，可以优化跳跃动画。<br>把动画过渡间的过度值去掉，可以减少动画播放的延迟。</p>
+<p><strong>2d平台游戏角色的移动脚本</strong></p>
+<pre><code>using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
+public class animation : MonoBehaviour
+{   //实现角色的移动，跳跃，多段跳
+    public float maxSpeed = 6f; //设置最大速度
+    bool isfacingright = true;//角色朝向默认设为true
+    Animator anim;
+    Rigidbody2D rbody2D;
+    bool grounded = true; //定义一个判断器来检测角色是不是在地面上。
+    public Transform GroundChecker;//地板判断器的坐标
+    float checkredius = 0.2f;//检测半径
+    public LayerMask whatisground; //决定在哪些层上检测地面
+    public float jumpforce = 700f; //跳跃的力
+
+    bool doublejump = false;//多段跳的条件
+
+    void Start() {
+        anim = GetComponent&lt;Animator&gt;();//获取animator组件。
+        rbody2D = GetComponent&lt;Rigidbody2D&gt;();//获取刚体组件
+    }
+
+    public void FixedUpdate() {
+        anim.SetFloat(&quot;Vspeed&quot;, rbody2D.velocity.y);//将Vspeed设置为垂直方向上的速度，这个可以用来做跳跃的动画。
+        grounded = Physics2D.OverlapCircle(GroundChecker.position,checkredius,whatisground);//检测地面碰撞。
+                                                       //GroundChecker为圆心，checkredius为半径进行地面检测。
+        anim.SetBool(&quot;grounded&quot;,grounded);//设置一个变量，动画控制器里的变量，把它的值和grounded返回的值一样。
+
+        doublejump = false;
+
+        float direction = Input.GetAxis(&quot;Horizontal&quot;);//接收水平方向上的输入，&lt;-取负值,-&gt;取正值。
+        anim.SetFloat(&quot;Speed&quot;, Mathf.Abs(direction * maxSpeed));//设置Speed参数的值，并且对它取绝对值，
+        rbody2D.velocity = new Vector2(direction * maxSpeed, rbody2D.velocity.y);//改变刚体物件的速度
+
+        if (direction &gt; 0 &amp;&amp; isfacingright == false)//检测翻转
+        {
+            Flip();
+        }
+        else if (direction &lt; 0 &amp;&amp; isfacingright == true)
+        {
+            Flip();
+        }
+    }
+
+    void Update() {
+        //实现跳跃和多段跳
+        if ( (grounded || !doublejump) &amp;&amp; Input.GetKeyDown(KeyCode.Space)) {
+            grounded = false;
+            rbody2D.AddForce(new Vector2(0, jumpforce));//在y轴上添加一个力
+
+            if (!grounded &amp;&amp; !doublejump)
+            {
+                doublejump = true;
+            }
+        }
+    }
+
+    void Flip() {//实现翻转
+        isfacingright = !isfacingright;//对当前朝向取反
+        Vector3 scale = transform.localScale;//角色相对坐标
+        scale.x *= -1;//对坐标取反
+        transform.localScale = scale; 
+    }
+}</code></pre>
       
     </div>
     
@@ -387,8 +445,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/16/%E5%88%9D%E8%AF%86unity%EF%BC%8C%E4%B8%80%E6%AC%BE%E5%B7%A5%E4%B8%9A%E7%BA%A7%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" rel="next" title="初识unity">
-                <i class="fa fa-chevron-left"></i> 初识unity
+              <a href="/2020/02/16/unity-2d%E4%B8%8E%E7%89%A9%E7%90%86-2/" rel="next" title="unity 2d与物理 2">
+                <i class="fa fa-chevron-left"></i> unity 2d与物理 2
               </a>
             
           </div>
@@ -397,8 +455,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/02/16/unity%202d%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%BB%BA%E7%AB%8B/" rel="prev" title="unity 2d的项目建立">
-                unity 2d的项目建立 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/02/19/unity-2d%E4%B8%8E%E8%84%9A%E6%9C%AC-1/" rel="prev" title="unity 与脚本语言与C#初入门">
+                unity 与脚本语言与C#初入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -467,7 +525,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -478,7 +536,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -489,7 +547,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
