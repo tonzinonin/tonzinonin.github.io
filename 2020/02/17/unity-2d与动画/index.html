@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="animator搭好并调整角色的四肢，放在一个母对象下。在母对象下，使用animator动画器组件。资源菜单创建动画控制器，移到其动画组件上。用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键行为模块可以在行为模块里建立关系。动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。 有关2d的移动控制1.直接修改transform–">
+<meta name="description" content="animator搭好并调整角色的四肢，放在一个母对象下。在母对象下，使用animator动画器组件。资源菜单创建动画控制器，移到其动画组件上。用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键结点可以在结点里建立过渡。动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。Entry节点是Animator变为活动状态并且开始在这里评">
 <meta property="og:type" content="article">
 <meta property="og:title" content="unity-2d的简单动画和控制">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;17&#x2F;unity-2d%E4%B8%8E%E5%8A%A8%E7%94%BB&#x2F;index.html">
 <meta property="og:site_name" content="tonzinonin 的 博 客">
-<meta property="og:description" content="animator搭好并调整角色的四肢，放在一个母对象下。在母对象下，使用animator动画器组件。资源菜单创建动画控制器，移到其动画组件上。用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键行为模块可以在行为模块里建立关系。动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。 有关2d的移动控制1.直接修改transform–">
+<meta property="og:description" content="animator搭好并调整角色的四肢，放在一个母对象下。在母对象下，使用animator动画器组件。资源菜单创建动画控制器，移到其动画组件上。用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键结点可以在结点里建立过渡。动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。Entry节点是Animator变为活动状态并且开始在这里评">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-17T02:17:31.000Z">
-<meta property="article:modified_time" content="2020-02-20T13:42:30.894Z">
+<meta property="article:modified_time" content="2020-02-21T08:03:47.564Z">
 <meta property="article:author" content="Tonzinonin">
 <meta property="article:tag" content="Unity 2d">
 <meta name="twitter:card" content="summary">
@@ -342,7 +342,8 @@
       
 
       
-        <p><strong>animator</strong><br>搭好并调整角色的四肢，放在一个母对象下。<br>在母对象下，使用animator动画器组件。<br>资源菜单创建动画控制器，移到其动画组件上。<br>用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键行为模块可以在行为模块里建立关系。<br>动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。</p>
+        <p><strong>animator</strong><br>搭好并调整角色的四肢，放在一个母对象下。<br>在母对象下，使用animator动画器组件。<br>资源菜单创建动画控制器，移到其动画组件上。<br>用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键结点可以在结点里建立过渡。<br>动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。<br>Entry节点是Animator变为活动状态并且开始在这里评估状态机。<br>黄色的节点是默认状态。</p>
+<p>过度菜单有一个 Has Exit Time，这意味这，一旦我们到了原状态，一秒之后就结束，他将会自动转换。</p>
 <p><strong>有关2d的移动控制</strong><br>1.直接修改transform<br>–transform.translate –按输入vector3的方向和大小移动，可以选择输入参照的坐标系。</p>
 <p>–vector3<br> –vector3.lerp -在两点间计算线性插值，可以用结果修改position，直线移动<br> –vector3.slerp -在两点间计算球形插值，用结果修改position，弧线移动<br> –vector3.movetowards -输入两点，及限制最大距离，返回一个不超过最大距离的点，直接移动。<br> –vector3.SmoothDamp -平滑的从A点逐渐移动到B点，可以设置移动总时间，最大速度，常见的用法是相机跟随目标。</p>
 <p>2.修改rigidbody<br>–velocity -速度<br>–AddForce -施加力<br>–MovePosition -移动位置<br>–使用时应该在fixedUpdate，因为是按照物理引擎更新进度更新的，UpdatehefixedUpdate不是一个节奏，而且需要注意描述里写的条件和影响结果。</p>
@@ -350,6 +351,9 @@
 <p><strong>blend tree</strong><br>创建过渡只能用Greater和less两个条件。<br>blend tree可以使用区间。<br>创建blend后双击，可以进入blend tree的检视菜单。<br>到里面兴建运动域，然后把你的动画放上，可以调节动画播放的时间和过度效果<br>blend tree有很多优点，详情可以查看官方文档。</p>
 <p><strong>地面检测</strong><br>建立空对象，放在游戏对象下，提供游戏对象与地面接触的坐标，可用来检测游戏对象的脚下是不是地面。<br>linecast，可以通过划线的方式检测地面，详情可以见官方文档。<br>还有一种方法，overlap覆盖检测</p>
 <p>如果用垂直速度来控制跳跃动画的播放，可以优化跳跃动画。<br>把动画过渡间的过度值去掉，可以减少动画播放的延迟。</p>
+<p><strong>UI</strong><br>可以在hierarchy菜单下创建，这个操作将会为我们自动做一些事。<br>创建Canvas对象，ui成为它的子对象，我们制作的任何ui对象都需要canvas的子对象才能被渲染。<br>他还创建了一个EventSystem，如果我们需要与按钮或滑块等ui交互，我们需要它。</p>
+<p>在锚点预设按住alt键可以编辑ui的位置。</p>
+<p>shadow组件可以在对象上添加阴影。</p>
 <p><strong>2d平台游戏角色的移动脚本</strong></p>
 <pre><code>using System.Collections;
 using System.Collections.Generic;
@@ -367,7 +371,7 @@ public class animation : MonoBehaviour
     public LayerMask whatisground; //决定在哪些层上检测地面
     public float jumpforce = 700f; //跳跃的力
 
-    bool doublejump = false;//多段跳的条件
+    //bool doublejump = false;//多段跳的条件
 
     void Start() {
         anim = GetComponent&lt;Animator&gt;();//获取animator组件。
@@ -380,7 +384,7 @@ public class animation : MonoBehaviour
                                                        //GroundChecker为圆心，checkredius为半径进行地面检测。
         anim.SetBool(&quot;grounded&quot;,grounded);//设置一个变量，动画控制器里的变量，把它的值和grounded返回的值一样。
 
-        doublejump = false;
+        //doublejump = false;
 
         float direction = Input.GetAxis(&quot;Horizontal&quot;);//接收水平方向上的输入，&lt;-取负值,-&gt;取正值。
         anim.SetFloat(&quot;Speed&quot;, Mathf.Abs(direction * maxSpeed));//设置Speed参数的值，并且对它取绝对值，
@@ -402,10 +406,10 @@ public class animation : MonoBehaviour
             grounded = false;
             rbody2D.AddForce(new Vector2(0, jumpforce));//在y轴上添加一个力
 
-            if (!grounded &amp;&amp; !doublejump)
+            /*if (!grounded &amp;&amp; !doublejump)
             {
                 doublejump = true;
-            }
+            }*/
         }
     }
 
@@ -525,7 +529,7 @@ public class animation : MonoBehaviour
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
