@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Unity 2d," />
+  <meta name="keywords" content="Unity 2d,Unity功能实现," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="animator搭好并调整角色的四肢，放在一个母对象下。在母对象下，使用animator动画器组件。资源菜单创建动画控制器，移到其动画组件上。用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键结点可以在结点里建立过渡。动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。Entry节点是Animator变为活动状态并且开始在这里评">
+<meta name="description" content="新建ui-panel对象render mode - worldspacereset canvas让ui界面移到地图中间。 event camera 决定哪个摄像机进行渲染更改sortinglayer Scale location 让其达到自己想要的效果更改图片 加入text与image 加入触发脚本到对象上，这里举几个常用函数：OnTriggerEnter2D()OnTriggerExit2D()">
 <meta property="og:type" content="article">
-<meta property="og:title" content="unity-2d的简单动画和控制">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;17&#x2F;unity-2d%E4%B8%8E%E5%8A%A8%E7%94%BB&#x2F;index.html">
+<meta property="og:title" content="unity dialogSystem">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;08&#x2F;28&#x2F;unity-dialogSystem&#x2F;index.html">
 <meta property="og:site_name" content="tonzinonin 的 博 客">
-<meta property="og:description" content="animator搭好并调整角色的四肢，放在一个母对象下。在母对象下，使用animator动画器组件。资源菜单创建动画控制器，移到其动画组件上。用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键结点可以在结点里建立过渡。动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。Entry节点是Animator变为活动状态并且开始在这里评">
+<meta property="og:description" content="新建ui-panel对象render mode - worldspacereset canvas让ui界面移到地图中间。 event camera 决定哪个摄像机进行渲染更改sortinglayer Scale location 让其达到自己想要的效果更改图片 加入text与image 加入触发脚本到对象上，这里举几个常用函数：OnTriggerEnter2D()OnTriggerExit2D()">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-17T02:17:31.000Z">
-<meta property="article:modified_time" content="2020-02-21T08:03:47.564Z">
+<meta property="article:published_time" content="2020-08-28T05:19:25.000Z">
+<meta property="article:modified_time" content="2020-08-31T03:48:19.974Z">
 <meta property="article:author" content="Tonzinonin">
 <meta property="article:tag" content="Unity 2d">
+<meta property="article:tag" content="Unity功能实现">
 <meta name="twitter:card" content="summary">
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/17/unity-2d与动画/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/08/28/unity-dialogSystem/"/>
 
 
 
 
 
-  <title>unity-2d的简单动画和控制 | tonzinonin 的 博 客</title>
+  <title>unity dialogSystem | tonzinonin 的 博 客</title>
   
 
 
@@ -253,7 +254,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/17/unity-2d%E4%B8%8E%E5%8A%A8%E7%94%BB/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/28/unity-dialogSystem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tonzinonin">
@@ -270,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">unity-2d的简单动画和控制</h1>
+          <h1 class="post-title" itemprop="name headline">unity dialogSystem</h1>
         
 
         <div class="post-meta">
@@ -282,8 +283,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-17T10:17:31+08:00">
-                2020-02-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-28T13:19:25+08:00">
+                2020-08-28
               </time>
             
 
@@ -342,84 +343,36 @@
       
 
       
-        <p><strong>animator</strong><br>搭好并调整角色的四肢，放在一个母对象下。<br>在母对象下，使用animator动画器组件。<br>资源菜单创建动画控制器，移到其动画组件上。<br>用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键结点可以在结点里建立过渡。<br>动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。<br>Entry节点是Animator变为活动状态并且开始在这里评估状态机。<br>黄色的节点是默认状态。</p>
-<p>过度菜单有一个 Has Exit Time，这意味这，一旦我们到了原状态，一秒之后就结束，他将会自动转换。</p>
-<p><strong>有关2d的移动控制</strong><br>1.直接修改transform<br>–transform.translate –按输入vector3的方向和大小移动，可以选择输入参照的坐标系。</p>
-<p>–vector3<br> –vector3.lerp -在两点间计算线性插值，可以用结果修改position，直线移动<br> –vector3.slerp -在两点间计算球形插值，用结果修改position，弧线移动<br> –vector3.movetowards -输入两点，及限制最大距离，返回一个不超过最大距离的点，直接移动。<br> –vector3.SmoothDamp -平滑的从A点逐渐移动到B点，可以设置移动总时间，最大速度，常见的用法是相机跟随目标。</p>
-<p>2.修改rigidbody<br>–velocity -速度<br>–AddForce -施加力<br>–MovePosition -移动位置<br>–使用时应该在fixedUpdate，因为是按照物理引擎更新进度更新的，UpdatehefixedUpdate不是一个节奏，而且需要注意描述里写的条件和影响结果。</p>
-<p>3.CharacterController并不适用于2D</p>
-<p><strong>blend tree</strong><br>创建过渡只能用Greater和less两个条件。<br>blend tree可以使用区间。<br>创建blend后双击，可以进入blend tree的检视菜单。<br>到里面兴建运动域，然后把你的动画放上，可以调节动画播放的时间和过度效果<br>blend tree有很多优点，详情可以查看官方文档。</p>
-<p><strong>地面检测</strong><br>建立空对象，放在游戏对象下，提供游戏对象与地面接触的坐标，可用来检测游戏对象的脚下是不是地面。<br>linecast，可以通过划线的方式检测地面，详情可以见官方文档。<br>还有一种方法，overlap覆盖检测</p>
-<p>如果用垂直速度来控制跳跃动画的播放，可以优化跳跃动画。<br>把动画过渡间的过度值去掉，可以减少动画播放的延迟。</p>
-<p><strong>UI</strong><br>可以在hierarchy菜单下创建，这个操作将会为我们自动做一些事。<br>创建Canvas对象，ui成为它的子对象，我们制作的任何ui对象都需要canvas的子对象才能被渲染。<br>他还创建了一个EventSystem，如果我们需要与按钮或滑块等ui交互，我们需要它。</p>
-<p>在锚点预设按住alt键可以编辑ui的位置。</p>
-<p>shadow组件可以在对象上添加阴影。</p>
-<p><strong>2d平台游戏角色的移动脚本</strong></p>
-<pre><code>using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+        <p>新建ui-panel对象<br>render mode - worldspace<br>reset canvas<br>让ui界面移到地图中间。</p>
+<p>event camera 决定哪个摄像机进行渲染<br>更改sortinglayer Scale location 让其达到自己想要的效果<br>更改图片</p>
+<p>加入text与image</p>
+<p>加入触发脚本到对象上，这里举几个常用函数：<br>OnTriggerEnter2D()<br>OnTriggerExit2D() 这两个函数需要在对象拥有Trigger Collision的情况下才有效。用途是在进入碰撞体时触发函数。</p>
+<p>gameObject.SetActive(bool var) 用来控制对象的激活状态。<br>gameObject.ActiveSelf 用来获取对象激活状态的布尔值。</p>
+<p>DialogSystem<br>[header(“TEXT”)] 这个方法可以用来在Inspector中建立可视化的头文字，可以用来注释public变量。</p>
+<p>TextAsset 这一类型可以把Text文件使用到游戏项目当中，并且帮助转换其中的文本。（txt, html, xml等，不支持mobi, pdf等）<br>用一个方法.Text可以把整个文件转换为字符型的数据。<br>使用例：<br>        B<br>        仙贝，你怎么在这里<br>        A<br>        抱歉，NYN，我必须先干掉你才能去掘皮炎子。<br>        B<br>        看来战斗是不可避免了吗</p>
+<p>建立一个Text列表</p>
+<pre><code>public int index;
 
-public class animation : MonoBehaviour
-{   //实现角色的移动，跳跃，多段跳
-    public float maxSpeed = 6f; //设置最大速度
-    bool isfacingright = true;//角色朝向默认设为true
-    Animator anim;
-    Rigidbody2D rbody2D;
-    bool grounded = true; //定义一个判断器来检测角色是不是在地面上。
-    public Transform GroundChecker;//地板判断器的坐标
-    float checkredius = 0.2f;//检测半径
-    public LayerMask whatisground; //决定在哪些层上检测地面
-    public float jumpforce = 700f; //跳跃的力
+List&lt;string&gt; textList = new List&lt;string&gt;();</code></pre><p>.Split 方法可以用来切割文本。（共有6种方法）<br>如 .Split(‘\n’); 可以将文本按行切割。</p>
+<pre><code>void GetTextFromFile(TextAsset file)
+    {
+        textList.Clear();
+        index = 0;
 
-    //bool doublejump = false;//多段跳的条件
+        var lineData = file.text.Split(&apos;\n&apos;);//将文本按行切割 加到临时stringArray lineData当中。
 
-    void Start() {
-        anim = GetComponent&lt;Animator&gt;();//获取animator组件。
-        rbody2D = GetComponent&lt;Rigidbody2D&gt;();//获取刚体组件
-    }
-
-    public void FixedUpdate() {
-        anim.SetFloat(&quot;Vspeed&quot;, rbody2D.velocity.y);//将Vspeed设置为垂直方向上的速度，这个可以用来做跳跃的动画。
-        grounded = Physics2D.OverlapCircle(GroundChecker.position,checkredius,whatisground);//检测地面碰撞。
-                                                       //GroundChecker为圆心，checkredius为半径进行地面检测。
-        anim.SetBool(&quot;grounded&quot;,grounded);//设置一个变量，动画控制器里的变量，把它的值和grounded返回的值一样。
-
-        //doublejump = false;
-
-        float direction = Input.GetAxis(&quot;Horizontal&quot;);//接收水平方向上的输入，&lt;-取负值,-&gt;取正值。
-        anim.SetFloat(&quot;Speed&quot;, Mathf.Abs(direction * maxSpeed));//设置Speed参数的值，并且对它取绝对值，
-        rbody2D.velocity = new Vector2(direction * maxSpeed, rbody2D.velocity.y);//改变刚体物件的速度
-
-        if (direction &gt; 0 &amp;&amp; isfacingright == false)//检测翻转
+        foreach (var line in lineData)//遍历lineData的每一元素(文本中的每一行)
         {
-            Flip();
+            textList.Add(line);//将每一行加到列表当中
         }
-        else if (direction &lt; 0 &amp;&amp; isfacingright == true)
-        {
-            Flip();
-        }
-    }
+    }</code></pre><p>之后可以遍历文字到游戏中。<br>（ps.有时候直接使用外部txt会产生无法读取的错误，一般发生错误时txt的inspector窗口不会显示文字）</p>
+<p>解决一开始对话栏显示为空的问题：<br>    private void OnEnable()<br>    {<br>        textLabel.text = textList[index];<br>        index++;<br>    }<br>这时要把start函数改为Awake函数</p>
+<p>注意：<br>OnEnable函数会在Start之前进行调用<br>Awake函数会在OnEnble之前调用</p>
+<p>startCoroutine协程<br>协程可以让你在两行代码中间加入执行一行代码，在代码没有执行完之前不会执行以后的代码，一般用IEnumerator方法来定义一个coroutine。<br>用StartCoroutine来调取一个协程。</p>
+<p>WaitForSeconds(waitTime)函数用来等待一段时间<br>yield return 会把yield return后的程序暂时挂起只执行yield return后的代码。</p>
+<p>读取关键字：<br>很简单，直接把文字的内容作为判断条件，比如在上面的使用例中，用 if(text == “A/r”)来读取A关键字。</p>
+<p>可以用来制作给对话自动添加人物头像的效果。<br>如果要更改GUI中的image,<br>如下实例:<br>Image.sprite = sprite01;</p>
 
-    void Update() {
-        //实现跳跃和多段跳
-        if ( (grounded || !doublejump) &amp;&amp; Input.GetKeyDown(KeyCode.Space)) {
-            grounded = false;
-            rbody2D.AddForce(new Vector2(0, jumpforce));//在y轴上添加一个力
-
-            /*if (!grounded &amp;&amp; !doublejump)
-            {
-                doublejump = true;
-            }*/
-        }
-    }
-
-    void Flip() {//实现翻转
-        isfacingright = !isfacingright;//对当前朝向取反
-        Vector3 scale = transform.localScale;//角色相对坐标
-        scale.x *= -1;//对坐标取反
-        transform.localScale = scale; 
-    }
-}</code></pre>
       
     </div>
     
@@ -438,6 +391,8 @@ public class animation : MonoBehaviour
           
             <a href="/tags/Unity-2d/" rel="tag"># Unity 2d</a>
           
+            <a href="/tags/Unity%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" rel="tag"># Unity功能实现</a>
+          
         </div>
       
 
@@ -449,8 +404,8 @@ public class animation : MonoBehaviour
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/16/unity-2d%E4%B8%8E%E7%89%A9%E7%90%86-2/" rel="next" title="unity 2d与物理 2">
-                <i class="fa fa-chevron-left"></i> unity 2d与物理 2
+              <a href="/2020/03/01/Csharp%E4%B8%8E%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" rel="next" title="C#与第一个应用程序">
+                <i class="fa fa-chevron-left"></i> C#与第一个应用程序
               </a>
             
           </div>
@@ -459,8 +414,8 @@ public class animation : MonoBehaviour
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/02/19/unity-2d%E4%B8%8E%E8%84%9A%E6%9C%AC-1/" rel="prev" title="unity 与脚本语言与C#初入门">
-                unity 与脚本语言与C#初入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/08/29/unity-%E6%A8%A1%E6%8B%9F%E8%A1%80%E6%9D%A1/" rel="prev" title="unity 模拟简单血条">
+                unity 模拟简单血条 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -529,7 +484,7 @@ public class animation : MonoBehaviour
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -540,7 +495,7 @@ public class animation : MonoBehaviour
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -551,7 +506,7 @@ public class animation : MonoBehaviour
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Unity 2d,C#," />
+  <meta name="keywords" content="Unity 2d,C#,Unity工具," />
 
 
 
@@ -87,10 +87,11 @@
 <meta property="og:description" content="warning–这是很个人化的unity脚本笔记，由于本人有过编程经验(虽然也很渣就是)，所以对于我来说比较基础的或了解过的东西在这里不会细讲，详情可以去官方文档搜索更加详细的脚本教程。 理解unity脚本在unity中，脚本应该被视为一种行为组件。与unity的其它组成相同，他们也可以添加到游戏对象上。可以为游戏对象添加更多的行为模式。可以在项目栏创建脚本，并且把脚本拖到游戏对象上。也可以到“添">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-19T06:57:16.000Z">
-<meta property="article:modified_time" content="2020-02-20T04:37:41.940Z">
+<meta property="article:modified_time" content="2020-08-31T04:08:01.407Z">
 <meta property="article:author" content="Tonzinonin">
 <meta property="article:tag" content="Unity 2d">
 <meta property="article:tag" content="C#">
+<meta property="article:tag" content="Unity工具">
 <meta name="twitter:card" content="summary">
 
 
@@ -412,7 +413,7 @@ public class NewBehaviourScript : MonoBehaviour//声明类
     void Start() {//播放时执行脚本，控制台也会执行这段命令
         Debug.Log(&quot;World!&quot;);
     }
-}</code></pre><p>需要注意，Start和Awake在脚本的生命周期内只会被调用一次。所以不能去通过使用被使用的脚本来重复使用Start函数(禁止套娃！)。<br><em>Start是唯一一个可以绕过自己编制计数器使用延迟的函数。</em></p>
+}</code></pre><p>需要注意，Start和Awake在脚本的生命周期内只会被调用一次。所以不能去通过使用被使用的脚本来重复使用Start函数。<br><em>Start是唯一一个可以绕过自己编制计数器使用延迟的函数。</em></p>
 <p><strong>Update()和FixedUpdate()</strong><br>Update可能是Unity里最常用的函数。<br>他在每帧，每个使用它的脚本上被调用一次。<br>几乎所有需要周期性修改调整的东西都发生在这。<br>  <em>非物理对象的移动</em><br>  <em>简单的计时器</em><br>  <em>输入检测</em><br>都是常在Update里做的事。<br>Update不是按照规则的时间间隔被调用的，如果每帧的处理时间比其后的长。</p>
 <p>FixedUpdate和Update类似，但是有几处不同。<br>他被调用的时间线是规则的，调用之间的时间间隔也是不同的。<br>FixedUpdate结束之后，紧接着，任何必要的物理计算开始进行。<br>因此，任何影响物理对象的操作，都该在FixedUpdate里执行。<br>在FixedUpdate处理物理效果时，最好用力来触发运动。</p>
 
@@ -436,6 +437,8 @@ public class NewBehaviourScript : MonoBehaviour//声明类
           
             <a href="/tags/C/" rel="tag"># C#</a>
           
+            <a href="/tags/Unity%E5%B7%A5%E5%85%B7/" rel="tag"># Unity工具</a>
+          
         </div>
       
 
@@ -447,7 +450,7 @@ public class NewBehaviourScript : MonoBehaviour//声明类
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/17/unity-2d%E4%B8%8E%E5%8A%A8%E7%94%BB/" rel="next" title="unity-2d的简单动画和控制">
+              <a href="/2020/02/17/unity-2d%E4%B8%8E%E5%8A%A8%E7%94%BB,%E8%A7%92%E8%89%B2%E7%A7%BB%E5%8A%A8%E5%AE%9E%E7%8E%B0/" rel="next" title="unity-2d的简单动画和控制">
                 <i class="fa fa-chevron-left"></i> unity-2d的简单动画和控制
               </a>
             
@@ -527,7 +530,7 @@ public class NewBehaviourScript : MonoBehaviour//声明类
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -538,7 +541,7 @@ public class NewBehaviourScript : MonoBehaviour//声明类
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -549,7 +552,7 @@ public class NewBehaviourScript : MonoBehaviour//声明类
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

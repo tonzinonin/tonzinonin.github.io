@@ -251,7 +251,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/21/%E7%94%A8unity%E5%81%9A%E4%B8%80%E4%B8%AAfliddy-bird/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/unity-%E6%A8%A1%E6%8B%9F%E8%A1%80%E6%9D%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tonzinonin">
@@ -270,7 +270,1095 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/02/21/%E7%94%A8unity%E5%81%9A%E4%B8%80%E4%B8%AAfliddy-bird/" itemprop="url">用unity做一个flabby bird</a></h1>
+                <a class="post-title-link" href="/2020/08/29/unity-%E6%A8%A1%E6%8B%9F%E8%A1%80%E6%9D%A1/" itemprop="url">unity 模拟简单血条</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-29T16:05:13+08:00">
+                2020-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Unity</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>需要用到gui的slider组件。</p>
+<p>首先我们需要一个用来作为血条的sprite，当然你可以多加一个sprite作为血条的背景。<br>新建一个slider组件。</p>
+<p>仅保留slider内的background组件，其余删除，看情况取舍。<br>更改imageType为Filled，<br>填充类型为horizontal。</p>
+<p>将画好的图片拖到background的image中，然后将carvas的渲染模式改成WorldSpace。</p>
+<p>调整大小，位置。</p>
+<p>在background下添加脚本，如下void Update()<br>    {<br>        if (Input.GetKeyDown(KeyCode.J))<br>            GetComponent<Image>().fillAmount -= 0.1; //按下J键，血条减少百分之10(在value为1的情况);<br>    }</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/28/unity-dialogSystem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tonzinonin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonzinonin 的 博 客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/28/unity-dialogSystem/" itemprop="url">unity dialogSystem</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-28T13:19:25+08:00">
+                2020-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Unity</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>新建ui-panel对象<br>render mode - worldspace<br>reset canvas<br>让ui界面移到地图中间。</p>
+<p>event camera 决定哪个摄像机进行渲染<br>更改sortinglayer Scale location 让其达到自己想要的效果<br>更改图片</p>
+<p>加入text与image</p>
+<p>加入触发脚本到对象上，这里举几个常用函数：<br>OnTriggerEnter2D()<br>OnTriggerExit2D() 这两个函数需要在对象拥有Trigger Collision的情况下才有效。用途是在进入碰撞体时触发函数。</p>
+<p>gameObject.SetActive(bool var) 用来控制对象的激活状态。<br>gameObject.ActiveSelf 用来获取对象激活状态的布尔值。</p>
+<p>DialogSystem<br>[header(“TEXT”)] 这个方法可以用来在Inspector中建立可视化的头文字，可以用来注释public变量。</p>
+<p>TextAsset 这一类型可以把Text文件使用到游戏项目当中，并且帮助转换其中的文本。（txt, html, xml等，不支持mobi, pdf等）<br>用一个方法.Text可以把整个文件转换为字符型的数据。<br>使用例：<br>        B<br>        仙贝，你怎么在这里<br>        A<br>        抱歉，NYN，我必须先干掉你才能去掘皮炎子。<br>        B<br>        看来战斗是不可避免了吗</p>
+<p>建立一个Text列表</p>
+<pre><code>public int index;
+
+List&lt;string&gt; textList = new List&lt;string&gt;();</code></pre><p>.Split 方法可以用来切割文本。（共有6种方法）<br>如 .Split(‘\n’); 可以将文本按行切割。</p>
+<pre><code>void GetTextFromFile(TextAsset file)
+    {
+        textList.Clear();
+        index = 0;
+
+        var lineData = file.text.Split(&apos;\n&apos;);//将文本按行切割 加到临时stringArray lineData当中。
+
+        foreach (var line in lineData)//遍历lineData的每一元素(文本中的每一行)
+        {
+            textList.Add(line);//将每一行加到列表当中
+        }
+    }</code></pre><p>之后可以遍历文字到游戏中。<br>（ps.有时候直接使用外部txt会产生无法读取的错误，一般发生错误时txt的inspector窗口不会显示文字）</p>
+<p>解决一开始对话栏显示为空的问题：<br>    private void OnEnable()<br>    {<br>        textLabel.text = textList[index];<br>        index++;<br>    }<br>这时要把start函数改为Awake函数</p>
+<p>注意：<br>OnEnable函数会在Start之前进行调用<br>Awake函数会在OnEnble之前调用</p>
+<p>startCoroutine协程<br>协程可以让你在两行代码中间加入执行一行代码，在代码没有执行完之前不会执行以后的代码，一般用IEnumerator方法来定义一个coroutine。<br>用StartCoroutine来调取一个协程。</p>
+<p>WaitForSeconds(waitTime)函数用来等待一段时间<br>yield return 会把yield return后的程序暂时挂起只执行yield return后的代码。</p>
+<p>读取关键字：<br>很简单，直接把文字的内容作为判断条件，比如在上面的使用例中，用 if(text == “A/r”)来读取A关键字。</p>
+<p>可以用来制作给对话自动添加人物头像的效果。<br>如果要更改GUI中的image,<br>如下实例:<br>Image.sprite = sprite01;</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/01/Csharp%E4%B8%8E%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tonzinonin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonzinonin 的 博 客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/01/Csharp%E4%B8%8E%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" itemprop="url">C#与第一个应用程序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-01T09:03:38+08:00">
+                2020-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index">
+                    <span itemprop="name">C#编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>vs2010</p>
+<p>C#是一个完全面向对象的编程语言</p>
+<p>Solution是针对客户需求的总的解决方案。<br>Project解决具体的某个问题。</p>
+<p>分别编写Console、WPS、Windows Forms的Hello World。</p>
+<p>类(class)是构成程序的主体<br>名称空间(namespace)以树形结构组织类(和其它类型)如Button和Path类。</p>
+<p>类库引用是使用名称空间的物理基础。不同技术类型的项目会默认引用不同的类库。<br>DLL引用（黑盒引用，无源代码）<br>项目引用（白盒引用，有源代码）</p>
+<pre><code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace ClassAndInstance
+{
+    class Program 
+    {
+        static void Main(string[] args)
+        {  
+            Form myForm = new Form(); //对象的实例化
+            myForm.Text = &quot;MyForm!&quot;;
+            myForm.ShowDialog();
+        }
+    }
+}</code></pre><p>类的三大成员：<br>属性(Property)<br>储存数据，组合起来表示类或对象当前的状态<br>方法(Method)<br>由C语言的函数(function)进化而来，表示类或对象”能做什么”<br>工作中%90的时间是在与方法打交道，因为它是”真正做事”、”构成逻辑”的成员<br>事件(Event)<br>类或对象通知其它类或对象的机制，为C#所持有(Java通过其它办法实现这个机制)<br>善用事件机制非常重要</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/29/%E7%94%A8unity%E5%81%9A%E4%B8%80%E4%B8%AA2D-roguelike/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tonzinonin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonzinonin 的 博 客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/29/%E7%94%A8unity%E5%81%9A%E4%B8%80%E4%B8%AA2D-roguelike/" itemprop="url">用unity做一个2D-roguelike</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-29T09:35:14+08:00">
+                2020-02-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Unity</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.使用类继承的方式使玩家和敌人拥有相同的移动方式；</p>
+<p>2.对象的单例模式</p>
+<p>3.可序列化 serializable</p>
+<p>4.利用数组和random函数，随机生成地图</p>
+<p>5.虚函数</p>
+<p>在某基类中声明为 virtual 并在一个或多个派生类中被重新定义的成员函数，用法格式为：virtual 函数返回类型 函数名（参数表） {函数体}；实现多态性，通过指向派生类的基类指针或引用，访问派生类中同名覆盖成员函数。</p>
+<p>6.抽象类</p>
+<p>抽象类往往用来表征对问题领域进行分析、设计中得出的抽象概念，是对一系列看上去不同，但是本质上相同的具体概念的抽象。<br>通常在编程语句中用 abstract 修饰的类是抽象类。在C++中，含有纯虚拟函数的类称为抽象类，它不能生成对象；在java中，含有抽象方法的类称为抽象类，同样不能生成对象。<br>抽象类是不完整的，它只能用作基类。在面向对象方法中，抽象类主要用来进行类型隐藏和充当全局变量的角色。</p>
+<p>7.protected保护类型前缀</p>
+<p>8.float.Epsilon代表近似于0的数</p>
+<p>9.MoveTowards函数<br>Vector3 newPosition = Vector3.MoveTowards (rb2D.position, end, inverseMoveTime * Time.deltaTime)<br>MoveTowards沿着指向目标点的直线移动点，这个点是inverseMoveTime*Time.deltaTime时间内能够移动到的最接近目的地的点。<br>Vector3.MoveTowards的返回值是一个点，这个点<br>三个参数，第一个是原位置，第二个是要移动到的位置</p>
+<p>10.LayerMask类型</p>
+<p>11.out关键字</p>
+<p>12.linecast</p>
+<p>13.泛型参数</p>
+<p>14.RaycastHit2D</p>
+<p>15.as关键字</p>
+<p>16.IEnumerable</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/29/unity-2d%E4%B8%8E%E8%84%9A%E6%9C%AC-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tonzinonin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonzinonin 的 博 客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/29/unity-2d%E4%B8%8E%E8%84%9A%E6%9C%AC-4/" itemprop="url">unity-2d与脚本-4</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-29T09:23:07+08:00">
+                2020-02-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Unity</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unity/C-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index">
+                    <span itemprop="name">C#编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Properties</strong><br>编码时经常会有在外部访问类内部变量的需求，可以把这个变量设置为公共的，然后直接访问他。<br>其实还有更好的方法，就是利用属性，属性本身类似变量，在内部封装了一些变量，被封装的变量称为域，而封装可以更好的控制域被访问的过程。<br>创建属性：<br>先确定访问控制符，然后是类型，通常把属性命名为跟域相同，但是首字母大写，在属性名后面是大括号。<br>像函数一样，在括号内是属性的访问器。<br>一个属性有get和set两种访问器，分别在取值和赋值时调用。<br>在get里返回被封装的域，在set访问器里使用value关键字对域赋值。</p>
+<p>用属性可以达成两件变量无法做到的事。<br>首先，不实现get或set的一个，就可以做出一个只读或只写的域。<br>如果域是私有的，那么没有get和set访问器，就无法读取或写入它。<br>第二点是访问器就像函数一样，意味着你可以在里面调用其它的函数。</p>
+<p>属性的另外一个特点是他们可以自动生成，自动生成属性使用简写写法。在get和set访问器直接打上分号。</p>
+<p><strong>三目运算符</strong><br>和C++差不多。</p>
+<p><strong>Static</strong><br>静态成员，如某些变量和方法，会在类的所有实例中共享。静态成员可以通过类直接访问。<br>不需要先实例化一个对象出来，通常成员变量是每个对象唯一的。<br>静态变量的值是所有实例共享。</p>
+<p>需要注意的是，在静态方法中不能使用静态变量，静态方法属于类本身，而非静态变量属于类的实例。</p>
+<p><strong>OverLoading</strong><br>重载指给单个函数多个定义的过程，也就是说同样的函数名可以做不同的事。<br>系统确定正确重载函数版本过程分3步。<br>如果有完全匹配参数的版本，就运行它。<br>如果没有完全匹配的，系统就会寻找可能的匹配，并且选择需要最少类型转换的。<br>最后，如果没有可能的匹配，或有多个版本需要转换类型的数目相同，系统抛出错误。</p>
+<p><strong>Generics</strong><br>泛型特性使类和函数等，可以接受类型作为参数。<br>这就允许你编写通用的程序，而不需要知道将要处理的数据的具体类型。<br>GetComponent函数使用泛型参数来获取某个类型的组件，getcomponent就是所谓的泛型函数。<br>    public T GenericMethod<T>(T param)<br>    {<br>        return param;<br>    }<br>一个简单的泛型函数，首先注意泛型参数<T>,T是它的名称。这里T可以是任何类型的，它的名字也可以是任意的，一般用T。<br>如果你需要多个泛型参数，可以使用逗号在后面追加，一般T后面用U和V。<br>函数绑定的类型是T，但是T只是一个占位符。<br>T只会在函数调用时被替换成实际类型。<br>不管T最终类型是什么，返回值和参数类型也都是这个值。</p>
+<p>如何进行更多的操作？为了知道类型的某些特性，必须限制类型的范围，可以在泛型参数后加入约束。<br>为函数增加约束时，在参数列表和函数体之间，输入where, 后面跟着需要限制的泛型类型，再接着冒号，在冒号后面是具体的约束，以逗号分隔。<br>约束分四类，使用class关键字确保T是引用类型，使用struct确保T是值类型，使用new()确保这个类型有公共的，不需要参数的构造函数，可以使用具体的类名，确保T是这个类型，或利用多态性，任何继承此类的类型也可以。最后一种约束时接口类型，可以使用接口名，确保T实现了这个接口。<br>使用泛型函数时，必须确定你要用的类型。<br>给类设置泛型类型，会影响类中的属性，域和函数。<br>创建泛型类也是泛型的常用点，可以方便的创建数据结构。</p>
+<p><strong>继承Inhertiance</strong><br>继承是面向对象编程(OOP)，里的核心概念。一个类继承另外一个类时，就可以获取被继承类的一些特性。<br>在讨论继承时，被继承的类被称为父类或基类，继承的类叫作子类或派生类，继承的结果是，存在于父类的东西，子类也可以访问。<br>于是子类可以使用这些函数和变量，就像它本身就是父类一样。</p>
+<p>在处理继承时，有3个控制符需要了解一下：public，private，protected。</p>
+<p>protected属于public和private的混合体。父类里的所有protected特性，在子类都可以访问，像public特性一样，但是不能在除父类和子类之外访问，像private一样。</p>
+<p>比如继承了MonoBehavior才能使用update(), start()之类的方法。</p>
+<p>继承的概念在游戏开发中非常有用</p>
+<p>构造函数是继承中的特例，它还是每个类唯一的，不会共享，当子类的构造函数被调用时，父类的构造函数会自动在子类构造函数之前调用，因为一个类可能有多个构造函数。我们需要具体调用哪个构造函数，可以通过base关键字实现，在子类构造函数参数列表后加冒号，你可以显示调用特定的基类构造函数。如果不显式调用基类构造函数，会隐式调用默认的父类构造函数。<br>除了调用基类构造函数，base关键字还能访问其它基类的成员，当你需要访问父类的某个特性，而子类这个特性和父类不同时，会用到这一点。</p>
+<p><strong>多态Polymorphism</strong><br>多态是继承的一种特性，它允许类有多种类型。</p>
+<p><strong>覆盖Overriding</strong><br>覆盖是指在子类中改变基类方法的行为，结果是当我们调用这个方法时，会选择方法的最新或者最接近的覆盖版本。<br>在继承层次里，通常需要使用与基类不同的方法，在子类里重新创建这个方法，然后实现需要方法做的事情即可。</p>
+<p>任何定义为子类的函数，都可以在任意子类中被覆盖。</p>
+<p>如果想要子类对函数增加新的功能，但保留基类提供的原有功能。<br>在实现的时候，就需要在函数中使用base关键字，调用基类版本的函数。<br>覆盖在多态是非常有用的，通过对基类函数设置virtual，对子类函数设置override，就覆盖了基类版本的函数。<br>这导致当我们向上转型一个子类引用为基类对象，并调用一个函数，那么函数的子类会被调用。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/21/unity%E4%B8%8EGUI-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tonzinonin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonzinonin 的 博 客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/21/unity%E4%B8%8EGUI-2/" itemprop="url">unity与GUI-2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-21T20:54:51+08:00">
+                2020-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/21/unity%E4%B8%8EGUI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tonzinonin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonzinonin 的 博 客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/21/unity%E4%B8%8EGUI/" itemprop="url">unity与GUI</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-21T19:20:59+08:00">
+                2020-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unity/" itemprop="url" rel="index">
+                    <span itemprop="name">Unity</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>1.canvas</strong><br>canvas是用来控制一组UI元素渲染方式的组件。<br>所有的UI元素必须是canvas的子节点。<br>场景中可以创建多个canvas。</p>
+<p>每个canvas都有几种不同的渲染模式。<br>渲染模式可以在RenderMode菜单里选择。</p>
+<p>scene Space - Overlay canvas会直接驱动Rect Transform组件的设置。<br>Ui会覆盖整个屏幕。所有的Ui元素会绘制在场景中其他元素的前面。<br>在屏幕设置变化时会自动调整大小。<br>所以canvas上的Rect Transform不能手动编辑。<br>canvas会设置所有的Rect Transform参数来自动填充整个屏幕。</p>
+<p>选中Pixel Perfect时，Ui元素会在渲染时自动调整到最接近的像素。<br>在某些情况下可能达到锐化外观的效果。</p>
+<p>Screen Space - Camera 和 Screen Space - Overlay类似。<br>但是它是被场景中某个指定的camera来渲染的。<br>这使得screen space UI可以应用一些camera独有的设置。<br>最常见用法是使用一个透视摄像头来使UI有一定深度感。<br>在此模式下，canvas会自动填充摄像头的视野。</p>
+<p>当摄像机的viewport设置修改时也会自动调整大小。<br>在此模式下rect transform组件也会完全由canvas驱动。<br>此模式下有几个选项，包括pixel perfect。</p>
+<p>render camera用来设置渲染此canvas上UI元素的摄像机，此项留空，canvas组件会使用screen space - overlay 的设置来渲染canvas。<br>当选中screen space - camera 而且设置了一个摄像机时，UI元素会被移动到这个摄像机的视口内并且调整大小。这允许UI与游戏对象在场景中分开渲染。要控制UI在场景中渲染的位置，使用Plane Distance来移动canvas，使其靠近或者远离摄像机。</p>
+<p>需要注意，plane distance必须在其选择的摄像头内的clipping planes设置中near和far范围内才能被渲染。</p>
+<p>使用Screen Space - Camera时，canvas可以被场景中的任何一个摄像机渲染。<br>要使一个canvas及其内的元素与场景中其他摄像机隔离的话，调整摄像机的clear flags，culling mask和depth等参数。</p>
+<p>World Space渲染模式下，UI元素可以在场景内部被渲染。这些UI元素可以是场景中的静态对象，也可以是移动对象，比如对话气泡，或者场景中跟随游戏对象的角色名签。<br>首先需要注意的是World space下的canvas，不会再直接驱动rect transform了，canvas可以放置在世界范围内的任意位置，canvas可以放置在世界范围内的任意位置，因为场景中可以有多个canvas，如果需要的话完全可以为world space UI元素创建新的canvas，需要设置Event Camera来接收事件，并且确定哪一个摄像机来检测事件，如UI点击事件，大多数情况下，选择 screen space warld时，这个event camera会这职位渲染整个场景的摄像机。</p>
+<p>receives Events 指示是否canvas上的UI元素会接收到点击或者悬浮等事件。不选择这个选项时，canvas的所有子节点都将忽略事件，Sorting Order 和 Order in LayerSorting 用来控制canvas的渲染顺序。顺序指与场景中的其它渲染器比较，Sorting Order和Order in layer会在canvas组件上显示，只能在选择screen space - camra或者world space时设置。</p>
+<p>一个canvas内的UI元素按照从上到下的顺序渲染，意思是第一个元素被渲染在最后。要改变UI元素顺序的话，直接修改层次中的顺序就行了。</p>
+<p><strong>Rect Transform</strong><br>Rect Transform是一个新的组件，用来在元素上代替常见的transform组件，鉴于transform组件代表了3D对象在场景内的位置，旋转以及播放。<br>Rect Transform代表了一个2D矩形，其形状由与轴心点关联的宽和高来定义。不过组件内还是包含了一个z轴位置，同时也有旋转和缩放设置，所以这个元素可以在场景中当成3d对象来操作。</p>
+<p>rect transform与传统的transform相比，一个重要的区别在于锚点的概念，一个rect transform可以锚定到期父节点上，如果这个父节点也拥有一个rect transform组件的话，锚定之后，UI元素可以基于父节点UI上的rect transform的位置以及大小进行拉伸和移动。</p>
+<p>canvas自身也有一个rect transform，那么几乎所有情况下，一个UI元素的父结点都会有一个rect transform，某种意义上UI元素最终都会锚定到其父结点上。</p>
+<p>在场景视图中，操作UI元素时，最好使用Rect工具，Rect工具可以通过点击</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/21/%E7%94%A8unity%E5%81%9A%E4%B8%80%E4%B8%AAflabby-bird/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tonzinonin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonzinonin 的 博 客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/21/%E7%94%A8unity%E5%81%9A%E4%B8%80%E4%B8%AAflabby-bird/" itemprop="url">用unity做一个flabby bird</a></h1>
         
 
         <div class="post-meta">
@@ -1093,1206 +2181,6 @@ public class Destroy : MonoBehaviour
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/19/unity-2d%E4%B8%8E%E8%84%9A%E6%9C%AC-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tonzinonin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tonzinonin 的 博 客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/19/unity-2d%E4%B8%8E%E8%84%9A%E6%9C%AC-1/" itemprop="url">unity 与脚本语言与C#初入门</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-19T14:57:16+08:00">
-                2020-02-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Unity/" itemprop="url" rel="index">
-                    <span itemprop="name">Unity</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Unity/C-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index">
-                    <span itemprop="name">C#编程语言</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>warning–这是很个人化的unity脚本笔记，由于本人有过编程经验(虽然也很渣就是)，所以对于我来说比较基础的或了解过的东西在这里不会细讲，详情可以去官方文档搜索更加详细的脚本教程。</strong></p>
-<p><strong>理解unity脚本</strong><br>在unity中，脚本应该被视为一种行为组件。<br>与unity的其它组成相同，他们也可以添加到游戏对象上。<br>可以为游戏对象添加更多的行为模式。<br>可以在项目栏创建脚本，并且把脚本拖到游戏对象上。<br>也可以到“添加组件”里，添加在你项目栏存在的游戏脚本。<br>也可以到组件-script 添加你想要的脚本。<br>unity的脚本支持 Javascript，C#，Boo（Boo是python的衍生，很少用）编写。</p>
-<p><strong>变量与函数</strong><br>C#声明变量和函数的方式，和C++类似。<br>变量： type nameOfVariable = value;<br>可以对变量进行各种赋值，运算的操作。<br>start函数，在脚本依附的对象进入场景时调用，可以通过Debug.Log()来获取变量值，如果我们想看到这个值，可以在unity 播放模式下的控制台中看到（前提是你的脚本放在了游戏对象中）。<br>函数：typeOfReturn nameOfFunction(type nameOfparameter)<br>不作任何的返回值的操作的函数的type一般是void。<br>以下是代码：<br>    using System.Collections;<br>    using System.Collections.Generic;<br>    using UnityEngine;</p>
-<pre><code>using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class NewBehaviourScript : MonoBehaviour//声明类
-{
-    int myint = 6;//声明一个变量，并且赋值为6.
-
-    void Start()
-    {
-        myint = Text(myint);//调用函数
-        Debug.Log(myint);//调用变量
-    }
-
-   int Text(int x)//声明一个int类型的变量，定义整型参数为x
-    {
-        return x * 2;//返回参数
-    }
-}</code></pre><p><strong>脚本规范与语法</strong><br>点操作符，可以让你分开或者访问到unity里一个复合对象的元素（复合对象就是包含了很多元素的对象）。<br>句号-出现在代码的中间，它的工作方式类似于写地址。<br>分号-分号用来完结一个语句（除了使用花括号的语句）。<br>花括号-缩进-可以展现出代码的功能结构（shift+Tab可以对选中内容缩进）。<br>右斜杠-注释，双右斜杠进行代码注释，注释的内容将不会被执行。<br>或者用这种方式多行注释：<br>    /*How<br>     are<br>     you?<br>     * */</p>
-<p><strong>C#与Javascript脚本的区别</strong></p>
-<p>unity的脚本里都包含一个或更多的类<br>C#脚本会写上class声明。<br>Javascript则被隐藏了<br>意思是你在这里写都会自动包含到类中。</p>
-<p>C#的声明变量type nameOfVariable = value;其中type可以是int或float之类的类型。<br>在js中，变量声明以var关键字为起始。var nameOfVariable :type = value。<br>顶部的#pragma strict会强制你选择一种类型。</p>
-<p>C#的函数声明typeOfReturn nameOfFunction(type nameOfparameter)无返回值时typeOfReturn为void。<br>Js的函数声明，以function关键字开始。function nameOfFunction(nameOfparameter : type)，可以用冒号指定返回值类型。</p>
-<p>默认访问修饰符(Default Private)：<br>C#是private。<br>Javascript里默认是public。</p>
-<p><strong>分支与循环</strong><br>C#的ifelse语句和c++类似，满足if()括号里的条件执行if下的语句，如果条件不满足而且if语句下接了else的话，执行else语句。可以用这种方式处理分支结构。</p>
-<p>C#的循环语句和C++类似，有while循环，do while循环，for循环，foreach循环。<br>foreach适合遍历集合，比如数组。<br>foreach循环用foreach关键字，后接圆括号，在括号定义一个与需要遍历的集合元素相同类型的变量。<br>    using System.Collections;<br>    using System.Collections.Generic;<br>    using UnityEngine;</p>
-<pre><code>public class aboutre : MonoBehaviour
-{
-    void Start()
-    {
-        string[] strings = new string[3];//创建含有三个字符串的数组
-
-        strings[0] = &quot;first&quot;;
-        strings[1] = &quot;second&quot;;
-        strings[2] = &quot;third&quot;;
-
-        foreach(string item in strings) {//定义一个与需要遍历的集合元素相同类型的变量 item，
-                                        //后接关键字in,后接需要遍历的集合的名字。
-            print(item);//在循环体里打印上面创建的item的值，每次循环后，item的值会变成集合下一个元素的值。
-        }
-    }
-}</code></pre><p>需要注意的是，用foreach时不能修改被遍历的集合中的元素。</p>
-<p><strong>unity的作用域和访问控制符</strong><br>变量的作用域就是指，代码中变量可以被使用的范围，就如c++的局部变量和全局变量的概念。</p>
-<p>public和private访问控制符，可以定义在类中的变量。<br>与定义在函数中的不同，他们有访问控制符的属性。<br>访问控制符是声明变量时放在数据类型前的关键字，其作用是定义变量或者函数的可见范围。<br>通常，如果其它脚本需要访问变量或者函数，那么它应该是public的，否则就是private的。</p>
-<p>变量声明为public意味着它可以在类之外被访问，同时意味着这个变量可以在Unity的检视视图显示并且修改，使用户在测试游戏时修改变量。<br>如果变量在类里初始化为某个数，那么它会被检视视图设置的值覆盖。<br>但是如果值设置在start()和Awake()这类函数里，这些都发生在检视视图操作以后，就不会被覆盖。所以，尽管public的变量可以在组件里修改，你还是可以在运行时通过脚本来修改它。</p>
-<p>private的变量通常只能在类内部修改，C#中不特殊指明时，默认的访问控制符是private。</p>
-<p><strong>Awake()和Start()</strong><br>Awake和Start函数在脚本被加载时自动被调用。<br>Awake会在脚本不使用时先被调用。适合在里面设置脚本间的引用和初始化操作。<br>Start在Awake之后被调用，在第一次调用Update之前，但只在脚本被使用时出现，这意味着你可以使用Start来处理任何你需要在脚本使用后才能发生的事，这允许你推迟任何初始化代码直到其真正需要为止。<br><em>比如一个enemy进入游戏，使用Awake将弹药数量添加到他的身上，但是只能在Start函数中赋予其射击的能力，在脚本组件被使用时。</em><br>    using System.Collections;<br>    using System.Collections.Generic;<br>    using UnityEngine;</p>
-<pre><code>public class aboutre : MonoBehaviour
-{
-    void Awake() {//播放时不执行脚本，控制台上只执行这段命令
-        Debug.Log(&quot;Hello&quot;);
-    }
-    void Start() {//播放时执行脚本，控制台也会执行这段命令
-        Debug.Log(&quot;World!&quot;);
-    }
-}</code></pre><p>需要注意，Start和Awake在脚本的生命周期内只会被调用一次。所以不能去通过使用被使用的脚本来重复使用Start函数(禁止套娃！)。<br><em>Start是唯一一个可以绕过自己编制计数器使用延迟的函数。</em></p>
-<p><strong>Update()和FixedUpdate()</strong><br>Update可能是Unity里最常用的函数。<br>他在每帧，每个使用它的脚本上被调用一次。<br>几乎所有需要周期性修改调整的东西都发生在这。<br>  <em>非物理对象的移动</em><br>  <em>简单的计时器</em><br>  <em>输入检测</em><br>都是常在Update里做的事。<br>Update不是按照规则的时间间隔被调用的，如果每帧的处理时间比其后的长。</p>
-<p>FixedUpdate和Update类似，但是有几处不同。<br>他被调用的时间线是规则的，调用之间的时间间隔也是不同的。<br>FixedUpdate结束之后，紧接着，任何必要的物理计算开始进行。<br>因此，任何影响物理对象的操作，都该在FixedUpdate里执行。<br>在FixedUpdate处理物理效果时，最好用力来触发运动。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/17/unity-2d%E4%B8%8E%E5%8A%A8%E7%94%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tonzinonin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tonzinonin 的 博 客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/17/unity-2d%E4%B8%8E%E5%8A%A8%E7%94%BB/" itemprop="url">unity-2d的简单动画和控制</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-17T10:17:31+08:00">
-                2020-02-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Unity/" itemprop="url" rel="index">
-                    <span itemprop="name">Unity</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>animator</strong><br>搭好并调整角色的四肢，放在一个母对象下。<br>在母对象下，使用animator动画器组件。<br>资源菜单创建动画控制器，移到其动画组件上。<br>用动画器可以调整游戏对象的行为，通过加号按钮可以增加参数，右键结点可以在结点里建立过渡。<br>动画可以让你在灵活地调整动画对象的行为，可以导入动画或者在unity内自定义动画，可以对一个角色添加多个动画。<br>Entry节点是Animator变为活动状态并且开始在这里评估状态机。<br>黄色的节点是默认状态。</p>
-<p>过度菜单有一个 Has Exit Time，这意味这，一旦我们到了原状态，一秒之后就结束，他将会自动转换。</p>
-<p><strong>有关2d的移动控制</strong><br>1.直接修改transform<br>–transform.translate –按输入vector3的方向和大小移动，可以选择输入参照的坐标系。</p>
-<p>–vector3<br> –vector3.lerp -在两点间计算线性插值，可以用结果修改position，直线移动<br> –vector3.slerp -在两点间计算球形插值，用结果修改position，弧线移动<br> –vector3.movetowards -输入两点，及限制最大距离，返回一个不超过最大距离的点，直接移动。<br> –vector3.SmoothDamp -平滑的从A点逐渐移动到B点，可以设置移动总时间，最大速度，常见的用法是相机跟随目标。</p>
-<p>2.修改rigidbody<br>–velocity -速度<br>–AddForce -施加力<br>–MovePosition -移动位置<br>–使用时应该在fixedUpdate，因为是按照物理引擎更新进度更新的，UpdatehefixedUpdate不是一个节奏，而且需要注意描述里写的条件和影响结果。</p>
-<p>3.CharacterController并不适用于2D</p>
-<p><strong>blend tree</strong><br>创建过渡只能用Greater和less两个条件。<br>blend tree可以使用区间。<br>创建blend后双击，可以进入blend tree的检视菜单。<br>到里面兴建运动域，然后把你的动画放上，可以调节动画播放的时间和过度效果<br>blend tree有很多优点，详情可以查看官方文档。</p>
-<p><strong>地面检测</strong><br>建立空对象，放在游戏对象下，提供游戏对象与地面接触的坐标，可用来检测游戏对象的脚下是不是地面。<br>linecast，可以通过划线的方式检测地面，详情可以见官方文档。<br>还有一种方法，overlap覆盖检测</p>
-<p>如果用垂直速度来控制跳跃动画的播放，可以优化跳跃动画。<br>把动画过渡间的过度值去掉，可以减少动画播放的延迟。</p>
-<p><strong>UI</strong><br>可以在hierarchy菜单下创建，这个操作将会为我们自动做一些事。<br>创建Canvas对象，ui成为它的子对象，我们制作的任何ui对象都需要canvas的子对象才能被渲染。<br>他还创建了一个EventSystem，如果我们需要与按钮或滑块等ui交互，我们需要它。</p>
-<p>在锚点预设按住alt键可以编辑ui的位置。</p>
-<p>shadow组件可以在对象上添加阴影。</p>
-<p><strong>2d平台游戏角色的移动脚本</strong></p>
-<pre><code>using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class animation : MonoBehaviour
-{   //实现角色的移动，跳跃，多段跳
-    public float maxSpeed = 6f; //设置最大速度
-    bool isfacingright = true;//角色朝向默认设为true
-    Animator anim;
-    Rigidbody2D rbody2D;
-    bool grounded = true; //定义一个判断器来检测角色是不是在地面上。
-    public Transform GroundChecker;//地板判断器的坐标
-    float checkredius = 0.2f;//检测半径
-    public LayerMask whatisground; //决定在哪些层上检测地面
-    public float jumpforce = 700f; //跳跃的力
-
-    //bool doublejump = false;//多段跳的条件
-
-    void Start() {
-        anim = GetComponent&lt;Animator&gt;();//获取animator组件。
-        rbody2D = GetComponent&lt;Rigidbody2D&gt;();//获取刚体组件
-    }
-
-    public void FixedUpdate() {
-        anim.SetFloat(&quot;Vspeed&quot;, rbody2D.velocity.y);//将Vspeed设置为垂直方向上的速度，这个可以用来做跳跃的动画。
-        grounded = Physics2D.OverlapCircle(GroundChecker.position,checkredius,whatisground);//检测地面碰撞。
-                                                       //GroundChecker为圆心，checkredius为半径进行地面检测。
-        anim.SetBool(&quot;grounded&quot;,grounded);//设置一个变量，动画控制器里的变量，把它的值和grounded返回的值一样。
-
-        //doublejump = false;
-
-        float direction = Input.GetAxis(&quot;Horizontal&quot;);//接收水平方向上的输入，&lt;-取负值,-&gt;取正值。
-        anim.SetFloat(&quot;Speed&quot;, Mathf.Abs(direction * maxSpeed));//设置Speed参数的值，并且对它取绝对值，
-        rbody2D.velocity = new Vector2(direction * maxSpeed, rbody2D.velocity.y);//改变刚体物件的速度
-
-        if (direction &gt; 0 &amp;&amp; isfacingright == false)//检测翻转
-        {
-            Flip();
-        }
-        else if (direction &lt; 0 &amp;&amp; isfacingright == true)
-        {
-            Flip();
-        }
-    }
-
-    void Update() {
-        //实现跳跃和多段跳
-        if ( (grounded || !doublejump) &amp;&amp; Input.GetKeyDown(KeyCode.Space)) {
-            grounded = false;
-            rbody2D.AddForce(new Vector2(0, jumpforce));//在y轴上添加一个力
-
-            /*if (!grounded &amp;&amp; !doublejump)
-            {
-                doublejump = true;
-            }*/
-        }
-    }
-
-    void Flip() {//实现翻转
-        isfacingright = !isfacingright;//对当前朝向取反
-        Vector3 scale = transform.localScale;//角色相对坐标
-        scale.x *= -1;//对坐标取反
-        transform.localScale = scale; 
-    }
-}</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/16/unity-2d%E4%B8%8E%E7%89%A9%E7%90%86-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tonzinonin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tonzinonin 的 博 客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/16/unity-2d%E4%B8%8E%E7%89%A9%E7%90%86-2/" itemprop="url">unity 2d与物理 2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-16T22:58:53+08:00">
-                2020-02-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Unity/" itemprop="url" rel="index">
-                    <span itemprop="name">Unity</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>2d铰链关节</strong><br>它允许精灵绕一个点旋转，同时受到2d刚体物理效果控制。<br>铰链关节最明显的用法是，利用绕着一个点转的精灵来创造一个门，也可以制作机器组件，钟摆，装了弹簧的暗门，一组添加了铰链关节的精灵组件绑在一起可以组成个锁链。<br>铰链关节的关键是精灵环绕的这个点，可以是场景中的一个点，也可以是另一个添加了刚体的精灵。<br>这个点由connected rigid body和其他两个锚点参数决定。</p>
-<p>把铰链关节链接到世界范围，或者场景内的一个点时，把connectd rigid body留空。把铰链关节链接到另外一个精灵上时，这个精灵必须有刚体组件。链接的时候需要创建对这个刚体组件的引用。<br>操作方法之一是直接拖拽想要链接的拥有刚体的精灵，拖拽到检视视图里，connect rigid body这个参数栏。<br>如果要定义锚点的精确位置，需要设置anchor（精灵要环绕的点，是相对于本地坐标空间的，这个点不需要在精灵的边界内）和connect anchor参数（代表这个点在场景中的位置，这个坐标值是相对于被连接的对象的，当链接到场景中世界位置时，这两个坐标是相对于世界范围内的，当链接到另外一个2d刚体时这些值都是在链接的对象本地坐标内的），这两个参数用来定义一个单独的锚点。<br>当绕着另外一个精灵旋转时，如果collide connected未选中，精灵将会忽略与被连接精灵的碰撞。</p>
-<p>use motor，当选中时，铰链关节会对精灵施加扭矩，旋转它。<br>motor speed是马达要达到的目标速度，单位是 角度/秒<br>maimum motor force是马达为达到目标速度可以施加的最大扭矩</p>
-<p>use limits，当选中时，铰链关节组件将防止精灵进行完整的旋转。<br>low angle代表旋转限制的最小角度。<br>upper angle代表旋转限制的最大角度。</p>
-<p>可以用这种方法制造暗门：利用限制条件防止暗门移动的太远，利用马达使暗门回复起始位置。</p>
-<p>chain：连接一组精灵，每个都添加刚体组件，作为链环。<br>每个环都用铰链关节链接到上面的环上，注意collide connected是未选中的。然后到下面加一些重物，达成自己想要的效果。<br>一个只限制最大距离的distance joint 2d（距离关节）组件被添加到这个重物上，可以限制其移动时，与上端链环的最大距离。</p>
-<p><strong>2d距离关节</strong><br>允许两个受到2d刚体物理控制的精灵，相互依附，并保持一个特定的距离。<br>距离关节将添加一个强制的限制，而不是利用一个平缓的力来维持指定的距离。<br>connected rigidbody属性是对所连接对象的刚体组件的引用，这里留空，代表世界范围内的一个点。<br>可以设置anchor和connected anchor参数，这两个参数用来分别定义一个单独的锚点。<br>当和另外一个精灵进行旋转时，可以确定精灵与被连接精灵是否相互碰撞。<br>distance代表两个精灵之间需要利用关节保持的距离。<br>max distance only将只保持最大距离，不选中的话，对象之间的距离会是固定的。</p>
-<p>可以仔细观察一下场景视图的gizmo，有一条连接两个锚点的线，有一个垂直于线上的标记，指示了场景中的距离数值，代表了关节需要在两个精灵间保持的距离。<br>当两个精灵移动到一个关节无法保持固定距离的位置，在这些情况下，引擎将对精灵施加作用力直到他们回到固定距离。</p>
-<p><strong>2d弹簧关节</strong><br>利用它和带有2d刚体组件的游戏对象，可以创建2d的弹簧，添加这个组件到需要的游戏对象时，可以通过组件菜单的physics 2d类别。<br>你可以添加弹簧关节组件到希望被弹簧所影响的某个对象上，但是这个对象同时需要被锚定到场景里某点。这个点由connected rigidbody参数决定。<br>可以设置anchor和connected anchor参数，这两个参数用来定义两个不同的锚点。</p>
-<p>distance代表了两点间的距离。<br>frequency代表了弹簧的强度值。<br>damping ratio取值范围是0-1，它允许你抑制弹簧的反应，减缓其对游戏对象的影响。</p>
-<p><strong>弹跳和滑动</strong><br>2D中，由四个部分一起来完成弹力球的制作。<br>代表球的精灵图像。<br>为图像在场景中提供物理实体的碰撞体组件。<br>附加到碰撞体组件的一种2D物理材质，用来定义摩擦系数和弹跳系数。<br>还有一个2d刚体组件，使球可以被物理作用力影响，包括重力等，可以参与物理事件（碰撞，触发器.etc）。</p>
-<p>制作一个弹力球时，先添加一个精灵图像到场景中，添加2d碰撞体组件到对象上，添加2d刚体组件。<br>添加2d物理素材，2d物理素材会放在项目视图里。创建2d物理材质的一种方法是 选择“create”-physics 2d material，这会在项目视图里创建一个新的物理材质，2d物理材质有两种属性friction（摩擦系数）和bounciness（弹跳系数），弹力球需要一个小的摩擦系数和一个大的弹跳系数。调整完后将物理材质拖拽放到2d碰撞体的materials参数栏。现在球不光会相应物理作用力以及其它场景中的碰撞体，还会在响应过程中产生弹跳行为。</p>
-<p>制作一个很滑的冰面时，2d刚体组件不是必需的，除非这个平台需要移动，其它的地方和弹力球的设置大同小异，只是弹跳系数和摩擦系数要调小。<br>如果平台需要移动，那么最好添加一个刚体组件到游戏对象上，同时标注运动学。</p>
-<p><strong>区域效果器</strong><br>可以对游戏对象施加力的作用。<br>在使用前需要给游戏对象设置碰撞器，选上“是触发器”，“由效果器使用”。</p>
-<p>可以调整力度，决定了这个效果器对游戏对象施加的力的大小。<br>可以调节角度，力角度相对于世界范围内计算，而不是对象的本地角度：<br>其数值按照逆时针增加：0-正右方，90-正上方，180-正左方。270-正下方。</p>
-<p><strong>点效果器</strong><br>官方教程这部分有涉及C#脚本，鉴于我脚本知识很疲弱，先把坑留到这里吧。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/16/unity%202d%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%BB%BA%E7%AB%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tonzinonin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tonzinonin 的 博 客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/16/unity%202d%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%BB%BA%E7%AB%8B/" itemprop="url">unity 2d的项目建立</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-16T19:55:04+08:00">
-                2020-02-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Unity/" itemprop="url" rel="index">
-                    <span itemprop="name">Unity</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>设置一个2d项目</strong><br>这个步骤可以在新建项目的时候完成。<br>也可以在菜单栏的编辑 - project setting - 编辑器 - 默认模式里 调整2d或3d。</p>
-<p><em>2d模式</em><br>代表预设情况下，输入的材质会被视为2d图片，场景视图也会预设为2d。<br>除此之外，unity 2d的工作流程是和现有的3d流程整合在一起的，所以如果你想要有3d元素在你的2d游戏里或2d元素在你的3d游戏里都没有问题。</p>
-<p><em>切换机位视角和正视图视角</em><br>工作面板上的2d按钮，点击它可以切换成3d的机位视角，再次点击切换回2d下的正视图视角。</p>
-<p><strong>界面介绍</strong><br>project窗口（以下简称项目栏）。<br>位于界面的左下角。<br>在此视图中，可访问和管理属于项目的资源，也可以访问素材商店。<br>可以收藏自己喜欢的素材，它将显示在favorite菜单下。</p>
-<p>scene窗口（场景栏）<br>可以在游戏和资源商店里切换。</p>
-<p>hierarchy窗口（对象栏）<br>在整个视图的右方，可以通过拖拽对游戏对象进行文件操作。</p>
-<p>inspector窗口（编辑栏）<br>对游戏资源进行参数的设置，是很核心的一个视图，不同类型的资源可以调节不同的参数。</p>
-<p>game窗口（游戏栏）<br>按钮：   功能：<br>显示屏     如果场景中有多个摄像机，可单机此按钮从摄像机列表中进行选择。默认情况下，此按钮设置为 Display 1，可以在摄像机模块中的target display下拉菜单下将显示分配给摄像机。<br>Aspect     可选择不同的值来测试游戏在具有不同宽高比的显示上的显示效果。<br>Low resolution Aspect Ratios    如果要模拟更旧显示屏的像素密度，请选中此框：选择长宽比后，此功能会降低game视图的分辨率。game视图处于非retina显示屏上时，此复选框始终处于启用状态。<br>scale滑动条     向右滚动放大更详细地检查游戏屏幕的区域。设备分辨率高于game视图窗口大小的情况下，该滚动条可以缩小视图以查看整个屏幕。<br>maximize on play：将game视图全屏<br>Mute audio：单击按钮启用，进入播放模式后可将游戏内的任何音频静音<br>stats：单击此按钮可以切换statistics覆盖层，其中包含有关游戏音频和图形的渲染统计信息，这对于在播放模式下监控游戏性能非常有用。<br>Gizmos：单击此按钮可切换辅助图标的可见性。要在播放模式下仅查看某些类型的辅助图标，单击gizmos</p>
-<p>工具栏<br>先简单介绍一下工具栏最核心的部位：播放，可以让你对游戏随时进行测试。<br>前面还有许多的按钮，可以对对象进行拖动，自由变换，旋转，调整比例。</p>
-<p><strong>build setting</strong><br>可以在菜单栏的文件下拉菜单中找到 build setting这个选项，可以将你制作的游戏点击“生成并运行”并选择路径，可以将你所做的游戏生成文件。<br>生成文件后可以调整一下分辨率之类的数值进行游戏，个人版生成游戏会出现unity的logo，玩了玩你的游戏后，可以按住alt+f4退出游戏。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/16/unity-2d%E4%B8%8E%E7%89%A9%E7%90%86-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tonzinonin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tonzinonin 的 博 客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/16/unity-2d%E4%B8%8E%E7%89%A9%E7%90%86-1/" itemprop="url">unity 2d与物理 1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-16T19:20:46+08:00">
-                2020-02-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Unity/" itemprop="url" rel="index">
-                    <span itemprop="name">Unity</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>2D物理引擎</strong><br>现在unity提供了2套不同的游戏引擎，2D一个、3D一个，3D引擎中有第三维度（z轴）。<br>physic 2d组件与对应的3d版本行为很相似，但尽管3D和2D物理能存在于同一场景中，但彼此之间不会交互。<br>2d和3d引擎的最决定性区别是在2d引擎中没有深度的概念，所有的2d物理只在x,y轴表现，这个片面的z轴是0值。<br>由于可以在3d模式下查看2d对象，也可以修改2d物理引擎作用下的游戏对象位置的z轴坐标。<br>需要注意的是所有的物理交互都发生在z轴的0值处。</p>
-<p>2d物理引擎有一些项目级别的设置。<br>edit-project settings-physics2D。<br>这些设置中包含一些详细参数。比如重力的方向和大小。默认材质，层间碰撞矩阵，还有很多其他。</p>
-<p>rigidbody2D，对游戏对象添加这个组件可以使它处在2d物理引擎的控制下。<br>rigidbody2D组件与碰撞体一起进行碰撞检测，能接受力和扭距，处理各种类型的关节，以及其他特别类型的2D物理行为，这个组件也用来跟踪，其所在物理对象的重要的物理属性，他拥有物体的质量参数，线性阻力和角阻力，受重力比例，以及其它属性。</p>
-<p>在每一个2d项目，在physics 2d setting里都有一个预设的重力值。<br>重力将会影响所有的添加了rigidbody的游戏对象。除非rigidbody被设置为忽略重力（将gravity scale设置为0）任何其它数值，都将会改变作用于物体的重力值，可以对每个游戏对象单独设置。</p>
-<p>如果对游戏对象添加一个2d碰撞体，他可以参与物理碰撞，和触发器事件。2d碰撞体允许游戏对象在2d场景中拥有物理形状，或者物理实体。有多种类型2d碰撞体可以与rigidbody2d（以下简称rb2d）一起工作，圆形，盒状，线型，多边形 碰撞体。每一个碰撞体都有一组不同的行为，可以在不同的环境中选择使用。</p>
-<p>添加了rb2d组件的游戏对象，可以使用一些joint 2d（2d关节类型）组件，添加了该组件游戏对象可以参与更复杂的，特殊的物理行为。2d关节组件允许游戏对象以场景内某点或某个对象为锚点，并对此锚点做出物理反应。</p>
-<p>碰撞体的表面属性由特殊类型的材质决定。这种材质是2d物理材质资源。两个拥有2d碰撞体的物体碰撞时，2d物理材质用来控制其摩擦和弹跳行为。</p>
-<p><strong>rigidbody2D刚体组件</strong><br>点击add component - physics 2d - rb2d可以设置物体的物理参数。<br>所有参与交互的对象都必须拥有2D碰撞组件，同时其中至少有一个拥有rb2d插件。<br>点击component-physics 2d-box collider<br>2d碰撞体会自动匹配精灵的大小。<br>rb2d组件，除了允许游戏对象被2d物理影响，也用来定义游戏对象的一些重要物理属性。</p>
-<p>2d刚体（rigidbody）的质量越大，就需要更多的力来移动，与其它对象碰撞时也会产生更大的效果。<br>线型阻力影响2d刚体的移动速度。<br>角阻力会影响它的旋转或者角速度。<br>重力比例控制重力如何影响2D刚体，与直接修改全局的重力值不同，重力比例允许对每个游戏对象进行精确控制，重力比例越小。物体下落速度越慢，设置为0时，忽略重力。<br>选中fixed angle（固定角度）时，rb2d会受到2d物理中力的影响，但不会旋转。<br>选中is kinematic（是否运动学）rb2d被认为是运动学物体。不会被2d物理的力影响，包括重力和碰撞，这种情况一般发生在，不使用物理引擎和物理力，去移动一个有2d碰撞体的对象。在游戏进行移动一个2d碰撞体时，非常建议把rb2d组件也加上，然而我们不想这个平台受到其它作用力影响，这种情况下可以把is kinematic打开。<br>interpolate（插入）设置用来平滑游戏对象的运动，当游戏对象被rb2d移动时发生抖动，使用interpolate来帮助平滑它的变换运动（根据上一帧的位置来平滑）<br>sleeping mode控制刚体如何休眠来节约处理时间。never sleep将禁止休眠，start awake保证rb2d在被实体化时是唤醒状态，start sleeping将初始化rb2d为休眠，但是可以被碰撞唤醒。<br>collision detection设置，用于控制rb2d上的碰撞检测机制类型。离散类型：此时，只有游戏对象的2d碰撞体，在一个物理更新时，与其他碰撞体接触，才产生碰撞事件；连续检测适用于快速移动的物体，当游戏对象在两个更新之间可能发生了碰撞时，就产生碰撞事件。</p>
-<p><strong>2d碰撞组件</strong><br>一个游戏对象必须使用碰撞体组件来定义它的物理外形，同时与相关的物理引擎交互。<br>添加2d碰撞体组件，有四种2d碰撞组件可供选择：<br>2d圆形碰撞体，2d方形碰撞体，2d多边形碰撞体，2d边缘碰撞体。<br>这些碰撞体组件有很多相同的参数，因为都继承自同一个通用基础2d碰撞体，但每一个碰撞体都为一种特殊的形状做了优化。</p>
-<p>多边形碰撞体和边缘碰撞体很相似，他们都由一组点或者顶点，及点间的连线组成，他们的主要区别是，多边形碰撞体必须是覆盖一块区域的封闭图形，边缘碰撞体必须是开放的，用于定义一个或多个段的边缘，所以它适合用于创造单个的固定表面。</p>
-<p>所有的碰撞体在检视视图中有2个相同参数；<br>is trigger（是否触发器）用来将碰撞体设置为触发器碰撞体，2d触发器碰撞体不参与碰撞，而且发出的是触发器消息，而不是碰撞消息，这些触发器消息可以用来在场景里加人新的动作；<br>material（材质）参数是对2d碰撞体所用的2d物理材质的引用，可以设置为none（空），物理材质用来定义当碰撞体相互碰撞时的反应，可以定义弹跳系数和表面摩擦力。<br>其余独有参数用来定义特定碰撞体的形状。</p>
-<p>2d碰撞体必须被添加到游戏对象上使用，可以点击Add Component button选择physics 2d选择一个collider2d组件添加2d碰撞体。</p>
-<p>添加了碰撞体组件后，unity会尝试将碰撞体尺寸匹配精灵的尺寸，如果对碰撞体的形状和尺寸不满意，可通过修改检视视图的参数修改形状，或者在场景视图内直接修改碰撞体（在场景视图编辑碰撞体时，按住shift，这会在2d碰撞体gizmo上显示一些操作点，这些操作点可以拖拽）<br>对于边缘碰撞体和多边形碰撞体，拖拽一个已存在的操作点，会移动碰撞体的顶点，改变其形状，而不是调整大小，将鼠标放到边缘碰撞体和多边形碰撞体的一个空白的边上，点击就能创建一个新的顶点，按住ctrl点击顶点可以将其删除。</p>
-<p>一个性能最优的常用模式是：只添加2d碰撞体，不添加rigidbody组件，对所有参与2d物理交互的，静态或不会移动的物体。<br>同时添加2d碰撞体和rigidbody组件，对场景内的交互中，动态且可移动的对象。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/16/%E5%88%9D%E8%AF%86unity%EF%BC%8C%E4%B8%80%E6%AC%BE%E5%B7%A5%E4%B8%9A%E7%BA%A7%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tonzinonin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tonzinonin 的 博 客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/16/%E5%88%9D%E8%AF%86unity%EF%BC%8C%E4%B8%80%E6%AC%BE%E5%B7%A5%E4%B8%9A%E7%BA%A7%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" itemprop="url">初识unity</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-16T17:55:04+08:00">
-                2020-02-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Unity/" itemprop="url" rel="index">
-                    <span itemprop="name">Unity</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>又开了个新坑……</p>
-<p>还是非常非常大的坑……</p>
-<p><strong>首先简单介绍一下 unity：</strong><br>unity是一款游戏引擎，支持用C#，javascript写脚本。虽然说是游戏引擎，但是其功能其实不只是制作游戏，还可以制作模型，虚拟现实，制作动画等等。</p>
-<p>unity自2015年起已经可以免费下载，并具有unity专业版的大部分功能。</p>
-<p><strong>如何下载unity？</strong><br>搜索unity官网，到官网下载个人版。<br>如果有钱也可以买专业版，毕竟专业版的功能更多，界面也更漂亮。</p>
-<p><strong>building a project</strong><br>下载好软件，点击进入，会提醒你要创建一个unity关联的账户。<br>注册好账户之后，可以进行立项，unity会内置给你一个小demo，可以用它来体验一下。</p>
-<p>这里我选择的是2d模式，因为本人的方向就是2d，<strong>把话说在前头，我博客里的unity文章，将大部分是与unity 2d有关的内容</strong>，但这并不意味着我不会涉及3d，<strong>之所以少用3d，是因为家里电脑配置不允许</strong>，以后有机会，我多会尝试与3d有关的内容。</p>
-<p><strong>具体的学习路线：</strong><br>总结了一下之前学ps的经验，这次我会在学习的过程中进行更多实践<br>由于unity这款软件的特殊性，我针对unity的学习曲线不会很系统，我会面向自己的项目学习，也就是用一个个的案例来学习，也就是先把基础打好，与其用一次性用大量的资源去造出个破烂一样的车来，不如先去把车轮子这些零件造好，之后再去造车就得心应手了。</p>
-<p>经过知乎查询和各路博客，我收集了一些学习资源，并根据各路人的意见大致总结了以下几点：<br>1.尽量跟着官方教程走。<br>2.unity的国内教程很多坑（siki算比较好的）。<br>3.学习unity可能有一点英文门槛，不过这不是重点，重点是C#编程语言的门槛。<br>4.c#语言好学，比c++简单，可以在学unity的时候同时学。</p>
-<p>学习路线规划：<br>先进入unity的the first project，进入后，unity会引导你大概要怎么做，先跟着他走就行，可以让你对unity有一个大概的认识。<br>使用unity官方文档，先把整体界面大致了解一下，之后如果有不懂的，随时可以到官方文档里查缺补漏。<br>b站的风农翻译的unity 2d 4.3官方教程<a href="https://www.bilibili.com/video/av3246302?p=6把他补了。" target="_blank" rel="noopener">https://www.bilibili.com/video/av3246302?p=6把他补了。</a><br>在学习的同时，制作自己的项目。</p>
-<p>先就到这里吧，等我把以上的步骤finish后，会回来更新的。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/16/unity-2d%E4%B8%8E%E7%B2%BE%E7%81%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tonzinonin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tonzinonin 的 博 客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/16/unity-2d%E4%B8%8E%E7%B2%BE%E7%81%B5/" itemprop="url">unity与sprite类型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-16T16:39:44+08:00">
-                2020-02-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Unity/" itemprop="url" rel="index">
-                    <span itemprop="name">Unity</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>精灵类型（sprite type）</strong><br>以精灵类型导入图片素材时，材质需要设置为sprite。如果项目已经被设置为2D，素材导入器会使用Sprite作为默认类型导入新的图片素材。如果图片素材导入时没有自动设置为sprite类型，可以手动在导入器中修改。<br>精灵类型有三个选项，单个，多个和图形。<br>当导入的图片素材只包含一个元素时选择单个，包含多个元素时选择多个。<br>打包标记：对素材打包进行标记，以后再补充<br>还可以调节一些参数：比如pixels to units（每单位像素数）决定了素材导入后的比例。<br>轴心：代表物体的中心，选中多个模式时，轴心设置选项为不可用。<br>需要对每个sprite在sprite editor中单独设置，点击sprite editor按钮，将用编辑器打开这个素材。<br>精灵类型素材不需要改动filter mode和per platform overrides（？）选项。<br>需要注意，图集和精灵表单的规格，可能超出图片素材默认的最大值2048，如果超出最大值，在导入过程中将会被调整为最大值。</p>
-<p><strong>精灵渲染器（sprite renderer）</strong><br>用来显示以精灵类型导入的图片素材，以便在2d和3d场景中使用。<br>这是一个精灵到渲染器的应用。</p>
-<p>颜色：可以改变sprite的颜色，colour也可以通过调整颜色的alpha通道值，控制sprite的透明度，。</p>
-<p>材质：默认情况下，新加入的精灵渲染器组件，使用的是默认材质，用默认材质渲染的精灵将不会被场景中的光照影响，将简单的最大亮度来渲染这个精灵。要使用光照的话，所选的材质必须需带有能够响应光照的shade（着色器）。<br>sprites diffuse类型专门为使用在精灵素材上优化过，当然也可以使用其它类型的shader，注意有一些shader是跟精灵渲染器不兼容的。<br>精灵使用标准的unity材质，但是精灵渲染器对材质的处理与mesh renderer（网格渲染器是不同的），主要区别是，不需要材质的纹理属性，精灵渲染器会使用一个兼容的材质中的shader，颜色以及其它属性，但不使用纹理属性。<br>如果所使用的材质中有一个调色（tint colour）属性，那么他将会与精灵的calour属性组合起来。<br>光照和材质会影响游戏性能，所以在使用光照和更加复杂的着色器时，最好找到场景中光照效果和性能之间的平衡点。</p>
-<p>对sprite进行翻转，更改绘制模式。</p>
-<p>sorting layer（排序图层）和order in layer（图层顺序）是系统决定sprite在哪层被绘制出来的参数。<br>所有的精灵渲染器，在创建时都会被放置在一个默认的sorting layer。</p>
-<p><strong>精灵编辑器（sprite editor）</strong><br>用来处理含有多个元素的图片，如图集或精灵表单。<br>只有精灵模式设置为多个时才能使用编辑器，设置为单个时无法使用编辑器。<br>点击sprite editor进入精灵编辑器的界面，编辑器是一个标准的unity窗口。<br>在编辑器内点击并圈入图中想要的元素，就可以创建出精灵，可以对边框进行自由变换的操作。<br>选中一个精灵时，编辑器窗口右下角出现一个精灵面板，显示出选中的精灵的详细信息。</p>
-<p>精灵编辑器顶部也有一些工具，讲一些主要的，切割菜单用来从图片中切割元素，自动创建精灵，切割类型可以是自动或者网格，自动适合切割单个的不规则的元素，比如一个图集，选择自动切割时，minimum size值决定了切割每个元素的最小大小，如果这个值设置的太大了，相互临近的小一些的元素会被合并在一起，形成一个大的精灵。<br>pivot（轴心）设置了所有精灵，从图片被切出来时的默认轴心点。<br>RGB Alpha按钮用来切换编辑器中的图片，以颜色模式还是以alpha通道模式来显示。<br>以上的步骤都完成后，点击slice按钮切割图片，生成单独的精灵并应用。<br>之后点击精灵旁边的三角符号可以看到它的子精灵“chidren”</p>
-<p><strong>排序图层（sorting layers）</strong><br>制作一个2d游戏时，必须要精确的控制物体的渲染顺序。<br>一种方法是控制精灵到摄像头之间的距离。<br>另一种方法是sorting layers。<br>排序图层与摄像头的位置无关，各排序图层之间被指定一定的顺序，在排序图层内的物体将按这一个顺序进行渲染。<br>在摄像头视野范围内精灵才会被渲染，如果需要更精确的控制，可以给单个精灵添加order in layer（图层顺序）值。</p>
-<p>有两种方式进入tags和layers设置面板。<br>从精灵渲染器组件选择sorting layer - add sorting layer或在编辑器内选择Edit - project setting - tags and layers。<br>在打开的面板中，可以对sorting layer 添加删除或者重新排序。<br>列表中有一个default layer，它不能被重命名或者删除，但是可以重新排序。<br>点击+，+一个图层。<br>点击名称区域可重命名图层<br>sorting layer列表顺序是从顶部到底部。<br>最先渲染的在后面。之后的层再前一层之上渲染。</p>
-<p>将一个精灵添加到某个sorting layer的操作是，选中一个精灵，在精灵渲染器组件里，使用sorting layer下拉菜单，选择一个sorting layer。</p>
-<p>需要注意，sorting layer和order in layer的参赛是全局的，在unity内所有的渲染器中都可以获取。<br>每个渲染器，包括粒子渲染器（particle renderers）都能指定一个sorting layer和order in layer<br>尽管只有精灵渲染器在检视视图里提供了这些参数，其他渲染器需要在脚本中使用这些参数。<br>设置渲染器的sorting layer时，把renderer.sortingLayerName参数设置为某个sorting layer的名称或者ID。<br>设置order in layer使用renderer.sortingorder参数。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2343,7 +2231,7 @@ public class animation : MonoBehaviour
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2354,7 +2242,7 @@ public class animation : MonoBehaviour
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2365,7 +2253,7 @@ public class animation : MonoBehaviour
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
