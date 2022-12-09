@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>unity与脚本语言与C#初入门 | 鼠鼠的鼠窝</title><meta name="author" content="tonzinonin"><meta name="copyright" content="tonzinonin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="warning–这是很个人化的unity脚本笔记，由于本人有过编程经验(虽然也很渣就是)，所以对于我来说比较基础的或了解过的东西在这里不会细讲，详情可以去官方文档搜索更加详细的脚本教程。 理解unity脚本在unity中，脚本应该被视为一种行为组件。与unity的其它组成相同，他们也可以添加到游戏对象上。可以为游戏对象添加更多的行为模式。可以在项目栏创建脚本，并且把脚本拖到游戏对象上。也可以到“添">
+<meta property="og:type" content="article">
+<meta property="og:title" content="unity与脚本语言与C#初入门">
+<meta property="og:url" content="https://tonzinonin.github.io/2020/02/19/unity%E7%9B%B8%E5%85%B3/unity%E4%B8%8E%E8%84%9A%E6%9C%AC-1/index.html">
+<meta property="og:site_name" content="鼠鼠的鼠窝">
+<meta property="og:description" content="warning–这是很个人化的unity脚本笔记，由于本人有过编程经验(虽然也很渣就是)，所以对于我来说比较基础的或了解过的东西在这里不会细讲，详情可以去官方文档搜索更加详细的脚本教程。 理解unity脚本在unity中，脚本应该被视为一种行为组件。与unity的其它组成相同，他们也可以添加到游戏对象上。可以为游戏对象添加更多的行为模式。可以在项目栏创建脚本，并且把脚本拖到游戏对象上。也可以到“添">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tonzinonin.github.io/img/R-C(3).jpg">
+<meta property="article:published_time" content="2020-02-19T06:57:16.000Z">
+<meta property="article:modified_time" content="2022-10-26T10:21:44.205Z">
+<meta property="article:author" content="tonzinonin">
+<meta property="article:tag" content="Unity 2d">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="Unity工具">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tonzinonin.github.io/img/R-C(3).jpg"><link rel="shortcut icon" href="/img/icon.png"><link rel="canonical" href="https://tonzinonin.github.io/2020/02/19/unity%E7%9B%B8%E5%85%B3/unity%E4%B8%8E%E8%84%9A%E6%9C%AC-1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'unity与脚本语言与C#初入门',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-10-26 18:21:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/OIP.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/R-C(3).jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">鼠鼠的鼠窝</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">unity与脚本语言与C#初入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-02-19T06:57:16.000Z" title="发表于 2020-02-19 14:57:16">2020-02-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-26T10:21:44.205Z" title="更新于 2022-10-26 18:21:44">2022-10-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Unity/">Unity</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Unity/C-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">C#编程语言</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="unity与脚本语言与C#初入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>warning–这是很个人化的unity脚本笔记，由于本人有过编程经验(虽然也很渣就是)，所以对于我来说比较基础的或了解过的东西在这里不会细讲，详情可以去官方文档搜索更加详细的脚本教程。</strong></p>
+<p><strong>理解unity脚本</strong><br>在unity中，脚本应该被视为一种行为组件。<br>与unity的其它组成相同，他们也可以添加到游戏对象上。<br>可以为游戏对象添加更多的行为模式。<br>可以在项目栏创建脚本，并且把脚本拖到游戏对象上。<br>也可以到“添加组件”里，添加在你项目栏存在的游戏脚本。<br>也可以到组件-script 添加你想要的脚本。<br>unity的脚本支持 Javascript，C#，Boo（Boo是python的衍生，很少用）编写。</p>
+<p><strong>变量与函数</strong><br>C#声明变量和函数的方式，和C++类似。<br>变量： type nameOfVariable &#x3D; value;<br>可以对变量进行各种赋值，运算的操作。<br>start函数，在脚本依附的对象进入场景时调用，可以通过Debug.Log()来获取变量值，如果我们想看到这个值，可以在unity 播放模式下的控制台中看到（前提是你的脚本放在了游戏对象中）。<br>函数：typeOfReturn nameOfFunction(type nameOfparameter)<br>不作任何的返回值的操作的函数的type一般是void。<br>以下是代码：<br>    using System.Collections;<br>    using System.Collections.Generic;<br>    using UnityEngine;</p>
+<pre><code>using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NewBehaviourScript : MonoBehaviour//声明类
+&#123;
+    int myint = 6;//声明一个变量，并且赋值为6.
+
+    void Start()
+    &#123;
+        myint = Text(myint);//调用函数
+        Debug.Log(myint);//调用变量
+    &#125;
+
+   int Text(int x)//声明一个int类型的变量，定义整型参数为x
+    &#123;
+        return x * 2;//返回参数
+    &#125;
+&#125;
+</code></pre>
+<p><strong>脚本规范与语法</strong><br>点操作符，可以让你分开或者访问到unity里一个复合对象的元素（复合对象就是包含了很多元素的对象）。<br>句号-出现在代码的中间，它的工作方式类似于写地址。<br>分号-分号用来完结一个语句（除了使用花括号的语句）。<br>花括号-缩进-可以展现出代码的功能结构（shift+Tab可以对选中内容缩进）。<br>右斜杠-注释，双右斜杠进行代码注释，注释的内容将不会被执行。<br>或者用这种方式多行注释：<br>    &#x2F;*How<br>     are<br>     you?<br>     * *&#x2F;</p>
+<p><strong>C#与Javascript脚本的区别</strong></p>
+<p>unity的脚本里都包含一个或更多的类<br>C#脚本会写上class声明。<br>Javascript则被隐藏了<br>意思是你在这里写都会自动包含到类中。</p>
+<p>C#的声明变量type nameOfVariable &#x3D; value;其中type可以是int或float之类的类型。<br>在js中，变量声明以var关键字为起始。var nameOfVariable :type &#x3D; value。<br>顶部的#pragma strict会强制你选择一种类型。</p>
+<p>C#的函数声明typeOfReturn nameOfFunction(type nameOfparameter)无返回值时typeOfReturn为void。<br>Js的函数声明，以function关键字开始。function nameOfFunction(nameOfparameter : type)，可以用冒号指定返回值类型。</p>
+<p>默认访问修饰符(Default Private)：<br>C#是private。<br>Javascript里默认是public。</p>
+<p><strong>分支与循环</strong><br>C#的ifelse语句和c++类似，满足if()括号里的条件执行if下的语句，如果条件不满足而且if语句下接了else的话，执行else语句。可以用这种方式处理分支结构。</p>
+<p>C#的循环语句和C++类似，有while循环，do while循环，for循环，foreach循环。<br>foreach适合遍历集合，比如数组。<br>foreach循环用foreach关键字，后接圆括号，在括号定义一个与需要遍历的集合元素相同类型的变量。<br>    using System.Collections;<br>    using System.Collections.Generic;<br>    using UnityEngine;</p>
+<pre><code>public class aboutre : MonoBehaviour
+&#123;
+    void Start()
+    &#123;
+        string[] strings = new string[3];//创建含有三个字符串的数组
+
+        strings[0] = &quot;first&quot;;
+        strings[1] = &quot;second&quot;;
+        strings[2] = &quot;third&quot;;
+
+        foreach(string item in strings) &#123;//定义一个与需要遍历的集合元素相同类型的变量 item，
+                                        //后接关键字in,后接需要遍历的集合的名字。
+            print(item);//在循环体里打印上面创建的item的值，每次循环后，item的值会变成集合下一个元素的值。
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>需要注意的是，用foreach时不能修改被遍历的集合中的元素。</p>
+<p><strong>unity的作用域和访问控制符</strong><br>变量的作用域就是指，代码中变量可以被使用的范围，就如c++的局部变量和全局变量的概念。</p>
+<p>public和private访问控制符，可以定义在类中的变量。<br>与定义在函数中的不同，他们有访问控制符的属性。<br>访问控制符是声明变量时放在数据类型前的关键字，其作用是定义变量或者函数的可见范围。<br>通常，如果其它脚本需要访问变量或者函数，那么它应该是public的，否则就是private的。</p>
+<p>变量声明为public意味着它可以在类之外被访问，同时意味着这个变量可以在Unity的检视视图显示并且修改，使用户在测试游戏时修改变量。<br>如果变量在类里初始化为某个数，那么它会被检视视图设置的值覆盖。<br>但是如果值设置在start()和Awake()这类函数里，这些都发生在检视视图操作以后，就不会被覆盖。所以，尽管public的变量可以在组件里修改，你还是可以在运行时通过脚本来修改它。</p>
+<p>private的变量通常只能在类内部修改，C#中不特殊指明时，默认的访问控制符是private。</p>
+<p><strong>Awake()和Start()</strong><br>Awake和Start函数在脚本被加载时自动被调用。<br>Awake会在脚本不使用时先被调用。适合在里面设置脚本间的引用和初始化操作。<br>Start在Awake之后被调用，在第一次调用Update之前，但只在脚本被使用时出现，这意味着你可以使用Start来处理任何你需要在脚本使用后才能发生的事，这允许你推迟任何初始化代码直到其真正需要为止。<br><em>比如一个enemy进入游戏，使用Awake将弹药数量添加到他的身上，但是只能在Start函数中赋予其射击的能力，在脚本组件被使用时。</em><br>    using System.Collections;<br>    using System.Collections.Generic;<br>    using UnityEngine;</p>
+<pre><code>public class aboutre : MonoBehaviour
+&#123;
+    void Awake() &#123;//播放时不执行脚本，控制台上只执行这段命令
+        Debug.Log(&quot;Hello&quot;);
+    &#125;
+    void Start() &#123;//播放时执行脚本，控制台也会执行这段命令
+        Debug.Log(&quot;World!&quot;);
+    &#125;
+&#125;
+</code></pre>
+<p>需要注意，Start和Awake在脚本的生命周期内只会被调用一次。所以不能去通过使用被使用的脚本来重复使用Start函数。<br><em>Start是唯一一个可以绕过自己编制计数器使用延迟的函数。</em></p>
+<p><strong>Update()和FixedUpdate()</strong><br>Update可能是Unity里最常用的函数。<br>他在每帧，每个使用它的脚本上被调用一次。<br>几乎所有需要周期性修改调整的东西都发生在这。<br>  <em>非物理对象的移动</em><br>  <em>简单的计时器</em><br>  <em>输入检测</em><br>都是常在Update里做的事。<br>Update不是按照规则的时间间隔被调用的，如果每帧的处理时间比其后的长。</p>
+<p>FixedUpdate和Update类似，但是有几处不同。<br>他被调用的时间线是规则的，调用之间的时间间隔也是不同的。<br>FixedUpdate结束之后，紧接着，任何必要的物理计算开始进行。<br>因此，任何影响物理对象的操作，都该在FixedUpdate里执行。<br>在FixedUpdate处理物理效果时，最好用力来触发运动。</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Unity-2d/">Unity 2d</a><a class="post-meta__tags" href="/tags/C/">C#</a><a class="post-meta__tags" href="/tags/Unity%E5%B7%A5%E5%85%B7/">Unity工具</a></div><div class="post_share"><div class="social-share" data-image="/img/R-C(3).jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/02/19/unity%E7%9B%B8%E5%85%B3/Unity%E4%B8%8E%E8%84%9A%E6%9C%AC-2/"><img class="prev-cover" src="/img/R-C(3).jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Unity与脚本-2</div></div></a></div><div class="next-post pull-right"><a href="/2020/02/17/unity%E7%9B%B8%E5%85%B3/unity-2d%E6%8E%A7%E5%88%B6%E5%99%A8/"><img class="next-cover" src="/img/R-C(3).jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">unity-2d角色控制器</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/09/13/unity%E7%9B%B8%E5%85%B3/Unity%E6%A3%80%E6%B5%8B%E7%89%A9%E4%BD%93/" title="Unity检测物体"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-13</div><div class="title">Unity检测物体</div></div></a></div><div><a href="/2020/09/13/unity%E7%9B%B8%E5%85%B3/Unity%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F%E6%8E%A7%E5%88%B6/" title="Unity音效系统控制"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-13</div><div class="title">Unity音效系统控制</div></div></a></div><div><a href="/2020/02/19/unity%E7%9B%B8%E5%85%B3/Unity%E4%B8%8E%E8%84%9A%E6%9C%AC-2/" title="Unity与脚本-2"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-19</div><div class="title">Unity与脚本-2</div></div></a></div><div><a href="/2020/09/13/unity%E7%9B%B8%E5%85%B3/Unity%E4%B8%8E%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/" title="Unity与动画系统"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-13</div><div class="title">Unity与动画系统</div></div></a></div><div><a href="/2020/02/19/unity%E7%9B%B8%E5%85%B3/unity%E4%B8%8E%E8%84%9A%E6%9C%AC-3/" title="unity与脚本-3"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-19</div><div class="title">unity与脚本-3</div></div></a></div><div><a href="/2020/02/29/unity%E7%9B%B8%E5%85%B3/unity%E4%B8%8E%E8%84%9A%E6%9C%AC-4/" title="unity与脚本-4"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-29</div><div class="title">unity与脚本-4</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/OIP.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">tonzinonin</div><div class="author-info__description">衬衫的价格是九磅十五便士</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tonzinonin" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/12/09/CPP%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93%E3%81%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" title="CPP标准模板库の打开方式">CPP标准模板库の打开方式</a><time datetime="2022-12-09T05:37:16.000Z" title="发表于 2022-12-09 13:37:16">2022-12-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/18/%E9%94%99%E9%A2%98%E9%9B%86/" title="错题集">错题集</a><time datetime="2022-11-18T04:45:42.000Z" title="发表于 2022-11-18 12:45:42">2022-11-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/16/python2/" title="python2">python2</a><time datetime="2022-11-16T14:45:22.000Z" title="发表于 2022-11-16 22:45:22">2022-11-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/15/c-%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" title="c++与面向对象编程">c++与面向对象编程</a><time datetime="2022-11-15T05:14:12.000Z" title="发表于 2022-11-15 13:14:12">2022-11-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/13/python/" title="python入门">python入门</a><time datetime="2022-11-13T13:23:17.000Z" title="发表于 2022-11-13 21:23:17">2022-11-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

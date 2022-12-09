@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>unity 2d与物理 1 | 鼠鼠的鼠窝</title><meta name="author" content="tonzinonin"><meta name="copyright" content="tonzinonin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="2D物理引擎现在unity提供了2套不同的游戏引擎，2D一个、3D一个，3D引擎中有第三维度（z轴）。physic 2d组件与对应的3d版本行为很相似，但尽管3D和2D物理能存在于同一场景中，但彼此之间不会交互。2d和3d引擎的最决定性区别是在2d引擎中没有深度的概念，所有的2d物理只在x,y轴表现，这个片面的z轴是0值。由于可以在3d模式下查看2d对象，也可以修改2d物理引擎作用下的游戏对象位置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="unity 2d与物理 1">
+<meta property="og:url" content="https://tonzinonin.github.io/2020/02/16/unity%E7%9B%B8%E5%85%B3/unity-2d%E4%B8%8E%E7%89%A9%E7%90%86-1/index.html">
+<meta property="og:site_name" content="鼠鼠的鼠窝">
+<meta property="og:description" content="2D物理引擎现在unity提供了2套不同的游戏引擎，2D一个、3D一个，3D引擎中有第三维度（z轴）。physic 2d组件与对应的3d版本行为很相似，但尽管3D和2D物理能存在于同一场景中，但彼此之间不会交互。2d和3d引擎的最决定性区别是在2d引擎中没有深度的概念，所有的2d物理只在x,y轴表现，这个片面的z轴是0值。由于可以在3d模式下查看2d对象，也可以修改2d物理引擎作用下的游戏对象位置">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tonzinonin.github.io/img/R-C(3).jpg">
+<meta property="article:published_time" content="2020-02-16T11:20:46.000Z">
+<meta property="article:modified_time" content="2022-10-26T10:21:44.203Z">
+<meta property="article:author" content="tonzinonin">
+<meta property="article:tag" content="Unity 2d">
+<meta property="article:tag" content="Unity工具">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tonzinonin.github.io/img/R-C(3).jpg"><link rel="shortcut icon" href="/img/icon.png"><link rel="canonical" href="https://tonzinonin.github.io/2020/02/16/unity%E7%9B%B8%E5%85%B3/unity-2d%E4%B8%8E%E7%89%A9%E7%90%86-1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'unity 2d与物理 1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-10-26 18:21:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/OIP.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/R-C(3).jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">鼠鼠的鼠窝</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">unity 2d与物理 1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-02-16T11:20:46.000Z" title="发表于 2020-02-16 19:20:46">2020-02-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-26T10:21:44.203Z" title="更新于 2022-10-26 18:21:44">2022-10-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Unity/">Unity</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="unity 2d与物理 1"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>2D物理引擎</strong><br>现在unity提供了2套不同的游戏引擎，2D一个、3D一个，3D引擎中有第三维度（z轴）。<br>physic 2d组件与对应的3d版本行为很相似，但尽管3D和2D物理能存在于同一场景中，但彼此之间不会交互。<br>2d和3d引擎的最决定性区别是在2d引擎中没有深度的概念，所有的2d物理只在x,y轴表现，这个片面的z轴是0值。<br>由于可以在3d模式下查看2d对象，也可以修改2d物理引擎作用下的游戏对象位置的z轴坐标。<br>需要注意的是所有的物理交互都发生在z轴的0值处。</p>
+<p>2d物理引擎有一些项目级别的设置。<br>edit-project settings-physics2D。<br>这些设置中包含一些详细参数。比如重力的方向和大小。默认材质，层间碰撞矩阵，还有很多其他。</p>
+<p>rigidbody2D，对游戏对象添加这个组件可以使它处在2d物理引擎的控制下。<br>rigidbody2D组件与碰撞体一起进行碰撞检测，能接受力和扭距，处理各种类型的关节，以及其他特别类型的2D物理行为，这个组件也用来跟踪，其所在物理对象的重要的物理属性，他拥有物体的质量参数，线性阻力和角阻力，受重力比例，以及其它属性。</p>
+<p>在每一个2d项目，在physics 2d setting里都有一个预设的重力值。<br>重力将会影响所有的添加了rigidbody的游戏对象。除非rigidbody被设置为忽略重力（将gravity scale设置为0）任何其它数值，都将会改变作用于物体的重力值，可以对每个游戏对象单独设置。</p>
+<p>如果对游戏对象添加一个2d碰撞体，他可以参与物理碰撞，和触发器事件。2d碰撞体允许游戏对象在2d场景中拥有物理形状，或者物理实体。有多种类型2d碰撞体可以与rigidbody2d（以下简称rb2d）一起工作，圆形，盒状，线型，多边形 碰撞体。每一个碰撞体都有一组不同的行为，可以在不同的环境中选择使用。</p>
+<p>添加了rb2d组件的游戏对象，可以使用一些joint 2d（2d关节类型）组件，添加了该组件游戏对象可以参与更复杂的，特殊的物理行为。2d关节组件允许游戏对象以场景内某点或某个对象为锚点，并对此锚点做出物理反应。</p>
+<p>碰撞体的表面属性由特殊类型的材质决定。这种材质是2d物理材质资源。两个拥有2d碰撞体的物体碰撞时，2d物理材质用来控制其摩擦和弹跳行为。</p>
+<p><strong>rigidbody2D刚体组件</strong><br>点击add component - physics 2d - rb2d可以设置物体的物理参数。<br>所有参与交互的对象都必须拥有2D碰撞组件，同时其中至少有一个拥有rb2d插件。<br>点击component-physics 2d-box collider<br>2d碰撞体会自动匹配精灵的大小。<br>rb2d组件，除了允许游戏对象被2d物理影响，也用来定义游戏对象的一些重要物理属性。</p>
+<p>2d刚体（rigidbody）的质量越大，就需要更多的力来移动，与其它对象碰撞时也会产生更大的效果。<br>线型阻力影响2d刚体的移动速度。<br>角阻力会影响它的旋转或者角速度。<br>重力比例控制重力如何影响2D刚体，与直接修改全局的重力值不同，重力比例允许对每个游戏对象进行精确控制，重力比例越小。物体下落速度越慢，设置为0时，忽略重力。<br>选中fixed angle（固定角度）时，rb2d会受到2d物理中力的影响，但不会旋转。<br>选中is kinematic（是否运动学）rb2d被认为是运动学物体。不会被2d物理的力影响，包括重力和碰撞，这种情况一般发生在，不使用物理引擎和物理力，去移动一个有2d碰撞体的对象。在游戏进行移动一个2d碰撞体时，非常建议把rb2d组件也加上，然而我们不想这个平台受到其它作用力影响，这种情况下可以把is kinematic打开。<br>interpolate（插入）设置用来平滑游戏对象的运动，当游戏对象被rb2d移动时发生抖动，使用interpolate来帮助平滑它的变换运动（根据上一帧的位置来平滑）<br>sleeping mode控制刚体如何休眠来节约处理时间。never sleep将禁止休眠，start awake保证rb2d在被实体化时是唤醒状态，start sleeping将初始化rb2d为休眠，但是可以被碰撞唤醒。<br>collision detection设置，用于控制rb2d上的碰撞检测机制类型。离散类型：此时，只有游戏对象的2d碰撞体，在一个物理更新时，与其他碰撞体接触，才产生碰撞事件；连续检测适用于快速移动的物体，当游戏对象在两个更新之间可能发生了碰撞时，就产生碰撞事件。</p>
+<p><strong>2d碰撞组件</strong><br>一个游戏对象必须使用碰撞体组件来定义它的物理外形，同时与相关的物理引擎交互。<br>添加2d碰撞体组件，有四种2d碰撞组件可供选择：<br>2d圆形碰撞体，2d方形碰撞体，2d多边形碰撞体，2d边缘碰撞体。<br>这些碰撞体组件有很多相同的参数，因为都继承自同一个通用基础2d碰撞体，但每一个碰撞体都为一种特殊的形状做了优化。</p>
+<p>多边形碰撞体和边缘碰撞体很相似，他们都由一组点或者顶点，及点间的连线组成，他们的主要区别是，多边形碰撞体必须是覆盖一块区域的封闭图形，边缘碰撞体必须是开放的，用于定义一个或多个段的边缘，所以它适合用于创造单个的固定表面。</p>
+<p>所有的碰撞体在检视视图中有2个相同参数；<br>is trigger（是否触发器）用来将碰撞体设置为触发器碰撞体，2d触发器碰撞体不参与碰撞，而且发出的是触发器消息，而不是碰撞消息，这些触发器消息可以用来在场景里加人新的动作；<br>material（材质）参数是对2d碰撞体所用的2d物理材质的引用，可以设置为none（空），物理材质用来定义当碰撞体相互碰撞时的反应，可以定义弹跳系数和表面摩擦力。<br>其余独有参数用来定义特定碰撞体的形状。</p>
+<p>2d碰撞体必须被添加到游戏对象上使用，可以点击Add Component button选择physics 2d选择一个collider2d组件添加2d碰撞体。</p>
+<p>添加了碰撞体组件后，unity会尝试将碰撞体尺寸匹配精灵的尺寸，如果对碰撞体的形状和尺寸不满意，可通过修改检视视图的参数修改形状，或者在场景视图内直接修改碰撞体（在场景视图编辑碰撞体时，按住shift，这会在2d碰撞体gizmo上显示一些操作点，这些操作点可以拖拽）<br>对于边缘碰撞体和多边形碰撞体，拖拽一个已存在的操作点，会移动碰撞体的顶点，改变其形状，而不是调整大小，将鼠标放到边缘碰撞体和多边形碰撞体的一个空白的边上，点击就能创建一个新的顶点，按住ctrl点击顶点可以将其删除。</p>
+<p>一个性能最优的常用模式是：只添加2d碰撞体，不添加rigidbody组件，对所有参与2d物理交互的，静态或不会移动的物体。<br>同时添加2d碰撞体和rigidbody组件，对场景内的交互中，动态且可移动的对象。</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Unity-2d/">Unity 2d</a><a class="post-meta__tags" href="/tags/Unity%E5%B7%A5%E5%85%B7/">Unity工具</a></div><div class="post_share"><div class="social-share" data-image="/img/R-C(3).jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/02/16/unity%E7%9B%B8%E5%85%B3/unity%202d%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%BB%BA%E7%AB%8B/"><img class="prev-cover" src="/img/R-C(3).jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">unity 2d的项目建立</div></div></a></div><div class="next-post pull-right"><a href="/2020/02/16/unity%E7%9B%B8%E5%85%B3/%E5%88%9D%E8%AF%86unity%EF%BC%8C%E4%B8%80%E6%AC%BE%E5%B7%A5%E4%B8%9A%E7%BA%A7%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"><img class="next-cover" src="/img/R-C(3).jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">初识unity</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/09/13/unity%E7%9B%B8%E5%85%B3/Unity%E6%A3%80%E6%B5%8B%E7%89%A9%E4%BD%93/" title="Unity检测物体"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-13</div><div class="title">Unity检测物体</div></div></a></div><div><a href="/2020/09/13/unity%E7%9B%B8%E5%85%B3/Unity%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F%E6%8E%A7%E5%88%B6/" title="Unity音效系统控制"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-13</div><div class="title">Unity音效系统控制</div></div></a></div><div><a href="/2020/02/19/unity%E7%9B%B8%E5%85%B3/Unity%E4%B8%8E%E8%84%9A%E6%9C%AC-2/" title="Unity与脚本-2"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-19</div><div class="title">Unity与脚本-2</div></div></a></div><div><a href="/2020/09/13/unity%E7%9B%B8%E5%85%B3/Unity%E4%B8%8E%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/" title="Unity与动画系统"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-13</div><div class="title">Unity与动画系统</div></div></a></div><div><a href="/2020/02/16/unity%E7%9B%B8%E5%85%B3/unity-2d%E4%B8%8E%E7%B2%BE%E7%81%B5/" title="unity与sprite类型"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-16</div><div class="title">unity与sprite类型</div></div></a></div><div><a href="/2020/02/17/unity%E7%9B%B8%E5%85%B3/unity-2d%E6%8E%A7%E5%88%B6%E5%99%A8/" title="unity-2d角色控制器"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-17</div><div class="title">unity-2d角色控制器</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/OIP.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">tonzinonin</div><div class="author-info__description">衬衫的价格是九磅十五便士</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tonzinonin" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/12/09/CPP%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93%E3%81%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" title="CPP标准模板库の打开方式">CPP标准模板库の打开方式</a><time datetime="2022-12-09T05:37:16.000Z" title="发表于 2022-12-09 13:37:16">2022-12-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/18/%E9%94%99%E9%A2%98%E9%9B%86/" title="错题集">错题集</a><time datetime="2022-11-18T04:45:42.000Z" title="发表于 2022-11-18 12:45:42">2022-11-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/16/python2/" title="python2">python2</a><time datetime="2022-11-16T14:45:22.000Z" title="发表于 2022-11-16 22:45:22">2022-11-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/15/c-%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" title="c++与面向对象编程">c++与面向对象编程</a><time datetime="2022-11-15T05:14:12.000Z" title="发表于 2022-11-15 13:14:12">2022-11-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/13/python/" title="python入门">python入门</a><time datetime="2022-11-13T13:23:17.000Z" title="发表于 2022-11-13 21:23:17">2022-11-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

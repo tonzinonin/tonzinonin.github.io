@@ -1,0 +1,656 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>python入门 | 鼠鼠的鼠窝</title><meta name="author" content="tonzinonin"><meta name="copyright" content="tonzinonin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前置文字部分几乎都refer自www.liaoxuefeng.com&#x2F;廖雪峰的python教程这么说本文可以算是纯纯的抄袭(不过代码部分大概百分之80是自己写的(本文章纯纯的自用 python中的一些语法细节2**10 &#x3D; pow(2,10); &#x3D; 1024a+b &#x3D; 一般是字符串相加，比如若a&#x3D;3,b&#x3D;1则a+b输出31print()会依次打印每">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python入门">
+<meta property="og:url" content="https://tonzinonin.github.io/2022/11/13/python/index.html">
+<meta property="og:site_name" content="鼠鼠的鼠窝">
+<meta property="og:description" content="前置文字部分几乎都refer自www.liaoxuefeng.com&#x2F;廖雪峰的python教程这么说本文可以算是纯纯的抄袭(不过代码部分大概百分之80是自己写的(本文章纯纯的自用 python中的一些语法细节2**10 &#x3D; pow(2,10); &#x3D; 1024a+b &#x3D; 一般是字符串相加，比如若a&#x3D;3,b&#x3D;1则a+b输出31print()会依次打印每">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tonzinonin.github.io/img/R-C(3).jpg">
+<meta property="article:published_time" content="2022-11-13T13:23:17.000Z">
+<meta property="article:modified_time" content="2022-11-19T03:43:41.465Z">
+<meta property="article:author" content="tonzinonin">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tonzinonin.github.io/img/R-C(3).jpg"><link rel="shortcut icon" href="/img/icon.png"><link rel="canonical" href="https://tonzinonin.github.io/2022/11/13/python/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python入门',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-11-19 11:43:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/OIP.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/R-C(3).jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">鼠鼠的鼠窝</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">python入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-13T13:23:17.000Z" title="发表于 2022-11-13 21:23:17">2022-11-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-19T03:43:41.465Z" title="更新于 2022-11-19 11:43:41">2022-11-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="python入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>前置文字部分几乎都refer自<a target="_blank" rel="noopener" href="http://www.liaoxuefeng.com/">www.liaoxuefeng.com/</a><br>廖雪峰的python教程<br>这么说本文可以算是纯纯的抄袭(<br>不过代码部分大概百分之80是自己写的(<br>本文章纯纯的自用</p>
+<p>python中的一些语法细节<br>2**10 &#x3D; pow(2,10); &#x3D; 1024<br>a+b &#x3D; 一般是字符串相加，比如若a&#x3D;3,b&#x3D;1则a+b输出31<br>print()会依次打印每个字符串，遇到逗号“,”会输出一个空格<br>Python允许在数字中间以_分隔<br>“”或者‘’都可以包含字符串<br>转义字符和c类似&#39; &quot;都可以用来输出’ “等<br>如果字符串内部有很多换行，用\n写在一行里不好阅读，为了简化，Python允许用’’’…’’’的格式表示多行内容<br>布尔值和布尔代数的表示完全一致，一个布尔值只有True、False两种值，要么是True，要么是False，在Python中，可以直接用True、False表示布尔值（请注意大小写），也可以通过布尔运算计算出来<br>这种变量本身类型不固定的语言称之为动态语言，与之对应的是静态语言。静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，就会报错。例如Java是静态语言<br>在Python中，通常用全部大写的变量名表示常量：PI &#x3D; 3.14159265359<br>&#x2F;除法计算结果是浮点数，即使是两个整数恰好整除，结果也是浮点数<br>还有一种除法是&#x2F;&#x2F;，称为地板除，两个整数的除法仍然是整数<br>%和c相同<br>Python的整数没有大小限制，而某些语言的整数根据其存储长度是有大小限制的，例如Java对32位整数的范围限制在-2147483648-2147483647<br>Python的浮点数也没有大小限制，但是超出一定范围就直接表示为inf（无限大）。</p>
+<p>所以，本着节约的精神，又出现了把Unicode编码转化为“可变长编码”的UTF-8编码。UTF-8编码把一个Unicode字符根据不同的数字大小编码成1-6个字节，常用的英文字母被编码成1个字节，汉字通常是3个字节，只有很生僻的字符才会被编码成4-6个字节。如果你要传输的文本包含大量英文字符，用UTF-8编码就能节省空间：</p>
+<p>在计算机内存中，统一使用Unicode编码，当需要保存到硬盘或者需要传输的时候，就转换为UTF-8编码。</p>
+<p>用记事本编辑的时候，从文件读取的UTF-8字符被转换为Unicode字符到内存里，编辑完成后，保存的时候再把Unicode转换为UTF-8保存到文件：</p>
+<p>对于单个字符的编码，Python提供了ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符：<br>如果知道字符的整数编码，还可以用十六进制这么写str：<br>print(‘\u4e2d’’\u6587’)<br>‘中文’</p>
+<p>以Unicode表示的str通过encode()方法可以编码为指定的bytes<br>如果bytes中包含无法解码的字节，decode()方法会报错</p>
+<p>要计算str包含多少个字符，可以用len()函数：</p>
+<p>由于Python源代码也是一个文本文件，所以，当你的源代码中包含中文的时候，在保存源代码时，就需要务必指定保存为UTF-8编码。当Python解释器读取源代码时，为了让它按UTF-8编码读取，我们通常在文件开头写上这两行：</p>
+<pre><code>#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+</code></pre>
+<p>第一行注释是为了告诉Linux&#x2F;OS X系统，这是一个Python可执行程序，Windows系统会忽略这个注释；</p>
+<p>第二行注释是为了告诉Python解释器，按照UTF-8编码读取源代码，否则，你在源代码中写的中文输出可能会有乱码。</p>
+<p>申明了UTF-8编码并不意味着你的.py文件就是UTF-8编码的，必须并且要确保文本编辑器正在使用UTF-8 without BOM编码：</p>
+<p>在Python中，采用的格式化方式和C语言是一致的，用%实现</p>
+<p>%d	整数<br>%f	浮点数<br>%s	字符串<br>%x	十六进制整数<br>%%  %作为转义字符使用输出结果为%</p>
+<p>format()<br>另一种格式化字符串的方法是使用字符串的format()方法，它会用传入的参数依次替换字符串内的占位符{0}、{1}……，不过这种方式写起来比%要麻烦得多：</p>
+<pre><code>&gt;&gt;&gt; &#39;Hello, &#123;0&#125;, 成绩提升了 &#123;1:.1f&#125;%&#39;.format(&#39;小明&#39;, 17.125)
+&#39;Hello, 小明, 成绩提升了 17.1%&#39;
+</code></pre>
+<p>continue语句的作用是结束本次循环</p>
+<p>set<br>set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。</p>
+<p>要创建一个set，需要提供一个list作为输入集合：</p>
+<pre><code>&gt;&gt;&gt; s = set([1, 2, 3])
+&gt;&gt;&gt; s
+&#123;1, 2, 3&#125;
+</code></pre>
+<p>注意，传入的参数[1, 2, 3]是一个list，而显示的{1, 2, 3}只是告诉你这个set内部有1，2，3这3个元素，显示的顺序也不表示set是有序的。。</p>
+<p>重复元素在set中自动被过滤：</p>
+<p>set可以看成数学意义上的无序和无重复元素的集合，因此，两个set可以做数学意义上的交集、并集等操作：</p>
+<pre><code>&gt;&gt;&gt; s1 = set([1, 2, 3])
+&gt;&gt;&gt; s2 = set([2, 3, 4])
+&gt;&gt;&gt; s1 &amp; s2
+&#123;2, 3&#125;
+&gt;&gt;&gt; s1 | s2
+&#123;1, 2, 3, 4&#125;
+</code></pre>
+<p>不可变对象, 有关对其的论述见廖雪峰使用dic和set的一节</p>
+<pre><code># -*- coding: utf-8 -*-
+print(&quot;goodness&quot;)
+print(&quot;hello&quot;,&quot;do you like van&quot;,&quot;van you see?&quot;)
+# print(&quot;a =&quot;)
+# a = input()
+# print(&quot;b =&quot;)
+# b = input()
+# c = a+b
+# print(&quot;a+b is&quot;,c)
+print(&#39;&#39;&#39;line1
+line2
+line114514&#39;&#39;&#39;)
+3&gt;5
+print(3&gt;5)
+print(1&gt;6 and 3&lt; 5)
+print(&quot;全世界都在说中国话&quot;)
+print(&#39;\u4e2d&#39;)
+ch  =  &#39;are you fine?&#39;
+kr = 1.412
+print(&quot;How are you %s %s you score is %.1f rank up %d&quot; % (&#39;bert&#39;,ch,kr,-1) )
+name  = &#39;我觉得这就是一种自信&#39;
+print(f&quot;fuck you &#123;name&#125; &#123;kr:.2f&#125;&quot;)
+print(2**10)
+r = 1.442
+print(&#39;&#123;&#125;成绩提升为&#123;&#125;&#39;.format(&#39;小明&#39;,r))
+classmates = [1,2,&#39;你好&#39;]
+print(classmates[0])
+print(classmates[1])
+print(classmates[2])
+print(classmates[-1])
+print(classmates[-2])
+print(classmates[-3])
+print(len(classmates))
+classmates2 = (1,2,[9,5,4])
+print(classmates2[1])
+print(classmates2[2,1])
+classmates2[2,1] = &#39;变&#39;
+print(classmates2[2,1])
+t = (&quot;你妈的电脑&quot;,)
+print(t)
+</code></pre>
+<p>输出</p>
+<pre><code>goodness
+hello do you like van van you see?
+line1
+line2
+line114514
+False
+False
+全世界都在说中国话
+中
+How are you bert are you fine? you score is 1.4 rank up -1
+fuck you 我觉得这就是一种自信 1.41
+1024
+小明成绩提升为1.442
+1
+2
+你好
+你好
+2
+1
+3
+2
+5
+变
+(&#39;你妈的电脑&#39;,)
+</code></pre>
+<hr>
+<pre><code># -*- coding: utf-8 -*-
+t = [[1],[2],[&#39;大&#39;,&#39;f&#39;]]
+print(t[2][1])# 2 dimension vector
+kr = (1,2,[&#39;你好&#39;,&#39;世界&#39;])
+for x in range(3): #from interge 0 to 2, number 3 tuple overflowed
+    print(kr[x])
+#kr[1] = 5 #TypeError: &#39;tuple&#39; object does not support item assignment
+#print(kr[1])
+kr[2][1] = &#39;去死吧&#39;#tuple 里面的 list的元素可以修改
+for x in range(3):
+    print(kr[x])
+print(t)
+l = t[1] + t[0]
+print(l) 
+l = t[1][0] + t[0][0]
+print(l)
+l = int(t[1][0])+int(t[0][0])
+print(l)
+l = float(t[1][0])+int(t[0][0])#datatype transformation
+print(&#39;%.1f&#39; % (l))
+l = float(t[1][0])+float(t[0][0])
+print(&#39;%.1f&#39; % (l))
+print(&#39;len = %d&#39; % (len(t)))
+t.pop()
+print(&#39;t = &#39;,t)#尾部的整个数组直接弹出
+print(&#39;len = %d&#39; % (len(t)))
+t.append(&#39;鸡你实在是太美&#39;)#尾部增加一个字符串
+t.pop(0)#下标为0的元素弹出
+print(t)
+print(&#39;len = %d&#39; % (len(t)))
+t.append(&#39;鸡你实在是太美&#39;)
+print(t)
+print(t.count(&#39;鸡你实在是太美&#39;))#统计相同字符串的个数
+t.reverse()#反转了
+print(t)
+L = ()
+print(len(L))#创建了一个长度为0的tuple
+</code></pre>
+<p>输出</p>
+<pre><code>f
+1
+2
+[&#39;你好&#39;, &#39;世界&#39;]
+1
+2
+[&#39;你好&#39;, &#39;去死吧&#39;]
+[[1], [2], [&#39;大&#39;, &#39;f&#39;]]
+[2, 1]
+3
+3
+3.0
+3.0
+len = 3
+t =  [[1], [2]]
+len = 2
+[[2], &#39;鸡你实在是太美&#39;]
+len = 2
+[[2], &#39;鸡你实在是太美&#39;, &#39;鸡你实在是太美&#39;]
+2
+[&#39;鸡你实在是太美&#39;, &#39;鸡你实在是太美&#39;, [2]]
+0
+</code></pre>
+<hr>
+<pre><code># -*- coding: utf-8 -*-
+names = [&#39;Michael&#39;, &#39;Bob&#39;, &#39;Tracy&#39;]
+for name in names:
+    print(name)
+    sum = 0
+for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+    sum = sum + x
+print(sum)
+l = [&#39;蔡徐坤&#39;,&#39;谷爱凌&#39;,&#39;瑞克.丁真&#39;,&#39;尼古.丁真&#39;,&#39;你好&#39;,&#39;卢本伟没有被输出&#39;]
+for x in l:
+    if(x == &#39;你好&#39;): 
+        print(&#39;撒由那拉嘞baby&#39;)
+        break
+    elif(x != &#39;谷爱凌&#39;):
+        print(&#39;你好,&#39;,x,&#39;先生&#39;)
+        continue
+    else: print(&#39;&#123;&#125;你是一个一个一个一个双国籍人士啊&#39;.format(x))
+
+d = &#123;&#39;Michael&#39;: 95, &#39;Bob&#39;: 75, &#39;Tracy&#39;: 85&#125;
+print(d[&#39;Michael&#39;]) #可以理解为enum，map，用字符串当作下标的数组
+#底层大概是用哈希表实现的是一种空间换时间的策略
+print(&#39;Thomas&#39; in d)
+k = d.get(&#39;你妈的电脑&#39;)
+print(k)
+</code></pre>
+<p>输出：</p>
+<pre><code>Michael
+Bob
+Tracy
+55
+你好, 蔡徐坤 先生
+谷爱凌你是一个一个一个一个双国籍人士啊
+你好, 瑞克.丁真 先生
+你好, 尼古.丁真 先生
+撒由那拉嘞baby
+95
+False
+None
+</code></pre>
+<p>#函数</p>
+<p>max函数max()可以接收任意多个参数，并返回最大的那个</p>
+<pre><code>&gt;&gt;&gt; max(1, 2)
+2
+&gt;&gt;&gt; max(2, 3, 1, -5)
+3
+</code></pre>
+<p>数据类型转换<br>Python内置的常用函数还包括数据类型转换函数，比如int()函数可以把其他数据类型转换为整数：</p>
+<pre><code>&gt;&gt;&gt; int(&#39;123&#39;)
+123
+&gt;&gt;&gt; int(12.34)
+12
+&gt;&gt;&gt; float(&#39;12.34&#39;)
+12.34
+&gt;&gt;&gt; str(1.23)
+&#39;1.23&#39;
+&gt;&gt;&gt; str(100)
+&#39;100&#39;
+&gt;&gt;&gt; bool(1)
+True
+&gt;&gt;&gt; bool(&#39;&#39;)
+False
+</code></pre>
+<hr>
+<pre><code># -*- coding: utf-8 -*-
+def adding(a , b , c = 3):#c为可变参数
+    if(a &gt; b): print(&#39;a大于b&#39;)
+    elif(a == b): print(&#39;a等于b&#39;)
+    else: print(&#39;a小于b&#39;)
+    print(&#39;c = &#39;,c)
+    return
+###############################
+a = int(input())
+b = int(input())
+adding(a,b,2)
+
+def add_end(l = None):
+    if(l == None):
+        l = []
+    l.append(&#39;END&#39;)
+    return
+
+def add_end2(l = []):
+    l.append(&#39;END&#39;)
+    print(l)
+    return
+###############################
+l = [1,3,&#39;你舍得打破这份宁静吗&#39;]
+add_end(l)
+print(l)
+l = []
+add_end(l)
+print(l)
+l = []
+add_end(l)
+print(l)
+
+add_end2()
+add_end2()
+</code></pre>
+<p>输出</p>
+<pre><code>1
+2
+a小于b
+c =  2
+[1, 3, &#39;你舍得打破这份宁静吗&#39;, &#39;END&#39;]
+[&#39;END&#39;]
+[&#39;END&#39;]
+[&#39;END&#39;]
+[&#39;END&#39;, &#39;END&#39;]
+</code></pre>
+<p>Python函数在定义的时候，默认参数L的值就被计算出来了，即[]，因为默认参数L也是一个变量，它指向对象[]，每次调用该函数，如果改变了L的内容，则下次调用时，默认参数的内容就变了，不再是函数定义时的[]了。</p>
+<p>#可变参数<br>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。</p>
+<p>我们以数学题为例子，给定一组数字a，b，c……，请计算a2 + b2 + c2 + ……。</p>
+<p>要定义出这个函数，我们必须确定输入的参数。由于参数个数不确定，我们首先想到可以把a，b，c……作为一个list或tuple传进来，这样，函数可以定义如下：</p>
+<pre><code>def calc(numbers):
+    sum = 0
+    for n in numbers:
+        sum = sum + n * n
+    return sum
+</code></pre>
+<p>但是调用的时候，需要先组装出一个list或tuple：</p>
+<pre><code>&gt;&gt;&gt; calc([1, 2, 3])
+14
+&gt;&gt;&gt; calc((1, 3, 5, 7))
+84
+</code></pre>
+<p>如果利用可变参数，调用函数的方式可以简化成这样：</p>
+<pre><code>&gt;&gt;&gt; calc(1, 2, 3)
+14
+&gt;&gt;&gt; calc(1, 3, 5, 7)
+84
+</code></pre>
+<p>所以，我们把函数的参数改为可变参数：<br>    def calc(*numbers):<br>        sum &#x3D; 0<br>        for n in numbers:<br>            sum &#x3D; sum + n * n<br>        return sum<br>如果已经有一个list或者tuple，要调用一个可变参数怎么办？可以这样做：</p>
+<pre><code>&gt;&gt;&gt; nums = [1, 2, 3]
+&gt;&gt;&gt; calc(nums[0], nums[1], nums[2])
+14
+</code></pre>
+<p>这种写法当然是可行的，问题是太繁琐，所以Python允许你在list或tuple前面加一个*号，把list或tuple的元素变成可变参数传进去：</p>
+<pre><code>&gt;&gt;&gt; nums = [1, 2, 3]
+&gt;&gt;&gt; calc(*nums)
+14
+</code></pre>
+<p>isinstance() 函数来判断一个对象是否是一个已知的类型，类似 type()。</p>
+<p>目前为止，我们使用函数时所用的参数都是位置参数，即传入函数的实际参数必须与形式参数的数量和位置对应。而本节将介绍的关键字参数，则可以避免牢记参数位置的麻烦，令函数的调用和参数传递更加灵活方便。</p>
+<p>#关键字参数<br>可变参数允许你传入0个或任意个参数，这些可变参数在函数调用时自动组装为一个tuple。而关键字参数允许你传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dict</p>
+<pre><code># -*- coding: utf-8 -*-
+def ID(name, age, **kw):
+    if &#39;job&#39; in kw :#检测kw里是否有关键字job
+        print(&#39;你好&#39;)
+        pass
+    print(&#39;name = &#39;,name,&#39;age = &#39;,age,&#39;other information = &#39;,kw)
+
+ID(&#39;brown&#39;,14)
+ID(&#39;dick&#39;,12,city = &#39;New York&#39;)
+ID(&#39;Mary&#39;,14,gender = &#39;female&#39;)
+ID(&#39;Jerry&#39;,16,city = &#39;sydney&#39;,country = &#39;australia&#39;)
+ID(&#39;Frank&#39;,24,job = &#39;actor&#39;,zipcode = 123456)
+extra = &#123;&#39;worksite&#39; : &#39;hospital&#39;, &#39;city&#39; : &#39;beijing&#39;&#125;
+ID(&#39;Linawei&#39;,18,worksite = extra[&#39;worksite&#39;],city = extra[&#39;city&#39;])
+
+def person(name, age, *, city = &#39;osaka&#39;, job):
+    print(name,age,city,job)
+
+person(&#39;shit&#39;,32,city = &#39;tokyo&#39;,job = &#39;singer&#39;)
+person(&#39;yuriki&#39;,21,job = &#39;student&#39;)
+#person(&#39;shit&#39;,32,city = &#39;tokyo&#39;,job = &#39;singer&#39;,worksite = &#39;osaka&#39;) #报错
+</code></pre>
+<p>输出：</p>
+<pre><code>name =  brown age =  14 other information =  &#123;&#125;
+name =  dick age =  12 other information =  &#123;&#39;city&#39;: &#39;New York&#39;&#125;
+name =  Mary age =  14 other information =  &#123;&#39;gender&#39;: &#39;female&#39;&#125;
+name =  Jerry age =  16 other information =  &#123;&#39;city&#39;: &#39;sydney&#39;, &#39;country&#39;: &#39;australia&#39;&#125;
+你好
+name =  Frank age =  24 other information =  &#123;&#39;job&#39;: &#39;actor&#39;, &#39;zipcode&#39;: 123456&#125;
+name =  Linawei age =  18 other information =  &#123;&#39;worksite&#39;: &#39;hospital&#39;, &#39;city&#39;: &#39;beijing&#39;&#125;
+shit 32 tokyo singer
+yuriki 21 osaka student
+</code></pre>
+<p>tuple也是一种list，唯一区别是tuple不可变。因此，tuple也可以用切片操作，只是操作的结果仍是tuple：<br>字符串’xxx’也可以看成是一种list，每个元素就是一个字符。因此，字符串也可以用切片操作，只是操作结果仍是字符串：</p>
+<p>如何判断一个对象是可迭代对象呢？方法是通过collections.abc模块的Iterable类型判断：</p>
+<pre><code>&gt;&gt;&gt; from collections.abc import Iterable
+&gt;&gt;&gt; isinstance(&#39;abc&#39;, Iterable) # str是否可迭代
+True
+&gt;&gt;&gt; isinstance([1,2,3], Iterable) # list是否可迭代
+True
+&gt;&gt;&gt; isinstance(123, Iterable) # 整数是否可迭代
+False
+</code></pre>
+<p>最后一个小问题，如果要对list实现类似Java那样的下标循环怎么办？Python内置的enumerate函数可以把一个list变成索引-元素对，这样就可以在for循环中同时迭代索引和元素本身：</p>
+<p>同时引用了两个变量，在Python里是很常见的，比如下面的代码：</p>
+<pre><code>&gt;&gt;&gt; for x, y in [(1, 1), (2, 4), (3, 9)]:
+...     print(x, y)
+...
+1 1
+2 4
+3 9
+</code></pre>
+<p>#引入方法：</p>
+<pre><code>import math
+j = math.cos(math.pi / 3)
+print(j)
+</code></pre>
+<p>#列表生成式：<br>if … else<br>使用列表生成式的时候，有些童鞋经常搞不清楚if…else的用法。</p>
+<p>例如，以下代码正常输出偶数：</p>
+<pre><code>&gt;&gt;&gt; [x for x in range(1, 11) if x % 2 == 0]
+[2, 4, 6, 8, 10]
+</code></pre>
+<p>但是，我们不能在最后的if加上else：</p>
+<pre><code>&gt;&gt;&gt; [x for x in range(1, 11) if x % 2 == 0 else 0]
+  File &quot;&lt;stdin&gt;&quot;, line 1
+    [x for x in range(1, 11) if x % 2 == 0 else 0]
+
+SyntaxError: invalid syntax
+</code></pre>
+<p>这是因为跟在for后面的if是一个筛选条件，不能带else，否则如何筛选？</p>
+<p>另一些童鞋发现把if写在for前面必须加else，否则报错：</p>
+<pre><code>&gt;&gt;&gt; [x if x % 2 == 0 for x in range(1, 11)]
+  File &quot;&lt;stdin&gt;&quot;, line 1
+    [x if x % 2 == 0 for x in range(1, 11)]
+                   ^
+SyntaxError: invalid syntax
+</code></pre>
+<p>这是因为for前面的部分是一个表达式，它必须根据x计算出一个结果。因此，考察表达式：x if x % 2 &#x3D;&#x3D; 0，它无法根据x计算出结果，因为缺少else，必须加上else：</p>
+<pre><code>&gt;&gt;&gt; [x if x % 2 == 0 else -x for x in range(1, 11)]
+[-1, 2, -3, 4, -5, 6, -7, 8, -9, 10]
+</code></pre>
+<p>上述for前面的表达式x if x % 2 &#x3D;&#x3D; 0 else -x才能根据x计算出确定的结果。</p>
+<p>可见，在一个列表生成式中，for前面的if … else是表达式，而for后面的if是过滤条件，不能带else。</p>
+<p>#生成器:<br>    g &#x3D; (x*x for x in range(10))<br>    print(g) #generator的地址<br>    print(next(g)) #generator的下一个元素<br>    #generator的优点，节省空间<br>    def fib(max):<br>        n , a , b &#x3D; 0 , 0 , 1<br>        while n &lt; max:<br>            yield b #加了这个关键字后fib函数就变成了generator函数了<br>            a , b &#x3D; b , a+b<br>            n &#x3D; n + 1<br>        return ‘done’<br>    f &#x3D; fib(6)<br>    print(f) #发现输出f后返回的是generator的地址</p>
+<pre><code># 这里，最难理解的就是generator函数和普通函数的执行
+# 流程不一样。普通函数是顺序执行，遇到return语句
+# 或者最后一行函数语句就返回。而变成generator的函
+# 数，在每次调用next()的时候执行，遇到yield语句返
+# 回，再次执行时从上次返回的yield语句处继续执行。
+
+def odd():
+    print(&#39;step 1&#39;)
+    yield 1
+    print(&#39;step 2&#39;)
+    yield(3)
+    print(&#39;step 3&#39;)
+    yield(5)
+o = odd()
+print(next(o))
+next(o)
+d = next(o)
+print(d)
+#next(o) #第四次调用generator，直接报错，因为函数里没有更多的yield等返回语句了
+
+# 请务必注意：调用generator函数会创建一个generator对象
+# ，多次调用generator函数会创建多个相互独立的generator。
+
+from collections.abc import Iterator
+
+print(isinstance((x for x in range(10)), Iterator))
+#可以被next()函数调用并不断返回下一个值的对象称为迭代器：Iterator，可以发现生成器就是迭代器
+</code></pre>
+<p>输出：</p>
+<pre><code>&lt;generator object &lt;genexpr&gt; at 0x000002466A019A10&gt;
+0
+&lt;generator object fib at 0x000002466A019A80&gt;
+step 1
+1
+step 2
+step 3
+5
+True
+</code></pre>
+<hr>
+<p>用一般方法和生成器解决杨辉三角形问题：</p>
+<pre><code>def ttriangle(x):
+    a = [1,]
+    print(a)
+    if(x &lt; 2) : return
+    for n in range(1,x):
+        b = []
+        for m in range(0,n+1):
+            if(m == 0):
+                b.append(int(a[0]))
+            elif(m == n):
+                b.append(int(a[n-1]))
+            else:
+                b.append(int(a[m-1]) + int(a[m]))
+        print(b)
+        a = b
+    return
+
+def triangle2():
+    yield [1]
+    l = [1,1]
+    yield l
+    while True:
+        l = [1] + [l[x-1]+l[x] for x in range(len(l)) if(x != 0)] + [1]
+        yield l
+
+e = triangle2()
+print(next(e))
+print(next(e))
+print(next(e))
+print(next(e))
+</code></pre>
+<p>输出：</p>
+<pre><code>[1]
+[1, 1]
+[1, 2, 1]
+[1, 3, 3, 1]
+</code></pre>
+<p>#迭代器<br>我们已经知道，可以直接作用于for循环的数据类型有以下几种：</p>
+<p>一类是集合数据类型，如list、tuple、dict、set、str等；</p>
+<p>一类是generator，包括生成器和带yield的generator function。</p>
+<p>这些可以直接作用于for循环的对象统称为可迭代对象：Iterable。</p>
+<p>而生成器不但可以作用于for循环，还可以被next()函数不断调用并返回下一个值，直到最后抛出StopIteration错误表示无法继续返回下一个值了。</p>
+<p>可以被next()函数调用并不断返回下一个值的对象称为迭代器：Iterator。</p>
+<p>可以使用isinstance()判断一个对象是否是Iterable对象：<br>为什么list、dict、str等数据类型不是Iterator？</p>
+<p>这是因为Python的Iterator对象表示的是一个数据流，Iterator对象可以被next()函数调用并不断返回下一个数据，直到没有数据时抛出StopIteration错误。可以把这个数据流看做是一个有序序列，但我们却不能提前知道序列的长度，只能不断通过next()函数实现按需计算下一个数据，所以Iterator的计算是惰性的，只有在需要返回下一个数据时它才会计算。</p>
+<p>Iterator甚至可以表示一个无限大的数据流，例如全体自然数。而使用list是永远不可能存储全体自然数的。</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a></div><div class="post_share"><div class="social-share" data-image="/img/R-C(3).jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/11/15/c-%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"><img class="prev-cover" src="/img/R-C(3).jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">c++与面向对象编程</div></div></a></div><div class="next-post pull-right"><a href="/2022/10/31/%E8%83%8C%E5%8C%85dp/"><img class="next-cover" src="/img/R-C(3).jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">背包dp</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/11/16/python2/" title="python2"><img class="cover" src="/img/R-C(3).jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-16</div><div class="title">python2</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/OIP.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">tonzinonin</div><div class="author-info__description">衬衫的价格是九磅十五便士</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tonzinonin" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/12/09/CPP%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93%E3%81%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" title="CPP标准模板库の打开方式">CPP标准模板库の打开方式</a><time datetime="2022-12-09T05:37:16.000Z" title="发表于 2022-12-09 13:37:16">2022-12-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/18/%E9%94%99%E9%A2%98%E9%9B%86/" title="错题集">错题集</a><time datetime="2022-11-18T04:45:42.000Z" title="发表于 2022-11-18 12:45:42">2022-11-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/16/python2/" title="python2">python2</a><time datetime="2022-11-16T14:45:22.000Z" title="发表于 2022-11-16 22:45:22">2022-11-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/15/c-%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" title="c++与面向对象编程">c++与面向对象编程</a><time datetime="2022-11-15T05:14:12.000Z" title="发表于 2022-11-15 13:14:12">2022-11-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/13/python/" title="python入门">python入门</a><time datetime="2022-11-13T13:23:17.000Z" title="发表于 2022-11-13 21:23:17">2022-11-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
