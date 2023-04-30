@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>哈希表 | final fantasy</title><meta name="author" content="某不知名的作者"><meta name="copyright" content="某不知名的作者"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。 给定表M，存在函数f(key)，对任意给定的关键字值key，代入函数后若能得到包含该关键字的记录在表中的地址，则称表M为哈希(Hash）表，函数f(key)为哈希(H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="哈希表">
+<meta property="og:url" content="https://tonzinonin.github.io/2020/01/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3/%E5%93%88%E5%B8%8C%E8%A1%A8/index.html">
+<meta property="og:site_name" content="final fantasy">
+<meta property="og:description" content="散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。 给定表M，存在函数f(key)，对任意给定的关键字值key，代入函数后若能得到包含该关键字的记录在表中的地址，则称表M为哈希(Hash）表，函数f(key)为哈希(H">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg">
+<meta property="article:published_time" content="2020-01-14T12:16:49.000Z">
+<meta property="article:modified_time" content="2023-01-13T14:53:46.000Z">
+<meta property="article:author" content="某不知名的作者">
+<meta property="article:tag" content="散列表">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg"><link rel="shortcut icon" href="/img/icon.png"><link rel="canonical" href="https://tonzinonin.github.io/2020/01/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3/%E5%93%88%E5%B8%8C%E8%A1%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '哈希表',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-01-13 22:53:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/OIP.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">final fantasy</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">哈希表</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-01-14T12:16:49.000Z" title="发表于 2020-01-14 20:16:49">2020-01-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-13T14:53:46.000Z" title="更新于 2023-01-13 22:53:46">2023-01-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="哈希表"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。</p>
+<p>给定表M，存在函数f(key)，对任意给定的关键字值key，代入函数后若能得到包含该关键字的记录在表中的地址，则称表M为哈希(Hash）表，函数f(key)为哈希(Hash) 函数。</p>
+<p>散列函数能使对一个数据序列的访问过程更加迅速有效，通过散列函数，数据元素将被更快地定位。<br>实际工作中需视不同的情况采用不同的哈希函数，通常考虑的因素有：</p>
+<ol>
+<li>· 计算哈希函数所需时间</li>
+<li>· 关键字的长度</li>
+<li>· 哈希表的大小</li>
+<li>· 关键字的分布情况</li>
+<li>· 记录的查找频率</li>
+</ol>
+<p> 直接寻址法：取关键字或关键字的某个线性函数值为散列地址。即H(key)&#x3D;key或H(key) &#x3D; a·key + b，其中a和b为常数（这种散列函数叫做自身函数）。若其中H(key）中已经有值了，就往下一个找，直到H(key）中没有值了，就放进去。</p>
+<p> 数字分析法：分析一组数据，比如一组员工的出生年月日，这时我们发现出生年月日的前几位数字大体相同，这样的话，出现冲突的几率就会很大，但是我们发现年月日的后几位表示月份和具体日期的数字差别很大，如果用后面的数字来构成散列地址，则冲突的几率会明显降低。因此数字分析法就是找出数字的规律，尽可能利用这些数据来构造冲突几率较低的散列地址。</p>
+<p> 平方取中法：当无法确定关键字中哪几位分布较均匀时，可以先求出关键字的平方值，然后按需要取平方值的中间几位作为哈希地址。这是因为：平方后中间几位和关键字中每一位都相关，故不同关键字会以较高的概率产生不同的哈希地址。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> empty <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> p <span class="token operator">=</span> <span class="token number">13</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> h<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">makehash</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//建立哈希表 </span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> p<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> h<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> empty<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">hash</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//计算哈希表，哈希函数 </span>
+	<span class="token keyword">return</span> x<span class="token operator">%</span>p<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">locate</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//定位操作 </span>
+	<span class="token keyword">int</span> orig <span class="token operator">=</span> <span class="token function">hash</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span> i <span class="token operator">&lt;</span> p<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span> h<span class="token punctuation">[</span><span class="token punctuation">(</span>i <span class="token operator">+</span> orig<span class="token punctuation">)</span> <span class="token operator">%</span> p<span class="token punctuation">]</span> <span class="token operator">!=</span> x<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>h<span class="token punctuation">[</span><span class="token punctuation">(</span>i <span class="token operator">+</span> orig<span class="token punctuation">)</span> <span class="token operator">%</span> p<span class="token punctuation">]</span> <span class="token operator">!=</span> empty <span class="token punctuation">)</span><span class="token punctuation">)</span> i<span class="token operator">++</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span>orig <span class="token operator">+</span> i<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">13</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">void</span> <span class="token function">insert</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//插入操作 </span>
+	<span class="token keyword">int</span> posi <span class="token operator">=</span> <span class="token function">locate</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>h<span class="token punctuation">[</span>posi<span class="token punctuation">]</span> <span class="token operator">==</span> empty<span class="token punctuation">)</span> h<span class="token punctuation">[</span>posi<span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span>
+	<span class="token keyword">else</span> <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"cant!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">bool</span> <span class="token function">judge</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//判断是否存在该元素 </span>
+	<span class="token keyword">int</span> posi <span class="token operator">=</span> <span class="token function">locate</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>h<span class="token punctuation">[</span>posi<span class="token punctuation">]</span> <span class="token operator">==</span> x<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">void</span> <span class="token function">output</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//检查状态 </span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"哈希表状态："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> p<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span>h<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">int</span> x<span class="token punctuation">;</span>
+	<span class="token function">makehash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">~</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>x<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token function">insert</span><span class="token punctuation">(</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">output</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%A3%E5%88%97%E8%A1%A8/">散列表</a></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/01/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3/%E6%A0%88/"><img class="prev-cover" src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">栈</div></div></a></div><div class="next-post pull-right"><a href="/2020/01/05/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%EF%BC%88BFS%EF%BC%89/"><img class="next-cover" src="https://s3.bmp.ovh/imgs/2023/01/12/1e052378ba7e2bfd.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">BFS</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/OIP.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">某不知名的作者</div><div class="author-info__description">衬衫的价格是九磅十五便士</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tonzinonin" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/27/opengl/" title="opengl"><img src="https://s3.bmp.ovh/imgs/2023/01/12/f8943481ff2f250b.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="opengl"/></a><div class="content"><a class="title" href="/2023/04/27/opengl/" title="opengl">opengl</a><time datetime="2023-04-27T04:33:51.000Z" title="发表于 2023-04-27 12:33:51">2023-04-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/04/notes/" title="notes"><img src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="notes"/></a><div class="content"><a class="title" href="/2023/03/04/notes/" title="notes">notes</a><time datetime="2023-03-04T10:49:56.000Z" title="发表于 2023-03-04 18:49:56">2023-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/14/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B3/" title="c++与面向对象编程3"><img src="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++与面向对象编程3"/></a><div class="content"><a class="title" href="/2023/01/14/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B3/" title="c++与面向对象编程3">c++与面向对象编程3</a><time datetime="2023-01-14T15:17:23.000Z" title="发表于 2023-01-14 23:17:23">2023-01-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/12/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B2/" title="c++与面向对象编程2"><img src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++与面向对象编程2"/></a><div class="content"><a class="title" href="/2023/01/12/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B2/" title="c++与面向对象编程2">c++与面向对象编程2</a><time datetime="2023-01-12T10:26:12.000Z" title="发表于 2023-01-12 18:26:12">2023-01-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/20/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" title="基础数论"><img src="https://s3.bmp.ovh/imgs/2023/01/12/e92609f7d9e775f5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基础数论"/></a><div class="content"><a class="title" href="/2022/12/20/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" title="基础数论">基础数论</a><time datetime="2022-12-20T08:30:22.000Z" title="发表于 2022-12-20 16:30:22">2022-12-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
