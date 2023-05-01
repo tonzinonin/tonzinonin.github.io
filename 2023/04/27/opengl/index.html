@@ -1,17 +1,17 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>opengl | final fantasy</title><meta name="author" content="某不知名的作者"><meta name="copyright" content="某不知名的作者"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="opengl是一种规范，而不是库或者引擎。 显卡驱动程序中会有自己的对opengl的实现，不同的显卡可能会有所不同。 opengl不是开源的。">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>opengl | final fantasy</title><meta name="author" content="某不知名的作者"><meta name="copyright" content="某不知名的作者"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="opengl是一种规范，而不是库或者引擎。 显卡驱动程序中会有自己的对opengl的实现，不同的显卡可能会有所不同。 opengl不是开源的。 使用现代的opengl我们需要在linker的input选项里添加opengl32.lib。我们最终用的头文件，特别是用于隐藏函数的头文件，事实上，我们用的一个是glfw，它提供了转动调整窗口的效果，另一个是现在的windows。 windows已经有了一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="opengl">
 <meta property="og:url" content="https://tonzinonin.github.io/2023/04/27/opengl/index.html">
 <meta property="og:site_name" content="final fantasy">
-<meta property="og:description" content="opengl是一种规范，而不是库或者引擎。 显卡驱动程序中会有自己的对opengl的实现，不同的显卡可能会有所不同。 opengl不是开源的。">
+<meta property="og:description" content="opengl是一种规范，而不是库或者引擎。 显卡驱动程序中会有自己的对opengl的实现，不同的显卡可能会有所不同。 opengl不是开源的。 使用现代的opengl我们需要在linker的input选项里添加opengl32.lib。我们最终用的头文件，特别是用于隐藏函数的头文件，事实上，我们用的一个是glfw，它提供了转动调整窗口的效果，另一个是现在的windows。 windows已经有了一">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/01/12/f8943481ff2f250b.jpg">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/01/12/b290daacd1b79e32.jpg">
 <meta property="article:published_time" content="2023-04-27T04:33:51.000Z">
-<meta property="article:modified_time" content="2023-04-27T04:44:35.438Z">
+<meta property="article:modified_time" content="2023-05-01T15:49:40.561Z">
 <meta property="article:author" content="某不知名的作者">
 <meta property="article:tag" content="Cpp">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2023/01/12/f8943481ff2f250b.jpg"><link rel="shortcut icon" href="/img/icon.png"><link rel="canonical" href="https://tonzinonin.github.io/2023/04/27/opengl/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2023/01/12/b290daacd1b79e32.jpg"><link rel="shortcut icon" href="/img/icon.png"><link rel="canonical" href="https://tonzinonin.github.io/2023/04/27/opengl/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: undefined,
@@ -52,8 +52,8 @@
   isPost: true,
   isHome: false,
   isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2023-04-27 12:44:35'
+  isToc: true,
+  postUpdate: '2023-05-01 23:49:40'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -142,10 +142,650 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/OIP.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2023/01/12/f8943481ff2f250b.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">final fantasy</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">opengl</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-27T04:33:51.000Z" title="发表于 2023-04-27 12:33:51">2023-04-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-27T04:44:35.438Z" title="更新于 2023-04-27 12:44:35">2023-04-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Cpp/">Cpp</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="opengl"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>opengl是一种规范，而不是库或者引擎。</p>
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/OIP.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2023/01/12/b290daacd1b79e32.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">final fantasy</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">opengl</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-27T04:33:51.000Z" title="发表于 2023-04-27 12:33:51">2023-04-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-01T15:49:40.561Z" title="更新于 2023-05-01 23:49:40">2023-05-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Cpp/">Cpp</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="opengl"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>opengl是一种规范，而不是库或者引擎。</p>
 <p>显卡驱动程序中会有自己的对opengl的实现，不同的显卡可能会有所不同。</p>
 <p>opengl不是开源的。</p>
-</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Cpp/">Cpp</a></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2023/01/12/f8943481ff2f250b.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/03/04/notes/"><img class="next-cover" src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">notes</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/12/09/CPP%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93%E3%81%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" title="CPP标准模板库の打开方式"><img class="cover" src="https://s3.bmp.ovh/imgs/2023/01/12/e92609f7d9e775f5.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-09</div><div class="title">CPP标准模板库の打开方式</div></div></a></div><div><a href="/2023/01/12/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B2/" title="c++与面向对象编程2"><img class="cover" src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-12</div><div class="title">c++与面向对象编程2</div></div></a></div><div><a href="/2022/11/15/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B1/" title="c++与面向对象编程1"><img class="cover" src="https://s3.bmp.ovh/imgs/2023/01/12/e92609f7d9e775f5.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-15</div><div class="title">c++与面向对象编程1</div></div></a></div><div><a href="/2023/01/14/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B3/" title="c++与面向对象编程3"><img class="cover" src="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-14</div><div class="title">c++与面向对象编程3</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/OIP.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">某不知名的作者</div><div class="author-info__description">衬衫的价格是九磅十五便士</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tonzinonin" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/27/opengl/" title="opengl"><img src="https://s3.bmp.ovh/imgs/2023/01/12/f8943481ff2f250b.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="opengl"/></a><div class="content"><a class="title" href="/2023/04/27/opengl/" title="opengl">opengl</a><time datetime="2023-04-27T04:33:51.000Z" title="发表于 2023-04-27 12:33:51">2023-04-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/04/notes/" title="notes"><img src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="notes"/></a><div class="content"><a class="title" href="/2023/03/04/notes/" title="notes">notes</a><time datetime="2023-03-04T10:49:56.000Z" title="发表于 2023-03-04 18:49:56">2023-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/14/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B3/" title="c++与面向对象编程3"><img src="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++与面向对象编程3"/></a><div class="content"><a class="title" href="/2023/01/14/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B3/" title="c++与面向对象编程3">c++与面向对象编程3</a><time datetime="2023-01-14T15:17:23.000Z" title="发表于 2023-01-14 23:17:23">2023-01-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/12/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B2/" title="c++与面向对象编程2"><img src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++与面向对象编程2"/></a><div class="content"><a class="title" href="/2023/01/12/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B2/" title="c++与面向对象编程2">c++与面向对象编程2</a><time datetime="2023-01-12T10:26:12.000Z" title="发表于 2023-01-12 18:26:12">2023-01-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/20/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" title="基础数论"><img src="https://s3.bmp.ovh/imgs/2023/01/12/e92609f7d9e775f5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基础数论"/></a><div class="content"><a class="title" href="/2022/12/20/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" title="基础数论">基础数论</a><time datetime="2022-12-20T08:30:22.000Z" title="发表于 2022-12-20 16:30:22">2022-12-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+<h2 id="使用现代的opengl"><a href="#使用现代的opengl" class="headerlink" title="使用现代的opengl"></a>使用现代的opengl</h2><p>我们需要在linker的input选项里添加opengl32.lib。我们最终用的头文件，特别是用于隐藏函数的头文件，事实上，我们用的一个是glfw，它提供了转动调整窗口的效果，另一个是现在的windows。</p>
+<p>windows已经有了一个图像api，它叫DirectX或者是Direct3D。它是一个专用一点的，在windows上，windows也鼓励使用directx这个api，但是记住，这不是windows能够决定的事，这取决于我们的gpu的供应商和来自英伟达，amd，英特尔的gpu驱动程序，这是我们应该使用opengl的地方，它们都支持opengl作为一个渲染api。</p>
+<p>windows的opengl头文件很古老，需要我们自己去获得opengl的新功能。于是我们获取opengl函数，但是他不是要你真正地去下载某样东西，它(opengl函数)事实上在你的图像驱动里。opengl函数在你的gpu驱动里，为了去用任意比opengl1.1新的函数，我们需要进入到那些驱动盒里面，获取函数。<br>我们需要一些win32 api调用或者外来的windows加载库，并且加载函数指针</p>
+<p>我们引入了glew库，具体请参考cherno的视频</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;GL/glew.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;GLFW/glfw3.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    GLFWwindow<span class="token operator">*</span> window<span class="token punctuation">;</span>
+
+    <span class="token comment">/* Initialize the library */</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">glfwInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+
+    <span class="token comment">/* Create a windowed mode window and its OpenGL context */</span>
+    window <span class="token operator">=</span> <span class="token function">glfwCreateWindow</span><span class="token punctuation">(</span><span class="token number">640</span><span class="token punctuation">,</span> <span class="token number">480</span><span class="token punctuation">,</span> <span class="token string">"Hello World"</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>window<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">glfwTerminate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/* Make the window's context current */</span>
+    <span class="token function">glfwMakeContextCurrent</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//需要生成渲染模块才能初始化glew</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">glewInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> GLEW_OK<span class="token punctuation">)</span>
+        std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Error!"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+    <span class="token comment">/* Loop until the user closes the window */</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">glfwWindowShouldClose</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token comment">/* Render here 调用glClear()函数清空颜色缓冲区，准备绘制新的帧。*/</span>
+        <span class="token function">glClear</span><span class="token punctuation">(</span>GL_COLOR_BUFFER_BIT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">glBegin</span><span class="token punctuation">(</span>GL_TRIANGLES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">glVertex2f</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">glVertex2f</span><span class="token punctuation">(</span><span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">glVertex2f</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">glEnd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//5行代码生成了一个三角形</span>
+
+        <span class="token comment">/* Swap front and back buffers 调用glfwSwapBuffers()函数交换前后缓冲区，这样刚才绘制的内容才会在屏幕上显示出来。*/</span>
+        <span class="token function">glfwSwapBuffers</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">/* Poll for and process events 调用glfwPollEvents()函数处理窗口事件，比如鼠标、键盘等输入事件。*/</span>
+        <span class="token function">glfwPollEvents</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token function">glfwTerminate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这行代码使我们生成了一个三角形：<br><img src="https://s3.bmp.ovh/imgs/2023/04/30/5d4d023f277f1843.png"></p>
+<p>顶点缓冲区，他基本上就是去掉vertex这个单词，他只是一个内存缓冲区，一个内存字节数组。但是顶点缓冲区和cpp中像字符数组的内存缓冲区不一样，区别在于它是opengl的内存缓冲区，这意味着它实际上在显卡GPU上，在我们的VRAM（video ram）中。</p>
+<p>在OpenGL中，缓冲区对象用于存储和管理图形数据。这些数据可以是顶点数据，纹理数据或其他任何类型的数据，而缓冲区对象是将数据发送到GPU进行渲染的关键。</p>
+<p>这里的基本想法是，我要定义一些数据来表示三角形，放入显卡的vram中，发出drawcall指令，这是一个绘制指令，就是说，嘿你的显存中有一堆数据，读取它，并且把它画在屏幕上。事实上我们还要告诉gpu如何读取和解释这些数据，以及如何把它放到我们的屏幕上。当我们在cpu这边做了所有的事情，我们还要用某种方法告诉显卡：好了，一旦你在显卡端获得了这些数据，我要你像这样把它摆出来，我希望你把它画出来在屏幕上给我显示一个三角形。所以我们需要告诉显卡怎么做，需要对显卡编程，这就是着色器，着色器只是一个运行在显卡上的程序，它是一堆我们可以编写的在显卡上以一种非常特殊的方式运行的代码。</p>
+<p>还有重要的一点，opengl是一个状态机，你所需要做的事设置一系列的状态。当你做了一些事的时候，比如：给我画一个三角形，这是与上下文非常相关的。我想让你用这个缓冲区，这个着色器，给我画一个三角形，然后根据你选择的缓冲区和着色器，决定画什么样子的三角形，画在哪里等等。</p>
+<p><em>在计算机科学中，状态机（state machine）是一个用于表示系统状态的数学模型，通常由一组状态、一组输入和一组输出组成，表示在输入的作用下，系统从一种状态转移到另一种状态的过程，产生相应的输出。在计算机图形学中，OpenGL被称为一个状态机，它管理着许多状态，包括渲染状态、矩阵状态、着色器状态、纹理状态等等。</em></p>
+<p><em>在OpenGL中，状态通常表示为一组全局变量，每个变量存储着某个状态的值。例如，glEnable函数可以用于启用或禁用某个状态，而glClearColor函数可以用于设置背景颜色状态。这些状态值在OpenGL中的使用方式与其他的C++ API不同，它们被存储在OpenGL上下文中，并且可以在任何时候被查询和更改。</em></p>
+<p><em>在OpenGL中，通过更改状态的值来控制渲染的结果。例如，可以通过设置矩阵状态来指定几何变换矩阵，然后将模型的顶点位置指定为顶点着色器的输入，从而更改渲染结果。OpenGL的状态机模型具有一定的优点，例如可重用状态、便于调试和更改状态时避免重复计算等等。但是，过多的状态转换和状态查询也可能会降低OpenGL的性能，因此需要合理地管理状态机。</em></p>
+<p>然后让我们写一些代码来创建顶点缓冲区。我们现在想用现代opengl来创建这个三角形。<br>我们现在想把glVertex2f里的数据都放进一个缓冲区，传到OpenGL的VRAM，然后发出一个DrawCall指令，说：嘿，请根据缓冲区画出图形。<br>要做到这点，需要这行代码：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token function">glBegin</span><span class="token punctuation">(</span>GL_TRIANGLES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">glVertex2f</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">glVertex2f</span><span class="token punctuation">(</span><span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">glVertex2f</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">glEnd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//5行代码生成了一个三角形</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>之后我们需要创建自己的缓冲区，这个过程非常简单，你只需要输入glGenBuffers()。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">unsigned</span> <span class="token keyword">int</span> buffer
+<span class="token function">glGenBuffer</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token punctuation">,</span> <span class="token operator">&amp;</span>buffer<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>opengl可以一次生成一堆的缓冲区，我们这里只需要一个缓冲区，第一个参数指定需要几个缓冲区；第二个参数指定返回整数的内存地址，这也是生成的缓冲区的 id。记住 OpenGL 是作为一个状态机工作，这意味着你可以生成一切，而 OpenGL 中生成所有东西都分配了一个唯一的标识符，它只是一个整数，也是你实际对象的 id，当你想要使用这个对象的时候就用这个数字。</p>
+<p>因为我要渲染我的三角形，需要说明用哪个缓冲区来渲染三角形，只需要传递这个整数即可。现在我们有了这个 id，一旦创建缓冲区后，我们现在就要选择那个缓冲区。选择（Selecting）在 OpenGL 中被称为绑定（Binding）</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token function">glBindBuffer</span><span class="token punctuation">(</span>GL_ARRAY_BUFFER <span class="token punctuation">,</span> buffer<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>下一步就要将数据存入这个缓冲区。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">float</span> positions<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token operator">-</span><span class="token number">0.5f</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span>
+     <span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+    <span class="token operator">-</span><span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.5</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">unsigned</span> <span class="token keyword">int</span> buffer<span class="token punctuation">;</span>
+<span class="token function">glGenBuffers</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">glBindBuffer</span><span class="token punctuation">(</span>GL_ARRAY_BUFFER <span class="token punctuation">,</span> buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">glBufferData</span><span class="token punctuation">(</span>GL_ARRAY_BUFFER<span class="token punctuation">,</span> <span class="token number">6</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">,</span> positions<span class="token punctuation">,</span> GL_STATIC_DRAW<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>通常我们还会需要创建一个索引缓冲区，但是这是后话了。<br>单单这些代码还是不够的，我们还需要告诉opengl怎么布局这些数据，因为从着色器的角度，我们希望能够以恰当的方式读取这些数据。我们可以使用glVertexAttribPointer()函数来实现。这又是和着色器紧密联系在一起的东西。</p>
+<p>我们可以使用立即模式画一个三角形。我实际上会为这个缓冲区发出一个drawcall指令。与两种方法实现：<br>glDrawArrays()，这是一个没有索引缓冲区的时候可以使用的方法。<br>glDrawElements()，这是有索引缓冲区的时候使用的函数。</p>
+<h3 id="OpenGL中顶点的属性和布局"><a href="#OpenGL中顶点的属性和布局" class="headerlink" title="OpenGL中顶点的属性和布局"></a>OpenGL中顶点的属性和布局</h3><p>opengl的概念一个顶点不只是位置，顶点只是一个在几何体上的点，人们在视觉上对它们的看法显然是由它的位置决定的。顶点可以包含比一个位置更多的东西。</p>
+<p>布局这些缓冲区的数据需要用到glVertexAttribPointer()<br>文档：<a target="_blank" rel="noopener" href="https://docs.gl/gl4/glVertexAttribPointer">glVertexAttribPointer - OpenGL 4 - docs.gl</a></p>
+<p>glVertexAttribPointer — define an array of generic vertex attribute data<br>它需要一些参数，有索引、大小、类型、法线、步幅、指针。</p>
+<p><strong>index</strong></p>
+<p>基本上，我们着色器读取这些所有东西，都要通过一个索引。一般来说如果我们有一个位置在索引 0 处，我们需要把它作为索引 0 来引用；而当我们有三种属性，我想让我的位置在下标 0，纹理坐标在索引 1，法线在索引 2.所以当我开始从着色器和显卡读取数据时，然后进入那个缓冲区，我可以简单地引用它们。这就是索引，它只是缓冲区实际属性的索引。</p>
+<p><strong>size</strong></p>
+<p>Specifies the number of components per generic vertex attribute. Must be 1, 2, 3, 4. Additionally, the symbolic constant <code>GL_BGRA</code> is accepted by <code>glVertexAttribPointer</code>. The initial value is 4.这里的 <code>size</code> 可能有点误导人，它是每个通用顶点属性的组件数，只能是 1，2，3，4。所以这个 <code>size</code> 和字节没有关系，和它们实际占用了多少内存也没关系。在本例中每个顶点的坐标有 x 和 y 两组分量，所以 <code>size</code> 为 2。</p>
+<p><strong>type</strong></p>
+<p>Specifies the data type of each component in the array. The symbolic constants GL_BYTE, GL_UNSIGNED_BYTE, GL_SHORT, GL_UNSIGNED_SHORT, GL_INT, and GL_UNSIGNED_INT are accepted by glVertexAttribPointer and glVertexAttribIPointer. Additionally GL_HALF_FLOAT, GL_FLOAT, GL_DOUBLE, GL_FIXED, GL_INT_2_10_10_10_REV, GL_UNSIGNED_INT_2_10_10_10_REV and GL_UNSIGNED_INT_10F_11F_11F_REV are accepted by glVertexAttribPointer. GL_DOUBLE is also accepted by glVertexAttribLPointer and is the only token accepted by the type parameter for that function. The initial value is GL_FLOAT.</p>
+<p><strong>normalized</strong></p>
+<p>标准化其实不用太担心，如果我们处理的是浮点数，因为它们已经被规范化了。假设我们要指定一个颜色字节在 0 到 255 之间，它在我们的实际着色器作为一个浮点数需要被规范化到 0 到 1 之间，这不是一个你可以在 CPU 上做的事情，但你可以让 OpenGL 替你做。</p>
+<p><strong>stride</strong></p>
+<p>Specifies the byte offset between consecutive generic vertex attributes. If stride is 0, the generic vertex attributes are understood to be tightly packed in the array. The initial value is 0.</p>
+<p>stride 指针会让很多人感到困惑，如文档所示它就是连续通用顶点属性之间的字节偏移量，也可以理解为每个顶点之间的字节数。举个例子我们有位置 vec3、纹理坐标 vec2 和法线 vec3，那么我们的 stride 就是 3 * 4 + 2 * 4 + 3 * 4 &#x3D; 32 字节，它是每个顶点的字节大小。</p>
+<p>如果我们想从一个顶点跳到下一个顶点，我需要在缓冲区中加上 32 个字节。所以如果我们有一个指针指向缓冲区的开始，然后经过缓冲区的 32 个字节，我应该在下一个顶点的起点，这就是 stride。</p>
+<p>你可以用宏来代替这些数据</p>
+<p><strong>pointer</strong></p>
+<p>Specifies a offset of the first component of the first generic vertex attribute in the array in the data store of the buffer currently bound to the GL_ARRAY_BUFFER target. The initial value is 0.</p>
+<p>pointer 文档的表述上第一个组件的一个偏移量，它是指向实际属性的指针。不要管有多少个顶点，聚焦于一个顶点，里面包含位置、纹理坐标和法线。对于位置偏移量为 0，因为它是缓冲区的第一个字节；然后我们前进 12 个字节到达纹理坐标，所以对于我的纹理坐标属性这个值（pointer）是 12；最后再前进 8 字节得到顶点的法线，所以对于顶点法线属性 20 是这个 pointer 的值。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43454101/article/details/125019293">Cherno OpenGL 教程_Yousazoe的博客-CSDN博客</a></p>
+<p>需要一个enable函数</p>
+<pre class="line-numbers language-CPP" data-language="CPP"><code class="language-CPP">glEnableVertexAttribArray(0);
+glVertexAttribPointer(0, 2, GL_FLOAT , GL_FALSE , sizeof(float) * 2 , 0);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这两段代码告诉 OpenGL 缓冲区的布局是什么，理论上如果有一个着色器就可以看到在屏幕上看到三角形了。</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;GL/glew.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;GLFW/glfw3.h></span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    GLFWwindow<span class="token operator">*</span> window<span class="token punctuation">;</span>
+
+    <span class="token comment">/* Initialize the library */</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">glfwInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/* Create a windowed mode window and its OpenGL context */</span>
+    window <span class="token operator">=</span> <span class="token function">glfwCreateWindow</span><span class="token punctuation">(</span><span class="token number">640</span><span class="token punctuation">,</span> <span class="token number">480</span><span class="token punctuation">,</span> <span class="token string">"Hello World"</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>window<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">glfwTerminate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/* Make the window's context current */</span>
+    <span class="token function">glfwMakeContextCurrent</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">glewInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> GLEW_OK<span class="token punctuation">)</span>
+        std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Error!"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+
+    <span class="token keyword">float</span> positions<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+        <span class="token operator">-</span><span class="token number">0.5f</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span>
+         <span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+        <span class="token operator">-</span><span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.5</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> buffer<span class="token punctuation">;</span>
+    <span class="token function">glGenBuffers</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">glBindBuffer</span><span class="token punctuation">(</span>GL_ARRAY_BUFFER <span class="token punctuation">,</span> buffer<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//GL_ARRAY_BUFFER是OpenGL的一个缓冲区类型，它用于存储顶点数据。当我们需要在渲染过程中向顶点着色器提供顶点数据时，我们可以使用GL_ARRAY_BUFFER类型的缓冲区对象来存储这些数据。</span>
+    <span class="token function">glBufferData</span><span class="token punctuation">(</span>GL_ARRAY_BUFFER<span class="token punctuation">,</span> <span class="token number">6</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">,</span> positions<span class="token punctuation">,</span> GL_STATIC_DRAW<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">glEnableVertexAttribArray</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">glVertexAttribPointer</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> GL_FLOAT <span class="token punctuation">,</span> GL_FALSE <span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">glBindBuffer</span><span class="token punctuation">(</span>GL_ARRAY_BUFFER<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/* Loop until the user closes the window */</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">glfwWindowShouldClose</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token comment">/* Render here */</span>
+        <span class="token function">glClear</span><span class="token punctuation">(</span>GL_COLOR_BUFFER_BIT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">glDrawArrays</span><span class="token punctuation">(</span>GL_TRIANGLES<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">/* Swap front and back buffers */</span>
+        <span class="token function">glfwSwapBuffers</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">/* Poll for and process events */</span>
+        <span class="token function">glfwPollEvents</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token function">glfwTerminate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="opengl的shader"><a href="#opengl的shader" class="headerlink" title="opengl的shader"></a>opengl的shader</h2><p>如果我们运行之前的代码，屏幕上会打印一个白色三角形，这是因为gpu驱动会向你提供默认的着色器，如果你没有提供自己的着色器的话。<br>但是这事实上是基于你电脑的驱动的。</p>
+<p><em><strong>chatgpt：</strong></em></p>
+<p>在OpenGL中，着色器是一种运行在GPU上的小程序，用于处理图形渲染过程中的各种计算。它们可以用来实现顶点转换、颜色计算、纹理采样和像素输出等功能。着色器使用一种专门的语言编写，例如OpenGL Shader Language（GLSL），然后编译并链接到OpenGL应用程序中。</p>
+<p>着色器的主要作用是控制图形渲染过程中的各个阶段，例如顶点着色器（Vertex Shader）负责将顶点从局部空间转换为屏幕空间，片段着色器（Fragment Shader）则负责计算像素的颜色和深度值等。着色器可以根据具体的应用需求进行定制，从而实现各种各样的效果，例如光照、阴影、纹理映射等。</p>
+<hr>
+<p>当我们发出一个绘制调用，顶点着色器会获得调用，片段着色器会get_cold，然后我们就会在屏幕上看到结果。（简单起见中间有很多部分都跳过去了）</p>
+<p><strong>顶点着色器</strong><br>那么顶点着色器是做什么的？</p>
+<p>它会被我们渲染的每个顶点调用，在这个例子中我们有一个三角形三个顶点，这意味着顶点着色器会被调用三次，每个顶点调用一次。顶点着色器的主要目的是告诉 OpenGL 你希望这个顶点在屏幕空间的什么位置。再强调一次，顶点着色器的主要目的是提供那些顶点的位置，如果有必要我们需要能够提供一些变换以便 OpenGL 能把这些数字转化成屏幕坐标，这样我们就能在窗口中看到我们的图形在对的位置。</p>
+<p><strong>片段着色器</strong><br>一旦顶点着色器运行结束，我们就进入了管道的下一个阶段：片段着色器或者像素着色器。</p>
+<p>虽然片段和像素在术语上有点小差别，但现在你可以把像素当成片段或者把片段想象成像素，因为片段着色器会为每个需要光栅化的像素运行一次。我们的窗口基本上是由像素组成的，我们指定的那三个顶点组成我们的三角形现在需要用实际的像素填充，这就是光栅化阶段所做的。</p>
+<p>片段着色器或像素着色器就是对三角形中需要填充的每个像素调用一次，主要决定这个像素是什么颜色，这就是它的作用，它决定了像素的输出颜色，这样像素就可以用正确的颜色着色。形象一点可以把它想象成一本涂色本，当你只有东西的轮廓时需要给它上色，这就是片段着色器的职责。</p>
+<p>相比于顶点着色器，片段着色器里面的东西代价要高得多，因为它会为每个像素运行。</p>
+<p>话虽如此，有些东西显然需要按像素计算例如光源。如果你在计算光源，每个像素都有一个颜色值，这个值是由很多东西决定：光源、环境、纹理、提供给表面的材质…所有这些一起来确定一个特定像素的正确颜色。显然这取决于一些输入，例如相机的位置在哪里，而这些所有的东西结束后你在片段着色器中的决定仅仅是单个像素的颜色，这就是片段着色器的作用。<br>————————————————<br>版权声明：本文为CSDN博主「Yousazoe」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43454101/article/details/125019293">https://blog.csdn.net/weixin_43454101/article/details/125019293</a></p>
+<h2 id="写一个shader"><a href="#写一个shader" class="headerlink" title="写一个shader"></a>写一个shader</h2><p>第一步我们需要定义一个静态函数，因为我不希望它链接到其他的编译单元或者cpp文件。他会返回一个整数。</p>
+<p>和创建缓冲区一致，我们需要返回一个整型作为标识符，当我们想绑定的时候可以绑定那个缓冲区 id。</p>
+<p>所以我们要做的第一件事就是创建一个程序，基本上我们只需要输入 glCreateProgram()，该函数不需要传入整数引用之类的东西，它会返回一个无符号的整数（顺带一提，这里和后面不使用 OpenGL 自带类型的原因是个人处理多种类型的图形 API，更倾向于 C++ 类型)</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">static</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token function">CompileShader</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> type <span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string source<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span><span class="token comment">//由于代码的复用性，我们可以写一个函数来生成着色器对象</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token function">glCreateShader</span><span class="token punctuation">(</span>GL_VERTEX_SHADER<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> src <span class="token operator">=</span> source<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//初始化函数，查找字符串的第一个字符然后返回它的内存地址</span>
+    <span class="token function">glShaderSource</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>src<span class="token punctuation">,</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">/*
+    这行代码是将指定ID的着色器对象的源代码设置为传递给函数的源代码字符串。具体来说：
+
+id是用于指定要修改的着色器对象的ID。
+1指定要修改的源代码字符串数量。在这种情况下，我们只传递了一个源代码字符串。
+&amp;src是指向源代码字符串的指针，该源代码字符串已存储在内存中，src是一个指向此字符串的指针。
+nullptr指定字符串长度数组的指针，表示每个源代码字符串的长度。因为我们使用了一个NULL指针，OpenGL会自动假定我们使用的字符串是以NULL结束的，这样它可以自己计算字符串长度。
+    glCompileShader(id);
+    */</span>
+    
+    <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">static</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token function">CreateShader</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> vertexShader<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> fragmentShader<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span><span class="token comment">//将着色器的源码作为字符串传入</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> program <span class="token operator">=</span> <span class="token function">glCreateProgram</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建一个程序</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> vs <span class="token operator">=</span> <span class="token function">CompileShader</span><span class="token punctuation">(</span>GL_VERTEX_SHADER <span class="token punctuation">,</span> vertexShadeR<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> fs <span class="token operator">=</span> <span class="token function">CompileShader</span><span class="token punctuation">(</span>GL_FRAGMENT_SHADER<span class="token punctuation">,</span> fragmentShader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">glAttachShader</span><span class="token punctuation">(</span>program<span class="token punctuation">,</span> vs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">glAttachShader</span><span class="token punctuation">(</span>program<span class="token punctuation">,</span> fs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">glLinkProgram</span><span class="token punctuation">(</span>program<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">glValidateProgram</span><span class="token punctuation">(</span>program<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//这个过程很像 C++编译中将两个不同的文件链接在一起，以便可以同时使用它们：</span>
+
+    <span class="token function">glDeleteShader</span><span class="token punctuation">(</span>vs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">glDeleteShader</span><span class="token punctuation">(</span>fs<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//连接程序完成，可以删除shader</span>
+    
+    <span class="token keyword">return</span> program<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>错误处理：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//TODO: Error handing</span>
+    <span class="token keyword">int</span> result<span class="token punctuation">;</span>
+    <span class="token function">glGetShaderiv</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> GL_COMPILE_STATUS<span class="token punctuation">,</span> <span class="token operator">&amp;</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">==</span> GL_FALSE<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> length<span class="token punctuation">;</span>
+        <span class="token function">glGetShaderiv</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> GL_INFO_LOG_LENGTH <span class="token punctuation">,</span> <span class="token operator">&amp;</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//获取着色器的编译状态</span>
+        <span class="token keyword">char</span><span class="token operator">*</span> message <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">alloca</span><span class="token punctuation">(</span>length <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//在栈上分配内存</span>
+        <span class="token function">glGetShaderInfoLog</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> length<span class="token punctuation">,</span> <span class="token operator">&amp;</span>length<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Failed to compile "</span><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>type <span class="token operator">==</span> GL_VERTEX_SHADER <span class="token operator">?</span> <span class="token string">"vertex"</span> <span class="token operator">:</span> <span class="token string">"fragment"</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" shader"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+        std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> message <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+        <span class="token function">glDeleteShader</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>chatgpt</strong></p>
+<p>glShaderSource(id, 1, &amp;src, nullptr);是什么意思</p>
+<p>这行代码是将指定ID的着色器对象的源代码设置为传递给函数的源代码字符串。具体来说：</p>
+<ul>
+<li><code>id</code>是用于指定要修改的着色器对象的ID。</li>
+<li><code>1</code>指定要修改的源代码字符串数量。在这种情况下，我们只传递了一个源代码字符串。</li>
+<li><code>&amp;src</code>是指向源代码字符串的指针，该源代码字符串已存储在内存中，<code>src</code>是一个指向此字符串的指针。</li>
+<li><code>nullptr</code>指定字符串长度数组的指针，表示每个源代码字符串的长度。因为我们使用了一个NULL指针，OpenGL会自动假定我们使用的字符串是以NULL结束的，这样它可以自己计算字符串长度。</li>
+</ul>
+<hr>
+<p><strong>chatgpt</strong></p>
+<p><code>glGetShaderInfoLog()</code> 函数是用于获取着色器编译或连接期间的错误消息或警告信息的函数。在这段代码中，该函数被用于获取着色器编译期间的错误消息。</p>
+<p>具体来说，<code>id</code> 是用于指定要查询信息的着色器对象的 ID。<code>length</code> 是用于指定接收消息的缓冲区大小的最大值，它的值在前面调用 <code>glGetShaderiv()</code> 获取着色器编译状态时已经获取了。<code>&amp;length</code> 是返回实际消息长度的变量的指针，<code>message</code> 是指向接收错误消息的缓冲区的指针。</p>
+<p>在函数调用后，<code>message</code> 缓冲区中将包含编译错误消息或警告信息。如果着色器编译成功，则消息缓冲区可能为空或包含一些提示性信息。如果编译失败，消息缓冲区将包含有关编译错误的详细信息，包括出错行数和错误描述等。</p>
+<hr>
+<p>接下来我们快速写一个着色器：</p>
+<p>首先 <code>#version 330 core</code> 意味着我们将使用 GLSL（OpenGL 的着色器），其次指定位置和颜色：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>string vertexShader <span class="token operator">=</span> <span class="token raw-string string">R"(
+        #version 330 core
+        
+        layout(location = 0) in vec4 position;
+
+        void main()
+		&#123;
+			gl_Position = position;
+		&#125;
+    )"</span><span class="token punctuation">;</span><span class="token comment">//这意味着他不让我们使用任何弃用函数或者类似的东西</span>
+	std<span class="token double-colon punctuation">::</span>string fragmentShader <span class="token operator">=</span> <span class="token raw-string string">R"(
+        #version 330 core
+        
+        layout(location = 0) in vec4 color;
+
+        void main()
+		&#123;
+			color = vec4(1.0 , 0.0 , 0.0 , 1.0);
+		&#125;
+    )"</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> shader <span class="token operator">=</span> <span class="token function">CreateShader</span><span class="token punctuation">(</span>vertexShader<span class="token punctuation">,</span> fragmentShader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glUseProgram</span><span class="token punctuation">(</span>shader<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;GL/glew.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;GLFW/glfw3.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+
+<span class="token keyword">static</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token function">CompileShader</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> type<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> source<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token function">glCreateShader</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> src <span class="token operator">=</span> source<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glShaderSource</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>src<span class="token punctuation">,</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glCompileShader</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">//TODO: Error handing</span>
+	<span class="token keyword">int</span> result<span class="token punctuation">;</span>
+	<span class="token function">glGetShaderiv</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> GL_COMPILE_STATUS<span class="token punctuation">,</span> <span class="token operator">&amp;</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">==</span> GL_FALSE<span class="token punctuation">)</span>
+	<span class="token punctuation">&#123;</span>
+		<span class="token keyword">int</span> length<span class="token punctuation">;</span>
+		<span class="token function">glGetShaderiv</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> GL_INFO_LOG_LENGTH<span class="token punctuation">,</span> <span class="token operator">&amp;</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">char</span><span class="token operator">*</span> message <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">alloca</span><span class="token punctuation">(</span>length <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//在栈上分配内存</span>
+		<span class="token function">glGetShaderInfoLog</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> length<span class="token punctuation">,</span> <span class="token operator">&amp;</span>length<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Failed to compile "</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>type <span class="token operator">==</span> GL_VERTEX_SHADER <span class="token operator">?</span> <span class="token string">"vertex"</span> <span class="token operator">:</span> <span class="token string">"fragment"</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" shader"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+		std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> message <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+		<span class="token function">glDeleteShader</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+
+	<span class="token keyword">return</span> id<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">static</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token function">CreateShader</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> vertexShader<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> fragmentShader<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span><span class="token comment">//将着色器的源码作为字符串传入</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> program <span class="token operator">=</span> <span class="token function">glCreateProgram</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建一个程序</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> vs <span class="token operator">=</span> <span class="token function">CompileShader</span><span class="token punctuation">(</span>GL_VERTEX_SHADER<span class="token punctuation">,</span> vertexShader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> fs <span class="token operator">=</span> <span class="token function">CompileShader</span><span class="token punctuation">(</span>GL_FRAGMENT_SHADER<span class="token punctuation">,</span> fragmentShader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token function">glAttachShader</span><span class="token punctuation">(</span>program<span class="token punctuation">,</span> vs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glAttachShader</span><span class="token punctuation">(</span>program<span class="token punctuation">,</span> fs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glLinkProgram</span><span class="token punctuation">(</span>program<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glValidateProgram</span><span class="token punctuation">(</span>program<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//这个过程很像 C++编译中将两个不同的文件链接在一起，以便可以同时使用它们：</span>
+
+	<span class="token function">glDeleteShader</span><span class="token punctuation">(</span>vs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glDeleteShader</span><span class="token punctuation">(</span>fs<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//连接程序完成，可以删除shader</span>
+
+	<span class="token keyword">return</span> program<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	GLFWwindow<span class="token operator">*</span> window<span class="token punctuation">;</span>
+
+	<span class="token comment">/* Initialize the library */</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">glfwInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/* Create a windowed mode window and its OpenGL context */</span>
+	window <span class="token operator">=</span> <span class="token function">glfwCreateWindow</span><span class="token punctuation">(</span><span class="token number">640</span><span class="token punctuation">,</span> <span class="token number">480</span><span class="token punctuation">,</span> <span class="token string">"Hello World"</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>window<span class="token punctuation">)</span>
+	<span class="token punctuation">&#123;</span>
+		<span class="token function">glfwTerminate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+
+	<span class="token comment">/* Make the window's context current */</span>
+	<span class="token function">glfwMakeContextCurrent</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">glewInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> GLEW_OK<span class="token punctuation">)</span>
+		std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Error!"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+
+	<span class="token keyword">float</span> positions<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+		<span class="token operator">-</span><span class="token number">0.5f</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span>
+		 <span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+		<span class="token operator">-</span><span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.5</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> buffer<span class="token punctuation">;</span>
+	<span class="token function">glGenBuffers</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glBindBuffer</span><span class="token punctuation">(</span>GL_ARRAY_BUFFER<span class="token punctuation">,</span> buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glBufferData</span><span class="token punctuation">(</span>GL_ARRAY_BUFFER<span class="token punctuation">,</span> <span class="token number">6</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">,</span> positions<span class="token punctuation">,</span> GL_STATIC_DRAW<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token function">glEnableVertexAttribArray</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glVertexAttribPointer</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> GL_FLOAT<span class="token punctuation">,</span> GL_FALSE<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	std<span class="token double-colon punctuation">::</span>string vertexShader <span class="token operator">=</span> <span class="token raw-string string">R"(
+        #version 330 core
+
+        layout(location = 0) in vec4 position;
+
+        void main()
+		&#123;
+			gl_Position = position;
+		&#125;
+    )"</span><span class="token punctuation">;</span><span class="token comment">//这意味着他不让我们使用任何弃用函数或者类似的东西</span>
+	std<span class="token double-colon punctuation">::</span>string fragmentShader <span class="token operator">=</span> <span class="token raw-string string">R"(
+        #version 330 core
+
+        layout(location = 0) out vec4 color;
+
+        void main()
+		&#123;
+			color = vec4(1.0 , 0.0 , 0.0 , 1.0);
+		&#125;
+    )"</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> shader <span class="token operator">=</span> <span class="token function">CreateShader</span><span class="token punctuation">(</span>vertexShader<span class="token punctuation">,</span> fragmentShader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glUseProgram</span><span class="token punctuation">(</span>shader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/* Loop until the user closes the window */</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">glfwWindowShouldClose</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#123;</span>
+		<span class="token comment">/* Render here */</span>
+		<span class="token function">glClear</span><span class="token punctuation">(</span>GL_COLOR_BUFFER_BIT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token function">glDrawArrays</span><span class="token punctuation">(</span>GL_TRIANGLES<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">/* Swap front and back buffers */</span>
+		<span class="token function">glfwSwapBuffers</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">/* Poll for and process events */</span>
+		<span class="token function">glfwPollEvents</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+
+	<span class="token function">glfwTerminate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="shader处理"><a href="#shader处理" class="headerlink" title="shader处理"></a>shader处理</h2><p>创建一个Shader.shader文件，写上这些代码</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">shader</span> <span class="token expression">vertex</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span>
+
+<span class="token function">layout</span><span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> in vec4 position<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	gl_Position <span class="token operator">=</span> position<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">shader</span> <span class="token expression">fragment</span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">version</span> <span class="token expression"><span class="token number">330</span> core</span></span>
+
+<span class="token function">layout</span><span class="token punctuation">(</span>location <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> out vec4 color<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	color <span class="token operator">=</span> <span class="token function">vec4</span><span class="token punctuation">(</span><span class="token number">1.0</span> <span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">,</span> <span class="token number">0.0</span> <span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><em>如果你在studio外面运行可执行文件，默认的工作目录将会是包含可执行文件的目录，所以一切都会相对于那个。但是如果我们通过visual studio调试运行这个，工作目录实际上是由visul studio调试类属性设置的。properties - debugging - working directory</em></p>
+<p>写一个读写文件的函数：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">struct</span> <span class="token class-name">ShaderProgramSource</span>
+<span class="token punctuation">&#123;</span>
+	std<span class="token double-colon punctuation">::</span>string VertexSource<span class="token punctuation">;</span>
+	std<span class="token double-colon punctuation">::</span>string FragmentSource<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">static</span> ShaderProgramSource <span class="token function">ParseShader</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> filepath<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	std<span class="token double-colon punctuation">::</span>ifstream <span class="token function">stream</span><span class="token punctuation">(</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">enum</span> <span class="token keyword">class</span> <span class="token class-name">Shadertype</span>
+	<span class="token punctuation">&#123;</span>
+		NONE <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">,</span> VERTEX <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">,</span> FRAGMENT <span class="token operator">=</span> <span class="token number">1</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+	std<span class="token double-colon punctuation">::</span>string line<span class="token punctuation">;</span>
+	std<span class="token double-colon punctuation">::</span>stringstream ss<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	Shadertype type <span class="token operator">=</span> Shadertype<span class="token double-colon punctuation">::</span>NONE<span class="token punctuation">;</span>
+
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">getline</span><span class="token punctuation">(</span>stream<span class="token punctuation">,</span> line<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//一行一行地浏览文件</span>
+	<span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>line<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"#shader"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> std<span class="token double-colon punctuation">::</span>string<span class="token double-colon punctuation">::</span>npos<span class="token punctuation">)</span>
+		<span class="token punctuation">&#123;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>line<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"vertex"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> std<span class="token double-colon punctuation">::</span>string<span class="token double-colon punctuation">::</span>npos<span class="token punctuation">)</span>
+			<span class="token punctuation">&#123;</span><span class="token comment">//set mode to vertex</span>
+				type <span class="token operator">=</span> Shadertype<span class="token double-colon punctuation">::</span>VERTEX<span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>line<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"fragment"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> std<span class="token double-colon punctuation">::</span>string<span class="token double-colon punctuation">::</span>npos<span class="token punctuation">)</span>
+			<span class="token punctuation">&#123;</span><span class="token comment">//set mode to fragment</span>
+				type <span class="token operator">=</span> Shadertype<span class="token double-colon punctuation">::</span>FRAGMENT<span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">else</span>
+		<span class="token punctuation">&#123;</span>
+			ss<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>type<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> line <span class="token operator">&lt;&lt;</span> <span class="token char">'\n'</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">return</span> <span class="token punctuation">&#123;</span> ss<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">,</span> ss<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>修改main函数</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">ShaderProgramSource source <span class="token operator">=</span> <span class="token function">ParseShader</span><span class="token punctuation">(</span><span class="token string">"res/shaders/Shader.shader"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">unsigned</span> <span class="token keyword">int</span> shader <span class="token operator">=</span> <span class="token function">CreateShader</span><span class="token punctuation">(</span>source<span class="token punctuation">.</span>VertexSource<span class="token punctuation">,</span> source<span class="token punctuation">.</span>FragmentSource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">glUseProgram</span><span class="token punctuation">(</span>shader<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>源码如下：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;GL/glew.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;GLFW/glfw3.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;fstream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sstream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span>
+
+<span class="token keyword">struct</span> <span class="token class-name">ShaderProgramSource</span>
+<span class="token punctuation">&#123;</span>
+	std<span class="token double-colon punctuation">::</span>string VertexSource<span class="token punctuation">;</span>
+	std<span class="token double-colon punctuation">::</span>string FragmentSource<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">static</span> ShaderProgramSource <span class="token function">ParseShader</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> filepath<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	std<span class="token double-colon punctuation">::</span>ifstream <span class="token function">stream</span><span class="token punctuation">(</span>filepath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">enum</span> <span class="token keyword">class</span> <span class="token class-name">Shadertype</span>
+	<span class="token punctuation">&#123;</span>
+		NONE <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">,</span> VERTEX <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">,</span> FRAGMENT <span class="token operator">=</span> <span class="token number">1</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+	std<span class="token double-colon punctuation">::</span>string line<span class="token punctuation">;</span>
+	std<span class="token double-colon punctuation">::</span>stringstream ss<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	Shadertype type <span class="token operator">=</span> Shadertype<span class="token double-colon punctuation">::</span>NONE<span class="token punctuation">;</span>
+
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">getline</span><span class="token punctuation">(</span>stream<span class="token punctuation">,</span> line<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//一行一行地浏览文件</span>
+	<span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>line<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"#shader"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> std<span class="token double-colon punctuation">::</span>string<span class="token double-colon punctuation">::</span>npos<span class="token punctuation">)</span>
+		<span class="token punctuation">&#123;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>line<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"vertex"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> std<span class="token double-colon punctuation">::</span>string<span class="token double-colon punctuation">::</span>npos<span class="token punctuation">)</span>
+			<span class="token punctuation">&#123;</span><span class="token comment">//set mode to vertex</span>
+				type <span class="token operator">=</span> Shadertype<span class="token double-colon punctuation">::</span>VERTEX<span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>line<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"fragment"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> std<span class="token double-colon punctuation">::</span>string<span class="token double-colon punctuation">::</span>npos<span class="token punctuation">)</span>
+			<span class="token punctuation">&#123;</span><span class="token comment">//set mode to fragment</span>
+				type <span class="token operator">=</span> Shadertype<span class="token double-colon punctuation">::</span>FRAGMENT<span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">else</span>
+		<span class="token punctuation">&#123;</span>
+			ss<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>type<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> line <span class="token operator">&lt;&lt;</span> <span class="token char">'\n'</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">return</span> <span class="token punctuation">&#123;</span> ss<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">,</span> ss<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">str</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">static</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token function">CompileShader</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> type<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> source<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token function">glCreateShader</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> src <span class="token operator">=</span> source<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glShaderSource</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>src<span class="token punctuation">,</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glCompileShader</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">//TODO: Error handing</span>
+	<span class="token keyword">int</span> result<span class="token punctuation">;</span>
+	<span class="token function">glGetShaderiv</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> GL_COMPILE_STATUS<span class="token punctuation">,</span> <span class="token operator">&amp;</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">==</span> GL_FALSE<span class="token punctuation">)</span>
+	<span class="token punctuation">&#123;</span>
+		<span class="token keyword">int</span> length<span class="token punctuation">;</span>
+		<span class="token function">glGetShaderiv</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> GL_INFO_LOG_LENGTH<span class="token punctuation">,</span> <span class="token operator">&amp;</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">char</span><span class="token operator">*</span> message <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">alloca</span><span class="token punctuation">(</span>length <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token comment">//在栈上分配内存</span>
+		<span class="token function">glGetShaderInfoLog</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> length<span class="token punctuation">,</span> <span class="token operator">&amp;</span>length<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Failed to compile "</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>type <span class="token operator">==</span> GL_VERTEX_SHADER <span class="token operator">?</span> <span class="token string">"vertex"</span> <span class="token operator">:</span> <span class="token string">"fragment"</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" shader"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+		std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> message <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+		<span class="token function">glDeleteShader</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+
+	<span class="token keyword">return</span> id<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">static</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token function">CreateShader</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> vertexShader<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string<span class="token operator">&amp;</span> fragmentShader<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span><span class="token comment">//将着色器的源码作为字符串传入</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> program <span class="token operator">=</span> <span class="token function">glCreateProgram</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//创建一个程序</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> vs <span class="token operator">=</span> <span class="token function">CompileShader</span><span class="token punctuation">(</span>GL_VERTEX_SHADER<span class="token punctuation">,</span> vertexShader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> fs <span class="token operator">=</span> <span class="token function">CompileShader</span><span class="token punctuation">(</span>GL_FRAGMENT_SHADER<span class="token punctuation">,</span> fragmentShader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token function">glAttachShader</span><span class="token punctuation">(</span>program<span class="token punctuation">,</span> vs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glAttachShader</span><span class="token punctuation">(</span>program<span class="token punctuation">,</span> fs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glLinkProgram</span><span class="token punctuation">(</span>program<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glValidateProgram</span><span class="token punctuation">(</span>program<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//这个过程很像 C++编译中将两个不同的文件链接在一起，以便可以同时使用它们：</span>
+
+	<span class="token function">glDeleteShader</span><span class="token punctuation">(</span>vs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glDeleteShader</span><span class="token punctuation">(</span>fs<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//连接程序完成，可以删除shader</span>
+
+	<span class="token keyword">return</span> program<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	GLFWwindow<span class="token operator">*</span> window<span class="token punctuation">;</span>
+
+	<span class="token comment">/* Initialize the library */</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">glfwInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/* Create a windowed mode window and its OpenGL context */</span>
+	window <span class="token operator">=</span> <span class="token function">glfwCreateWindow</span><span class="token punctuation">(</span><span class="token number">640</span><span class="token punctuation">,</span> <span class="token number">480</span><span class="token punctuation">,</span> <span class="token string">"Hello World"</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>window<span class="token punctuation">)</span>
+	<span class="token punctuation">&#123;</span>
+		<span class="token function">glfwTerminate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+
+	<span class="token comment">/* Make the window's context current */</span>
+	<span class="token function">glfwMakeContextCurrent</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">glewInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> GLEW_OK<span class="token punctuation">)</span>
+		std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Error!"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+
+	std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token function">glGetString</span><span class="token punctuation">(</span>GL_VERSION<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+
+	<span class="token keyword">float</span> positions<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+		<span class="token operator">-</span><span class="token number">0.5f</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span>
+		 <span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+		<span class="token operator">-</span><span class="token number">0.5f</span><span class="token punctuation">,</span> <span class="token number">0.5</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> buffer<span class="token punctuation">;</span>
+	<span class="token function">glGenBuffers</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glBindBuffer</span><span class="token punctuation">(</span>GL_ARRAY_BUFFER<span class="token punctuation">,</span> buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glBufferData</span><span class="token punctuation">(</span>GL_ARRAY_BUFFER<span class="token punctuation">,</span> <span class="token number">6</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">,</span> positions<span class="token punctuation">,</span> GL_STATIC_DRAW<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token function">glEnableVertexAttribArray</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glVertexAttribPointer</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> GL_FLOAT<span class="token punctuation">,</span> GL_FALSE<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	ShaderProgramSource source <span class="token operator">=</span> <span class="token function">ParseShader</span><span class="token punctuation">(</span><span class="token string">"res/shaders/Shader.shader"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">unsigned</span> <span class="token keyword">int</span> shader <span class="token operator">=</span> <span class="token function">CreateShader</span><span class="token punctuation">(</span>source<span class="token punctuation">.</span>VertexSource<span class="token punctuation">,</span> source<span class="token punctuation">.</span>FragmentSource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">glUseProgram</span><span class="token punctuation">(</span>shader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token comment">/* Loop until the user closes the window */</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">glfwWindowShouldClose</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#123;</span>
+		<span class="token comment">/* Render here 调用glClear()函数清空颜色缓冲区，准备绘制新的帧。*/</span>
+		<span class="token function">glClearColor</span><span class="token punctuation">(</span><span class="token number">0.2f</span><span class="token punctuation">,</span> <span class="token number">0.3f</span><span class="token punctuation">,</span> <span class="token number">0.3f</span><span class="token punctuation">,</span> <span class="token number">1.0f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">glClear</span><span class="token punctuation">(</span>GL_COLOR_BUFFER_BIT<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token function">glDrawArrays</span><span class="token punctuation">(</span>GL_TRIANGLES<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">/* Swap front and back buffers 调用glfwSwapBuffers()函数交换前后缓冲区，这样刚才绘制的内容才会在屏幕上显示出来。*/</span>
+		<span class="token function">glfwSwapBuffers</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		<span class="token comment">/* Poll for and process events 调用glfwPollEvents()函数处理窗口事件，比如鼠标、键盘等输入事件。*/</span>
+		<span class="token function">glfwPollEvents</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+
+	<span class="token function">glDeleteProgram</span><span class="token punctuation">(</span>shader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token function">glfwTerminate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Cpp/">Cpp</a></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2023/01/12/b290daacd1b79e32.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/03/04/notes/"><img class="next-cover" src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">notes</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/12/09/CPP%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93%E3%81%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" title="CPP标准模板库の打开方式"><img class="cover" src="https://s3.bmp.ovh/imgs/2023/01/12/e92609f7d9e775f5.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-09</div><div class="title">CPP标准模板库の打开方式</div></div></a></div><div><a href="/2023/01/12/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B2/" title="c++与面向对象编程2"><img class="cover" src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-12</div><div class="title">c++与面向对象编程2</div></div></a></div><div><a href="/2022/11/15/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B1/" title="c++与面向对象编程1"><img class="cover" src="https://s3.bmp.ovh/imgs/2023/01/12/e92609f7d9e775f5.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-15</div><div class="title">c++与面向对象编程1</div></div></a></div><div><a href="/2023/01/14/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B3/" title="c++与面向对象编程3"><img class="cover" src="https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-14</div><div class="title">c++与面向对象编程3</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/OIP.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">某不知名的作者</div><div class="author-info__description">衬衫的价格是九磅十五便士</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tonzinonin" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%8E%B0%E4%BB%A3%E7%9A%84opengl"><span class="toc-number">1.</span> <span class="toc-text">使用现代的opengl</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenGL%E4%B8%AD%E9%A1%B6%E7%82%B9%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E5%B8%83%E5%B1%80"><span class="toc-number">1.1.</span> <span class="toc-text">OpenGL中顶点的属性和布局</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#opengl%E7%9A%84shader"><span class="toc-number">2.</span> <span class="toc-text">opengl的shader</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E4%B8%80%E4%B8%AAshader"><span class="toc-number">3.</span> <span class="toc-text">写一个shader</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shader%E5%A4%84%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">shader处理</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/27/opengl/" title="opengl"><img src="https://s3.bmp.ovh/imgs/2023/01/12/b290daacd1b79e32.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="opengl"/></a><div class="content"><a class="title" href="/2023/04/27/opengl/" title="opengl">opengl</a><time datetime="2023-04-27T04:33:51.000Z" title="发表于 2023-04-27 12:33:51">2023-04-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/04/notes/" title="notes"><img src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="notes"/></a><div class="content"><a class="title" href="/2023/03/04/notes/" title="notes">notes</a><time datetime="2023-03-04T10:49:56.000Z" title="发表于 2023-03-04 18:49:56">2023-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/14/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B3/" title="c++与面向对象编程3"><img src="https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++与面向对象编程3"/></a><div class="content"><a class="title" href="/2023/01/14/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B3/" title="c++与面向对象编程3">c++与面向对象编程3</a><time datetime="2023-01-14T15:17:23.000Z" title="发表于 2023-01-14 23:17:23">2023-01-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/12/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B2/" title="c++与面向对象编程2"><img src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++与面向对象编程2"/></a><div class="content"><a class="title" href="/2023/01/12/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B2/" title="c++与面向对象编程2">c++与面向对象编程2</a><time datetime="2023-01-12T10:26:12.000Z" title="发表于 2023-01-12 18:26:12">2023-01-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/20/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" title="基础数论"><img src="https://s3.bmp.ovh/imgs/2023/01/12/e92609f7d9e775f5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基础数论"/></a><div class="content"><a class="title" href="/2022/12/20/%E5%9F%BA%E7%A1%80%E6%95%B0%E8%AE%BA/" title="基础数论">基础数论</a><time datetime="2022-12-20T08:30:22.000Z" title="发表于 2022-12-20 16:30:22">2022-12-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
   function initValine () {
     const valine = new Valine(Object.assign({
       el: '#vcomment',
