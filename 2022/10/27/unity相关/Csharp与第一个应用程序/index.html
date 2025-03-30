@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>唐老师c#笔 | final fantasy</title><meta name="author" content="某不知名的作者"><meta name="copyright" content="某不知名的作者"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="只提供记忆使用 C#基础（选择性）1，枚举1枚举的命名规则一般在名字的前面加上E_2枚举一般申明在namespace下的级别中 3switch语句的贯穿特性合理使用可以将相同枚举类型执行相同的逻辑4字符串转枚举2，数组1new的数组默认值为02int[] arr &#x3D; new int[] {1 , 2 , 3 , 4}，int[] arr &#x3D; {1 , 2 , 3 , 4}，数组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="唐老师c#笔">
+<meta property="og:url" content="https://tonzinonin.github.io/2022/10/27/unity%E7%9B%B8%E5%85%B3/Csharp%E4%B8%8E%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/index.html">
+<meta property="og:site_name" content="final fantasy">
+<meta property="og:description" content="只提供记忆使用 C#基础（选择性）1，枚举1枚举的命名规则一般在名字的前面加上E_2枚举一般申明在namespace下的级别中 3switch语句的贯穿特性合理使用可以将相同枚举类型执行相同的逻辑4字符串转枚举2，数组1new的数组默认值为02int[] arr &#x3D; new int[] {1 , 2 , 3 , 4}，int[] arr &#x3D; {1 , 2 , 3 , 4}，数组">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg">
+<meta property="article:published_time" content="2022-10-27T00:47:09.887Z">
+<meta property="article:modified_time" content="2025-03-16T01:39:50.167Z">
+<meta property="article:author" content="某不知名的作者">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg"><link rel="shortcut icon" href="/img/icon.png"><link rel="canonical" href="https://tonzinonin.github.io/2022/10/27/unity%E7%9B%B8%E5%85%B3/Csharp%E4%B8%8E%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '唐老师c#笔',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-03-16 09:39:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/OIP.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">final fantasy</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">唐老师c#笔</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-27T00:47:09.887Z" title="发表于 2022-10-27 08:47:09">2022-10-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-16T01:39:50.167Z" title="更新于 2025-03-16 09:39:50">2025-03-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="唐老师c#笔"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>只提供记忆使用</p>
+<h1 id="C-基础（选择性）"><a href="#C-基础（选择性）" class="headerlink" title="C#基础（选择性）"></a>C#基础（选择性）</h1><p><strong>1，枚举</strong><br>1枚举的命名规则一般在名字的前面加上E_<br>2枚举一般申明在namespace下的级别中</p>
+<p><img src="https://gitee.com/tonzin/picgo_image_inventory/raw/master/blog/20250311122807750.png" alt="image-20250311122749277"><br>3switch语句的贯穿特性合理使用可以将相同枚举类型执行相同的逻辑<br>4字符串转枚举<br><img src="https://gitee.com/tonzin/picgo_image_inventory/raw/master/blog/20250311123426697.png" alt="image-20250311123423056"><br><strong>2，数组</strong><br>1new的数组默认值为0<br>2int[] arr &#x3D; new int[] {1 , 2 , 3 , 4}，int[] arr &#x3D; {1 , 2 , 3 , 4}，数组大小自动分配<br>3数组的“搬家”<br><img src="/./../../../../BlogImg/image-20250311124648887.png" alt="image-20250311124648887"><br>4交错数组<br><img src="/./../../../../BlogImg/image-20250311130419406.png" alt="image-20250311130419406"></p>
+<p><strong>3，函数</strong></p>
+<p>1值和引用类型<br><img src="/./../../../../BlogImg/image-20250311131722498.png" alt="image-20250311131722498"></p>
+<p>2string作为一个引用类型非常特殊，它具备了值类型的特征，他变我不变，当他重新赋值的时候，会在堆当中重新分配一个内存空间<br>3params变长参数<br><img src="/./../../../../BlogImg/image-20250311160832986.png" alt="image-20250311160832986"><br>这种方式可以向函数里面传入数量不确定的参数，注意后面必须是数组，可以传入0个参数</p>
+<h1 id="C-核心"><a href="#C-核心" class="headerlink" title="C#核心"></a>C#核心</h1><p>面向对象编程：</p>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><h4 id="类的基本概念"><a href="#类的基本概念" class="headerlink" title="类的基本概念"></a><strong>类的基本概念</strong></h4><p>类的实例化<br><code>Person p;</code><br><code>Person p2 = null;</code><br><code>Person p3 = new Person();</code><br>其中前两行代码只是在栈上申明了内存空间引用类型，并没有分配实际堆上的内存，而后面利用new关键字分配了堆上的内存</p>
+<p>Person A; &#x2F;&#x2F;在栈上声明了一个Person类A，但是指向的内存为空<br>Person A &#x3D; new Person(); &#x2F;&#x2F;在栈上声明了类A同时在堆上为这个类分配了内存空间<br>Person B &#x3D; A; &#x2F;&#x2F;在栈上声明新的内存来表示类B，但是将类B的在堆上的内存指定成了类A在堆上的内存。A与B发生了连接<br>Person B &#x3D; new Person(); &#x2F;&#x2F;类B在栈上的地址没有发生改变，但是它的内存地址变成了新的堆上的内存，与A的联系切断</p>
+<h4 id="类的成员变量"><a href="#类的成员变量" class="headerlink" title="类的成员变量"></a><strong>类的成员变量</strong></h4><p>类与结构体的区别其中之一在于结构体不能在结构体里面申明它自己作为成员变量<br>需要注意的一点，<strong>虽然可以声明同类的成员变量，但是不可以对他进行实例化，不然就会产生报错</strong></p>
+<p>所有的成员变量就算你不在代码当中进行赋值，它也会在类实例化的时候为他赋值一个初始值</p>
+<p>其中对于值类型来说，默认值都是0<br>其中对于bool是false<br>引用类型都是空</p>
+<p>通过default(int)就可以看到一个数据类型的默认值</p>
+<p><img src="/./../../../../BlogImg/image-20250311164942750.png" alt="image-20250311164942750"></p>
+<p>访问修饰符：<br>public<br>private<br>protected 只有自己和子类可以进行访问</p>
+<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a><strong>构造函数</strong></h4><p>构造函数可以被重载<br>this代表当前调用函数的对象自己<br><strong>注意</strong>：<br>如果不自己实现无参构造函数而实现了有参构造函数<br>会失去默认的无参构造<br><strong>构造函数特殊写法</strong><br>访问修饰符 构造函数名 (参数列表)：this(参数1 ， 参数2…)<br>比如说</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">public Person(int age , string name) : this()
+&#123;
+	Console.WriteLine(&quot;两个参数构造函数调用&quot;);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>如果使用断点，可以发现它先调用无参构造函数，之后再调用这个构造函数，同理你可以对有参数进行相同做法</p>
+<h4 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a><strong>析构函数</strong></h4><p>当引用类型的堆内存被回收的时候，就会调用这个函数，<br>由于C#存在<strong>垃圾回收机制</strong>，一般不会直接使用析构函数<br>析构函数是当垃圾真正被回收的时候才会调用的函数</p>
+<p><img src="https://gitee.com/tonzin/picgo_image_inventory/raw/master/blog/20250312122427066.png" alt="image-20250311180206190"></p>
+<p>比如这里p在分配了内存空间之后被赋值为空，这个时候原来被分配的内存与引用类型p断开了联系，变成了“垃圾”</p>
+<h4 id="垃圾回收（GC）"><a href="#垃圾回收（GC）" class="headerlink" title="垃圾回收（GC）"></a><strong>垃圾回收（GC）</strong></h4><p>的过程是在便利堆上动态分配的所有对象<br>通过识别它们是否被引用来确定哪些对象是垃圾，哪些对象仍然要重复使用<br>所谓的垃圾就是没有被任何变量，对象引用的内容<br>垃圾就需要被回收释放<br>垃圾回收有很多种算法<br>引用计数，标记清除，标记整理，赋值集合<br>注意：<br><strong>GC只负责堆（heap）内存的垃圾回收</strong><br>引用类型都是存在堆种的，所以他的分配和释放通过垃圾回收机制来进行管理</p>
+<p>栈上的内存是由系统自动管理的<br>值类型在栈种是自动分配内存的，它们有自己的申明周期，不用对他们进行管理。会自动分配和释放</p>
+<p><strong>内存回收机制的大概原理</strong><br>0代内存，1代内存，2代内存<br>代的概念：<br>代是垃圾回收机制使用的一种算法（分代算法）<br>新分配的对象都会被配置在第零代内存当中<br>在第一次内存回收过程开始的时候垃圾回收器会认为堆当中全都是垃圾<br>会进行以下的两步<br>1，标记对象，从根（静态字段，方法参数）开始检查引用对象，标记后为可达对象，未标记为不可达对象，不可达对象就是垃圾<br>2，搬迁对象压缩堆（挂起执行托管代码线程释放未标记的对象，搬迁可达对象，修改引用地址</p>
+<p>大对象总是被分配在第二代内存，目的是减少性能损耗，提高性能<br>不会对大对象进行搬迁压缩，85000字节以上的对象为大对象。</p>
+<p>新东西都在零代，每次触发垃圾回收都会把0代的可达对象迁移到下一代，并且将其中因为垃圾清理形成的内存间隔进行压缩，之后到了2代的时候，运行速度会下降。</p>
+<p>手动触发垃圾回收的方法（一般情况下我们不会去频繁调用，都是在loading界面过场景的时候才会进行调用）：</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">GC.Collect();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="成员属性"><a href="#成员属性" class="headerlink" title="成员属性"></a><strong>成员属性</strong></h4><p>基本概念：<br>1，用于保护成员变量<br>2，为成员属性的获取和赋值添加逻辑处理<br>3，解决3P的局限性<br>    public-内外访问<br>    private-内部访问<br>    protected-内部和子类访问<br>属性可以让成员变量在外部<br>只能获取 不能修改 或者 只能修改 不能获取</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">private string _name;
+
+public string Name
+&#123;
+	get
+	&#123;
+        &#x2F;&#x2F;可以在返回之前添加一些逻辑规则
+		&#x2F;&#x2F;意味着这个属性可以获取的内容
+		return name;
+	&#125;
+	set
+	&#123;
+		&#x2F;&#x2F;可以在设置之前添加一些逻辑规则
+		&#x2F;&#x2F;value关键字用于表示从外部传入的值
+		name &#x3D; value;
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>对属性进行保护处理</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">set
+&#123;
+	if(value &lt; 0)
+	&#123;
+		value &#x3D; 0;
+		Console.WriteLine(&quot;Money less than zero&quot;);
+	&#125;
+	money &#x3D; value;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>对属性进行加密处理</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">get
+&#123;
+	return money - 5;
+&#125;
+set
+&#123;
+	money &#x3D; value + 5;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意：加的访问修饰符低于属性的访问权限，不能让get和set的访问权限都低于属性的访问权限</p>
+<p>属性可以进行简写，比如单例模式</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">public static GameObject Instance&#123;get; private set;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>索引器的概念与属性类似，让对象和数组一样可以通过索引访问其中的元素，注意一下语法<br><img src="https://gitee.com/tonzin/picgo_image_inventory/raw/master/blog/20250312122533054.png" alt="image-20250312122528848"></p>
+<p><img src="https://gitee.com/tonzin/picgo_image_inventory/raw/master/blog/20250312122647122.png" alt="image-20250312122644184"><br>同样的你可以弄一个两个下标的索引器</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">private int [,] array;
+
+public int this[int i , int j]
+&#123;
+	get
+	&#123;
+		return array[i , j];
+	&#125;
+	set
+	&#123;
+		array[i , j] &#x3D; value;
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a><strong>静态成员</strong></h4><p>静态成员会在程序执行开始的就在堆当中分配一块静态内存区域，让静态的方法不需要通过实例化直接就可以通过类名就可以使用</p>
+<p>1,静态成员基本概念</p>
+<p>2早已出现的静态成员</p>
+<p>3自定义静态成员</p>
+<p>4为什么可以直接点出来使用</p>
+<p>5静态函数当中不可以使用非静态成员</p>
+<p>6非静态函数可以使用静态成员</p>
+<p>7非静态函数可以使用静态成员</p>
+<p>8静态成员对于我们的作用</p>
+<p>9常量和静态变量</p>
+<h3 id="静态类和静态构造函数"><a href="#静态类和静态构造函数" class="headerlink" title="静态类和静态构造函数"></a><strong>静态类和静态构造函数</strong></h3><p>用static修饰的类：<br>特点:只能包含静态成员 不能被实例化</p>
+<p>作用：将常用的静态成员写在静态类当中，方便使用</p>
+<p>静态类不能被实例化，更加体现<strong>工具性</strong>的一面</p>
+<p>比如console就是一个静态类</p>
+<p>静态构造函数：<br>1静态类和普通类都可以拥有</p>
+<p>2不能使用访问修饰符</p>
+<p>3不能有参数</p>
+<p>4只会自动调用一次</p>
+<p>作用:</p>
+<p>在静态构造函数中初始化，静态变量</p>
+<p>使用:</p>
+<p>1静态类中的静态构造函数</p>
+<p>2普通类中的静态构造函数</p>
+<p>举例：</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">static class StaticClass
+&#123;
+	public static int testInt &#x3D; 100;
+	pubilc static int testInt &#x3D; 100;
+	
+	static StaticClass()
+	&#123;
+		Console.WriteLine(&quot;Running the Program&quot;);
+	&#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>实际上这个静态构造函数会在这个类第一次实例化的时候就被调用，下图的StaticClass就是一个静态类</p>
+<p><img src="/./image-20250314234149894.png"></p>
+<h4 id="拓展方法"><a href="#拓展方法" class="headerlink" title="拓展方法"></a><strong>拓展方法</strong></h4><p>概念： 为现有的非静态变量类型添加新方法<br>作用：<br>提升程序的扩展性就比如说int值类型，我们是无法在编译器当中直接对其进行编辑的，但是我们可以通过拓展方法来给int类型添加新的方法<br>不再需要继承来添加方法<br>不再需要在对象当中重写方法</p>
+<p>特点</p>
+<p>1一定是在静态类当中</p>
+<p>2一定是一个静态函数</p>
+<p>3第一个参数为拓展目标</p>
+<p>4第一个参数使用this修饰</p>
+<p><img src="/./image-20250314235018366.png" alt="image-20250314235018366"></p>
+<p><img src="/./image-20250314235250069.png" alt="image-20250314235250069"><br>为int类型给了一个拓展方法SpeakValue<br><img src="/./image-20250314235335863.png" alt="image-20250314235335863"></p>
+<h4 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a><strong>泛型</strong></h4><p>实现了类型参数化，达到代码重用的目的<br>通过类型参数化来实现同一份代码上操作多种类型<br>泛型相当于类型占位符<br>定义类或者方法的时候再具体指定类型</p>
+<p>泛型的分类：<br>泛型类和泛型接口<br>基本语法<br>class 类名&lt;泛型占位字母&gt;<br>interface 接口名&lt;泛型占位字母&gt;</p>
+<p>泛型函数<br>基本语法:函数名&lt;泛型占位字母&gt;(参数列表)<br>注意：泛型占位字母可以有多个，注意用逗号分开<br>泛型类的定义：<br><img src="/./image-20250315000517228.png" alt="image-20250315000517228"><br>在主函数当中实例化泛型类、<br><img src="/./image-20250315000502961.png" alt="image-20250315000502961"><br>实现了类型的参数化，之后这个value的类型就是int<br>声明n个占位符</p>
+<p><img src="/./image-20250315000711127.png" alt="image-20250315000711127"></p>
+<p><img src="/./image-20250315000737235.png" alt="image-20250315000737235"><br>接口泛型<br><img src="/./image-20250315000808410.png" alt="image-20250315000808410"><br><img src="/./image-20250315000849360.png" alt="image-20250315000849360"><br>可以看到继承了int类型的泛型接口的类需要实现的成员变量需要是int</p>
+<p>泛型函数</p>
+<p><img src="/./image-20250315001053625.png" alt="image-20250315001053625"><br>tips：default()可以获取一个类型的默认值<br>同样的，T这个占位符也可以作为参数传递<br><img src="/./image-20250315002524448.png" alt="image-20250315002524448"></p>
+<p>泛型函数也可以拥有多个占位符<br><img src="/./image-20250315002621214.png" alt="image-20250315002621214"></p>
+<p>泛型可以看做类名的一部分，比如下面这样的写法其实是合法的</p>
+<p><img src="/./image-20250315002705559.png" alt="image-20250315002705559"><br>在泛型函数的某些情况，类型可以省略不写<br><img src="/./image-20250315002907565.png" alt="image-20250315002907565"></p>
+<h4 id="泛型约束"><a href="#泛型约束" class="headerlink" title="泛型约束"></a><strong>泛型约束</strong></h4><p><img src="https://gitee.com/tonzin/picgo_image_inventory/raw/master/blog/20250312125805577.png" alt="image-20250312125801764"><img src="https://gitee.com/tonzin/picgo_image_inventory/raw/master/blog/20250312125806847.png" alt="image-20250312125709029"></p>
+<p>第一点：限制泛型T为struct值类型（比如说int，float）</p>
+<p><img src="/./image-20250312131221429.png" alt="image-20250312131221429"></p>
+<p><img src="/./image-20250312154152756.png" alt="image-20250312154152756"></p>
+<h4 id="委托事件"><a href="#委托事件" class="headerlink" title="委托事件"></a><strong>委托事件</strong></h4><p>delegate关键字，可以申明一个函数，之后要去实现<br>委托实际上有一点像类似c++的函数指针，可以看做存储各种各样方法的容器，既包括普通的函数，也可以添加匿名函数表达式，不过由于匿名函数没有函数标识符，所以不可以从委托当中移除，灵活性较低。</p>
+<p><img src="/./image-20250315003512732.png" alt="image-20250315003512732"></p>
+<p>delegate用法：访问修饰符 delegate 返回值 委托名（参数列表）<br>语法：访问修饰符 delegate 返回值 委托名（参数列表）</p>
+<p>写在哪里：<br>一般写在namespace 语句块当中，也可以写在class当中<br>简单记忆委托语法，就是在函数申明语法之前加上一个delegate关键字<br>注意：委托负责的申明是不能重名的<br><img src="/./image-20250315003925523.png" alt="image-20250315003925523"><br><img src="/./image-20250315003950683.png" alt="image-20250315003950683"><br>用法如此<br><img src="/./image-20250315004036289.png" alt="image-20250315004036289"><br>其中MyFun是一个委托，这相当于委托容器当中装载了Fun这么一个函数<br>通过Invoke关键字可以使用委托<br><img src="/./image-20250315004225739.png" alt="image-20250315004225739"></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/10/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9B%B8%E5%85%B3/C++%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F/"><img class="prev-cover" src="https://s3.bmp.ovh/imgs/2023/01/12/b290daacd1b79e32.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">输入输出</div></div></a></div><div class="next-post pull-right"><a href="/2020/09/13/unity%E7%9B%B8%E5%85%B3/Unity%E6%99%AF%E6%B7%B1%E6%95%88%E6%9E%9C/"><img class="next-cover" src="https://s3.bmp.ovh/imgs/2023/01/12/f8943481ff2f250b.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Unity景深效果</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/OIP.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">某不知名的作者</div><div class="author-info__description">衬衫的价格是九磅十五便士</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tonzinonin" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-%E5%9F%BA%E7%A1%80%EF%BC%88%E9%80%89%E6%8B%A9%E6%80%A7%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">C#基础（选择性）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C-%E6%A0%B8%E5%BF%83"><span class="toc-number">2.</span> <span class="toc-text">C#核心</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">封装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.0.1.</span> <span class="toc-text">类的基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-number">2.1.0.2.</span> <span class="toc-text">类的成员变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.0.3.</span> <span class="toc-text">构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.0.4.</span> <span class="toc-text">析构函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%EF%BC%88GC%EF%BC%89"><span class="toc-number">2.1.0.5.</span> <span class="toc-text">垃圾回收（GC）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%90%E5%91%98%E5%B1%9E%E6%80%A7"><span class="toc-number">2.1.0.6.</span> <span class="toc-text">成员属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%88%90%E5%91%98"><span class="toc-number">2.1.0.7.</span> <span class="toc-text">静态成员</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E7%B1%BB%E5%92%8C%E9%9D%99%E6%80%81%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.1.</span> <span class="toc-text">静态类和静态构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">拓展方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">泛型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F"><span class="toc-number">2.1.1.3.</span> <span class="toc-text">泛型约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A7%94%E6%89%98%E4%BA%8B%E4%BB%B6"><span class="toc-number">2.1.1.4.</span> <span class="toc-text">委托事件</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/29/Substance%20Painter%20Blender%E5%B7%A5%E4%BD%9C%E6%B5%81/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/1e052378ba7e2bfd.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/29/Substance%20Painter%20Blender%E5%B7%A5%E4%BD%9C%E6%B5%81/" title="无题">无题</a><time datetime="2025-03-29T12:39:26.888Z" title="发表于 2025-03-29 20:39:26">2025-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/27/Unity%20%E4%BB%8EBuilt%20in%E5%8D%87%E7%BA%A7%E5%88%B0Universal%20Render%20PipeLine/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/e92609f7d9e775f5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/27/Unity%20%E4%BB%8EBuilt%20in%E5%8D%87%E7%BA%A7%E5%88%B0Universal%20Render%20PipeLine/" title="无题">无题</a><time datetime="2025-03-27T09:33:04.691Z" title="发表于 2025-03-27 17:33:04">2025-03-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/26/UnityShaderGraph/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/26/UnityShaderGraph/" title="无题">无题</a><time datetime="2025-03-26T08:33:02.619Z" title="发表于 2025-03-26 16:33:02">2025-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/26/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF%E5%85%A5%E9%97%A8/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/26/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF%E5%85%A5%E9%97%A8/" title="无题">无题</a><time datetime="2025-03-26T04:48:22.514Z" title="发表于 2025-03-26 12:48:22">2025-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/26/Gpu%E9%98%B3%E6%98%A5%E7%99%BD%E9%9B%AA%E4%B8%8E%E4%B8%8B%E9%87%8C%E5%B7%B4%E4%BA%BA%E7%AC%94%E8%AE%B0/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/26/Gpu%E9%98%B3%E6%98%A5%E7%99%BD%E9%9B%AA%E4%B8%8E%E4%B8%8B%E9%87%8C%E5%B7%B4%E4%BA%BA%E7%AC%94%E8%AE%B0/" title="无题">无题</a><time datetime="2025-03-26T02:43:50.830Z" title="发表于 2025-03-26 10:43:50">2025-03-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

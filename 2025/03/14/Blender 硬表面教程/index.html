@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>final fantasy | final fantasy</title><meta name="author" content="某不知名的作者"><meta name="copyright" content="某不知名的作者"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Blender 硬表面教程 A1 小技巧一些知识点： 在物体模式可以直接使用ctrl + 数字键进行表面细分，但是无法过多操作，如果需要详细操作，进入编辑模式右键细分，这个时候左下角会多出来细分选项。ctrl+🖱左键，可以从一个点挤出一个点到你光标的所在位置shift + s 是用来吸附物体的，你可以将其吸附到网格来让你挤出的线吸附到网格上直接沿着法向挤出可能会丢形，你需要在挤出后在左下角选择均">
+<meta property="og:type" content="article">
+<meta property="og:title" content="final fantasy">
+<meta property="og:url" content="https://tonzinonin.github.io/2025/03/14/Blender%20%E7%A1%AC%E8%A1%A8%E9%9D%A2%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="final fantasy">
+<meta property="og:description" content="Blender 硬表面教程 A1 小技巧一些知识点： 在物体模式可以直接使用ctrl + 数字键进行表面细分，但是无法过多操作，如果需要详细操作，进入编辑模式右键细分，这个时候左下角会多出来细分选项。ctrl+🖱左键，可以从一个点挤出一个点到你光标的所在位置shift + s 是用来吸附物体的，你可以将其吸附到网格来让你挤出的线吸附到网格上直接沿着法向挤出可能会丢形，你需要在挤出后在左下角选择均">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg">
+<meta property="article:published_time" content="2025-03-14T00:39:01.063Z">
+<meta property="article:modified_time" content="2025-03-29T11:16:25.018Z">
+<meta property="article:author" content="某不知名的作者">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg"><link rel="shortcut icon" href="/img/icon.png"><link rel="canonical" href="https://tonzinonin.github.io/2025/03/14/Blender%20%E7%A1%AC%E8%A1%A8%E9%9D%A2%E6%95%99%E7%A8%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'final fantasy',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-03-29 19:16:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/OIP.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">final fantasy</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-14T00:39:01.063Z" title="发表于 2025-03-14 08:39:01">2025-03-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-29T11:16:25.018Z" title="更新于 2025-03-29 19:16:25">2025-03-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Blender 硬表面教程</p>
+<p>A1</p>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p>一些知识点：</p>
+<p>在物体模式可以直接使用ctrl + 数字键进行表面细分，但是无法过多操作，如果需要详细操作，进入编辑模式右键细分，这个时候左下角会多出来细分选项。<br>ctrl+🖱左键，可以从一个点挤出一个点到你光标的所在位置<br>shift + s 是用来吸附物体的，你可以将其吸附到网格来让你挤出的线吸附到网格上<br>直接沿着法向挤出可能会丢形，你需要在挤出后在左下角选择均等偏移<br><img src="https://gitee.com/tonzin/picgo_image_inventory/raw/master/blog/20250314092520680.png" alt="image-20250314092518653"></p>
+<p>S + Z + 0 可以把物体压平<br>在两个平行边之间添加细分可以在中间新添加一条边，但是可能会变形的特别厉害<br>这个时候你需要调整细分下的平滑度为0来添加中线的同时不变形<br><img src="/./image-20250314110603957.png" alt="image-20250314110603957"><br><img src="/./image-20250314110625017.png" alt="image-20250314110625017"></p>
+<p>如果我们对单条边制作细分，呢么我们就可以在这条边上新添加一个点<br><img src="/./image-20250314110815508.png" alt="image-20250314110815508"></p>
+<p>与此同时ctrl + shift + b可以给点添加倒角，实际上的效果是多出了一些点，鼠标滚轮滑动可以增加点的数量。<br><img src="/./image-20250314111253870.png" alt="image-20250314111253870"><br>之后我们就可以线上添加倒角了<br><img src="/./image-20250314111443235.png" alt="image-20250314111443235"><br>通过调整形状可以使得其向内偏移<br><img src="/./image-20250314111632718.png" alt="image-20250314111632718"></p>
+<p>可以通过这个选项选择一个与这个面相平行且相连的所有面<br><img src="/./image-20250314112239144.png" alt="image-20250314112239144"><br>注意选择的同时按住control是减选<br>可以通过按i向内挤出然后桥接面来在物体上面挖一个洞<br><img src="/./image-20250314113356710.png" alt="image-20250314113356710"><br><img src="/./image-20250314113402833.png" alt="image-20250314113402833"></p>
+<p>遇到这种情况，我们可以进入顶点选择模式<br><img src="/./image-20250314114004242.png" alt="image-20250314114004242"><br>按两下g，可以让点沿着表面移动<br><img src="/./image-20250314114128635.png" alt="image-20250314114128635"><br>之后ctrl+m融合重复的点就行了</p>
+<p>如果我们想要连接一个面上面的两个顶点的时候<br>这是按f来连接点的情况</p>
+<p><img src="/./image-20250314114927004.png" alt="image-20250314114927004"><br>可以看到连了一条线，并且这个平面并没有被分割成两个平面</p>
+<p>这是按j来连接点的情况<br><img src="/./image-20250314115045777.png" alt="image-20250314115045777"><br>可以看到被分成了两个平面</p>
+<p>A2<br>布尔运算是建造硬表面的强大工具</p>
+<p>但是缺点是可能会产生大量的多边形面</p>
+<p>如果是静态物体则可以减轻这些多边形面的影响</p>
+<p>A3<br>使用extra mesh object插件可以在你按下shift + A的时候获得更多组件，比如里面的beam builder就是非常好的工具<br>ctrl + n 可以重新计算法线<br><img src="/./image-20250314094943284.png" alt="image-20250314094943284"><br>bolt factory也是一个非常好用的插件，它给我们提供了更多可自定义的螺丝</p>
+<p>A4硬表面雕刻<br>A5重拓扑，注意你在表面细分了之后，物体的边缘会发生平滑，这个时候你可以选中内部的边，shift + e就可以实现增加锐度</p>
+<p>A6曲线<br>我们可以创建一个贝塞尔曲线</p>
+<p>当你在进行倒角的时候，如果选择的分段是奇数，那么就会获得一个三角面，这取决于你想要打成的效果，在硬表面建模的时候，我们往往需要在立方体上添加一些倒角，来在边上获得更多的高光反光，以来让这个立方体看起来更加真实。</p>
+<h2 id="blender布线原理："><a href="#blender布线原理：" class="headerlink" title="blender布线原理："></a><strong>blender布线原理</strong>：</h2><p>了解几个概念：<br>拓扑：就是顶点、边、面结合在一起的方式，在描述一个图形的拓扑时，我们会用到术语flow，往往用来描述一条连续的可以预测走向的循环边</p>
+<p>在blender当中，很多教程都会说的一点是，尽量将物体上面的拓扑结构保持成四边形，原因有两点。</p>
+<p><strong>第一点</strong>是blender建模的时候我们往往会需要选择一条边的循环边进行操作，但是如果我们的模型上出现了三角面，这个时候我们要去选择循环边就会比较困难了。</p>
+<p><img src="https://gitee.com/tonzin/picgo_image_inventory/raw/master/blog/20250314143245986.png" alt="image-20250314143241401"><br>通过这里我们可以去寻找物体中各种边的多边形<br><img src="/./image-20250314143512719.png" alt="image-20250314143512719"></p>
+<p>如图当我们选择循环边的时候，这条边在三角面（tri）附近中断了，而发生中断的那个点我们往往称之为极点。我们如果还是想要选择，可以按住ctrl进行选择，blender会使用最短路算法来得到循环边<br><img src="/./image-20250314143705346.png" alt="image-20250314143705346"></p>
+<p><strong>第二点</strong>是着色会发生失真</p>
+<p>如图是经典的uv球，它的垂直方向的点都由一个点来展开，在它的附近着色发生了失真<br><img src="/./image-20250314144210309.png" alt="image-20250314144210309"><br><img src="/./image-20250314144329677.png" alt="image-20250314144329677"></p>
+<p>而全是四边形面的经纬球就没有这种情况</p>
+<p>当我们对这样的图添加简易形变修改器的时候<br><img src="/./image-20250314144453524.png" alt="image-20250314144453524"><br><img src="/./image-20250314144505798.png" alt="image-20250314144505798"></p>
+<p><img src="/./image-20250314144519588.png" alt="image-20250314144519588"><br>如图所示发生了一些奇怪的着色</p>
+<p>更多的好处，四边形可以帮助我们更加容易实现我们想要的细节，比如这里的落差效果<br><img src="/./image-20250314144650883.png" alt="image-20250314144650883"></p>
+<p><strong>平直着色和光滑着色的区别</strong>：<br>平直着色适合模拟一些低poly风格的游戏，它往往会取三角面上的某一点的法向来进行计算着色，可以是三角形拓扑结构中的第一个点，也可以是三角形的中点，它给出的效果是整个三角面都是一个颜色的效果<br>平滑着色是通过点与点之对法向间进行线性插值进行着色，给出的效果往往非常光滑，unity和ue的shader默认就是平滑着色渲染。</p>
+<p><strong>SubD建模要领</strong><br>在我们实际建模过程中，所得到的网格往往不是理想状态，实际上让物体中存在一些多边形不一定就不行。<br>可以安全使用的场景：</p>
+<p>如果我们的多边形基本上是平直的，其实没有什么关系，一切都是因为角度，图二中因为刁钻的角度，让我们的着色器没有发现问题<br><img src="/./image-20250314153800738.png" alt="image-20250314153800738"></p>
+<p><img src="/./image-20250314153848047.png" alt="image-20250314153848047"></p>
+<p>我们真正需要处理的是3d模型当中的锐利角度</p>
+<p><img src="/./image-20250314154236820.png" alt="image-20250314154236820"></p>
+<p>在这两张图当中，后者的拓扑结构更加容易进行处理锐利角度，当按下ctrl r的时候，非常容易就可以找到循环边<br><img src="/./image-20250314154320709.png" alt="image-20250314154320709"></p>
+<p>而旁边这个网格就比较难去处理这种效果了</p>
+<p><img src="/./image-20250314154357602.png" alt="image-20250314154357602"></p>
+<p>几种在blender当中建立锐角的方式：</p>
+<p>在下面的这个正方体当中，这个物体（平滑着色）作为立方体的感觉基本上消失了。因为它的法线在每一个方向上都取了平均值，表现得几乎就像一个球体</p>
+<p><img src="https://gitee.com/tonzin/picgo_image_inventory/raw/master/blog/20250314154907512.png" alt="image-20250314154620212"></p>
+<p>这样的立方体是不真实的，我们想要的得到的应该是立方体平直着色的效果，这里有几个注意点：</p>
+<p>当我们为立方体（平直着色）添加倒角，注意当倒角为奇数时，中间会有一个三角面，这时候平直着色的立方体的过渡往往不够自然。<br><img src="/./image-20250314155015958.png" alt="image-20250314155015958"></p>
+<p>一般来说偶数的表现力会更好</p>
+<p>我们生成的倒角会经常发生偏移，这个时候的着色器就会发生失真，如下图，我们给之前的平滑着色立方体添加了倒角，但是它的着色仍然有涂抹过或者一样的迹象，这个时候我们会添加一条循环边进行处理<br>如图为发生了失真的平滑着色立方体（右边那个）<br><img src="/./image-20250314155620317.png" alt="image-20250314155620317"></p>
+<p>使用添加循环边来进行校正<br><img src="/./image-20250314155650675.png" alt="image-20250314155650675"></p>
+<h2 id="倒角修改器"><a href="#倒角修改器" class="headerlink" title="倒角修改器"></a>倒角修改器</h2><p>快捷键ctrl+b，鼠标滚轮可以增加倒角的边数</p>
+<p>我们在修改器界面中添加倒角修改器：</p>
+<h3 id="宽度与段数"><a href="#宽度与段数" class="headerlink" title="宽度与段数"></a>宽度与段数</h3><p><img src="/./image-20250329140133867.png" alt="image-20250329140133867"></p>
+<h3 id="顶点模式和边模式的区别"><a href="#顶点模式和边模式的区别" class="headerlink" title="顶点模式和边模式的区别"></a>顶点模式和边模式的区别</h3><p><img src="/./image-20250329140433176.png" alt="image-20250329140433176"></p>
+<p><img src="/./image-20250329140458809.png" alt="image-20250329140458809"></p>
+<h3 id="钳制重叠"><a href="#钳制重叠" class="headerlink" title="钳制重叠"></a>钳制重叠</h3><p>如果在没有打开钳制重叠的情况下，当倒角的宽度过长，那么就会变成这个样子</p>
+<p><img src="/./image-20250329140713024.png" alt="image-20250329140713024"></p>
+<p><img src="/./image-20250329140911758.png" alt="image-20250329140911758"></p>
+<h3 id="环切线滑移"><a href="#环切线滑移" class="headerlink" title="环切线滑移"></a>环切线滑移</h3><p>由于教程是英文的，使用中文软件有所不便，于是将软件的语言设置成英文</p>
+<p><img src="/./image-20250329141522713.png" alt="image-20250329141522713"></p>
+<p>环切线滑移有助于维持均匀的宽度</p>
+<h3 id="倒角方式"><a href="#倒角方式" class="headerlink" title="倒角方式"></a>倒角方式</h3><p><img src="/./image-20250329141756193.png" alt="image-20250329141756193"></p>
+<p>它们决定了倒角是凸的还是凹的</p>
+<h4 id="偏移模式"><a href="#偏移模式" class="headerlink" title="偏移模式"></a>偏移模式</h4><p><img src="/./image-20250329142036961.png" alt="image-20250329142036961"></p>
+<p>这是没有缩放的情况下使用了偏移模式的倒角立方体</p>
+<p><img src="/./image-20250329142141038.png" alt="image-20250329142141038"></p>
+<p><img src="/./image-20250329142229946.png" alt="image-20250329142229946"></p>
+<h4 id="宽度模式"><a href="#宽度模式" class="headerlink" title="宽度模式"></a>宽度模式</h4><h4 id="深度模式"><a href="#深度模式" class="headerlink" title="深度模式"></a>深度模式</h4><p>这两个模式拉伸的效果和上面的一样</p>
+<h4 id="百分比模式"><a href="#百分比模式" class="headerlink" title="百分比模式"></a>百分比模式</h4><p><img src="/./image-20250329142606077.png" alt="image-20250329142606077"></p>
+<h4 id="Profile轮廓"><a href="#Profile轮廓" class="headerlink" title="Profile轮廓"></a>Profile轮廓</h4><p><img src="/./image-20250329142816278.png" alt="image-20250329142816278"></p>
+<p>一般来说，轮廓的数值越高，平滑着色的着色故障就会越少</p>
+<h3 id="倒角修改器与布尔修改器相结合"><a href="#倒角修改器与布尔修改器相结合" class="headerlink" title="倒角修改器与布尔修改器相结合"></a>倒角修改器与布尔修改器相结合</h3><h4 id="切换物体的显示模式"><a href="#切换物体的显示模式" class="headerlink" title="切换物体的显示模式"></a>切换物体的显示模式</h4><p><img src="/./image-20250329144104520.png" alt="image-20250329144104520"></p>
+<p><img src="/./image-20250329144803300.png" alt="image-20250329144803300"></p>
+<p>打开修改器下的真实网格</p>
+<p><img src="/./image-20250329150125083.png" alt="image-20250329150125083"></p>
+<h3 id="限制方法"><a href="#限制方法" class="headerlink" title="限制方法"></a>限制方法</h3><h4 id="角限制"><a href="#角限制" class="headerlink" title="角限制"></a>角限制</h4><p><img src="/./image-20250329150408889.png" alt="image-20250329150408889"></p>
+<p>这个是在没有限制下的网格，可以发现一些明显是平面的地方也发生了倒角细分</p>
+<p><img src="/./image-20250329150554873.png" alt="image-20250329150554873"></p>
+<h4 id="权重限制"><a href="#权重限制" class="headerlink" title="权重限制"></a>权重限制</h4><p>这意味着我们可以通过控制边缘角系数来控制效果</p>
+<p><img src="/./image-20250329151732994.png" alt="image-20250329151732994"></p>
+<p>正确的操作方法是选中边上的四条边</p>
+<p><img src="/./image-20250329152033348.png" alt="image-20250329152033348"></p>
+<p>之后拖拽鼠标就会产生这种效果</p>
+<p><img src="/./image-20250329152349719.png" alt="image-20250329152349719"></p>
+<p>当然直接对着边ctrl + B也可以有这种效果。</p>
+<p><img src="/./image-20250329152717703.png" alt="image-20250329152717703"></p>
+<h4 id="顶点组权重"><a href="#顶点组权重" class="headerlink" title="顶点组权重"></a>顶点组权重</h4><p><img src="/./image-20250329153159352.png" alt="image-20250329153159352"></p>
+<p>让我们创建一个顶点组</p>
+<p><img src="/./image-20250329153711069.png" alt="image-20250329153711069"></p>
+<p><img src="/./image-20250329153845603.png" alt="image-20250329153845603"></p>
+<p><img src="/./image-20250329154218624.png" alt="image-20250329154218624"></p>
+<p>有点bug不知道为什么</p>
+<p>注意倒角修改器在栈当中的位置，在不同的位置可能会产生不同的效果</p>
+<h4 id="布尔制作刻痕效果"><a href="#布尔制作刻痕效果" class="headerlink" title="布尔制作刻痕效果"></a>布尔制作刻痕效果</h4><p><img src="/./image-20250329161916774.png" alt="image-20250329161916774"></p>
+<p>首先创建一个球体</p>
+<p><img src="/./image-20250329162318736.png" alt="image-20250329162318736"></p>
+<p><img src="/./image-20250329162602062.png" alt="image-20250329162602062"></p>
+<p>得到的最终效果</p>
+<p><img src="/./image-20250329162610018.png" alt="image-20250329162610018"></p>
+<h2 id="实体化修改器"><a href="#实体化修改器" class="headerlink" title="实体化修改器"></a>实体化修改器</h2><p><img src="/./image-20250329163854294.png" alt="image-20250329163854294"></p>
+<p><img src="/./image-20250329173802028.png" alt="image-20250329173802028"></p>
+<p><img src="/./image-20250329173918517.png" alt="image-20250329173918517"></p>
+<p><img src="/./image-20250329174054268.png" alt="image-20250329174054268"></p>
+<p>可以通过控制顶点组来控制物体的厚度</p>
+<p><img src="/./image-20250329174515920.png" alt="image-20250329174515920"></p>
+<p><img src="/./image-20250329175047479.png" alt="image-20250329175047479"></p>
+<h3 id="实体化修改器与布尔修改器结合"><a href="#实体化修改器与布尔修改器结合" class="headerlink" title="实体化修改器与布尔修改器结合"></a>实体化修改器与布尔修改器结合</h3><p>blender 在曲面使用布尔修改器的时候，在删除了网格之后就停止了</p>
+<p><img src="/./image-20250329175548097.png" alt="image-20250329175548097"></p>
+<p><img src="/./image-20250329175557398.png" alt="image-20250329175557398"><br>添加了实体化修改器之后，这个情况便有所改善</p>
+<h2 id="平滑修改器"><a href="#平滑修改器" class="headerlink" title="平滑修改器"></a>平滑修改器</h2><h3 id="Smooth"><a href="#Smooth" class="headerlink" title="Smooth"></a>Smooth</h3><p><img src="/./image-20250329175707007.png" alt="image-20250329175707007"></p>
+<p>它的作用是将面与面之间的角度抚平，松弛整体结构</p>
+<p><img src="/./image-20250329175950262.png" alt="image-20250329175950262"></p>
+<p>数值越高这个几何体会更加松弛</p>
+<p><img src="/./image-20250329180338550.png" alt="image-20250329180338550"></p>
+<p><img src="/./image-20250329180503236.png" alt="image-20250329180503236"></p>
+<p><img src="/./image-20250329180755864.png" alt="image-20250329180755864"></p>
+<p><img src="/./image-20250329180838617.png" alt="image-20250329180838617"></p>
+<p><img src="/./image-20250329180936734.png" alt="image-20250329180936734"></p>
+<p>可以看到之前的边缘平滑的效果消失了</p>
+<p>作用，对混乱的硬表面进行抢救</p>
+<p><img src="/./image-20250329181156259.png" alt="image-20250329181156259"></p>
+<h3 id="corrective-Smooth"><a href="#corrective-Smooth" class="headerlink" title="corrective Smooth"></a>corrective Smooth</h3><p><img src="/./image-20250329181343561.png" alt="image-20250329181343561"></p>
+<p>选择Pin Boundaries也可以帮助我们锁定物体边缘进行平滑，只不过没那么灵活</p>
+<p><img src="/./image-20250329181606939.png" alt="image-20250329181606939"></p>
+<p>Repeat值与Factor值之间的关系</p>
+<p>Factor &#x2F; Repeat值如果相同的，我们会得到相同的结果</p>
+<p><img src="/./image-20250329181817716.png" alt="image-20250329181817716"></p>
+<h2 id="镜像修改器"><a href="#镜像修改器" class="headerlink" title="镜像修改器"></a>镜像修改器</h2><p>将镜像修改器排在布尔修改器之后可以让布尔的效果也拥有镜像效果</p>
+<p>通过在物体中心设置原点的方法来给物体上面的小物件设置对称点（虽然一般来说直接选中那个父物体也行）</p>
+<p><img src="/./image-20250329182440089.png" alt="image-20250329182440089"></p>
+<p>节省操作时间：ctrl + l 进入这个面板选择copy modify可以复制修改器</p>
+<p><img src="/./image-20250329182828144.png" alt="image-20250329182828144"></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/03/16/Unity%20Shader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81%E4%B8%AD%E7%BA%A7/"><img class="prev-cover" src="https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2024/09/13/%E5%9C%B0%E5%BD%A2%E7%BC%96%E8%BE%91/"><img class="next-cover" src="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/OIP.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">某不知名的作者</div><div class="author-info__description">衬衫的价格是九磅十五便士</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tonzinonin" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="toc-number">1.</span> <span class="toc-text">小技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#blender%E5%B8%83%E7%BA%BF%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">blender布线原理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%80%92%E8%A7%92%E4%BF%AE%E6%94%B9%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">倒角修改器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%BD%E5%BA%A6%E4%B8%8E%E6%AE%B5%E6%95%B0"><span class="toc-number">3.1.</span> <span class="toc-text">宽度与段数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B6%E7%82%B9%E6%A8%A1%E5%BC%8F%E5%92%8C%E8%BE%B9%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.2.</span> <span class="toc-text">顶点模式和边模式的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%B3%E5%88%B6%E9%87%8D%E5%8F%A0"><span class="toc-number">3.3.</span> <span class="toc-text">钳制重叠</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%88%87%E7%BA%BF%E6%BB%91%E7%A7%BB"><span class="toc-number">3.4.</span> <span class="toc-text">环切线滑移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%80%92%E8%A7%92%E6%96%B9%E5%BC%8F"><span class="toc-number">3.5.</span> <span class="toc-text">倒角方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%81%8F%E7%A7%BB%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.5.1.</span> <span class="toc-text">偏移模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%BD%E5%BA%A6%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.5.2.</span> <span class="toc-text">宽度模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.5.3.</span> <span class="toc-text">深度模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BE%E5%88%86%E6%AF%94%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.5.4.</span> <span class="toc-text">百分比模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Profile%E8%BD%AE%E5%BB%93"><span class="toc-number">3.5.5.</span> <span class="toc-text">Profile轮廓</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%80%92%E8%A7%92%E4%BF%AE%E6%94%B9%E5%99%A8%E4%B8%8E%E5%B8%83%E5%B0%94%E4%BF%AE%E6%94%B9%E5%99%A8%E7%9B%B8%E7%BB%93%E5%90%88"><span class="toc-number">3.6.</span> <span class="toc-text">倒角修改器与布尔修改器相结合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%89%A9%E4%BD%93%E7%9A%84%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.6.1.</span> <span class="toc-text">切换物体的显示模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E6%96%B9%E6%B3%95"><span class="toc-number">3.7.</span> <span class="toc-text">限制方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%92%E9%99%90%E5%88%B6"><span class="toc-number">3.7.1.</span> <span class="toc-text">角限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%83%E9%87%8D%E9%99%90%E5%88%B6"><span class="toc-number">3.7.2.</span> <span class="toc-text">权重限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B6%E7%82%B9%E7%BB%84%E6%9D%83%E9%87%8D"><span class="toc-number">3.7.3.</span> <span class="toc-text">顶点组权重</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E5%88%B6%E4%BD%9C%E5%88%BB%E7%97%95%E6%95%88%E6%9E%9C"><span class="toc-number">3.7.4.</span> <span class="toc-text">布尔制作刻痕效果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E5%8C%96%E4%BF%AE%E6%94%B9%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">实体化修改器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E5%8C%96%E4%BF%AE%E6%94%B9%E5%99%A8%E4%B8%8E%E5%B8%83%E5%B0%94%E4%BF%AE%E6%94%B9%E5%99%A8%E7%BB%93%E5%90%88"><span class="toc-number">4.1.</span> <span class="toc-text">实体化修改器与布尔修改器结合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E6%BB%91%E4%BF%AE%E6%94%B9%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">平滑修改器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Smooth"><span class="toc-number">5.1.</span> <span class="toc-text">Smooth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#corrective-Smooth"><span class="toc-number">5.2.</span> <span class="toc-text">corrective Smooth</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E4%BF%AE%E6%94%B9%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text">镜像修改器</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/29/Substance%20Painter%20Blender%E5%B7%A5%E4%BD%9C%E6%B5%81/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/1e052378ba7e2bfd.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/29/Substance%20Painter%20Blender%E5%B7%A5%E4%BD%9C%E6%B5%81/" title="无题">无题</a><time datetime="2025-03-29T12:39:26.888Z" title="发表于 2025-03-29 20:39:26">2025-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/27/Unity%20%E4%BB%8EBuilt%20in%E5%8D%87%E7%BA%A7%E5%88%B0Universal%20Render%20PipeLine/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/e92609f7d9e775f5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/27/Unity%20%E4%BB%8EBuilt%20in%E5%8D%87%E7%BA%A7%E5%88%B0Universal%20Render%20PipeLine/" title="无题">无题</a><time datetime="2025-03-27T09:33:04.691Z" title="发表于 2025-03-27 17:33:04">2025-03-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/26/UnityShaderGraph/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/26/UnityShaderGraph/" title="无题">无题</a><time datetime="2025-03-26T08:33:02.619Z" title="发表于 2025-03-26 16:33:02">2025-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/26/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF%E5%85%A5%E9%97%A8/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/26/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF%E5%85%A5%E9%97%A8/" title="无题">无题</a><time datetime="2025-03-26T04:48:22.514Z" title="发表于 2025-03-26 12:48:22">2025-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/26/Gpu%E9%98%B3%E6%98%A5%E7%99%BD%E9%9B%AA%E4%B8%8E%E4%B8%8B%E9%87%8C%E5%B7%B4%E4%BA%BA%E7%AC%94%E8%AE%B0/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/26/Gpu%E9%98%B3%E6%98%A5%E7%99%BD%E9%9B%AA%E4%B8%8E%E4%B8%8B%E9%87%8C%E5%B7%B4%E4%BA%BA%E7%AC%94%E8%AE%B0/" title="无题">无题</a><time datetime="2025-03-26T02:43:50.830Z" title="发表于 2025-03-26 10:43:50">2025-03-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

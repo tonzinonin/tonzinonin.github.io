@@ -1,0 +1,582 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Unity十个垃圾游戏系列第一部:FPS游戏 | final fantasy</title><meta name="author" content="某不知名的作者"><meta name="copyright" content="某不知名的作者"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在 Unity 中，Update 和 FixedUpdate 是两个常用的函数，用于在每一帧中更新游戏对象的状态和行为。它们的区别在于调用时间和执行频率不同。 我们首先创建了这些东西 1.控制鼠标移动的脚本 using System.Collections;  using System.Collections.Generic;  using UnityEngine;  public class M">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity十个垃圾游戏系列第一部:FPS游戏">
+<meta property="og:url" content="https://tonzinonin.github.io/2023/03/04/Unity%20%E5%B0%84%E5%87%BB%E7%94%9F%E5%AD%98%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="final fantasy">
+<meta property="og:description" content="在 Unity 中，Update 和 FixedUpdate 是两个常用的函数，用于在每一帧中更新游戏对象的状态和行为。它们的区别在于调用时间和执行频率不同。 我们首先创建了这些东西 1.控制鼠标移动的脚本 using System.Collections;  using System.Collections.Generic;  using UnityEngine;  public class M">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/01/12/f8943481ff2f250b.jpg">
+<meta property="article:published_time" content="2023-03-04T10:49:56.000Z">
+<meta property="article:modified_time" content="2025-03-07T06:05:24.056Z">
+<meta property="article:author" content="某不知名的作者">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2023/01/12/f8943481ff2f250b.jpg"><link rel="shortcut icon" href="/img/icon.png"><link rel="canonical" href="https://tonzinonin.github.io/2023/03/04/Unity%20%E5%B0%84%E5%87%BB%E7%94%9F%E5%AD%98%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Unity十个垃圾游戏系列第一部:FPS游戏',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-03-07 14:05:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/OIP.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2023/01/12/f8943481ff2f250b.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">final fantasy</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Unity十个垃圾游戏系列第一部:FPS游戏</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-04T10:49:56.000Z" title="发表于 2023-03-04 18:49:56">2023-03-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-07T06:05:24.056Z" title="更新于 2025-03-07 14:05:24">2025-03-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Unity十个垃圾游戏系列第一部:FPS游戏"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>在 Unity 中，Update 和 FixedUpdate 是两个常用的函数，用于在每一帧中更新游戏对象的状态和行为。它们的区别在于调用时间和执行频率不同。</p>
+<p>我们首先创建了这些东西</p>
+<p>1.控制鼠标移动的脚本</p>
+<pre><code>using System.Collections;
+
+using System.Collections.Generic;
+
+using UnityEngine;
+
+public class MouseMovingScript : MonoBehaviour
+
+&#123;
+
+​    public float mouseSensitivity = 100f;
+
+​    float xRotation = 0f;
+
+​    float yRotation = 0f;
+
+​    public float topClamp = -90f;
+
+​    public float bottomClamp = 90f;
+
+​    // Start is called before the first frame update
+
+​    void Start()
+
+​    &#123;
+
+​        Cursor.lockstate = CursorLockMOde.Locked;
+
+​    &#125;
+
+​    // Update is called once per frame
+
+​    void Update()
+
+​    &#123;
+
+​        float mouseX = Input.GetAxis(&quot;Mouse X&quot;) * mouseSensitivity * Time.deltaTime;
+
+​        float mouseY = Input.GetAxis(&quot;Mouse Y&quot;) * mouseSensitivity * Time.deltaTime;
+
+​        xRotation -= mouseY;
+
+​        xRotation = Mathf.Clamp(xRotation, topClamp , bottomClamp );
+
+​        yRotation += mouseX;
+
+​        transform localRotation = Quaternion Euler(xRotation , yRotation , 0f);
+
+​    &#125;
+
+&#125;
+</code></pre>
+<ol>
+<li>XRotation -&#x3D; mouseY; 这行代码的作用<br>在 Update() 中，mouseY 代表鼠标在 垂直方向（Y轴） 的移动量。当玩家向上移动鼠标时，mouseY 为 正值，向下移动鼠标时 mouseY 为 负值。</li>
+</ol>
+<p>这行代码的作用是反转鼠标Y轴的输入，使得鼠标上移时视角向上，鼠标下移时视角向下。</p>
+<p>XRotation 代表 摄像机在X轴方向上的旋转角度（即视角的俯仰角 Pitch）。<br>mouseY 直接加到 XRotation 上会导致鼠标上移时摄像机向下看，因此用 XRotation -&#x3D; mouseY; 反转方向，让鼠标上移时视角也上移。</p>
+<ol start="2">
+<li>Mathf.Clamp(XRotation, 90f , 90f);<br>作用<br>Mathf.Clamp(value, min, max) 用于限制数值范围，确保 value 不会超过 min 和 max 之间。<br>这样可以限制 XRotation 在 -90 到 90 之间，防止摄像机翻转，让玩家不能把视角转到头顶或者脚下。</li>
+</ol>
+<p><code>Cursor.lockState = CursorLockMode.Locked;</code> 这行代码用于<strong>锁定鼠标指针</strong>，让鼠标在游戏窗口内不可见，并且不会移出游戏屏幕。</p>
+<p><strong>pickedupWeapon.transform.SetParent(activeWeaponSlot.transform , false);<br>请问这个false是什么意思</strong></p>
+<p><code>SetParent(Transform parent, bool worldPositionStays)</code> 方法的第二个参数 <code>worldPositionStays</code> 决定了 <strong>更改父对象时子对象的世界坐标是否保持不变</strong>。  </p>
+<p>在你的代码中：  </p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">pickedupWeapon<span class="token punctuation">.</span>transform<span class="token punctuation">.</span><span class="token function">SetParent</span><span class="token punctuation">(</span>activeWeaponSlot<span class="token punctuation">.</span>transform<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这里的 <code>false</code> 表示 <strong>子对象（pickedupWeapon）会完全继承新父对象（activeWeaponSlot）的位置、旋转和缩放</strong>，也就是 <strong>跟随父对象的本地坐标</strong>。</p>
+<h3 id="worldPositionStays-的两种情况："><a href="#worldPositionStays-的两种情况：" class="headerlink" title="worldPositionStays 的两种情况："></a><code>worldPositionStays</code> 的两种情况：</h3><ol>
+<li><p><strong><code>true</code>（默认值）：</strong>  </p>
+<ul>
+<li><strong>保持世界坐标不变</strong>，但会更新 <code>localPosition</code> 和 <code>localRotation</code> 以补偿位置变化。</li>
+<li>适用于：希望子对象在场景中 <strong>不改变外观</strong> 但更换父对象的情况。</li>
+</ul>
+</li>
+<li><p><strong><code>false</code>：</strong>  </p>
+<ul>
+<li><strong>跟随新父对象的本地坐标</strong>，<code>localPosition</code>、<code>localRotation</code> 和 <code>localScale</code> <strong>不变</strong>（相对于新父对象）。</li>
+<li>适用于：希望子对象 <strong>完全变成新父对象的一部分</strong>，跟随父对象移动。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="举个例子："><a href="#举个例子：" class="headerlink" title="举个例子："></a>举个例子：</h3><p>假设 <code>pickedupWeapon</code> 在世界坐标 <code>(10, 0, 5)</code>，<code>activeWeaponSlot</code> 在 <code>(0, 0, 0)</code>：</p>
+<ul>
+<li><p><strong><code>true</code>（保持世界坐标）</strong></p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">pickedupWeapon<span class="token punctuation">.</span>transform<span class="token punctuation">.</span><span class="token function">SetParent</span><span class="token punctuation">(</span>activeWeaponSlot<span class="token punctuation">.</span>transform<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><code>pickedupWeapon</code> 仍然在 **(10, 0, 5)**，但它的 <code>localPosition</code> 可能会被调整以保持世界坐标不变。</li>
+</ul>
+</li>
+<li><p><strong><code>false</code>（跟随新父对象）</strong></p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">pickedupWeapon<span class="token punctuation">.</span>transform<span class="token punctuation">.</span><span class="token function">SetParent</span><span class="token punctuation">(</span>activeWeaponSlot<span class="token punctuation">.</span>transform<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><code>pickedupWeapon</code> 的 <strong>localPosition 维持不变</strong>，但由于 <code>activeWeaponSlot</code> 在 <code>(0, 0, 0)</code>，它的 <strong>世界坐标可能会改变</strong>，以匹配 <code>activeWeaponSlot</code> 的本地坐标系。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="你的代码的作用："><a href="#你的代码的作用：" class="headerlink" title="你的代码的作用："></a>你的代码的作用：</h3><p><code>false</code> 使得 <code>pickedupWeapon</code> <strong>完全继承 <code>activeWeaponSlot</code> 的位置和旋转</strong>，让武器正确放置在武器槽里，而不会漂浮在原来的世界坐标位置。<br>**<br>internal变量**：意味着你可以从其他脚本访问这个变量，但是你不可从inspector窗口当中修改这个变量</p>
+<p>如果动画发生偏移，注意是否是动画的坐标归回初始坐标</p>
+<p>如果数值发生了大幅度浮动现象，看看是不是因为在动画里面打了有关数值的关键帧</p>
+<p>防止枪穿墙的简单方法：<br>在maincamera的下面创建一个render用的子camera，与此同时 创建一个新的weapon render层，并且将所有的武器包括预制体加上这个层，之后在maincamera当中将渲染层cull mask选项当中的weaponrenderlayer关闭，之后将rendercamera的渲染cull mask改成只用weaponrenderlayer，之后将background type 设置成uninitialize，将hdr mssa设置成off，之后你的武器就不会穿墙</p>
+<p>如果你发现你的image无法显示在hierarchy视图当中，那么你可能需要在方法当中检查image是否与其他的同名方法冲突</p>
+<p>Resources.Load<GameObject>(“Pistol1911_Weapon”) 这一行代码的作用是从 Unity 项目的 Resources 文件夹 中加载一个名为 “Pistol1911_Weapon” 的 GameObject 预制体（Prefab）。</p>
+<p>详细解析<br>Resources.Load<T>(string path)</p>
+<p>这是 Unity 提供的一个 API，用于从 Resources 目录加载资源。<br>泛型 <T> 指定了要加载的资源类型，例如 GameObject、Sprite、Texture2D 等。<br>path 是资源在 Resources 目录中的相对路径（不带 .prefab 后缀）。<br>Instantiate(Resources.Load<GameObject>(“Pistol1911_Weapon”))</p>
+<p>Resources.Load<GameObject>(“Pistol1911_Weapon”) 加载 “Pistol1911_Weapon” 预制体。<br>Instantiate(…) 创建该预制体的一个实例（克隆）。<br>.GetComponent<SpriteRenderer>().sprite 获取该预制体的 SpriteRenderer 组件，并返回其 sprite 属性。<br>前提条件<br>你的项目需要有一个名为 “Pistol1911_Weapon” 的 预制体（Prefab）。<br>这个 Prefab 必须放在 Assets&#x2F;Resources&#x2F; 目录下，否则 Resources.Load() 无法找到它。<br>这个预制体上必须有 SpriteRenderer 组件，否则 GetComponent<SpriteRenderer>() 会返回 null，导致 NullReferenceException。</p>
+<h3 id="GetComponentInChildren-lt-Weapon-gt-是什么？"><a href="#GetComponentInChildren-lt-Weapon-gt-是什么？" class="headerlink" title="GetComponentInChildren&lt;Weapon&gt;() 是什么？"></a><code>GetComponentInChildren&lt;Weapon&gt;()</code> 是什么？</h3><p><code>GetComponentInChildren&lt;Weapon&gt;()</code> 是 Unity 提供的一个方法，用于<strong>在当前 GameObject 及其所有子对象中查找指定类型的组件</strong>。它返回找到的第一个 <code>Weapon</code> 组件（如果存在），否则返回 <code>null</code>。</p>
+<hr>
+<h2 id="示例-1：基本用法"><a href="#示例-1：基本用法" class="headerlink" title="示例 1：基本用法"></a><strong>示例 1：基本用法</strong></h2><p>假设我们有如下的 <strong>GameObject 层级结构</strong>：</p>
+<pre class="line-numbers language-none"><code class="language-none">Player (GameObject)
+│── ActiveWeaponSlot (GameObject)
+│   ├── Weapon (GameObject)  &lt;--- 这里有 Weapon 组件
+│   ├── Scope (GameObject)
+│   ├── Magazine (GameObject)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果 <code>ActiveWeaponSlot</code> 这个 GameObject 调用：</p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token class-name">Weapon</span> activeWeapon <span class="token operator">=</span> activeWeaponSlot<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetComponentInChildren</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>Weapon<span class="token punctuation">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>那么：</p>
+<ul>
+<li><code>GetComponentInChildren&lt;Weapon&gt;()</code> 会<strong>向下查找</strong>，发现 <code>Weapon</code> 组件，并返回它。</li>
+</ul>
+<hr>
+<h2 id="示例-2：实际代码"><a href="#示例-2：实际代码" class="headerlink" title="示例 2：实际代码"></a><strong>示例 2：实际代码</strong></h2><p>在你的 <code>HUDManager</code> 代码中：</p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token class-name">Weapon</span> activeWeapon <span class="token operator">=</span> WeaponManager<span class="token punctuation">.</span>Instance<span class="token punctuation">.</span>activeWeaponSlot<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetComponentInChildren</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>Weapon<span class="token punctuation">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这行代码的作用是：</p>
+<ol>
+<li><code>WeaponManager.Instance.activeWeaponSlot</code> 获取当前激活的武器槽（<code>GameObject</code>）。</li>
+<li><code>.GetComponentInChildren&lt;Weapon&gt;()</code> 在这个 <code>GameObject</code> 及其所有子对象中<strong>查找</strong> <code>Weapon</code> 组件。</li>
+<li><strong>如果找到了 <code>Weapon</code> 组件，就返回它；否则返回 <code>null</code>。</strong></li>
+</ol>
+<hr>
+<h2 id="示例-3：使用-GetComponent-lt-gt-vs-GetComponentInChildren-lt-gt"><a href="#示例-3：使用-GetComponent-lt-gt-vs-GetComponentInChildren-lt-gt" class="headerlink" title="示例 3：使用 GetComponent&lt;&gt; vs GetComponentInChildren&lt;&gt;"></a><strong>示例 3：使用 <code>GetComponent&lt;&gt;</code> vs <code>GetComponentInChildren&lt;&gt;</code></strong></h2><h3 id="情况-1：当前-GameObject-有-Weapon-组件"><a href="#情况-1：当前-GameObject-有-Weapon-组件" class="headerlink" title="情况 1：当前 GameObject 有 Weapon 组件"></a><strong>情况 1：当前 GameObject 有 <code>Weapon</code> 组件</strong></h3><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token class-name">Weapon</span> weapon <span class="token operator">=</span> gameObject<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetComponent</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>Weapon<span class="token punctuation">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>只会检查 <code>gameObject</code> 本身是否有 <code>Weapon</code> 组件。</li>
+<li><strong>不会检查子对象</strong>。</li>
+</ul>
+<h3 id="情况-2：当前-GameObject-的子对象有-Weapon-组件"><a href="#情况-2：当前-GameObject-的子对象有-Weapon-组件" class="headerlink" title="情况 2：当前 GameObject 的子对象有 Weapon 组件"></a><strong>情况 2：当前 GameObject 的子对象有 <code>Weapon</code> 组件</strong></h3><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token class-name">Weapon</span> weapon <span class="token operator">=</span> gameObject<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetComponentInChildren</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>Weapon<span class="token punctuation">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><strong>会检查 <code>gameObject</code> 本身</strong>。</li>
+<li><strong>如果 <code>gameObject</code> 本身没有 <code>Weapon</code>，会继续检查所有子对象</strong>。</li>
+<li>返回找到的<strong>第一个</strong> <code>Weapon</code> 组件。</li>
+</ul>
+<hr>
+<h2 id="示例-4：GetComponentInChildren-lt-T-gt-true"><a href="#示例-4：GetComponentInChildren-lt-T-gt-true" class="headerlink" title="示例 4：GetComponentInChildren&lt;T&gt;(true)"></a><strong>示例 4：<code>GetComponentInChildren&lt;T&gt;(true)</code></strong></h2><p>默认情况下，<code>GetComponentInChildren&lt;T&gt;()</code> 只会查找<strong>激活的对象</strong>。<br>如果希望<strong>包括隐藏的（inactive）子对象</strong>，可以使用：</p>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token class-name">Weapon</span> weapon <span class="token operator">=</span> gameObject<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetComponentInChildren</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>Weapon<span class="token punctuation">></span></span></span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><code>true</code> 表示<strong>即使对象被禁用（SetActive(false)），也要查找</strong>。</li>
+</ul>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h2><ul>
+<li><code>GetComponentInChildren&lt;T&gt;()</code> <strong>会向下递归查找子对象</strong>，返回找到的第一个 <code>T</code> 组件。</li>
+<li><code>GetComponent&lt;T&gt;()</code> <strong>只会检查当前对象</strong>，不会检查子对象。</li>
+<li><code>GetComponentInChildren&lt;T&gt;(true)</code> <strong>可以查找隐藏的子对象</strong>。</li>
+<li>在你的代码里：<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token class-name">Weapon</span> activeWeapon <span class="token operator">=</span> WeaponManager<span class="token punctuation">.</span>Instance<span class="token punctuation">.</span>activeWeaponSlot<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">GetComponentInChildren</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>Weapon<span class="token punctuation">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+作用是获取当前激活武器槽（<code>activeWeaponSlot</code>）及其子对象上的 <code>Weapon</code> 组件。</li>
+</ul>
+<p>这个方法特别适合用在 <strong>层级结构较深</strong> 的 UI 或 3D 物体上，比如武器系统、UI 面板、装备栏等！🚀</p>
+<pre><code>#region || ---- Ammo ---- || 
+#endregion
+</code></pre>
+<p>用于折叠代码</p>
+<h3 id="📌-Unity-动画中的-Root-Transform（根变换）是什么？"><a href="#📌-Unity-动画中的-Root-Transform（根变换）是什么？" class="headerlink" title="📌 Unity 动画中的 Root Transform（根变换）是什么？"></a><strong>📌 Unity 动画中的 Root Transform（根变换）是什么？</strong></h3><p>在 Unity 动画系统中，<strong>Root Transform（根变换）</strong> 指的是动画中影响<strong>整个角色或物体的全局变换（位置、旋转、缩放）</strong>的部分，主要用于 <strong>Root Motion（根运动）</strong>。</p>
+<p>当动画中启用了 <strong>Root Motion</strong>，Unity 会让 <strong>Root Transform</strong> 直接驱动游戏对象的 <code>Transform</code>（位置和旋转），而不是依赖 <code>CharacterController</code> 或 <code>Rigidbody</code> 的物理计算。</p>
+<hr>
+<h3 id="🎯-Root-Transform-具体包含哪些部分？"><a href="#🎯-Root-Transform-具体包含哪些部分？" class="headerlink" title="🎯 Root Transform 具体包含哪些部分？"></a><strong>🎯 Root Transform 具体包含哪些部分？</strong></h3><p>在 Unity 动画导入设置（<strong>Inspector &gt; Animation</strong>）中，你会看到以下几个 <strong>Root Transform</strong> 相关的选项：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Root Transform Position (Y)</strong></td>
+<td>控制动画中 <strong>垂直方向（Y 轴）</strong> 的位置变化。</td>
+</tr>
+<tr>
+<td><strong>Root Transform Position (XZ)</strong></td>
+<td>控制动画中 <strong>水平移动（X 和 Z 轴）</strong> 的位置变化。</td>
+</tr>
+<tr>
+<td><strong>Root Transform Rotation</strong></td>
+<td>控制动画中 <strong>旋转</strong> 的变化。</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="🛠-Root-Transform-作用"><a href="#🛠-Root-Transform-作用" class="headerlink" title="🛠 Root Transform 作用"></a><strong>🛠 Root Transform 作用</strong></h3><ol>
+<li><strong>控制动画的世界坐标移动</strong><ul>
+<li>例如，一个奔跑动画，如果启用了 Root Motion，角色会<strong>真实向前移动</strong>，而不是原地播放动画 + 代码控制移动。</li>
+</ul>
+</li>
+<li><strong>修正动画方向</strong><ul>
+<li>例如，导入的动画方向不对，可以通过 <code>Root Transform Rotation</code> 调整，使角色始终面向正确方向。</li>
+</ul>
+</li>
+<li><strong>防止角色漂移或滑动</strong><ul>
+<li>当一个跳跃动画在 Y 轴方向有位移，可以调整 <code>Root Transform Position (Y)</code> 来防止角色跳得太高或浮空。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="🎮-示例：Root-Transform-应用"><a href="#🎮-示例：Root-Transform-应用" class="headerlink" title="🎮 示例：Root Transform 应用"></a><strong>🎮 示例：Root Transform 应用</strong></h3><h4 id="🟢-示例-1：启用-Root-Motion-的行走动画"><a href="#🟢-示例-1：启用-Root-Motion-的行走动画" class="headerlink" title="🟢 示例 1：启用 Root Motion 的行走动画"></a><strong>🟢 示例 1：启用 Root Motion 的行走动画</strong></h4><p>如果你有一个角色 <code>Player</code>，并播放 <code>walk</code> 动画：</p>
+<ul>
+<li><strong>不开启 Root Motion</strong>：动画只是原地播放，你需要用代码 <code>transform.Translate()</code> 让角色移动。</li>
+<li><strong>开启 Root Motion</strong>：动画的 Root Transform 直接影响 <code>Player</code> 的 <code>Transform</code>，角色会随着动画移动。</li>
+</ul>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token return-type class-name"><span class="token keyword">void</span></span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    animator<span class="token punctuation">.</span>applyRootMotion <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// 开启 Root Motion</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="🔵-示例-2：调整-Root-Transform-让角色保持正确方向"><a href="#🔵-示例-2：调整-Root-Transform-让角色保持正确方向" class="headerlink" title="🔵 示例 2：调整 Root Transform 让角色保持正确方向"></a><strong>🔵 示例 2：调整 Root Transform 让角色保持正确方向</strong></h4><p>有时候导入动画后，角色可能会：</p>
+<ul>
+<li><p>朝错误方向移动（例如跑步动画默认是面朝 Z 轴，但你的角色面朝 X 轴）。</p>
+</li>
+<li><p>你可以在 </p>
+<p>Animation &gt; Root Transform Rotation</p>
+<p> 里调整 </p>
+<p>Based Upon（基于…）</p>
+<p>： </p>
+<ul>
+<li><strong>Body Orientation（身体朝向）</strong>：角色会根据动画自身调整方向，适用于大多数情况。</li>
+<li><strong>Original（原始）</strong>：保持动画文件的原始旋转方向。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="✅-总结"><a href="#✅-总结" class="headerlink" title="✅ 总结"></a><strong>✅ 总结</strong></h3><ul>
+<li><strong>Root Transform</strong> 是动画中的 <strong>根节点变换（位置、旋转、缩放）</strong>，在 <strong>Root Motion</strong> 模式下控制角色的移动和旋转。</li>
+<li><strong>Root Transform 主要用于修正动画的移动和方向，防止角色滑动或漂移</strong>。</li>
+<li><strong>如果角色动画需要真实移动，启用 Root Motion</strong>，否则可以手动用代码控制 <code>Transform</code> 位置。</li>
+</ul>
+<p>这样，你的动画就不会看起来像是在地面上“滑动”了 🚀！</p>
+<h3 id="📌-NavMeshAgent-中的-Angular-Speed（角速度）是什么？"><a href="#📌-NavMeshAgent-中的-Angular-Speed（角速度）是什么？" class="headerlink" title="📌 NavMeshAgent 中的 Angular Speed（角速度）是什么？"></a><strong>📌 NavMeshAgent 中的 Angular Speed（角速度）是什么？</strong></h3><p>在 Unity 的 <code>NavMeshAgent</code> 组件中，<strong>Angular Speed（角速度）</strong> 控制 <strong>AI 角色旋转的速度</strong>，单位是 <strong>度&#x2F;秒（degrees per second）</strong>。</p>
+<p>当 <code>NavMeshAgent</code> 需要转向目标方向时，<strong>Angular Speed 限制了旋转的最大速度</strong>，防止角色瞬间转向，使其旋转更加平滑和自然。</p>
+<hr>
+<h3 id="🎯-Angular-Speed-的作用"><a href="#🎯-Angular-Speed-的作用" class="headerlink" title="🎯 Angular Speed 的作用"></a><strong>🎯 Angular Speed 的作用</strong></h3><ol>
+<li><strong>控制转向速度</strong><ul>
+<li>角速度越高，角色转向越快，甚至可能瞬间完成转向。</li>
+<li>角速度越低，角色需要较长时间才能转向目标方向。</li>
+</ul>
+</li>
+<li><strong>防止转向过快导致的不自然运动</strong><ul>
+<li>角色的行走、奔跑时的转向会受到 <code>Angular Speed</code> 限制，防止<strong>突然急转弯</strong>。</li>
+<li>适用于模拟现实中的惯性，如汽车或人物转向。</li>
+</ul>
+</li>
+<li><strong>影响 NavMeshAgent 在路径拐弯处的流畅度</strong><ul>
+<li>角速度过低，AI 角色在拐弯时可能会显得“呆滞”或“拖沓”。</li>
+<li>角速度过高，AI 角色可能会在拐弯时产生<strong>不自然的瞬间转向</strong>。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="🛠-示例：调整-Angular-Speed"><a href="#🛠-示例：调整-Angular-Speed" class="headerlink" title="🛠 示例：调整 Angular Speed"></a><strong>🛠 示例：调整 Angular Speed</strong></h3><h4 id="🟢-示例-1：普通人类角色"><a href="#🟢-示例-1：普通人类角色" class="headerlink" title="🟢 示例 1：普通人类角色"></a><strong>🟢 示例 1：普通人类角色</strong></h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">navAgent<span class="token punctuation">.</span>angularSpeed <span class="token operator">=</span> <span class="token number">120f</span><span class="token punctuation">;</span> <span class="token comment">// 让角色每秒最多旋转 120 度</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><strong>效果</strong>：角色转向较快但不会太突兀，适合一般行走的 AI 角色。</li>
+</ul>
+<h4 id="🔵-示例-2：快速转向（机器人、轻型载具）"><a href="#🔵-示例-2：快速转向（机器人、轻型载具）" class="headerlink" title="🔵 示例 2：快速转向（机器人、轻型载具）"></a><strong>🔵 示例 2：快速转向（机器人、轻型载具）</strong></h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">navAgent<span class="token punctuation">.</span>angularSpeed <span class="token operator">=</span> <span class="token number">500f</span><span class="token punctuation">;</span> <span class="token comment">// 角色能瞬间完成转向</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><strong>效果</strong>：适用于机器人或赛车，能够几乎<strong>瞬间</strong>转向。</li>
+</ul>
+<h4 id="🔴-示例-3：缓慢转向（坦克、重型载具）"><a href="#🔴-示例-3：缓慢转向（坦克、重型载具）" class="headerlink" title="🔴 示例 3：缓慢转向（坦克、重型载具）"></a><strong>🔴 示例 3：缓慢转向（坦克、重型载具）</strong></h4><pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">navAgent<span class="token punctuation">.</span>angularSpeed <span class="token operator">=</span> <span class="token number">30f</span><span class="token punctuation">;</span> <span class="token comment">// 角色转向很慢</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><strong>效果</strong>：适用于坦克或笨重角色，转向会很慢，显得更有惯性。</li>
+</ul>
+<hr>
+<h3 id="⚠️-Angular-Speed-影响转向，但不会影响移动！"><a href="#⚠️-Angular-Speed-影响转向，但不会影响移动！" class="headerlink" title="⚠️ Angular Speed 影响转向，但不会影响移动！"></a><strong>⚠️ Angular Speed 影响转向，但不会影响移动！</strong></h3><ul>
+<li><p><code>Angular Speed</code> 只控制 <strong>旋转速度</strong>，不影响角色的前进速度（由 <code>speed</code> 控制）。</p>
+</li>
+<li><p>&#96;&#96;&#96;<br>NavMeshAgent</p>
+<pre class="line-numbers language-none"><code class="language-none">
+不会强制 AI 角色面向移动方向
+
+，如果需要角色始终朝向目标方向，可以手动调整： 
+
+&#96;&#96;&#96;csharp
+if (navAgent.velocity.sqrMagnitude &gt; 0.1f) &#x2F;&#x2F; 只有在移动时才调整方向
+&#123;
+    transform.forward &#x3D; Vector3.Lerp(transform.forward, navAgent.velocity.normalized, Time.deltaTime * 10f);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>这样即使 <code>Angular Speed</code> 低，角色也不会显得“滞后”。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="🎮-总结"><a href="#🎮-总结" class="headerlink" title="🎮 总结"></a><strong>🎮 总结</strong></h3><p>✅ <code>Angular Speed</code> 决定 <strong>NavMeshAgent</strong> 旋转的速度，单位是 <strong>度&#x2F;秒</strong>。<br> ✅ 适用于控制 AI 角色拐弯时的流畅度，防止突然瞬转或过度滞后。<br> ✅ <strong>数值建议</strong>：</p>
+<ul>
+<li><strong>普通角色</strong>：<code>120f ~ 180f</code></li>
+<li><strong>快速单位（机器人、轻载具）</strong>：<code>300f ~ 600f</code></li>
+<li><strong>缓慢单位（坦克、重载具）</strong>：<code>20f ~ 60f</code> ✅ <strong>如果角色旋转滞后，可以手动调整 transform.forward</strong> 让它更流畅。</li>
+</ul>
+<p>这样，你的 AI 角色在 <code>NavMesh</code> 上移动时会更符合预期 🚀！</p>
+<h3 id="📌-Has-Exit-Time-在-Unity-Animator-中的含义"><a href="#📌-Has-Exit-Time-在-Unity-Animator-中的含义" class="headerlink" title="📌 Has Exit Time 在 Unity Animator 中的含义"></a><strong>📌 Has Exit Time 在 Unity Animator 中的含义</strong></h3><p><code>Has Exit Time</code> 是 <strong>Unity Animator</strong> 里 <strong>状态转换（Transition）</strong> 的一个参数，它决定了动画在播放完成后是否会自动切换到下一个状态。</p>
+<hr>
+<h2 id="🎯-Has-Exit-Time-的作用"><a href="#🎯-Has-Exit-Time-的作用" class="headerlink" title="🎯 Has Exit Time 的作用"></a><strong>🎯 Has Exit Time 的作用</strong></h2><p>当一个动画从 <strong>A 状态</strong> 过渡到 <strong>B 状态</strong> 时，如果 <strong>Has Exit Time 被勾选</strong>，表示：</p>
+<ul>
+<li><strong>动画 A 必须播放到一定时间（Exit Time）才能进行过渡</strong>。</li>
+<li>如果 <code>Exit Time</code> 设为 <code>1.0</code>，意味着动画 A <strong>必须完整播放完</strong>，然后才会切换到动画 B。</li>
+<li>如果 <code>Exit Time</code> 设为 <code>0.5</code>，则动画 A 只需播放到 50% 时就可以进入 B。</li>
+</ul>
+<p>如果 <strong>Has Exit Time 没有勾选</strong>：</p>
+<ul>
+<li><strong>动画 A 可能会被事件或参数立即打断，立刻进入动画 B</strong>（适用于攻击、跳跃等可随时中断的动画）。</li>
+</ul>
+<hr>
+<h2 id="🛠-使用示例"><a href="#🛠-使用示例" class="headerlink" title="🛠 使用示例"></a><strong>🛠 使用示例</strong></h2><h3 id="🟢-示例-1：角色循环播放奔跑动画"><a href="#🟢-示例-1：角色循环播放奔跑动画" class="headerlink" title="🟢 示例 1：角色循环播放奔跑动画"></a><strong>🟢 示例 1：角色循环播放奔跑动画</strong></h3><blockquote>
+<p>如果 <code>Has Exit Time</code> <strong>被勾选</strong>，角色的奔跑动画会播放完整的 1 次，然后才会进入下一个动画。</p>
+</blockquote>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp">animator<span class="token punctuation">.</span><span class="token function">SetTrigger</span><span class="token punctuation">(</span><span class="token string">"Jump"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><strong>适用情况</strong>：适合播放完整的 <strong>开场动画、攻击动画、死亡动画</strong>，不希望动画被意外打断。</li>
+</ul>
+<hr>
+<h3 id="🔵-示例-2：角色攻击可以被打断"><a href="#🔵-示例-2：角色攻击可以被打断" class="headerlink" title="🔵 示例 2：角色攻击可以被打断"></a><strong>🔵 示例 2：角色攻击可以被打断</strong></h3><blockquote>
+<p>如果 <code>Has Exit Time</code> <strong>未勾选</strong>，攻击动画可以随时打断进入新的动作，比如连击或闪避。</p>
+</blockquote>
+<pre class="line-numbers language-csharp" data-language="csharp"><code class="language-csharp"><span class="token keyword">if</span> <span class="token punctuation">(</span>Input<span class="token punctuation">.</span><span class="token function">GetKeyDown</span><span class="token punctuation">(</span>KeyCode<span class="token punctuation">.</span>Space<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    animator<span class="token punctuation">.</span><span class="token function">SetTrigger</span><span class="token punctuation">(</span><span class="token string">"Attack"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>适用情况</strong>：适合 <strong>攻击、翻滚、跳跃等需要立即响应的动画</strong>。</li>
+</ul>
+<hr>
+<h2 id="🔄-Exit-Time-的数值意义"><a href="#🔄-Exit-Time-的数值意义" class="headerlink" title="🔄 Exit Time 的数值意义"></a><strong>🔄 Exit Time 的数值意义</strong></h2><p>在 <code>Has Exit Time</code> 选项打开的情况下，你还可以调整 <code>Exit Time</code>（动画退出时间）：</p>
+<table>
+<thead>
+<tr>
+<th><strong>Exit Time 值</strong></th>
+<th><strong>效果</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>1.0</code></td>
+<td><strong>动画播放完 100% 后切换</strong>（默认）。</td>
+</tr>
+<tr>
+<td><code>0.75</code></td>
+<td><strong>动画播放到 75% 时切换</strong>。</td>
+</tr>
+<tr>
+<td><code>0.5</code></td>
+<td><strong>动画播放到一半时切换</strong>，适用于提前进入下一状态。</td>
+</tr>
+<tr>
+<td><code>0.0</code></td>
+<td><strong>动画一开始就切换</strong>（几乎等于无意义）。</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="⚠️-Has-Exit-Time-的注意点"><a href="#⚠️-Has-Exit-Time-的注意点" class="headerlink" title="⚠️ Has Exit Time 的注意点"></a><strong>⚠️ Has Exit Time 的注意点</strong></h2><ol>
+<li><strong>Has Exit Time 适用于循环动画，但可能影响即时响应</strong><ul>
+<li>如果 <code>Has Exit Time</code> 被勾选，可能会导致角色在动画播放完之前无法切换状态，导致<strong>动画卡顿或延迟</strong>。</li>
+</ul>
+</li>
+<li><strong>非循环动画通常不勾选 Has Exit Time</strong><ul>
+<li>例如，攻击、跳跃、受伤等动画，通常希望它们可以随时被打断。</li>
+</ul>
+</li>
+<li><strong>与 Fixed Duration 结合使用</strong><ul>
+<li><code>Fixed Duration</code>：如果勾选，<code>Exit Time</code> 代表的是<strong>固定时间</strong>（比如 1 秒）；如果不勾选，它代表的是动画百分比（比如 1.0 &#x3D; 100%）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="🎮-总结-1"><a href="#🎮-总结-1" class="headerlink" title="🎮 总结"></a><strong>🎮 总结</strong></h2><p>✅ <strong>Has Exit Time</strong> 控制动画是否<strong>必须播放到一定时间后</strong>才能转换。<br> ✅ <strong>适用于</strong> 需要完整播放的动画（如奔跑、开门、死亡）。<br> ✅ <strong>不适用于</strong> 需要随时响应输入的动画（如攻击、跳跃、翻滚）。<br> ✅ <strong>如果动画需要及时打断，不要勾选 Has Exit Time，而是用参数（Trigger、Bool）来控制动画转换！</strong></p>
+<p>这样，你的动画切换就会更流畅和符合预期 🎬🚀！</p>
+<p><strong># Answer</strong></p>
+<p>逐步分解并详细解释代码：</p>
+<p><strong>### 代码解释</strong></p>
+<p>`&#96;&#96;csharp</p>
+<p>if(agent.remainingDistance &lt;&#x3D; agent.stoppingDistance)</p>
+<p>`&#96;&#96;</p>
+<p>- <em><strong>*agent.remainingDistance*</strong></em>: 这是NavMeshAgent组件的一个属性，表示从当前位置到目标位置的剩余距离。</p>
+<p>- <em><strong>*agent.stoppingDistance*</strong></em>: 这是NavMeshAgent组件的另一个属性，表示当剩余距离小于或等于这个值时，Agent认为已经到达目标位置。</p>
+<p>- <em><strong>*if(agent.remainingDistance &lt;&#x3D; agent.stoppingDistance)*</strong></em>: 这是一个条件判断语句，用于检测Agent是否已经到达当前的目标位置。具体来说，当<code>remainingDistance</code>小于或等于<code>stoppingDistance</code>时，条件为真，执行其后的语句块。</p>
+<p><strong>### 代码上下文</strong></p>
+<p>在<code>OnStateUpdate</code>方法中，这段代码被用来检测僵尸是否已经到达当前的巡逻点。如果僵尸到达了当前的巡逻点，它就会被分配一个新的随机巡逻点作为目标。</p>
+<p>`&#96;&#96;csharp</p>
+<p>override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)</p>
+<p>{</p>
+<p>​    &#x2F;&#x2F; Check if agent arrived at waypoint , move to next waypoint</p>
+<p>​    if(agent.remainingDistance &lt;&#x3D; agent.stoppingDistance)</p>
+<p>​    {</p>
+<p>​        agent.SetDestination(wayPointsList[Random.Range(0, wayPointsList.Count)].position);</p>
+<p>​    }</p>
+<p>}</p>
+<p>`&#96;&#96;</p>
+<p>- <em><strong>*OnStateUpdate*</strong></em>: 这是Unity中AnimatorBehaviour类的一个方法，会在动画状态更新时调用。该方法用于在每一帧中检查僵尸是否到达当前的巡逻点。</p>
+<p>- <em><strong>*agent.SetDestination*</strong></em>: 如果僵尸到达当前的巡逻点，则通过此方法设置一个新的目标位置。目标位置是从wayPointsList中随机选择的一个巡逻点的坐标。</p>
+<p><strong>### 总结</strong></p>
+<p>这段代码的主要功能是实现僵尸角色在多个巡逻点之间的随机巡逻。当僵尸到达一个巡逻点后，它会自动选择下一个巡逻点作为目标，并移动向这个新的目标。这样可以模拟真实环境中僵尸的巡逻行为，增加了游戏的趣味性和真实性。</p>
+<p>导入图片ui 作为image，可以在stretch里按住alt点击自己想要的效果</p>
+<p>这段代码可以可视化一些距离</p>
+<p>​    private void OnDrawGizmos()</p>
+<p>​    {</p>
+<p>​        Gizmos.color &#x3D; Color.red;</p>
+<p>​        Gizmos.DrawWireSphere(transform.position, 2f);</p>
+<p>​        Gizmos.color &#x3D; Color.red;</p>
+<p>​        Gizmos.DrawWireSphere(transform.position, 18f);</p>
+<p>​        Gizmos.color &#x3D; Color.red;</p>
+<p>​        Gizmos.DrawWireSphere(transform.position, 21f);</p>
+<p>​    }</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2023/01/12/f8943481ff2f250b.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/04/27/opengl/"><img class="prev-cover" src="https://s3.bmp.ovh/imgs/2023/01/12/1e052378ba7e2bfd.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">opengl</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/14/CPP%E4%B8%8E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"><img class="next-cover" src="https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">c++与面向对象编程</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/OIP.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">某不知名的作者</div><div class="author-info__description">衬衫的价格是九磅十五便士</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tonzinonin" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#worldPositionStays-%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%83%85%E5%86%B5%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">worldPositionStays 的两种情况：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">举个例子：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%A0%E7%9A%84%E4%BB%A3%E7%A0%81%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">你的代码的作用：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GetComponentInChildren-lt-Weapon-gt-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">GetComponentInChildren&lt;Weapon&gt;() 是什么？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1%EF%BC%9A%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number"></span> <span class="toc-text">示例 1：基本用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2%EF%BC%9A%E5%AE%9E%E9%99%85%E4%BB%A3%E7%A0%81"><span class="toc-number"></span> <span class="toc-text">示例 2：实际代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-3%EF%BC%9A%E4%BD%BF%E7%94%A8-GetComponent-lt-gt-vs-GetComponentInChildren-lt-gt"><span class="toc-number"></span> <span class="toc-text">示例 3：使用 GetComponent&lt;&gt; vs GetComponentInChildren&lt;&gt;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%83%85%E5%86%B5-1%EF%BC%9A%E5%BD%93%E5%89%8D-GameObject-%E6%9C%89-Weapon-%E7%BB%84%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">情况 1：当前 GameObject 有 Weapon 组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%83%85%E5%86%B5-2%EF%BC%9A%E5%BD%93%E5%89%8D-GameObject-%E7%9A%84%E5%AD%90%E5%AF%B9%E8%B1%A1%E6%9C%89-Weapon-%E7%BB%84%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">情况 2：当前 GameObject 的子对象有 Weapon 组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-4%EF%BC%9AGetComponentInChildren-lt-T-gt-true"><span class="toc-number"></span> <span class="toc-text">示例 4：GetComponentInChildren&lt;T&gt;(true)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number"></span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-Unity-%E5%8A%A8%E7%94%BB%E4%B8%AD%E7%9A%84-Root-Transform%EF%BC%88%E6%A0%B9%E5%8F%98%E6%8D%A2%EF%BC%89%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">📌 Unity 动画中的 Root Transform（根变换）是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%8E%AF-Root-Transform-%E5%85%B7%E4%BD%93%E5%8C%85%E5%90%AB%E5%93%AA%E4%BA%9B%E9%83%A8%E5%88%86%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">🎯 Root Transform 具体包含哪些部分？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9B%A0-Root-Transform-%E4%BD%9C%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">🛠 Root Transform 作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%8E%AE-%E7%A4%BA%E4%BE%8B%EF%BC%9ARoot-Transform-%E5%BA%94%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">🎮 示例：Root Transform 应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%9F%A2-%E7%A4%BA%E4%BE%8B-1%EF%BC%9A%E5%90%AF%E7%94%A8-Root-Motion-%E7%9A%84%E8%A1%8C%E8%B5%B0%E5%8A%A8%E7%94%BB"><span class="toc-number">4.1.</span> <span class="toc-text">🟢 示例 1：启用 Root Motion 的行走动画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%94%B5-%E7%A4%BA%E4%BE%8B-2%EF%BC%9A%E8%B0%83%E6%95%B4-Root-Transform-%E8%AE%A9%E8%A7%92%E8%89%B2%E4%BF%9D%E6%8C%81%E6%AD%A3%E7%A1%AE%E6%96%B9%E5%90%91"><span class="toc-number">4.2.</span> <span class="toc-text">🔵 示例 2：调整 Root Transform 让角色保持正确方向</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">✅ 总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-NavMeshAgent-%E4%B8%AD%E7%9A%84-Angular-Speed%EF%BC%88%E8%A7%92%E9%80%9F%E5%BA%A6%EF%BC%89%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">📌 NavMeshAgent 中的 Angular Speed（角速度）是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%8E%AF-Angular-Speed-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">7.</span> <span class="toc-text">🎯 Angular Speed 的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9B%A0-%E7%A4%BA%E4%BE%8B%EF%BC%9A%E8%B0%83%E6%95%B4-Angular-Speed"><span class="toc-number">8.</span> <span class="toc-text">🛠 示例：调整 Angular Speed</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%9F%A2-%E7%A4%BA%E4%BE%8B-1%EF%BC%9A%E6%99%AE%E9%80%9A%E4%BA%BA%E7%B1%BB%E8%A7%92%E8%89%B2"><span class="toc-number">8.1.</span> <span class="toc-text">🟢 示例 1：普通人类角色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%94%B5-%E7%A4%BA%E4%BE%8B-2%EF%BC%9A%E5%BF%AB%E9%80%9F%E8%BD%AC%E5%90%91%EF%BC%88%E6%9C%BA%E5%99%A8%E4%BA%BA%E3%80%81%E8%BD%BB%E5%9E%8B%E8%BD%BD%E5%85%B7%EF%BC%89"><span class="toc-number">8.2.</span> <span class="toc-text">🔵 示例 2：快速转向（机器人、轻型载具）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%94%B4-%E7%A4%BA%E4%BE%8B-3%EF%BC%9A%E7%BC%93%E6%85%A2%E8%BD%AC%E5%90%91%EF%BC%88%E5%9D%A6%E5%85%8B%E3%80%81%E9%87%8D%E5%9E%8B%E8%BD%BD%E5%85%B7%EF%BC%89"><span class="toc-number">8.3.</span> <span class="toc-text">🔴 示例 3：缓慢转向（坦克、重型载具）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9A%A0%EF%B8%8F-Angular-Speed-%E5%BD%B1%E5%93%8D%E8%BD%AC%E5%90%91%EF%BC%8C%E4%BD%86%E4%B8%8D%E4%BC%9A%E5%BD%B1%E5%93%8D%E7%A7%BB%E5%8A%A8%EF%BC%81"><span class="toc-number">9.</span> <span class="toc-text">⚠️ Angular Speed 影响转向，但不会影响移动！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%8E%AE-%E6%80%BB%E7%BB%93"><span class="toc-number">10.</span> <span class="toc-text">🎮 总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-Has-Exit-Time-%E5%9C%A8-Unity-Animator-%E4%B8%AD%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-number">11.</span> <span class="toc-text">📌 Has Exit Time 在 Unity Animator 中的含义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%AF-Has-Exit-Time-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number"></span> <span class="toc-text">🎯 Has Exit Time 的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9B%A0-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-number"></span> <span class="toc-text">🛠 使用示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9F%A2-%E7%A4%BA%E4%BE%8B-1%EF%BC%9A%E8%A7%92%E8%89%B2%E5%BE%AA%E7%8E%AF%E6%92%AD%E6%94%BE%E5%A5%94%E8%B7%91%E5%8A%A8%E7%94%BB"><span class="toc-number">1.</span> <span class="toc-text">🟢 示例 1：角色循环播放奔跑动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%94%B5-%E7%A4%BA%E4%BE%8B-2%EF%BC%9A%E8%A7%92%E8%89%B2%E6%94%BB%E5%87%BB%E5%8F%AF%E4%BB%A5%E8%A2%AB%E6%89%93%E6%96%AD"><span class="toc-number">2.</span> <span class="toc-text">🔵 示例 2：角色攻击可以被打断</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%84-Exit-Time-%E7%9A%84%E6%95%B0%E5%80%BC%E6%84%8F%E4%B9%89"><span class="toc-number"></span> <span class="toc-text">🔄 Exit Time 的数值意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9A%A0%EF%B8%8F-Has-Exit-Time-%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number"></span> <span class="toc-text">⚠️ Has Exit Time 的注意点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%AE-%E6%80%BB%E7%BB%93-1"><span class="toc-number"></span> <span class="toc-text">🎮 总结</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/29/Substance%20Painter%20Blender%E5%B7%A5%E4%BD%9C%E6%B5%81/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/1e052378ba7e2bfd.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/29/Substance%20Painter%20Blender%E5%B7%A5%E4%BD%9C%E6%B5%81/" title="无题">无题</a><time datetime="2025-03-29T12:39:26.888Z" title="发表于 2025-03-29 20:39:26">2025-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/27/Unity%20%E4%BB%8EBuilt%20in%E5%8D%87%E7%BA%A7%E5%88%B0Universal%20Render%20PipeLine/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/e92609f7d9e775f5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/27/Unity%20%E4%BB%8EBuilt%20in%E5%8D%87%E7%BA%A7%E5%88%B0Universal%20Render%20PipeLine/" title="无题">无题</a><time datetime="2025-03-27T09:33:04.691Z" title="发表于 2025-03-27 17:33:04">2025-03-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/26/UnityShaderGraph/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/26/UnityShaderGraph/" title="无题">无题</a><time datetime="2025-03-26T08:33:02.619Z" title="发表于 2025-03-26 16:33:02">2025-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/26/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF%E5%85%A5%E9%97%A8/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/26/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF%E5%85%A5%E9%97%A8/" title="无题">无题</a><time datetime="2025-03-26T04:48:22.514Z" title="发表于 2025-03-26 12:48:22">2025-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/26/Gpu%E9%98%B3%E6%98%A5%E7%99%BD%E9%9B%AA%E4%B8%8E%E4%B8%8B%E9%87%8C%E5%B7%B4%E4%BA%BA%E7%AC%94%E8%AE%B0/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/26/Gpu%E9%98%B3%E6%98%A5%E7%99%BD%E9%9B%AA%E4%B8%8E%E4%B8%8B%E9%87%8C%E5%B7%B4%E4%BA%BA%E7%AC%94%E8%AE%B0/" title="无题">无题</a><time datetime="2025-03-26T02:43:50.830Z" title="发表于 2025-03-26 10:43:50">2025-03-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

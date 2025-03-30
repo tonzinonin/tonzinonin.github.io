@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>final fantasy | final fantasy</title><meta name="author" content="某不知名的作者"><meta name="copyright" content="某不知名的作者"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="技术美术入门1，渲染流水线  详细描述渲染流水线&#x3D;应用阶段： &#x3D;&#x3D;准备好基本场景数据：场景物体数据：物体变换数据（UnityTransform），位置、旋转缩放等等；物体网格数据，顶点位置UV贴图。 光源信息：光源类型：方向光、点光、聚光等等；位置、方向、角度等其他参数。 设置光源：方向光：颜色、方向等点光源：颜色、位置、范围等聚光源：颜色、位置、方向、内外圆锥角等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="final fantasy">
+<meta property="og:url" content="https://tonzinonin.github.io/2025/03/26/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="final fantasy">
+<meta property="og:description" content="技术美术入门1，渲染流水线  详细描述渲染流水线&#x3D;应用阶段： &#x3D;&#x3D;准备好基本场景数据：场景物体数据：物体变换数据（UnityTransform），位置、旋转缩放等等；物体网格数据，顶点位置UV贴图。 光源信息：光源类型：方向光、点光、聚光等等；位置、方向、角度等其他参数。 设置光源：方向光：颜色、方向等点光源：颜色、位置、范围等聚光源：颜色、位置、方向、内外圆锥角等">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg">
+<meta property="article:published_time" content="2025-03-26T04:48:22.514Z">
+<meta property="article:modified_time" content="2025-03-26T16:34:09.295Z">
+<meta property="article:author" content="某不知名的作者">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg"><link rel="shortcut icon" href="/img/icon.png"><link rel="canonical" href="https://tonzinonin.github.io/2025/03/26/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF%E5%85%A5%E9%97%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'final fantasy',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-03-27 00:34:09'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/OIP.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">final fantasy</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-26T04:48:22.514Z" title="发表于 2025-03-26 12:48:22">2025-03-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-26T16:34:09.295Z" title="更新于 2025-03-27 00:34:09">2025-03-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="技术美术入门"><a href="#技术美术入门" class="headerlink" title="技术美术入门"></a>技术美术入门</h1><h2 id="1，渲染流水线"><a href="#1，渲染流水线" class="headerlink" title="1，渲染流水线"></a>1，渲染流水线</h2><p><img src="/./../../../BlogImg/image-20250326131318318.png" alt="image-20250326131318318"></p>
+<p><img src="/./../../../BlogImg/image-20250326131929637.png" alt="image-20250326131929637"></p>
+<h3 id="详细描述渲染流水线"><a href="#详细描述渲染流水线" class="headerlink" title="详细描述渲染流水线"></a><strong>详细描述渲染流水线</strong></h3><h4 id="x3D-应用阶段："><a href="#x3D-应用阶段：" class="headerlink" title="&#x3D;应用阶段："></a><strong>&#x3D;应用阶段</strong>：</h4><hr>
+<h5 id="x3D-x3D-准备好基本场景数据："><a href="#x3D-x3D-准备好基本场景数据：" class="headerlink" title="&#x3D;&#x3D;准备好基本场景数据："></a><strong>&#x3D;&#x3D;准备好基本场景数据</strong>：</h5><p><em><strong>场景物体数据</strong></em>：物体变换数据（UnityTransform），位置、旋转缩放等等；物体网格数据，顶点位置UV贴图。</p>
+<p><em><strong>光源信息</strong></em>：光源类型：方向光、点光、聚光等等；位置、方向、角度等其他参数。</p>
+<p><em><strong>设置光源</strong></em>：<br>方向光：颜色、方向等<br>点光源：颜色、位置、范围等<br>聚光源：颜色、位置、方向、内外圆锥角等</p>
+<p><em><strong>设置阴影</strong></em>：<br>是否需要阴影：判断该光源可见范围内是否有可以投射阴影的物体<br>阴影参数：对应光源序号、阴影强度、深度偏移、近平面偏移等</p>
+<p><em><strong>逐光源绘制阴影贴图</strong></em>：<br>近平面偏移<br>逐级联：计算当前光源+级联对应的观察矩阵、投影矩阵、以及对应到阴影贴图里的视口区域<br>绘制到阴影贴图</p>
+<p><em><strong>摄像机参数</strong></em>：位置、方向、远近裁剪平面；正交、透视Fov；视口比例&#x2F;尺寸等等</p>
+<hr>
+<h5 id="x3D-x3D-碰撞检测，加速算法，粗粒度剔除："><a href="#x3D-x3D-碰撞检测，加速算法，粗粒度剔除：" class="headerlink" title="&#x3D;&#x3D;碰撞检测，加速算法，粗粒度剔除："></a><strong>&#x3D;&#x3D;碰撞检测，加速算法，粗粒度剔除</strong>：</h5><p>进行算法上的加速，削除不需要进行渲染的物体，做一些剔除</p>
+<p><em><strong>可见光裁剪</strong></em>：比如说点光和聚光由于它们都有衰减，而且聚光的光椎体还有区域，如果它们距离摄像机很远，比如聚光的光锥和摄像机的视椎体不相交，那么就进行裁剪</p>
+<p><em><strong>可见场景物体裁剪</strong></em>：八叉树、BSP树、K-D树、BVH</p>
+<h5 id="x3D-x3D-设置渲染状态，准备渲染参数"><a href="#x3D-x3D-设置渲染状态，准备渲染参数" class="headerlink" title="&#x3D;&#x3D;设置渲染状态，准备渲染参数"></a><strong>&#x3D;&#x3D;设置渲染状态，准备渲染参数</strong></h5><p>（比如渲染ui和渲染场景，他们的渲染参数和模式可能是不一样的）</p>
+<p><em><strong>绘制设置</strong></em>：<br>使用着色器:场景中的不同物体可能使用不同的shader进行渲染<br>合批方式：静态批处理、动态批处理</p>
+<p><em><strong>绘制顺序</strong></em>：<br>比如将透明物体放在不透明度物体之后进行渲染<br>1，相对摄像机的远近距离进行排序<br>2，材质上面的RenderQueue进行排序<br>3，UICanvas<br>其他方式等</p>
+<p><em><strong>渲染目标</strong></em>：将物体渲染到哪里，RenderTexture或者FrameBuffer</p>
+<p><em><strong>渲染模式</strong></em>：Unity常见的前向渲染和延迟渲染等等。</p>
+<h5 id="x3D-x3D-调用DrawCall，输出渲染图元到显存"><a href="#x3D-x3D-调用DrawCall，输出渲染图元到显存" class="headerlink" title="&#x3D;&#x3D;调用DrawCall，输出渲染图元到显存"></a><strong>&#x3D;&#x3D;调用DrawCall，输出渲染图元到显存</strong></h5><p>包含顶点数据和其他数据</p>
+<h4 id="x3D-几何阶段："><a href="#x3D-几何阶段：" class="headerlink" title="&#x3D;几何阶段："></a><strong>&#x3D;几何阶段</strong>：</h4><p><img src="/./../../../BlogImg/image-20250326140340666.png" alt="image-20250326140340666"></p>
+<h5 id="x3D-x3D-顶点着色："><a href="#x3D-x3D-顶点着色：" class="headerlink" title="&#x3D;&#x3D;顶点着色："></a>&#x3D;&#x3D;顶点着色：</h5><p>顶点变换<br>顶点着色</p>
+<p><em><strong>视图变换</strong></em>：坐标系变换</p>
+<p><img src="/./../../../BlogImg/image-20250326141036428.png" alt="image-20250326141036428"></p>
+<h5 id="x3D-x3D-可选顶点处理"><a href="#x3D-x3D-可选顶点处理" class="headerlink" title="&#x3D;&#x3D;可选顶点处理"></a>&#x3D;&#x3D;可选顶点处理</h5><p>（比如制作顶点动画的时候可能会用到）</p>
+<p><em><strong>曲面细分</strong></em></p>
+<p>主要是使用顶点着色器输出的顶点，按照一定的规则和算法来生成更多的顶点，将现有的网格和图元细分<br><img src="/./../../../BlogImg/image-20250326141438699.png" alt="image-20250326141438699"></p>
+<h5 id="x3D-x3D-几何着色器（可选步骤）"><a href="#x3D-x3D-几何着色器（可选步骤）" class="headerlink" title="&#x3D;&#x3D;几何着色器（可选步骤）"></a>&#x3D;&#x3D;几何着色器（可选步骤）</h5><p>几何着色器的操作对象是一个图元，这个图元可以是一个顶点，也有可能是一个线段，两个顶点，也有可能是多个顶点构成的连续线段，也有可能是三个顶点构成的三角形</p>
+<p><img src="/./../../../BlogImg/image-20250326141646487.png" alt="image-20250326141646487"></p>
+<p>作用是通过给定的·图元生成更多的图元。</p>
+<h5 id="x3D-x3D-投影Projection"><a href="#x3D-x3D-投影Projection" class="headerlink" title="&#x3D;&#x3D;投影Projection"></a>&#x3D;&#x3D;投影Projection</h5><p>对于顶点在<strong>裁剪空间</strong>里的位置xyzw，我们会对其进行一次透视除法</p>
+<p>把xyz除以w来完成<strong>投影</strong>操作，这样就可以从投影坐标系转换到了标准设备坐标系（NDC）</p>
+<p><img src="/./../../../BlogImg/image-20250326142340383.png" alt="image-20250326142340383"></p>
+<p>在正交投影模式当中，w始终为1，它们的顶点位置xyz除以w，除完之后不会发生变化，它的xyz投影到平面上之后还是保留原来的数字。</p>
+<h5 id="x3D-x3D-裁剪"><a href="#x3D-x3D-裁剪" class="headerlink" title="&#x3D;&#x3D;裁剪"></a>&#x3D;&#x3D;裁剪</h5><p>CVV<br>正面或者背面剔除（可以进行配置）</p>
+<p><img src="/./../../../BlogImg/image-20250326142650037.png" alt="image-20250326142650037"></p>
+<p>在Opengl中xyz都是-1到1，在D3D当中只有xy两个维度，而z是从0~1</p>
+<h5 id="x3D-x3D-屏幕映射"><a href="#x3D-x3D-屏幕映射" class="headerlink" title="&#x3D;&#x3D;屏幕映射"></a>&#x3D;&#x3D;屏幕映射</h5><p>从连续到离散（从3d空间变换到2D屏幕空间）<br>坐标系差异</p>
+<p><img src="/./../../../BlogImg/image-20250326142916815.png" alt="image-20250326142916815"></p>
+<p>标准的设备坐标系当中xy的范围是从-1~1，而在屏幕坐标系当中，它的范围是屏幕，或者说是输出设备的长和宽</p>
+<p>注意Opengl的原点在左下方，而D3D的原点在左上方</p>
+<h4 id="x3D-光栅化阶段"><a href="#x3D-光栅化阶段" class="headerlink" title="&#x3D;光栅化阶段"></a>&#x3D;光栅化阶段</h4><h5 id="x3D-x3D-三角形设置"><a href="#x3D-x3D-三角形设置" class="headerlink" title="&#x3D;&#x3D;三角形设置"></a>&#x3D;&#x3D;三角形设置</h5><p><img src="/./../../../BlogImg/image-20250326143506100.png" alt="image-20250326143506100"></p>
+<h5 id="x3D-x3D-三角形遍历"><a href="#x3D-x3D-三角形遍历" class="headerlink" title="&#x3D;&#x3D;三角形遍历"></a>&#x3D;&#x3D;三角形遍历</h5><p>得到三角形的边界信息之后，就遍历所有三角形内部的像素</p>
+<p>对覆盖的像素进行线性插值</p>
+<p><img src="/./../../../BlogImg/image-20250326143615426.png" alt="image-20250326143615426"></p>
+<h5 id="x3D-x3D-抗锯齿"><a href="#x3D-x3D-抗锯齿" class="headerlink" title="&#x3D;&#x3D;抗锯齿"></a>&#x3D;&#x3D;抗锯齿</h5><h5 id=""><a href="#" class="headerlink" title=""></a><img src="/./../../../BlogImg/image-20250326143712693.png" alt="image-20250326143712693"></h5><h4 id="x3D-逐片元操作"><a href="#x3D-逐片元操作" class="headerlink" title="&#x3D;逐片元操作"></a>&#x3D;逐片元操作</h4><img src="./../../../BlogImg/image-20250326144113184.png" alt="image-20250326144113184" style="zoom:80%;" />
+
+<h5 id="x3D-x3D-片元着色"><a href="#x3D-x3D-片元着色" class="headerlink" title="&#x3D;&#x3D;片元着色"></a>&#x3D;&#x3D;片元着色</h5><p><img src="/./../../../BlogImg/image-20250326144151804.png" alt="image-20250326144151804"></p>
+<p>第一步进行线性插值：不仅仅是颜色，也包括了uv信息，深度信息等等</p>
+<h5 id="x3D-x3D-颜色混合"><a href="#x3D-x3D-颜色混合" class="headerlink" title="&#x3D;&#x3D;颜色混合"></a>&#x3D;&#x3D;颜色混合</h5><p><em><strong>AlphaTest透明度测试</strong></em></p>
+<p>透明度小于给定阈值的片元就会被舍弃不进行渲染</p>
+<p><em><strong>DepthBufferTest深度测试</strong></em><br><img src="/./../../../BlogImg/image-20250326144500641.png" alt="image-20250326144500641"></p>
+<p>将片元的深度值和深度缓冲当中的深度值进行比较，如果通过比较那么这个片元就会被我们保留下来</p>
+<p>深度比较的方式可以是大于、小于或者是等于，这是可以进行配置的。同时覆盖完之后还可以进行配置，是否向深度缓冲里面写入我们覆盖的深度值</p>
+<p><em><strong>StencilTest模版测试</strong></em></p>
+<p>深度测试比较深度值，模版测试比较模版值</p>
+<p><img src="/./../../../BlogImg/image-20250326145054961.png" alt="image-20250326145054961"></p>
+<p>我们希望对这个两个立方体的整体进行描边但是我们不希望任何一个立方体的描边遮挡住其他的立方体，那么我们可以将两个立方体的顶点放大，并且将其绘制成描边的颜色。</p>
+<p>并且在绘制的时候我们写入模版值，绘制完进行这一步后我们得到两个绿色区域的立方体</p>
+<p>模版测试的比较方式可以进行配置，可以是小于通过也可以是大于通过，也可以是等于通过，也可以配置是否写入模版缓冲</p>
+<p><em><strong>Blending</strong></em></p>
+<p><img src="/./../../../BlogImg/image-20250326145751709.png" alt="image-20250326145751709"></p>
+<h5 id="x3D-x3D-目标缓冲区"><a href="#x3D-x3D-目标缓冲区" class="headerlink" title="&#x3D;&#x3D;目标缓冲区"></a>&#x3D;&#x3D;目标缓冲区</h5><p>FrameBuffer</p>
+<p>RenderTexture</p>
+<h4 id="x3D-后处理"><a href="#x3D-后处理" class="headerlink" title="&#x3D;后处理"></a>&#x3D;后处理</h4><p><img src="/./../../../BlogImg/image-20250326150003112.png" alt="image-20250326150003112"></p>
+<h4 id="x3D-总结"><a href="#x3D-总结" class="headerlink" title="&#x3D;总结"></a>&#x3D;总结</h4><p><img src="/./../../../BlogImg/image-20250326145807578.png" alt="image-20250326145807578"></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/03/26/UnityShaderGraph/"><img class="prev-cover" src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2025/03/26/Gpu%E9%98%B3%E6%98%A5%E7%99%BD%E9%9B%AA%E4%B8%8E%E4%B8%8B%E9%87%8C%E5%B7%B4%E4%BA%BA%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/OIP.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">某不知名的作者</div><div class="author-info__description">衬衫的价格是九磅十五便士</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tonzinonin" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">技术美术入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%EF%BC%8C%E6%B8%B2%E6%9F%93%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="toc-number">1.1.</span> <span class="toc-text">1，渲染流水线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E6%8F%8F%E8%BF%B0%E6%B8%B2%E6%9F%93%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="toc-number">1.1.1.</span> <span class="toc-text">详细描述渲染流水线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#x3D-%E5%BA%94%E7%94%A8%E9%98%B6%E6%AE%B5%EF%BC%9A"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">&#x3D;应用阶段：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E5%87%86%E5%A4%87%E5%A5%BD%E5%9F%BA%E6%9C%AC%E5%9C%BA%E6%99%AF%E6%95%B0%E6%8D%AE%EF%BC%9A"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">&#x3D;&#x3D;准备好基本场景数据：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%EF%BC%8C%E5%8A%A0%E9%80%9F%E7%AE%97%E6%B3%95%EF%BC%8C%E7%B2%97%E7%B2%92%E5%BA%A6%E5%89%94%E9%99%A4%EF%BC%9A"><span class="toc-number">1.1.1.1.2.</span> <span class="toc-text">&#x3D;&#x3D;碰撞检测，加速算法，粗粒度剔除：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E8%AE%BE%E7%BD%AE%E6%B8%B2%E6%9F%93%E7%8A%B6%E6%80%81%EF%BC%8C%E5%87%86%E5%A4%87%E6%B8%B2%E6%9F%93%E5%8F%82%E6%95%B0"><span class="toc-number">1.1.1.1.3.</span> <span class="toc-text">&#x3D;&#x3D;设置渲染状态，准备渲染参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E8%B0%83%E7%94%A8DrawCall%EF%BC%8C%E8%BE%93%E5%87%BA%E6%B8%B2%E6%9F%93%E5%9B%BE%E5%85%83%E5%88%B0%E6%98%BE%E5%AD%98"><span class="toc-number">1.1.1.1.4.</span> <span class="toc-text">&#x3D;&#x3D;调用DrawCall，输出渲染图元到显存</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#x3D-%E5%87%A0%E4%BD%95%E9%98%B6%E6%AE%B5%EF%BC%9A"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">&#x3D;几何阶段：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E9%A1%B6%E7%82%B9%E7%9D%80%E8%89%B2%EF%BC%9A"><span class="toc-number">1.1.1.2.1.</span> <span class="toc-text">&#x3D;&#x3D;顶点着色：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E5%8F%AF%E9%80%89%E9%A1%B6%E7%82%B9%E5%A4%84%E7%90%86"><span class="toc-number">1.1.1.2.2.</span> <span class="toc-text">&#x3D;&#x3D;可选顶点处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E5%87%A0%E4%BD%95%E7%9D%80%E8%89%B2%E5%99%A8%EF%BC%88%E5%8F%AF%E9%80%89%E6%AD%A5%E9%AA%A4%EF%BC%89"><span class="toc-number">1.1.1.2.3.</span> <span class="toc-text">&#x3D;&#x3D;几何着色器（可选步骤）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E6%8A%95%E5%BD%B1Projection"><span class="toc-number">1.1.1.2.4.</span> <span class="toc-text">&#x3D;&#x3D;投影Projection</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E8%A3%81%E5%89%AA"><span class="toc-number">1.1.1.2.5.</span> <span class="toc-text">&#x3D;&#x3D;裁剪</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E5%B1%8F%E5%B9%95%E6%98%A0%E5%B0%84"><span class="toc-number">1.1.1.2.6.</span> <span class="toc-text">&#x3D;&#x3D;屏幕映射</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#x3D-%E5%85%89%E6%A0%85%E5%8C%96%E9%98%B6%E6%AE%B5"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">&#x3D;光栅化阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E4%B8%89%E8%A7%92%E5%BD%A2%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.1.1.3.1.</span> <span class="toc-text">&#x3D;&#x3D;三角形设置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E4%B8%89%E8%A7%92%E5%BD%A2%E9%81%8D%E5%8E%86"><span class="toc-number">1.1.1.3.2.</span> <span class="toc-text">&#x3D;&#x3D;三角形遍历</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E6%8A%97%E9%94%AF%E9%BD%BF"><span class="toc-number">1.1.1.3.3.</span> <span class="toc-text">&#x3D;&#x3D;抗锯齿</span></a></li><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.1.3.4.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#x3D-%E9%80%90%E7%89%87%E5%85%83%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">&#x3D;逐片元操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E7%89%87%E5%85%83%E7%9D%80%E8%89%B2"><span class="toc-number">1.1.1.4.1.</span> <span class="toc-text">&#x3D;&#x3D;片元着色</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E9%A2%9C%E8%89%B2%E6%B7%B7%E5%90%88"><span class="toc-number">1.1.1.4.2.</span> <span class="toc-text">&#x3D;&#x3D;颜色混合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#x3D-x3D-%E7%9B%AE%E6%A0%87%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="toc-number">1.1.1.4.3.</span> <span class="toc-text">&#x3D;&#x3D;目标缓冲区</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#x3D-%E5%90%8E%E5%A4%84%E7%90%86"><span class="toc-number">1.1.1.5.</span> <span class="toc-text">&#x3D;后处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#x3D-%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.1.6.</span> <span class="toc-text">&#x3D;总结</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/29/Substance%20Painter%20Blender%E5%B7%A5%E4%BD%9C%E6%B5%81/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/1e052378ba7e2bfd.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/29/Substance%20Painter%20Blender%E5%B7%A5%E4%BD%9C%E6%B5%81/" title="无题">无题</a><time datetime="2025-03-29T12:39:26.888Z" title="发表于 2025-03-29 20:39:26">2025-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/27/Unity%20%E4%BB%8EBuilt%20in%E5%8D%87%E7%BA%A7%E5%88%B0Universal%20Render%20PipeLine/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/e92609f7d9e775f5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/27/Unity%20%E4%BB%8EBuilt%20in%E5%8D%87%E7%BA%A7%E5%88%B0Universal%20Render%20PipeLine/" title="无题">无题</a><time datetime="2025-03-27T09:33:04.691Z" title="发表于 2025-03-27 17:33:04">2025-03-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/26/UnityShaderGraph/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/12fe4ce985801876.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/26/UnityShaderGraph/" title="无题">无题</a><time datetime="2025-03-26T08:33:02.619Z" title="发表于 2025-03-26 16:33:02">2025-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/26/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF%E5%85%A5%E9%97%A8/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/4380663e3f60c5ab.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/26/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF%E5%85%A5%E9%97%A8/" title="无题">无题</a><time datetime="2025-03-26T04:48:22.514Z" title="发表于 2025-03-26 12:48:22">2025-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/26/Gpu%E9%98%B3%E6%98%A5%E7%99%BD%E9%9B%AA%E4%B8%8E%E4%B8%8B%E9%87%8C%E5%B7%B4%E4%BA%BA%E7%AC%94%E8%AE%B0/" title="无题"><img src="https://s3.bmp.ovh/imgs/2023/01/12/6b712c90bf59be49.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/03/26/Gpu%E9%98%B3%E6%98%A5%E7%99%BD%E9%9B%AA%E4%B8%8E%E4%B8%8B%E9%87%8C%E5%B7%B4%E4%BA%BA%E7%AC%94%E8%AE%B0/" title="无题">无题</a><time datetime="2025-03-26T02:43:50.830Z" title="发表于 2025-03-26 10:43:50">2025-03-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
